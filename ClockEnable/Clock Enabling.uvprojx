@@ -329,7 +329,7 @@
             <uC99>1</uC99>
             <uGnu>1</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
+            <v6Lang>3</v6Lang>
             <v6LangP>1</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -388,6 +388,26 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>RCC_Clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\RCC_Clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>RCC_Clock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\RCC_Clock.h</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Delay.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -22,42 +22,19 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\EMBEDDED\KUvision\Register Coding Of STM32\ClockEnable\Clock Enabling.uvprojx
-Project File Date:  10/10/2023
+Project File Date:  10/19/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-compiling system_stm32f4xx.c...
-main.c(110): warning: // comments are not allowed in this language [-Wcomment]
-        // 1. ENABLE HSE and wait for the HSE to become Ready
-        ^
-main.c(89): warning: no previous prototype for function 'SysClockConfig' [-Wmissing-prototypes]
-void SysClockConfig (void)
-     ^
-main.c(89): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void SysClockConfig (void)
-^
-static 
-main.c(146): warning: no previous prototype for function 'GPIO_Config' [-Wmissing-prototypes]
-void GPIO_Config (void)
-     ^
-main.c(146): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void GPIO_Config (void)
-^
-static 
-main.c(167): warning: no previous prototype for function 'delay' [-Wmissing-prototypes]
-void delay (uint32_t time)
-     ^
-main.c(167): note: declare 'static' if the function is not intended to be used outside of this translation unit
-void delay (uint32_t time)
-^
-static 
-4 warnings generated.
+compiling Delay.c...
 compiling main.c...
+compiling RCC_Clock.c...
+compiling system_stm32f4xx.c...
 assembling startup_stm32f401xe.s...
 linking...
-Program Size: Code=744 RO-data=420 RW-data=0 ZI-data=1632  
-".\Objects\Clock Enabling.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=792 RO-data=420 RW-data=0 ZI-data=1632  
+".\Objects\Clock Enabling.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
