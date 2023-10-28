@@ -1,0 +1,5 @@
+".\Objects\MS51_STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\RFID_Proj" 
+PRINT(".\Listings\RFID_Proj.m51") RAMSIZE(256) 
+DISABLEWARNING (16) 
