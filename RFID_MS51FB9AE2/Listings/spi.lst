@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.7.0   SPI                                                               10/29/2023 18:54:13 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SPI
+OBJECT MODULE PLACED IN .\Objects\spi.obj
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE spi.c OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE
+                    -_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\StdDriver\inc) DEBUG OBJE
+                    -CTEXTEND PRINT(.\Listings\spi.lst) TABS(2) OBJECT(.\Objects\spi.obj)
+
+line level    source
+
+   1          #include "spi.h"
+   2          #include "MS51_16K.H"
+   3          
+   4          
+   5          void SPI_Initial(void)
+   6          {
+   7   1                  P15_QUASI_MODE;                                  // P15 (SS) Quasi mode
+   8   1                  P10_QUASI_MODE;                                  // P10 (SPCLK) Quasi mode
+   9   1                  P00_QUASI_MODE;                                  // P00 (MOSI) Quasi mode
+  10   1                  P01_QUASI_MODE;
+  11   1                  set_SPSR_DISMODF;            // SS General purpose I/O ( No Mode Fault )
+  12   1                  clr_SPCR_SSOE;
+  13   1      
+  14   1                  clr_SPCR_LSBFE;                 // MSB first      
+  15   1                  
+  16   1                  clr_SPCR_CPOL;                  // The SPI clock is low in idle mode
+  17   1                  set_SPCR_CPHA;                 // The data is sample on the second edge of SPI clock
+  18   1                  set_SPCR_MSTR;                 // SPI in Master mode
+  19   1                  SPICLK_FSYS_DIV2;         // Select SPI clock
+  20   1          
+  21   1                  set_SPCR_SPIEN;                           // Enable SPI function
+  22   1                  clr_SPSR_SPIF;
+  23   1      }
+  24          
+  25          
+  26          void SPI_Tx(unsigned char Data)
+  27          {
+  28   1         SPDR = Data;
+  29   1         while(!(SPSR&0x80));
+  30   1         clr_SPSR_SPIF;
+  31   1      }
+  32          
+  33          unsigned char SPI_Rx(unsigned char Rx_Buf){
+  34   1          unsigned char u8SpiRB;
+  35   1          SPDR = Rx_Buf;
+  36   1          while(!(SPSR&0x80));
+  37   1          u8SpiRB = SPDR;
+  38   1          clr_SPSR_SPIF;
+  39   1          return u8SpiRB;
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    275    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

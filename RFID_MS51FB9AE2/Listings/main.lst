@@ -1,0 +1,76 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              10/29/2023 18:56:03 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9A
+                    -E_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\StdDriver\inc) DEBUG OBJ
+                    -ECTEXTEND PRINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "MS51_16K.H"
+   2          #include "spi.h"
+   3          #include "rfid.h"
+   4           
+   5           
+   6           unsigned char status;
+   7           unsigned char str[7]; // Max_LEN = 16
+   8          
+   9           
+  10          void sw_delay(int ms);
+  11          
+  12          //void SPI_Initial(void);
+  13          /*                
+  14          main function
+  15          */
+  16          void main (void)
+  17          {
+  18   1        ALL_GPIO_QUASI_MODE;
+  19   1        /* Modify HIRC to 24MHz for UART baud rate function only */
+  20   1          MODIFY_HIRC(HIRC_24);
+  21   1          P06_QUASI_MODE;
+  22   1          UART_Open(24000000,UART0_Timer3,115200);
+  23   1          ENABLE_UART0_PRINTF;
+  24   1          printf("\n Hello world!");   // Important! use prinft function must set TI=1;
+  25   1         SPI_Initial();
+*** WARNING C206 IN LINE 25 OF main.c: 'SPI_Initial': missing function-prototype
+  26   1         Timer0_Delay(16000000,200,3000);
+  27   1         MFRC522_Init();
+  28   1      
+  29   1        while(1)
+  30   1        {
+  31   2            printf("\n Hello world!");
+  32   2          status = MFRC522_Request(PICC_REQIDL, str); //MFRC522_Request(0x26, str)
+  33   2          status = MFRC522_Anticoll(str); //Take a collision, look up 5 bytes
+  34   2          if (status == MI_OK)
+  35   2          {
+  36   3             printf(" UID : 0x%x 0x%x 0x%x 0x%x 0x%x \r\n",str[0],str[1],str[2],str[3],str[4],str[5]);
+  37   3          }
+  38   2        }
+  39   1       
+  40   1      }
+  41          
+  42          // Software based delay. Time is not accurate.
+  43          void sw_delay (int ms){
+  44   1          int a, b;
+  45   1          for (a=0; a<1296; a++){
+  46   2                   for (b=0; b<ms; b++);
+  47   2      }
+  48   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    230    ----
+C51 COMPILER V9.60.7.0   MAIN                                                              10/29/2023 18:56:03 PAGE 2   
+
+   CONSTANT SIZE    =     50    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
