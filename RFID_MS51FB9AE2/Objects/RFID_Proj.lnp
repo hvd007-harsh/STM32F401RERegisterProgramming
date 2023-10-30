@@ -1,7 +1,11 @@
-".\Objects\MS51_STARTUP.obj",
 ".\Objects\main.obj",
+".\Objects\rfid.obj",
 ".\Objects\spi.obj",
-".\Objects\rfid.obj" 
+".\Objects\common.obj",
+".\Objects\delay.obj",
+".\Objects\sys.obj",
+".\Objects\uart.obj",
+".\Objects\MS51_STARTUP.obj" 
 TO ".\Objects\RFID_Proj" 
 PRINT(".\Listings\RFID_Proj.m51") RAMSIZE(256) 
 DISABLEWARNING (16) 

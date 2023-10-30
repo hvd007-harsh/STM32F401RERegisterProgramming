@@ -1,7 +1,3 @@
-#ifndef __RFID_H
-#define __RFID_H
-
-
 #define MAX_LEN 16
 
 /////////////////////////////////////////////////////////////////////
@@ -88,9 +84,24 @@
 #define     TReloadRegL           0x2D
 #define     TCounterValueRegH     0x2E
 #define     TCounterValueRegL     0x2F
-
+//Page 3:TestRegister     
+#define     Reserved30            0x30
+#define     TestSel1Reg           0x31
+#define     TestSel2Reg           0x32
+#define     TestPinEnReg          0x33
+#define     TestPinValueReg       0x34
+#define     TestBusReg            0x35
+#define     AutoTestReg           0x36
+#define     VersionReg            0x37
+#define     AnalogTestReg         0x38
+#define     TestDAC1Reg           0x39  
+#define     TestDAC2Reg           0x3A   
+#define     TestADCReg            0x3B   
+#define     Reserved31            0x3C   
+#define     Reserved32            0x3D   
+#define     Reserved33            0x3E   
+#define     Reserved34			  		0x3F
 //-----------------------------------------------
-// The desire to use
 unsigned char MFRC522_Request(unsigned char reqMode, unsigned char *TagType);
 unsigned char MFRC522_Anticoll(unsigned char *serNum);
 unsigned char MFRC522_SelectTag(unsigned char *serNum);
@@ -100,4 +111,3 @@ unsigned char MFRC522_Read(unsigned char blockAddr, unsigned char *recvData);
 void MFRC522_Init(void);
 void MFRC522_Halt(void);
 
-#endif

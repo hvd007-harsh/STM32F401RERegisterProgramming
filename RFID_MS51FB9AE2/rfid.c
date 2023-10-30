@@ -1,11 +1,9 @@
-#include "rfid.h"
-#include "spi.h"
-
 #include "MS51_16K.H"
+#include "spi.h"
+#include "rfid.h"
 
 
-void SPI_Tx(unsigned char Data);
-unsigned char SPI_Rx(unsigned char Rx_Buf);
+
 
  unsigned char  RC522_SPI_Transfer( unsigned char  Data)
 {
@@ -24,27 +22,27 @@ unsigned char SPI_Rx(unsigned char Rx_Buf);
 
 void Write_MFRC522( unsigned char  addr,  unsigned char  val) {
 	/* CS LOW */
-	P15= 0x00; 
+	SS= 0x00; 
 	//The address is located:0XXXXXX0
 	RC522_SPI_Transfer((addr << 1) & 0x7E);
 	RC522_SPI_Transfer(val);
 
 	/* CS HIGH */
-	P15 = 0xFF; 
+	SS = 0xFF; 
 }
 
  unsigned char  Read_MFRC522( unsigned char  addr) {
 	unsigned char  val;
 
 	/* CS LOW */
-	P15 = 0x00;
+	SS = 0x00;
 
 	//The address is located:1XXXXXX0
 	RC522_SPI_Transfer(((addr << 1) & 0x7E) | 0x80);
 	val = RC522_SPI_Transfer(0x00);
 
 	/* CS HIGH */
-	P15 = 0xFF;
+	SS = 0xFF;
 	return val;
 
 }
@@ -79,7 +77,7 @@ void MFRC522_Reset(void) {
 void MFRC522_Init(void) {
 
 	//GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);						// Activate the RFID reader
-	P15 = 0x00;
+	SS = 0x00;
 	P17 = 0xFF;
 	//GPIO_SetBits(MFRC522_RST_GPIO,MFRC522_RST_PIN);					// not reset
 

@@ -1,21 +1,27 @@
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 1   
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 1   
 
 
-C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SPI
-OBJECT MODULE PLACED IN .\Objects\spi.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE spi.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51F
-                    -B9AE_MS51XB9AE_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\StdDriver\i
-                    -nc) DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Listings\spi.lst) TABS(2) OBJECT(.\Objects\spi.obj)
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN .\Objects\uart.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE uart.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51
+                    -FB9AE_MS51XB9AE_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\StdDriver\
+                    -inc) DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Listings\uart.lst) TABS(2) OBJECT(.\Objects\uart.obj)
 
 line level    source
 
-   1          #include "spi.h"
-   1      =1  
-   2      =1  
-   3      =1  void SPI_Initial(void);
-   4      =1  void SPI_Tx(unsigned char Data);
-   5      =1  unsigned char SPI_Rx(unsigned char Rx_Buf);
-   2          #include "MS51_16K.H"
+   1          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   2          /*                                                                                                        
+             - */
+   3          /* SPDX-License-Identifier: Apache-2.0                                                                    
+             - */
+   4          /* Copyright(c) 2022 Nuvoton Technology Corp. All rights reserved.                                        
+             - */
+   5          /*                                                                                                        
+             - */
+   6          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   7          #include "ms51_16k.h"
    1      =1  /*--------------------------------------------------------------------------------------------------------
              --*/
    2      =1  /*                                                                                                        
@@ -56,14 +62,14 @@ line level    source
    9      =2  /*  sfr_macro_ms51_16k.h                                                                                  
              - */
   10      =2  /*  SFR Macro define for Nuvoton MS51FB9AE / MS51XB9AE / MS51XB9BE                                        
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 2   
+
              - */
   11      =2  /*  <Define rule I> set or clr _ regsiter name _ register bit name                                        
              - */
   12      =2  /*--------------------------------------------------------------------------------------------------------
              --*/
   13      =2  /******************************************************************************/
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 2   
-
   14      =2  /*                         Keil C51 include files                            */
   15      =2  /******************************************************************************/
   16      =2  #include <intrins.h>
@@ -120,14 +126,14 @@ line level    source
   10      =3  #define __STDIO_H__
   11      =3  
   12      =3  #ifndef EOF
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 3   
+
   13      =3   #define EOF -1
   14      =3  #endif
   15      =3  
   16      =3  #ifndef NULL
   17      =3   #define NULL ((void *) 0)
   18      =3  #endif
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 3   
-
   19      =3  
   20      =3  #ifndef _SIZE_T
   21      =3   #define _SIZE_T
@@ -184,14 +190,14 @@ line level    source
            =3 #define FVAR(object, addr)   (*((object volatile far *) (addr)))
            =3 #define FARRAY(object, base) ((object volatile far *) (base))
            =3 #define FCVAR(object, addr)   (*((object const far *) (addr)))
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 4   
+
            =3 #define FCARRAY(object, base) ((object const far *) (base))
            =3 #else
   33      =3  #define FVAR(object, addr)    (*((object volatile far *) ((addr)+0x10000L)))
   34      =3  #define FCVAR(object, addr)   (*((object const far *) ((addr)+0x810000L)))
   35      =3  #define FARRAY(object, base)  ((object volatile far *) ((base)+0x10000L))
   36      =3  #define FCARRAY(object, base) ((object const far *) ((base)+0x810000L))
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 4   
-
   37      =3  #endif
   38      =3  
   39      =3  #if defined (__CX2__)
@@ -248,14 +254,14 @@ line level    source
   36      =3  extern int    strpos  (const char *s, char c);
   37      =3  extern char  *strrchr (const char *s, char c);
   38      =3  extern int    strrpos (const char *s, char c);
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 5   
+
   39      =3  
   40      =3  extern size_t strspn  (const char *s, const char *set);
   41      =3  extern size_t strcspn (const char *s, const char *set);
   42      =3  extern char  *strpbrk (const char *s, const char *set);
   43      =3  extern char  *strrpbrk(const char *s, const char *set);
   44      =3  extern char  *strstr  (const char *s, const char *sub);
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 5   
-
   45      =3  extern char  *strtok  (char *str, const char *set);
   46      =3  
   47      =3  extern char   memcmp  (const void *s1, const void *s2, size_t n);
@@ -312,14 +318,14 @@ line level    source
   29      =3  
   30      =3  #define Disable  0
   31      =3  #define Enable   1
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 6   
+
   32      =3  
   33      =3  #define DISABLE  0
   34      =3  #define ENABLE   1 
   35      =3  
   36      =3  #define TRUE     1  
   37      =3  #define FALSE    0  
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 6   
-
   38      =3                      
   39      =3  #define FAIL     1  
   40      =3  #define PASS     0  
@@ -376,14 +382,14 @@ line level    source
   91      =3  
   92      =3  /*****************************************************************************/
   93      =3  /*   Software reset                                                          */
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 7   
+
   94      =3  /*****************************************************************************/
   95      =3  #define    ENABLE_SOFTWARE_RESET_TO_APROM    clr_CHPCON_BS;set_CHPCON_SWRST
   96      =3  #define    ENABLE_SOFTWARE_RESET_TO_LDROM    set_CHPCON_BS;set_CHPCON_SWRST
   97      =3  
   98      =3  /*****************************************************************************/
   99      =3  /*   Power down / idle mode define                                           */
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 7   
-
  100      =3  /*****************************************************************************/
  101      =3  #define    POWERDOWN_MODE_ENABLE    set_PCON_PD
  102      =3  #define    IDLE_MODE_ENABLE         set_PCON_IDLE
@@ -440,14 +446,14 @@ line level    source
  147      =3  #define    DISABLE_GLOBAL_INTERRUPT      EA=0
  148      =3  /*ENABLE INTERRUPT*/                     
  149      =3  #define    ENABLE_ADC_INTERRUPT          set_IE_EADC
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 8   
+
  150      =3  #define    ENABLE_BOD_INTERRUPT          set_IE_EBOD
  151      =3  #define    ENABLE_UART0_INTERRUPT        set_IE_ES
  152      =3  #define    ENABLE_TIMER1_INTERRUPT       set_IE_ET1
  153      =3  #define    ENABLE_INT1_INTERRUPT         set_IE_EX1
  154      =3  #define    ENABLE_TIMER0_INTERRUPT       set_IE_ET0
  155      =3  #define    ENABLE_INT0_INTERRUPT         set_IE_EX0
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 8   
-
  156      =3                                           
  157      =3  #define    ENABLE_TIMER2_INTERRUPT       set_EIE_ET2
  158      =3  #define    ENABLE_SPI0_INTERRUPT         set_EIE_ESPI
@@ -504,14 +510,14 @@ line level    source
  209      =3  #define   SET_INT_TIMER0_LEVEL1        clr_IP_PT0; set_IPH_PT0H
  210      =3  #define   SET_INT_TIMER0_LEVEL2        set_IP_PT0; clr_IPH_PT0H
  211      =3  #define   SET_INT_TIMER0_LEVEL3        set_IP_PT0; set_IPH_PT0H
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 9   
+
  212      =3  
  213      =3  #define   SET_INT_I2C0_LEVEL0          clr_EIP_PI2C; clr_EIPH_PI2CH
  214      =3  #define   SET_INT_I2C0_LEVEL1          clr_EIP_PI2C; set_EIPH_PI2CH
  215      =3  #define   SET_INT_I2C0_LEVEL2          set_EIP_PI2C; clr_EIPH_PI2CH
  216      =3  #define   SET_INT_I2C0_LEVEL3          set_EIP_PI2C; set_EIPH_PI2CH
  217      =3  
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 9   
-
  218      =3  #define   SET_INT_ADC_LEVEL0           clr_IP_PADC; clr_IPH_PADCH
  219      =3  #define   SET_INT_ADC_LEVEL1           clr_IP_PADC; set_IPH_PADCH
  220      =3  #define   SET_INT_ADC_LEVEL2           set_IP_PADC; clr_IPH_PADCH
@@ -568,14 +574,14 @@ line level    source
  271      =3  #define   SET_INT_UART1_LEVEL3         set_EIP1_PS_1; set_EIPH1_PSH_1
  272      =3  
  273      =3  #define   SET_INT_Timer3_LEVEL0        clr_EIP1_PT3; clr_EIPH1_PT3H
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 10  
+
  274      =3  #define   SET_INT_Timer3_LEVEL1        clr_EIP1_PT3; set_EIPH1_PT3H
  275      =3  #define   SET_INT_Timer3_LEVEL2        set_EIP1_PT3; clr_EIPH1_PT3H
  276      =3  #define   SET_INT_Timer3_LEVEL3        set_EIP1_PT3; set_EIPH1_PT3H
  277      =3  
  278      =3  #define   SET_INT_WKT_LEVEL0           clr_EIP1_PWKT; clr_EIPH1_PWKTH
  279      =3  #define   SET_INT_WKT_LEVEL1           clr_EIP1_PWKT; set_EIPH1_PWKTH
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 10  
-
  280      =3  #define   SET_INT_WKT_LEVEL2           set_EIP1_PWKT; clr_EIPH1_PWKTH
  281      =3  #define   SET_INT_WKT_LEVEL3           set_EIP1_PWKT; set_EIPH1_PWKTH
  282      =3  
@@ -632,14 +638,14 @@ line level    source
  333      =3  #define    P17_QUASI_MODE            clr_SFRS_SFRPAGE;P1M1&=0x7F;P1M2&=0x7F
  334      =3  #define    P30_QUASI_MODE            clr_SFRS_SFRPAGE;P3M1&=0xFE;P3M2&=0xFE
  335      =3  #define    ALL_GPIO_QUASI_MODE       clr_SFRS_SFRPAGE;P0M1=0;P0M2=0;P1M1=0;P1M2=0;P3M1=0;P3M2=0
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 11  
+
  336      =3  //------------------- Define Port as Push Pull mode -------------------
  337      =3  #define    P00_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xFE;P0M2|=0x01
  338      =3  #define    P01_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xFD;P0M2|=0x02
  339      =3  #define    P02_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xFB;P0M2|=0x04
  340      =3  #define    P03_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xF7;P0M2|=0x08
  341      =3  #define    P04_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xEF;P0M2|=0x10
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 11  
-
  342      =3  #define    P05_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xDF;P0M2|=0x20
  343      =3  #define    P06_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xBF;P0M2|=0x40
  344      =3  #define    P07_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0x7F;P0M2|=0x80
@@ -696,14 +702,14 @@ line level    source
  394      =3  /*****************************************************************************************
  395      =3  * For GPIO TTL/Schmitt Trig Type Seetting 
  396      =3  *****************************************************************************************/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 12  
+
  397      =3  //------------------- Enable GPIO Schmitt Trigger Mode  -------------------
  398      =3  #define    P00_ST_ENABLE          SFRS=1;P0S|=0x01
  399      =3  #define    P01_ST_ENABLE          SFRS=1;P0S|=0x02
  400      =3  #define    P02_ST_ENABLE          SFRS=1;P0S|=0x04
  401      =3  #define    P03_ST_ENABLE          SFRS=1;P0S|=0x08
  402      =3  #define    P04_ST_ENABLE          SFRS=1;P0S|=0x10
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 12  
-
  403      =3  #define    P05_ST_ENABLE          SFRS=1;P0S|=0x20
  404      =3  #define    P06_ST_ENABLE          SFRS=1;P0S|=0x40
  405      =3  #define    P07_ST_ENABLE          SFRS=1;P0S|=0x80
@@ -760,14 +766,14 @@ line level    source
  456      =3  *****************************************************************************/
  457      =3  #define    ENABLE_BIT7_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0x7F;PIPEN|=0x80
  458      =3  #define    ENABLE_BIT6_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0xBF;PIPEN|=0x40
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 13  
+
  459      =3  #define    ENABLE_BIT5_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xDF;PIPEN|=0x20
  460      =3  #define    ENABLE_BIT4_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xEF;PIPEN|=0x10
  461      =3  #define    ENABLE_BIT3_HIGHLEVEL_TRIG     PICON&=0xDF;PINEN&=0xF7;PIPEN|=0x08
  462      =3  #define    ENABLE_BIT2_HIGHLEVEL_TRIG     PICON&=0xEF;PINEN&=0xFB;PIPEN|=0x04
  463      =3  #define    ENABLE_BIT1_HIGHLEVEL_TRIG     PICON&=0xF7;PINEN&=0xFD;PIPEN|=0x02
  464      =3  #define    ENABLE_BIT0_HIGHLEVEL_TRIG     PICON&=0xFD;PINEN&=0xFE;PIPEN|=0x01
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 13  
-
  465      =3  /*****************************************************************************
  466      =3   Enable each bit falling edge trig mode
  467      =3  *****************************************************************************/
@@ -824,14 +830,14 @@ line level    source
              -divider = 4   for TM2/TM3) */
  511      =3  #define    TIMER_DIV16_VALUE_10ms_FOSC_7372800     65536-4608       /* 4608*16   /7372800= 10 ms   (Timer 
              -divider = 16  for TM2/TM3) */
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 14  
+
  512      =3  #define    TIMER_DIV64_VALUE_30ms_FOSC_7372800     65536-3456       /* 3456*64   /7372800= 30 ms   (Timer 
              -divider = 64  for TM2/TM3) */
  513      =3  #define    TIMER_DIV128_VALUE_1ms_FOSC_7372800     65536-57         /* 57*128    /7372800= 1 ms    (Timer 
              -divider = 128 for TM2/TM3) */
  514      =3  #define    TIMER_DIV128_VALUE_10ms_FOSC_7372800    65536-576        /* 576*128   /7372800= 10 ms   (Timer 
              -divider = 128 for TM2/TM3) */
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 14  
-
  515      =3  #define    TIMER_DIV128_VALUE_100ms_FOSC_7372800   65536-5760       /* 5760*128  /7372800= 100 ms  (Timer 
              -divider = 128 for TM2/TM3) */
  516      =3  #define    TIMER_DIV128_VALUE_200ms_FOSC_7372800   65536-11520      /* 11520*128 /7372800= 200 ms  (Timer 
@@ -888,14 +894,14 @@ line level    source
              -r divider = 4   for TM2/TM3) */
  543      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_11059200      65536-2765       /* 2765*4    /11059200 = 1 mS    (Time
              -r divider = 4   for TM2/TM3) */
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 15  
+
  544      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_11059200    65536-277        /* 553*4     /11059200 = 100 us  (Time
              -r divider = 4   for TM2/TM3) */
  545      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_11059200    65536-553        /* 1106*4    /11059200 = 200 us  (Time
              -r divider = 4   for TM2/TM3) */
  546      =3  #define    TIMER_DIV4_VALUE_500us_FOSC_11059200    65536-1383       /* 2765*4    /11059200 = 500 us  (Time
              -r divider = 4   for TM2/TM3) */  
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 15  
-
  547      =3  #define    TIMER_DIV16_VALUE_10ms_FOSC_11059200    65536-6912       /* 1500*16   /11059200 = 10 ms   (Time
              -r divider = 16  for TM2/TM3) */
  548      =3  #define    TIMER_DIV64_VALUE_30ms_FOSC_11059200    65536-5184       /* 10368*64  /11059200 = 30 ms   (Time
@@ -952,14 +958,14 @@ line level    source
  574      =3  /* define timer base value Fsys = 16.6MHz */
  575      =3  #define    TIMER_DIV12_VALUE_10us_FOSC_16600000      65536-14       /* 14*12     /16600000 = 10 uS,  (Time
              -r divider = 12  for TM0/TM1) */
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 16  
+
  576      =3  #define    TIMER_DIV12_VALUE_100us_FOSC_16600000     65536-138      /* 138*12    /16600000 = 100 uS, (Time
              -r divider = 12  for TM0/TM1) */
  577      =3  #define    TIMER_DIV12_VALUE_1ms_FOSC_16600000       65536-1384     /* 1384*12   /16600000 = 1 mS,   (Time
              -r divider = 12  for TM0/TM1) */
  578      =3  #define    TIMER_DIV12_VALUE_10ms_FOSC_16600000      65536-13834    /* 13834*12  /16600000 = 10 mS   (Time
              -r divider = 12  for TM0/TM1) */
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 16  
-
  579      =3  #define    TIMER_DIV12_VALUE_40ms_FOSC_16600000      65536-55333    /* 55333*12  /16600000 = 40 ms   (Time
              -r divider = 12  for TM0/TM1) */
  580      =3  #define    TIMER_DIV4_VALUE_10us_FOSC_16600000       65536-41       /* 41*4      /16600000 = 10 uS,  (Time
@@ -1016,14 +1022,14 @@ line level    source
  607      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_22118400        65536-5530     /* 923*4      /22118400 = 1 mS,   (Tim
              -er divider = 4   for TM2/TM3) */
  608      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_22118400      65536-553      /* 553*4      /22118400 = 100 us  (Tim
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 17  
+
              -er divider = 4   for TM2/TM3) */
  609      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_22118400      65536-1106     /* 1106*4     /22118400 = 200 us  (Tim
              -er divider = 4   for TM2/TM3) */
  610      =3  #define    TIMER_DIV4_VALUE_500us_FOSC_22118400      65536-2765     /* 2765*4     /22118400 = 500 us  (Tim
              -er divider = 4   for TM2/TM3) */    
  611      =3  #define    TIMER_DIV16_VALUE_10ms_FOSC_22118400      65536-13824    /* 1500*16    /22118400 = 10 ms   (Tim
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 17  
-
              -er divider = 16  for TM2/TM3) */
  612      =3  #define    TIMER_DIV64_VALUE_30ms_FOSC_22118400      65536-10368    /* 10368*64   /22118400 = 30 ms   (Tim
              -er divider = 64  for TM2/TM3) */
@@ -1080,14 +1086,14 @@ line level    source
              -er divider = 512 for TM2/TM3) */ 
  639      =3  
  640      =3  /*******************************************************************************
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 18  
+
  641      =3  *   TIMER Function Define
  642      =3  ********************************************************************************/
  643      =3  #define    ENABLE_CLOCK_OUT             set_CKCON_CLOEN;
  644      =3  /*-------------------- Timer0 basic define --------------------*/
  645      =3  #define    ENABLE_TIMER0_MODE0           TMOD&=0xF0
  646      =3  #define    ENABLE_TIMER0_MODE1           TMOD&=0xF0;TMOD|=0x01
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 18  
-
  647      =3  #define    ENABLE_TIMER0_MODE2           TMOD&=0xF0;TMOD|=0x02
  648      =3  #define    ENABLE_TIMER0_MODE3           TMOD&=0xF0;TMOD|=0x03
  649      =3  #define    TIMER0_FSYS                   set_CKCON_T0M
@@ -1144,14 +1150,14 @@ line level    source
              -0x10;CAPCON2|=0x10
  693      =3  #define  IC7_P15_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x08;CAPCON0|=
              -0x10;CAPCON2|=0x10
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 19  
+
  694      =3                                                  
  695      =3  #define  IC0_P12_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x00;CAPCON0|=
              -0x20;CAPCON2|=0x20
  696      =3  #define  IC1_P11_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x10;CAPCON0|=
              -0x20;CAPCON0|=0x20
  697      =3  #define  IC2_P10_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x20;CAPCON0|=
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 19  
-
              -0x20;CAPCON2|=0x20
  698      =3  #define  IC3_P00_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x30;CAPCON0|=
              -0x20;CAPCON2|=0x20
@@ -1208,14 +1214,14 @@ line level    source
  726      =3  #define  IC0_P12_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x00;CAPCON0|=0x20;CAPCON2|=0x20
  727      =3  #define  IC1_P11_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 20  
+
              -0x10;CAPCON0|=0x20;CAPCON2|=0x20
  728      =3  #define  IC2_P10_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x20;CAPCON0|=0x20;CAPCON2|=0x20
  729      =3  #define  IC3_P00_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x30;CAPCON0|=0x20;CAPCON2|=0x20
  730      =3  #define  IC3_P04_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 20  
-
              -0x40;CAPCON0|=0x20;CAPCON2|=0x20
  731      =3  #define  IC4_P01_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x50;CAPCON0|=0x20;CAPCON2|=0x20
@@ -1272,14 +1278,14 @@ line level    source
  759      =3  #define  IC2_P10_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x20;CAPCON0|=0x20;CAPCON2|=0x20
  760      =3  #define  IC3_P00_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 21  
+
              -0x30;CAPCON0|=0x20;CAPCON2|=0x20
  761      =3  #define  IC3_P04_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x40;CAPCON0|=0x20;CAPCON2|=0x20
  762      =3  #define  IC4_P01_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x50;CAPCON0|=0x20;CAPCON2|=0x20
  763      =3  #define  IC5_P03_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 21  
-
              -0x60;CAPCON0|=0x20;CAPCON2|=0x20
  764      =3  #define  IC6_P05_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x70;CAPCON0|=0x20;CAPCON2|=0x20
@@ -1336,14 +1342,14 @@ line level    source
  805      =3  #define    PWM5_P15_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output enable
  806      =3  #define    PWM5_P03_OUTPUT_ENABLE            PIOCON0|=0x20                                                
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 22  
+
              -                                 //P0.3 as PWM5
  807      =3  #define    PWM4_P01_OUTPUT_ENABLE            PIOCON0|=0x10                                                
              -                                 //P0.1 as PWM4 output enable
  808      =3  #define    PWM3_P04_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x08;clr_SFRS_SFRPAGE        //P0.4
              - as PWM3 output enable
  809      =3  #define    PWM3_P00_OUTPUT_ENABLE            PIOCON0|=0x08                                                
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 22  
-
              -                                 //P0.0 as PWM3 
  810      =3  #define    PWM2_P05_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x04;clr_SFRS_SFRPAGE        //P1.0
              - as PWM2 output enable
@@ -1400,14 +1406,14 @@ line level    source
  847      =3  #define    PWM_CENTRAL_POINT_INT             set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x20;clr_SFRS_SFRPAGE
              -;set_PWMCON1_PWMTYP
  848      =3  #define    PWM_PERIOD_END_INT                set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x30;clr_SFRS_SFRPAGE
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 23  
+
              -;set_PWMCON1_PWMTYP
  849      =3  //--------- PWM interrupt pin select ---------------------------
  850      =3  #define    PWM_INT_PWM0                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x00;clr_SFRS_SFRPAGE
  851      =3  #define    PWM_INT_PWM1                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x01;clr_SFRS_SFRPAGE
  852      =3  #define    PWM_INT_PWM2                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x02;clr_SFRS_SFRPAGE
  853      =3  #define    PWM_INT_PWM3                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x03;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 23  
-
  854      =3  #define    PWM_INT_PWM4                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x04;clr_SFRS_SFRPAGE
  855      =3  #define    PWM_INT_PWM5                      set_SFRS_SFRPAGE;PWMINTC&=0xF8;PWMINTC|=0x05;clr_SFRS_SFRPAGE
  856      =3  //--------- PWM Dead time setting ------------------------------
@@ -1464,14 +1470,14 @@ line level    source
  897      =3  
  898      =3  #define    DISABLE_PWM0_CH5_P15_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xDF;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output disable
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 24  
+
  899      =3  #define    DISABLE_PWM0_CH5_P03_OUTPUT       PIOCON0&=0xDF                                                
              -                                 //P0.3 as PWM5               
  900      =3  #define    DISABLE_PWM0_CH4_P01_OUTPUT       PIOCON0&=0xEF                                                
              -                                 //P0.1 as PWM4 output disable
  901      =3  #define    DISABLE_PWM0_CH3_P04_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xF7;clr_SFRS_SFRPAGE        //P0.4
              - as PWM3 output disable
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 24  
-
  902      =3  #define    DISABLE_PWM0_CH3_P00_OUTPUT       PIOCON0&=0xF7                                                
              -                                 //P0.0 as PWM3               
  903      =3  #define    DISABLE_PWM0_CH2_P05_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xFB;clr_SFRS_SFRPAGE        //P1.0
@@ -1528,14 +1534,14 @@ line level    source
  947      =3  #define    ENABLE_ADC_AIN2                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x02;P07_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x04;ADCCON1|=1    //P07
  948      =3  #define    ENABLE_ADC_AIN3                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x03;P06_INPUT_MODE;A
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 25  
+
              -INDIDS=0;AINDIDS|=0x08;ADCCON1|=1    //P06
  949      =3  #define    ENABLE_ADC_AIN4                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x04;P05_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x10;ADCCON1|=1    //P05
  950      =3  #define    ENABLE_ADC_AIN5                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x05;P04_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x20;ADCCON1|=1    //P04
  951      =3  #define    ENABLE_ADC_AIN6                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x06;P03_INPUT_MODE;A
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 25  
-
              -INDIDS=0;AINDIDS|=0x40;ADCCON1|=1    //P03
  952      =3  #define    ENABLE_ADC_AIN7                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x07;P11_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x80;ADCCON1|=1    //P11
@@ -1592,14 +1598,14 @@ line level    source
  981      =3  #define    PWM0_CH2_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x00;ADCCON1|=0x02
  982      =3  #define    PWM0_CH4_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 26  
+
              -CCON1|=0x04;ADCCON1|=0x02
  983      =3  #define    PWM0_CH0_RISINGEDGE_TRIG_ADC      clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
              -CCON1|=0x04;ADCCON1|=0x02
  984      =3  #define    PWM0_CH2_RISINGEDGE_TRIG_ADC      clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x04;ADCCON1|=0x02
  985      =3  #define    PWM0_CH4_RISINGEDGE_TRIG_ADC      clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 26  
-
              -CCON1|=0x06;ADCCON1|=0x02
  986      =3  #define    PWM0_CH0_CENTRAL_TRIG_ADC         clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
              -CCON1|=0x08;ADCCON1|=0x02
@@ -1656,14 +1662,14 @@ line level    source
 1027      =3  
 1028      =3  /*****************************************************************************************
 1029      =3  * WDT setting
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 27  
+
 1030      =3  *****************************************************************************************/
 1031      =3  #define    WDT_TIMEOUT_6MS                    TA=0xAA;TA=0x55;WDCON&=0xF8
 1032      =3  #define    WDT_TIMEOUT_25MS                   TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x01
 1033      =3  #define    WDT_TIMEOUT_50MS                   TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x02
 1034      =3  #define    WDT_TIMEOUT_100MS                  TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x03
 1035      =3  #define    WDT_TIMEOUT_200MS                  TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x04
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 27  
-
 1036      =3  #define    WDT_TIMEOUT_400MS                  TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x05
 1037      =3  #define    WDT_TIMEOUT_800MS                  TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x06
 1038      =3  #define    WDT_TIMEOUT_1_6S                   TA=0xAA;TA=0x55;WDCON&=0xF8;WDCON|=0x07
@@ -1720,14 +1726,14 @@ line level    source
   45      =3  #define ADC_ADCAQT6                 6
   46      =3  #define ADC_ADCAQT7                 7
   47      =3  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 28  
+
   48      =3  
   49      =3  void ADC_InitialContinous(unsigned int u16ADCRBase, unsigned char u8ADCRLength);
   50      =3  void ADC_ConvertTime(unsigned char u8ADCDIV, unsigned char u8ADCAQT);
   51      =3  void ADC_ComapreMode(unsigned char u8ADCCMPEN, unsigned int u16ADCCMPVALUE);
   52      =3  unsigned int READ_BANDGAP();
   26      =2  #include "bod.h"
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 28  
-
    1      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
    2      =3  /*                                                                                                        
@@ -1784,14 +1790,14 @@ line level    source
   13      =3  #define  BOOT_LDROM     2
   14      =3  
   15      =3  extern bit BIT_TMP;
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 29  
+
   16      =3  
   17      =3  unsigned char Read_APROM_BYTE(unsigned int code *u16_addr);
   18      =3  void Software_Reset(unsigned char u8Bootarea);
   19      =3  void PowerDown_Mode(bit PDStatus);
   20      =3  void Idle_Mode(bit IdleStatus);
   28      =2  #include "delay.h"
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 29  
-
    1      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
    2      =3  /*                                                                                                        
@@ -1848,14 +1854,14 @@ line level    source
              -divider = 128
   38      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_110592    65536-17280    //34560*128/22118400 = 200 ms    // Timer
              - divider = 128
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 30  
+
   39      =3    #define TIMER_DIV256_VALUE_500ms_FOSC_110592    65536-21600    //43200*256/22118400 = 500 ms     // Time
              -r divider = 256
   40      =3    #define TIMER_DIV512_VALUE_1s_FOSC_110592        65536-21600    //43200*512/22118400 = 1 s    // Timer d
              -ivider = 512
   41      =3  // define timer base value Fsys = 16MHz 
   42      =3    #define TIMER_DIV12_VALUE_10us_FOSC_160000      65536-8    //13*12/16000000 = 10 uS,        // Timer div
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 30  
-
              -ider = 12 for TM0/TM1
   43      =3    #define TIMER_DIV12_VALUE_100us_FOSC_160000      65536-130    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
@@ -1912,14 +1918,14 @@ line level    source
   70      =3    #define TIMER_DIV4_VALUE_100us_FOSC_166000      65536-415    //415*4/16600000 = 100 us        // Timer d
              -ivider = 4
   71      =3    #define TIMER_DIV4_VALUE_200us_FOSC_166000      65536-830    //830*4/16600000 = 200 us        // Timer d
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 31  
+
              -ivider = 4
   72      =3    #define TIMER_DIV4_VALUE_500us_FOSC_166000      65536-2075  //2075*4/16600000 = 500 us      // Timer div
              -ider = 4
   73      =3    #define TIMER_DIV4_VALUE_1ms_FOSC_166000        65536-4150  //4150*4/16600000 = 1 mS,       // Timer div
              -ider = 4
   74      =3    #define TIMER_DIV16_VALUE_10ms_FOSC_166000      65536-10375  //10375*16/16600000 = 10 ms      // Timer  
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 31  
-
              -divider = 16
   75      =3    #define TIMER_DIV64_VALUE_30ms_FOSC_166000      65536-7781  //7781*64/16600000 = 30 ms      // Timer div
              -ider = 64
@@ -1976,14 +1982,14 @@ line level    source
              -imer divider = 128
  103      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_221184    65536-34560      //34560*128/22118400 = 200 ms      // T
              -imer divider = 128
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 32  
+
  104      =3    #define TIMER_DIV256_VALUE_500ms_FOSC_221184    65536-43200      //43200*256/22118400 = 500 ms       // 
              -Timer divider = 256
  105      =3    #define TIMER_DIV512_VALUE_1s_FOSC_221184        65536-43200      //43200*512/22118400 = 1 s      // Tim
              -er divider = 512
  106      =3  // define timer base value Fsys = 24 MHz
  107      =3    #define TIMER_DIV12_VALUE_10us_FOSC_240000      65536-20      //20*12/24000000 = 10 uS,        // Timer 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 32  
-
              -divider = 12
  108      =3    #define TIMER_DIV12_VALUE_100us_FOSC_240000      65536-200    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
@@ -2040,14 +2046,14 @@ line level    source
              - */
    6      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 33  
+
    7      =3  
    8      =3  void Write_DATAFLASH_BYTE(unsigned int u16EPAddr,unsigned char u8EPData);
    9      =3  void Write_DATAFLASH_ARRAY(unsigned int u16_addr,unsigned char *pDat,unsigned int num);
   10      =3  void Read_DATAFLASH_ARRAY(unsigned int u16_addr,unsigned char *pDat,unsigned int num);
   11      =3  unsigned char WriteDataToOnePage(unsigned int u16_addr,const unsigned char *pDat,unsigned char num);
   30      =2  #include "i2c.h"
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 33  
-
    1      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
    2      =3  /*                                                                                                        
@@ -2104,14 +2110,14 @@ line level    source
   17      =3  #define     BYTE_READ_CONFIG         0xC0
   18      =3  #define     BYTE_PROGRAM_CONFIG      0xE1
   19      =3  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 34  
+
   20      =3  extern unsigned char xdata DIDBuffer[2];
   21      =3  extern unsigned char xdata PIDBuffer[2];
   22      =3  extern unsigned char xdata UIDBuffer[12];
   23      =3  extern unsigned char xdata UCIDBuffer[12];
   24      =3  extern unsigned char xdata IAPDataBuf[128];
   25      =3  extern unsigned char xdata IAPCFBuf[5];
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 34  
-
   26      =3  extern bit  ConfigModifyFlag;
   27      =3  
   28      =3  void Trigger_IAP(void);
@@ -2168,14 +2174,14 @@ line level    source
    9      =3  #define  INT_BOD          2
   10      =3  #define  INT_WDT          3
   11      =3  #define  INT_Timer0       4
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 35  
+
   12      =3  #define  INT_I2C0         5
   13      =3  #define  INT_ADC          6
   14      =3  #define  INT_INT1         7
   15      =3  #define  INT_PIT          8
   16      =3  #define  INT_Timer1       9
   17      =3  #define  INT_UART0        11
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 35  
-
   18      =3  #define  INT_PWM0_Brake   12
   19      =3  #define  INT_SPI0         13
   20      =3  #define  INT_Timer2       14
@@ -2232,14 +2238,14 @@ line level    source
    8      =3  #define PWM_FSYS         0
    9      =3  #define PWM_TIMER1       1
   10      =3  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 36  
+
   11      =3  #define Independent      0
   12      =3  #define Complementary    1
   13      =3  #define Synchronous      2
   14      =3  
   15      =3  #define EdgeAligned      0
   16      =3  #define CenterAligned    1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 36  
-
   17      =3  
   18      =3  #define PWM0_CH01        0
   19      =3  #define PWM0_CH23        1
@@ -2296,14 +2302,14 @@ line level    source
    8      =3  #define  FSYS_HXT   0
    9      =3  #define  FSYS_LXT   1
   10      =3  #define  FSYS_HIRC  2
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 37  
+
   11      =3  #define  FSYS_LIRC  3
   12      =3  #define  FSYS_OSCIN_P30  4
   13      =3  #define  FSYS_HXTIN_P00  5
   14      =3  #define  HIRC_24        6
   15      =3  #define  HIRC_16        7
   16      =3  #define  HIRC_166       8
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 37  
-
   17      =3  #define  HIRC_24        6
   18      =3  #define  HIRC_16        7
   19      =3  #define  HIRC_166       8
@@ -2360,14 +2366,14 @@ line level    source
              --*/
    7      =3  
    8      =3  #define UART0_Timer1  0
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 38  
+
    9      =3  #define UART0_Timer3  1
   10      =3  #define UART1_Timer3  2
   11      =3  #define UART0 0
   12      =3  #define UART1 1
   13      =3  
   14      =3  void UART_Open(unsigned long u32SysClock, unsigned char u8UARTPort,unsigned long u32Baudrate);
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 38  
-
   15      =3  void UART_Send_Data(unsigned char UARTPort, unsigned char c);
   16      =3  unsigned char Receive_Data(unsigned char UARTPort);
   17      =3  void Enable_UART0_VCOM_printf_24M_115200(void);
@@ -2424,14 +2430,14 @@ line level    source
   65      =2  #define clr_PCON_GF0             PCON&=0xFB 
   66      =2  #define clr_PCON_PD              PCON&=0xFD
   67      =2  #define clr_PCON_IDLE            PCON&=0xFE
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 39  
+
   68      =2  
   69      =2  /**** TCON    88H ****/
   70      =2  #define set_TCON_TF1             TF1=1
   71      =2  #define set_TCON_TR1             TR1=1
   72      =2  #define set_TCON_TF0             TF0=1
   73      =2  #define set_TCON_TR0             TR0=1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 39  
-
   74      =2  #define set_TCON_IE1             IE1=1
   75      =2  #define set_TCON_IT1             IT1=1
   76      =2  #define set_TCON_IE0             IE0=1
@@ -2488,14 +2494,14 @@ line level    source
  127      =2  #define set_WKCON_WKPS2          WKCON|=0x04
  128      =2  #define set_WKCON_WKPS1          WKCON|=0x02
  129      =2  #define set_WKCON_WKPS0          WKCON|=0x01
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 40  
+
  130      =2                                     
  131      =2  #define clr_WKCON_WKTCK          WKCON&=0xDF
  132      =2  #define clr_WKCON_WKTF           WKCON&=0xEF
  133      =2  #define clr_WKCON_WKTR           WKCON&=0xF7
  134      =2  #define clr_WKCON_WKPS2          WKCON&=0xFB
  135      =2  #define clr_WKCON_WKPS1          WKCON&=0xFD
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 40  
-
  136      =2  #define clr_WKCON_WKPS0          WKCON&= 0xFE
  137      =2  
  138      =2  /****SFRS    91H ****/
@@ -2552,14 +2558,14 @@ line level    source
  189      =2  #define clr_CKSWT_HIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xDF;EA=BIT_TMP
  190      =2  #define clr_CKSWT_LIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xEF;EA=BIT_TMP
  191      =2  #define clr_CKSWT_ECLKST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xF7;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 41  
+
  192      =2  #define clr_CKSWT_OSC1           BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xFB;EA=BIT_TMP
  193      =2  #define clr_CKSWT_OSC0           BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xFD;EA=BIT_TMP
  194      =2  
  195      =2  /**** CKEN   97H **** TA protect register ****/ 
  196      =2  #define set_CKEN_EXTEN1          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x80;EA=BIT_TMP
  197      =2  #define set_CKEN_EXTEN0          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x40;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 41  
-
  198      =2  #define set_CKEN_HIRCEN          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x20;EA=BIT_TMP
  199      =2  #define set_CKEN_CKSWTF          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x01;EA=BIT_TMP
  200      =2  
@@ -2616,14 +2622,14 @@ line level    source
  251      =2                                      
  252      =2  #define clr_EIE1_EWKT            EIE1&=0xFB
  253      =2  #define clr_EIE1_ET3             EIE1&=0xFD
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 42  
+
  254      =2  #define clr_EIE1_ES_1            EIE1&=0xFE
  255      =2                              
  256      =2  /**** CHPCON    9DH ****  TA protect register  ****/
  257      =2  #define set_CHPCON_SWRST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON|=0x80;EA=BIT_TMP
  258      =2  #define set_CHPCON_IAPFF         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON|=0x40;EA=BIT_TMP
  259      =2  #define set_CHPCON_BS            BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON|=0x02;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 42  
-
  260      =2  #define set_CHPCON_IAPEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON|=0x01;EA=BIT_TMP
  261      =2                                   
  262      =2  #define clr_CHPCON_SWRST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0x7F;EA=BIT_TMP
@@ -2680,14 +2686,14 @@ line level    source
  313      =2                                   
  314      =2  #define clr_IAPUEN_SPMEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xEF;EA=BIT_TMP
  315      =2  #define clr_IAPUEN_SPUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xF7;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 43  
+
  316      =2  #define clr_IAPUEN_CFUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xFB;EA=BIT_TMP
  317      =2  #define clr_IAPUEN_LDUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xFD;EA=BIT_TMP
  318      =2  #define clr_IAPUEN_APUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xFE;EA=BIT_TMP
  319      =2  
  320      =2  /**** IAPAL  A6H ****/
  321      =2  /**** IAPAH  A7H ****/
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 43  
-
  322      =2  
  323      =2  /**** IE      A8H ****/
  324      =2  #define set_IE_EA                EA  =1
@@ -2744,14 +2750,14 @@ line level    source
  375      =2  #define set_IAPCN_FCEN           IAPN|=0x10
  376      =2  #define set_IAPCN_FCTRL3         IAPN|=0x08
  377      =2  #define set_IAPCN_FCTRL2         IAPN|=0x04
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 44  
+
  378      =2  #define set_IAPCN_FCTRL1         IAPN|=0x02
  379      =2  #define set_IAPCN_FCTRL0         IAPN|=0x01
  380      =2                                     
  381      =2  #define clr_IAPCN_FOEN           IAPN&=0xDF
  382      =2  #define clr_IAPCN_FCEN           IAPN&=0xEF
  383      =2  #define clr_IAPCN_FCTRL3         IAPN&=0xF7
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 44  
-
  384      =2  #define clr_IAPCN_FCTRL2         IAPN&=0xFB
  385      =2  #define clr_IAPCN_FCTRL1         IAPN&=0xFD
  386      =2  #define clr_IAPCN_FCTRL0         IAPN&=0xFE
@@ -2808,14 +2814,14 @@ line level    source
  437      =2  #define clr_P0M2_6               clr_SFRS_SFRPAGE;P0M2&=0xBF
  438      =2  #define clr_P0M2_5               clr_SFRS_SFRPAGE;P0M2&=0xDF
  439      =2  #define clr_P0M2_4               clr_SFRS_SFRPAGE;P0M2&=0xEF
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 45  
+
  440      =2  #define clr_P0M2_3               clr_SFRS_SFRPAGE;P0M2&=0xF7
  441      =2  #define clr_P0M2_2               clr_SFRS_SFRPAGE;P0M2&=0xFB
  442      =2  #define clr_P0M2_1               clr_SFRS_SFRPAGE;P0M2&=0xFD
  443      =2  #define clr_P0M2_0               clr_SFRS_SFRPAGE;P0M2&=0xFE
  444      =2  
  445      =2  /**** P0SR    B0H PAGE1 ****/ 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 45  
-
  446      =2  #define set_P0SR_7               set_SFRS_SFRPAGE;P0SR|=0x80;clr_SFRS_SFRPAGE
  447      =2  #define set_P0SR_6               set_SFRS_SFRPAGE;P0SR|=0x40;clr_SFRS_SFRPAGE
  448      =2  #define set_P0SR_5               set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
@@ -2872,14 +2878,14 @@ line level    source
  499      =2  #define clr_P1SR_1               set_SFRS_SFRPAGE;P1SR&=0xFD;clr_SFRS_SFRPAGE
  500      =2  #define clr_P1SR_0               set_SFRS_SFRPAGE;P1SR&=0xFE;clr_SFRS_SFRPAGE
  501      =2  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 46  
+
  502      =2  /**** P2S    B5H ****/
  503      =2  #define set_P2S_P20UP            P2S|=0x80
  504      =2  #define set_P2S_T1OE             P2S|=0x08
  505      =2  #define set_P2S_T0OE             P2S|=0x04
  506      =2  #define set_P2S_P2S0             P2S|=0x01
  507      =2                                   
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 46  
-
  508      =2  #define clr_P2S_P20UP            P2S&=0x7F
  509      =2  #define clr_P2S_T1OE             P2S&=0xF7
  510      =2  #define clr_P2S_T0OE             P2S&=0xFB
@@ -2936,14 +2942,14 @@ line level    source
  561      =2  /**** SADEN_1  8AH ****/
  562      =2  /**** SADDR_1  BBH ****/
  563      =2  /**** I2DAT    BCH ****/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 47  
+
  564      =2  /**** I2STAT    BDH ****/
  565      =2  /**** I2CLK    BEH ****/
  566      =2  
  567      =2  /**** I2TOC    BFH ****/
  568      =2  #define set_I2TOC_I2TOCEN       I2TOC|=0x04
  569      =2  #define set_I2TOC_DIV           I2TOC|=0x02
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 47  
-
  570      =2  #define set_I2TOC_I2TOF         I2TOC|=0x01
  571      =2                                  
  572      =2  #define clr_I2TOC_I2TOCEN       I2TOC&=0xFB
@@ -3000,14 +3006,14 @@ line level    source
  623      =2  #define set_PIOCON1_PIO15       set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE
  624      =2  #define set_PIOCON1_PIO13       set_SFRS_SFRPAGE;PIOCON1|=0x08;clr_SFRS_SFRPAGE
  625      =2  #define set_PIOCON1_PIO12       set_SFRS_SFRPAGE;PIOCON1|=0x04;clr_SFRS_SFRPAGE
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 48  
+
  626      =2  #define set_PIOCON1_PIO11       set_SFRS_SFRPAGE;PIOCON1|=0x02;clr_SFRS_SFRPAGE
  627      =2  
  628      =2  #define clr_PIOCON1_PIO15       set_SFRS_SFRPAGE;PIOCON1&=0xDF;clr_SFRS_SFRPAGE
  629      =2  #define clr_PIOCON1_PIO13       set_SFRS_SFRPAGE;PIOCON1&=0xF7;clr_SFRS_SFRPAGE
  630      =2  #define clr_PIOCON1_PIO12       set_SFRS_SFRPAGE;PIOCON1&=0xFB;clr_SFRS_SFRPAGE
  631      =2  #define clr_PIOCON1_PIO11       set_SFRS_SFRPAGE;PIOCON1&=0xFD;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 48  
-
  632      =2  
  633      =2  /**** T2CON  C8H ****/
  634      =2  #define set_T2CON_TF2           TF2      = 1
@@ -3064,14 +3070,14 @@ line level    source
  685      =2  #define clr_PSW_P               P    = 0
  686      =2  
  687      =2  /**** PWMPH    D1H ****/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 49  
+
  688      =2  /**** PWM0H    D2H ****/
  689      =2  /**** PWM1H    D3H ****/
  690      =2  /**** PWM2H    D4H ****/
  691      =2  /**** PWM3H    D5H  ****
  692      =2  
  693      =2  /**** FBD    D7H ****/
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 49  
-
  694      =2  #define set_FBD_FBF             FBD|=0x80
  695      =2  #define set_FBD_FBINLS          FBD|=0x40
  696      =2  #define set_FBD_FBD5            FBD|=0x20
@@ -3128,14 +3134,14 @@ line level    source
  747      =2  #define set_PWMCON1_GP          PWMCON1|=0x20
  748      =2  #define set_PWMCON1_PWMTYP      PWMCON1|=0x10
  749      =2  #define set_PWMCON1_FBINEN      PWMCON1|=0x08
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 50  
+
  750      =2  #define set_PWMCON1_PWMDIV2     PWMCON1|=0x04 
  751      =2  #define set_PWMCON1_PWMDIV1     PWMCON1|=0x02
  752      =2  #define set_PWMCON1_PWMDIV0     PWMCON1|=0x01
  753      =2                                  
  754      =2  #define clr_PWMCON1_PWMMOD1     PWMCON1&=0x7F
  755      =2  #define clr_PWMCON1_PWMMOD0     PWMCON1&=0xBF
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 50  
-
  756      =2  #define clr_PWMCON1_GP          PWMCON1&=0xDF
  757      =2  #define clr_PWMCON1_PWMTYP      PWMCON1&=0xEF
  758      =2  #define clr_PWMCON1_FBINEN      PWMCON1&=0xF7
@@ -3192,14 +3198,14 @@ line level    source
  808      =2  #define clr_ADCCON0_ETGSEL0     clr_SFRS_SFRPAGE;ETGSEL0=0
  809      =2  #define clr_ADCCON0_ADCHS3      clr_SFRS_SFRPAGE;ADCHS3=0
  810      =2  #define clr_ADCCON0_ADCHS2      clr_SFRS_SFRPAGE;ADCHS2=0
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 51  
+
  811      =2  #define clr_ADCCON0_ADCHS1      clr_SFRS_SFRPAGE;ADCHS1=0
  812      =2  #define clr_ADCCON0_ADCHS0      clr_SFRS_SFRPAGE;ADCHS0=0
  813      =2  
  814      =2  /**** PICON  E9H ****/
  815      =2  #define set_PICON_PIT67         PICON|=0x80
  816      =2  #define set_PICON_PIT45         PICON|=0x40
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 51  
-
  817      =2  #define set_PICON_PIT3          PICON|=0x20
  818      =2  #define set_PICON_PIT2          PICON|=0x10
  819      =2  #define set_PICON_PIT1          PICON|=0x08
@@ -3256,14 +3262,14 @@ line level    source
  870      =2  
  871      =2  /**** PIF ECH ****/
  872      =2  #define set_PIF_PIF7             PIF|=0x80
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 52  
+
  873      =2  #define set_PIF_PIF6             PIF|=0x40
  874      =2  #define set_PIF_PIF5             PIF|=0x20
  875      =2  #define set_PIF_PIF4             PIF|=0x10
  876      =2  #define set_PIF_PIF3             PIF|=0x08
  877      =2  #define set_PIF_PIF2             PIF|=0x04
  878      =2  #define set_PIF_PIF1             PIF|=0x02
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 52  
-
  879      =2  #define set_PIF_PIF0             PIF|=0x01
  880      =2                                   
  881      =2  #define clr_PIF_PIF7             PIF&=0x7F
@@ -3320,14 +3326,14 @@ line level    source
  932      =2  
  933      =2  /**** CAPCON4    F2H ****/
  934      =2  #define set_CAPCON4_CAP23       CAPCON4|=0x08
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 53  
+
  935      =2  #define set_CAPCON4_CAP22       CAPCON4|=0x04
  936      =2  #define set_CAPCON4_CAP21       CAPCON4|=0x02
  937      =2  #define set_CAPCON4_CAP20       CAPCON4|=0x01
  938      =2                                  
  939      =2  #define clr_CAPCON4_CAP23       CAPCON4&=0xF7
  940      =2  #define clr_CAPCON4_CAP22       CAPCON4&=0xFB
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 53  
-
  941      =2  #define clr_CAPCON4_CAP21       CAPCON4&=0xFD
  942      =2  #define clr_CAPCON4_CAP20       CAPCON4&=0xFE
  943      =2  
@@ -3384,14 +3390,14 @@ line level    source
  994      =2                                  
  995      =2  #define clr_AINDIDS_P11DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0x7F
  996      =2  #define clr_AINDIDS_P03DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xBF
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 54  
+
  997      =2  #define clr_AINDIDS_P04DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xDF
  998      =2  #define clr_AINDIDS_P05DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xEF
  999      =2  #define clr_AINDIDS_P06DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xF7
 1000      =2  #define clr_AINDIDS_P07DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xFB
 1001      =2  #define clr_AINDIDS_P30DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xFD
 1002      =2  #define clr_AINDIDS_P17DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xFE
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 54  
-
 1003      =2  
 1004      =2  /**** EIPH      F7H ****/
 1005      =2  #define set_EIPH_PT2H           clr_SFRS_SFRPAGE;EIPH|=0x80
@@ -3448,14 +3454,14 @@ line level    source
 1056      =2  #define set_PMEN_3               PMEN|=0x08
 1057      =2  #define set_PMEN_2               PMEN|=0x04
 1058      =2  #define set_PMEN_1               PMEN|=0x02
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 55  
+
 1059      =2  #define set_PMEN_0               PMEN|=0x01
 1060      =2                                      
 1061      =2  #define clr_PMEN_5               PMEN&=0xDF
 1062      =2  #define clr_PMEN_4               PMEN&=0xEF
 1063      =2  #define clr_PMEN_3               PMEN&=0xF7
 1064      =2  #define clr_PMEN_2               PMEN&=0xFB
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 55  
-
 1065      =2  #define clr_PMEN_1               PMEN&=0xFD
 1066      =2  #define clr_PMEN_0               PMEN&=0xFE
 1067      =2                              
@@ -3512,14 +3518,14 @@ line level    source
 1118      =2  #define clr_P00                 P00=0
 1119      =2  #define clr_P01                 P01=0
 1120      =2  #define clr_P02                 P02=0
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 56  
+
 1121      =2  #define clr_P03                 P03=0
 1122      =2  #define clr_P04                 P04=0
 1123      =2  #define clr_P05                 P05=0
 1124      =2  #define clr_P06                 P06=0
 1125      =2  #define clr_P07                 P07=0
 1126      =2  
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 56  
-
 1127      =2  /**** SP    81H ****/ 
 1128      =2  /**** DPH  82H ****/ 
 1129      =2  /**** DPL  83H ****/ 
@@ -3576,14 +3582,14 @@ line level    source
 1180      =2  #define clr_M1_T1               TMOD&=0xDF
 1181      =2  #define clr_M0_T1               TMOD&=0xEF
 1182      =2  #define clr_GATE_T0             TMOD&=0xF7
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 57  
+
 1183      =2  #define clr_CT_T0               TMOD&=0xFB
 1184      =2  #define clr_M1_T0               TMOD&=0xFD
 1185      =2  #define clr_M0_T0               TMOD&=0xFE
 1186      =2  
 1187      =2  /**** TH1    8AH ****/ 
 1188      =2  /**** TH0    8BH ****/ 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 57  
-
 1189      =2  /**** TL1    8CH  **** 
 1190      =2  /**** TL0    8DH ****/ 
 1191      =2  
@@ -3640,14 +3646,14 @@ line level    source
 1242      =2  #define set_CAPEN2              CAPCON0|=0x40
 1243      =2  #define set_CAPEN1              CAPCON0|=0x20
 1244      =2  #define set_CAPEN0              CAPCON0|=0x10
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 58  
+
 1245      =2  #define set_CAPF2               CAPCON0|=0x04
 1246      =2  #define set_CAPF1               CAPCON0|=0x02
 1247      =2  #define set_CAPF0               CAPCON0|=0x01
 1248      =2                                  
 1249      =2  #define clr_CAPEN2              CAPCON0&=0xBF
 1250      =2  #define clr_CAPEN1              CAPCON0&=0xDF
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 58  
-
 1251      =2  #define clr_CAPEN0              CAPCON0&=0xEF
 1252      =2  #define clr_CAPF2               CAPCON0&=0xFB
 1253      =2  #define clr_CAPF1               CAPCON0&=0xFD
@@ -3704,14 +3710,14 @@ line level    source
 1304      =2  #define clr_CKSWTF              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xFE;EA=BIT_TMP
 1305      =2  
 1306      =2  /**** SCON    98H ****/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 59  
+
 1307      =2  #define set_FE                  FE    = 1
 1308      =2  #define set_SM1                 SM1   = 1
 1309      =2  #define set_SM2                 SM2   = 1
 1310      =2  #define set_REN                 REN   = 1
 1311      =2  #define set_TB8                 TB8   = 1
 1312      =2  #define set_RB8                 RB8   = 1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 59  
-
 1313      =2  #define set_TI                  TI    = 1
 1314      =2  #define set_RI                  RI    = 1
 1315      =2                                  
@@ -3768,14 +3774,14 @@ line level    source
 1366      =2  
 1367      =2  /**** P2    A0H ****/
 1368      =2  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 60  
+
 1369      =2  /**** AUXR1  A2H ****/
 1370      =2  #define set_SWRF                AUXR1|=0x80
 1371      =2  #define set_RSTPINF             AUXR1|=0x40
 1372      =2  #define set_HARDF               AUXR1|=0x20
 1373      =2  #define set_GF2                 AUXR1|=0x08
 1374      =2  #define set_UART0PX             AUXR1|=0x04
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 60  
-
 1375      =2  #define set_DPS                 AUXR1|=0x01
 1376      =2                                       
 1377      =2  #define clr_SWRF                AUXR1&=0x7F
@@ -3832,14 +3838,14 @@ line level    source
 1428      =2  #define clr_EADC                EADC     = 0
 1429      =2  #define clr_EBOD                EBOD     = 0
 1430      =2  #define clr_ES                  ES       = 0
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 61  
+
 1431      =2  #define clr_ET1                 ET1      = 0
 1432      =2  #define clr_EX1                 EX1      = 0
 1433      =2  #define clr_ET0                 ET0      = 0
 1434      =2  #define clr_EX0                 EX0      = 0
 1435      =2  
 1436      =2  /**** SADDR    A9H ****/
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 61  
-
 1437      =2  
 1438      =2  /**** WDCON    AAH **** TA protect register ****/
 1439      =2  #define set_WDTR                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x80;EA=BIT_TMP
@@ -3896,14 +3902,14 @@ line level    source
 1490      =2                                        
 1491      =2  #define clr_FOEN                IAPN&=0xDF
 1492      =2  #define clr_FCEN                IAPN&=0xEF
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 62  
+
 1493      =2  #define clr_FCTRL3              IAPN&=0xF7
 1494      =2  #define clr_FCTRL2              IAPN&=0xFB
 1495      =2  #define clr_FCTRL1              IAPN&=0xFD
 1496      =2  #define clr_FCTRL0              IAPN&=0xFE
 1497      =2  
 1498      =2  /**** P3    B0H ****/
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 62  
-
 1499      =2  #define set_P30                 P30= 1
 1500      =2  #define clr_P30                 P30= 0
 1501      =2  
@@ -3960,14 +3966,14 @@ line level    source
 1552      =2  #define clr_P0M2_5              clr_SFRS_SFRPAGE;P0M2&=0xDF
 1553      =2  #define clr_P0M2_4              clr_SFRS_SFRPAGE;P0M2&=0xEF
 1554      =2  #define clr_P0M2_3              clr_SFRS_SFRPAGE;P0M2&=0xF7
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 63  
+
 1555      =2  #define clr_P0M2_2              clr_SFRS_SFRPAGE;P0M2&=0xFB
 1556      =2  #define clr_P0M2_1              clr_SFRS_SFRPAGE;P0M2&=0xFD
 1557      =2  #define clr_P0M2_0              clr_SFRS_SFRPAGE;P0M2&=0xFE
 1558      =2  
 1559      =2  /**** P0SR    B0H PAGE1 ****/ 
 1560      =2  #define set_P0SR_7              set_SFRS_SFRPAGE;P0SR|=0x80;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 63  
-
 1561      =2  #define set_P0SR_6              set_SFRS_SFRPAGE;P0SR|=0x40;clr_SFRS_SFRPAGE
 1562      =2  #define set_P0SR_5              set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
 1563      =2  #define set_P0SR_4              set_SFRS_SFRPAGE;P0SR|=0x10;clr_SFRS_SFRPAGE
@@ -4024,14 +4030,14 @@ line level    source
 1614      =2  #define clr_P1S_0               set_SFRS_SFRPAGE;P1S&=0xFE;clr_SFRS_SFRPAGE
 1615      =2  
 1616      =2  /**** P1M2    B4H PAGE0 ****/                      
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 64  
+
 1617      =2  #define set_P12UP               clr_SFRS_SFRPAGE;P1M2|=0x04
 1618      =2  #define set_P1M2_1              clr_SFRS_SFRPAGE;P1M2|=0x02
 1619      =2  #define set_P1M2_0              clr_SFRS_SFRPAGE;P1M2|=0x01
 1620      =2                                      
 1621      =2  #define clr_P12UP               clr_SFRS_SFRPAGE;P1M2&=0xFB
 1622      =2  #define clr_P1M2_1              clr_SFRS_SFRPAGE;P1M2&=0xFD
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 64  
-
 1623      =2  #define clr_P1M2_0              clr_SFRS_SFRPAGE;P1M2&=0xFE
 1624      =2  
 1625      =2  /**** P1SR    B4H PAGE1 ****/ 
@@ -4088,14 +4094,14 @@ line level    source
 1676      =2  #define clr_INTSEL0             set_SFRS_SFRPAGE;PWMINTC&=0xFE;clr_SFRS_SFRPAGE
 1677      =2  
 1678      =2  /**** IP    B8H ****/
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 65  
+
 1679      =2  #define set_PADC                PADC     = 1
 1680      =2  #define set_PBOD                PBOD     = 1
 1681      =2  #define set_PS                  PS       = 1
 1682      =2  #define set_PT1                 PT1      = 1
 1683      =2  #define set_PX1                 PX1      = 1
 1684      =2  #define set_PT0                 PT0      = 1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 65  
-
 1685      =2  #define set_PX0                 PX0      = 1
 1686      =2                                  
 1687      =2  #define clr_PADC                PADC     = 0
@@ -4152,14 +4158,14 @@ line level    source
 1738      =2  #define set_TR3                 clr_SFRS_SFRPAGE;T3CON|=0x08
 1739      =2  #define set_T3PS2               clr_SFRS_SFRPAGE;T3CON|=0x04
 1740      =2  #define set_T3PS1               clr_SFRS_SFRPAGE;T3CON|=0x02
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 66  
+
 1741      =2  #define set_T3PS0               clr_SFRS_SFRPAGE;T3CON|=0x01
 1742      =2                                       
 1743      =2  #define clr_SMOD_1              clr_SFRS_SFRPAGE;T3CON&=0x7F
 1744      =2  #define clr_SMOD0_1             clr_SFRS_SFRPAGE;T3CON&=0xBF
 1745      =2  #define clr_BRCK                clr_SFRS_SFRPAGE;T3CON&=0xDF
 1746      =2  #define clr_TF3                 clr_SFRS_SFRPAGE;T3CON&=0xEF
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 66  
-
 1747      =2  #define clr_TR3                 clr_SFRS_SFRPAGE;T3CON&=0xF7
 1748      =2  #define clr_T3PS2               clr_SFRS_SFRPAGE;T3CON&=0xFB
 1749      =2  #define clr_T3PS1               clr_SFRS_SFRPAGE;T3CON&=0xFD
@@ -4216,14 +4222,14 @@ line level    source
 1800      =2  /**** TH2    CDH PAGE0 ****/
 1801      =2  /**** PWM5L  CDH PAGE1 ****/ 
 1802      =2  /**** ADCMPL  CEH ****/ 
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 67  
+
 1803      =2  /**** ADCMPH  CFH ****/
 1804      =2  
 1805      =2  /****  PSW     D0H ****/
 1806      =2  #define set_CY                   CY  = 1
 1807      =2  #define set_AC                   AC  = 1
 1808      =2  #define set_F0                   F0  = 1 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 67  
-
 1809      =2  #define set_RS1                  RS1 = 1
 1810      =2  #define set_RS0                  RS0 = 1
 1811      =2  #define set_OV                   OV  = 1
@@ -4280,14 +4286,14 @@ line level    source
 1862      =2  /**** PWMCON0      D8H ****/
 1863      =2  #define set_PWMRUN               PWMRUN   = 1
 1864      =2  #define set_LOAD                 LOAD     = 1
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 68  
+
 1865      =2  #define set_PWMF                 PWMF     = 1
 1866      =2  #define set_CLRPWM               CLRPWM   = 1
 1867      =2                                   
 1868      =2  #define clr_PWMRUN               PWMRUN   = 0
 1869      =2  #define clr_LOAD                 LOAD     = 0
 1870      =2  #define clr_PWMF                 PWMF     = 0 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 68  
-
 1871      =2  #define clr_CLRPWM               CLRPWM   = 0
 1872      =2  
 1873      =2  /**** PWMPL    D9H ****/
@@ -4344,14 +4350,14 @@ line level    source
 1924      =2  #define clr_ETGTYP0              ADCCON1&=0xFB
 1925      =2  #define clr_ADCEX                ADCCON1&=0xFD
 1926      =2  #define clr_ADCEN                ADCCON1&=0xFE
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 69  
+
 1927      =2  
 1928      =2  /**** ADCON2    E2H ****/
 1929      =2  #define set_ADFBEN               ADCCON2|=0x80
 1930      =2  #define set_ADCMPOP              ADCCON2|=0x40
 1931      =2  #define set_ADCMPEN              ADCCON2|=0x20
 1932      =2  #define set_ADCMPO               ADCCON2|=0x10
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 69  
-
 1933      =2                                   
 1934      =2  #define clr_ADFBEN               ADCCON2&=0x7F
 1935      =2  #define clr_ADCMPOP              ADCCON2&=0xBF
@@ -4408,14 +4414,14 @@ line level    source
 1986      =2  #define set_PINEN5               PINEN|=0x20
 1987      =2  #define set_PINEN4               PINEN|=0x10
 1988      =2  #define set_PINEN3               PINEN|=0x08
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 70  
+
 1989      =2  #define set_PINEN2               PINEN|=0x04
 1990      =2  #define set_PINEN1               PINEN|=0x02
 1991      =2  #define set_PINEN0               PINEN|=0x01
 1992      =2                                        
 1993      =2  #define clr_PINEN7               PINEN&=0x7F
 1994      =2  #define clr_PINEN6               PINEN&=0xBF
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 70  
-
 1995      =2  #define clr_PINEN5               PINEN&=0xDF
 1996      =2  #define clr_PINEN4               PINEN&=0xEF
 1997      =2  #define clr_PINEN3               PINEN&=0xF7
@@ -4472,14 +4478,14 @@ line level    source
 2048      =2  #define set_PPWM                 clr_SFRS_SFRPAGE;EIP|=0x08
 2049      =2  #define set_PCAP                 clr_SFRS_SFRPAGE;EIP|=0x04
 2050      =2  #define set_PPI                  clr_SFRS_SFRPAGE;EIP|=0x02
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 71  
+
 2051      =2  #define set_PI2C                 clr_SFRS_SFRPAGE;EIP|=0x01
 2052      =2                                      
 2053      =2  #define clr_PT2                  clr_SFRS_SFRPAGE;EIP&=0x7F
 2054      =2  #define clr_PSPI                 clr_SFRS_SFRPAGE;EIP&=0xBF
 2055      =2  #define clr_PFB                  clr_SFRS_SFRPAGE;EIP&=0xDF
 2056      =2  #define clr_PWDT                 clr_SFRS_SFRPAGE;EIP&=0xEF
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 71  
-
 2057      =2  #define clr_PPWM                 clr_SFRS_SFRPAGE;EIP&=0xF7
 2058      =2  #define clr_PCAP                 clr_SFRS_SFRPAGE;EIP&=0xFB
 2059      =2  #define clr_PPI                  clr_SFRS_SFRPAGE;EIP&=0xFD
@@ -4536,14 +4542,14 @@ line level    source
 2110      =2  #define clr_SPR1                 clr_SFRS_SFRPAGE;SPCR&=0xFD
 2111      =2  #define clr_SPR0                 clr_SFRS_SFRPAGE;SPCR&=0xFE
 2112      =2  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 72  
+
 2113      =2  /**** SPCR2    F3H PAGE1 ****/ 
 2114      =2  #define set_SPIS1                set_SFRS_SFRPAGE;SPCR2|=0x02;clr_SFRS_SFRPAGE
 2115      =2  #define set_SPIS0                set_SFRS_SFRPAGE;SPCR2|=0x02;clr_SFRS_SFRPAGE
 2116      =2  
 2117      =2  #define clr_SPIS1                set_SFRS_SFRPAGE;SPCR2&=0xFD;clr_SFRS_SFRPAGE
 2118      =2  #define clr_SPIS0                set_SFRS_SFRPAGE;SPCR2&=0xFE;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 72  
-
 2119      =2  
 2120      =2  /**** SPSR      F4H ****/
 2121      =2  #define set_SPIF                 SPSR|=0x80
@@ -4600,14 +4606,14 @@ line level    source
 2172      =2  
 2173      =2  /**** SCON_1    F8H ****/
 2174      =2  #define set_FE_1                 FE_1  = 1
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 73  
+
 2175      =2  #define set_SM1_1                SM1_1 = 1
 2176      =2  #define set_SM2_1                SM2_1 = 1
 2177      =2  #define set_REN_1                REN_1 = 1
 2178      =2  #define set_TB8_1                TB8_1 = 1
 2179      =2  #define set_RB8_1                RB8_1 = 1
 2180      =2  #define set_TI_1                 TI_1  = 1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 73  
-
 2181      =2  #define set_RI_1                 RI_1  = 1
 2182      =2                                   
 2183      =2  #define clr_FE_1                 FE_1  = 0
@@ -4664,14 +4670,14 @@ line level    source
 2234      =2  #define clr_PMD1                 PMD&=0xFD
 2235      =2  #define clr_PMD0                 PMD&=0xFE
 2236      =2  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 74  
+
 2237      =2  /****  PORDIS   FDH PAGE0 ****/
 2238      =2  /****  EIP1     FEH PAGE0 ****/                     
 2239      =2  #define set_PWKT                 clr_SFRS_SFRPAGE;EIP1|=0x04
 2240      =2  #define set_PT3                  clr_SFRS_SFRPAGE;EIP1|=0x02
 2241      =2  #define set_PS_1                 clr_SFRS_SFRPAGE;EIP1|=0x01
 2242      =2                                       
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 74  
-
 2243      =2  #define clr_PWKT                 clr_SFRS_SFRPAGE;EIP1&=0xFB
 2244      =2  #define clr_PT3                  clr_SFRS_SFRPAGE;EIP1&=0xFD
 2245      =2  #define clr_PS_1                 clr_SFRS_SFRPAGE;EIP1&=0xFE
@@ -4728,14 +4734,14 @@ line level    source
   58      =1  sfr IAPAL       = 0xA6;
   59      =1  sfr IAPAH       = 0xA7;
   60      =1  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 75  
+
   61      =1  sfr IE          = 0xA8;
   62      =1  sfr SADDR       = 0xA9;
   63      =1  sfr WDCON       = 0xAA; //TA Protection
   64      =1  sfr BODCON1     = 0xAB; //TA Protection
   65      =1  sfr P3M1        = 0xAC;
   66      =1  sfr P3S         = 0xAC; //Page1
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 75  
-
   67      =1  sfr P3M2        = 0xAD;
   68      =1  sfr P3SR        = 0xAD; //Page1
   69      =1  sfr IAPFD       = 0xAE;
@@ -4792,14 +4798,14 @@ line level    source
  120      =1  sfr PWM1H        = 0xD3;
  121      =1  sfr PWM2H        = 0xD4;
  122      =1  sfr PWM3H        = 0xD5;
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 76  
+
  123      =1  sfr PNP          = 0xD6;
  124      =1  sfr FBD          = 0xD7;
  125      =1  
  126      =1  sfr PWMCON0      = 0xD8;
  127      =1  sfr PWMPL       = 0xD9;
  128      =1  sfr PWM0L        = 0xDA;
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 76  
-
  129      =1  sfr PWM1L        = 0xDB;
  130      =1  sfr PWM2L        = 0xDC;
  131      =1  sfr PWM3L        = 0xDD;
@@ -4856,14 +4862,14 @@ line level    source
  182      =1  
  183      =1  /*  ADCCON0  */
  184      =1  sbit ADCF       = ADCCON0^7;
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 77  
+
  185      =1  sbit ADCS       = ADCCON0^6;
  186      =1  sbit ETGSEL1    = ADCCON0^5;
  187      =1  sbit ETGSEL0    = ADCCON0^4;
  188      =1  sbit ADCHS3     = ADCCON0^3;
  189      =1  sbit ADCHS2     = ADCCON0^2;
  190      =1  sbit ADCHS1     = ADCCON0^1;
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 77  
-
  191      =1  sbit ADCHS0     = ADCCON0^0;
  192      =1  
  193      =1  /*  PWMCON0  */
@@ -4920,14 +4926,14 @@ line level    source
  244      =1  
  245      =1  /*  P2  */ 
  246      =1  sbit P20        = P2^0;
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 78  
+
  247      =1  
  248      =1  /*  SCON  */
  249      =1  sbit SM0        = SCON^7;
  250      =1  sbit FE         = SCON^7; 
  251      =1  sbit SM1        = SCON^6; 
  252      =1  sbit SM2        = SCON^5; 
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 78  
-
  253      =1  sbit REN        = SCON^4; 
  254      =1  sbit TB8        = SCON^3; 
  255      =1  sbit RB8        = SCON^2; 
@@ -4984,58 +4990,421 @@ line level    source
  306      =1  
  307      =1  
  308      =1  
- 309      =1  
-   3          
-   4          
-   5          void SPI_Initial(void)
-   6          {      
-   7   1          P15_QUASI_MODE;                                  // P15 (SS) Quasi mode
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 79  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 79  
 
-   8   1          P10_QUASI_MODE;                                  // P10 (SPCLK) Quasi mode
-   9   1          P00_QUASI_MODE;                                  // P00 (MOSI) Quasi mode
-  10   1          P01_QUASI_MODE;                                  // P01 (MISO) Quasi mode
-  11   1          
-  12   1          set_SPSR_DISMODF;                                // SS General purpose I/O ( No Mode Fault ) 
-  13   1          clr_SPCR_SSOE;
-  14   1         
-  15   1          clr_SPCR_LSBFE;                                  // MSB first
-  16   1      
-  17   1          clr_SPCR_CPOL;                                   // The SPI clock is low in idle mode
-  18   1          clr_SPCR_CPHA;                                   // The data is sample on the second edge of SPI clock
-             - 
-  19   1          
-  20   1          set_SPCR_MSTR;                                   // SPI in Master mode 
-  21   1          SPICLK_FSYS_DIV2;                                    // Select SPI clock 
-  22   1          set_SPCR_SPIEN;                                  // Enable SPI function 
-  23   1          clr_SPSR_SPIF;
-  24   1      }
-  25          
-  26          
-  27          void SPI_Tx(unsigned char Data)
-  28          {
-  29   1         SPDR = Data;
-  30   1         while(!(SPSR&0x80));
-  31   1         clr_SPSR_SPIF;
-  32   1      }
-  33          
-  34          unsigned char SPI_Rx(unsigned char Rx_Buf){
-  35   1          unsigned char u8SpiRB;
-  36   1          SPDR = Rx_Buf;
-  37   1          while(!(SPSR&0x80));
-  38   1          u8SpiRB = SPDR;
-  39   1          clr_SPSR_SPIF;
-  40   1          return u8SpiRB;
-  41   1      }
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 80  
+ 309      =1  
+   8          
+   9           bit PRINTFG = 0, uart0_receive_flag = 0, uart1_receive_flag;
+  10          unsigned char uart0_receive_data, uart1_receive_data;
+  11          
+  12          
+  13          #if 0 
+              void Serial_ISR(void) interrupt 4
+              {
+                  _push_(SFRS);
+                
+                  if (RI)
+                  {
+                      uart0_receive_flag = 1;
+                      uart0_receive_data = SBUF;
+                      clr_SCON_RI;                                         // Clear RI (Receive Interrupt).
+                  }
+              
+                  if (TI)
+                  {
+                      if (!PRINTFG)
+                      {
+                          TI = 0;
+                      }
+                  }
+              
+                  _pop_(SFRS);
+              }
+              
+              void SerialPort1_ISR(void) interrupt 15
+              {
+                  _push_(SFRS);
+                
+                  if (RI_1)
+                  {
+                      uart1_receive_data = SBUF_1;
+                      uart1_receive_flag = 1;
+                      clr_SCON_1_RI_1;                             /* clear reception flag for next reception */
+                  }
+              
+                  if (TI_1 == 1)
+                  {
+                      if (!PRINTFG)
+                      {
+                          clr_SCON_1_TI_1;                             /* if emission occur */
+                      }
+                  }
+              
+                  _pop_(SFRS);
+              }
+              #endif 
+  58          
+  59          /*MS51 new version buadrate */
+  60          void UART_Open(unsigned long u32SysClock, unsigned char u8UARTPort,unsigned long u32Baudrate)
+  61          {
+  62   1        switch(u8UARTPort)
+  63   1        {
+  64   2          case UART0_Timer1:
+  65   2                SCON = 0x50;       //UART0 Mode1,REN=1,TI=1
+  66   2                TMOD |= 0x20;      //Timer1 Mode1
+  67   2                set_PCON_SMOD;          //UART0 Double Rate Enable
+  68   2                set_CKCON_T1M;
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 80  
+
+  69   2                clr_T3CON_BRCK;          //Serial port 0 baud rate clock source = Timer1
+  70   2                TH1 = 256 - (u32SysClock/16/u32Baudrate);
+  71   2                set_TCON_TR1;
+  72   2            break;
+  73   2            
+  74   2            case UART0_Timer3:
+  75   2                SCON = 0x50;     //UART0 Mode1,REN=1,TI=1
+  76   2                set_PCON_SMOD;        //UART0 Double Rate Enable
+  77   2                T3CON &= 0xF8;   //T3PS2=0,T3PS1=0,T3PS0=0(Prescale=1)
+  78   2                set_T3CON_BRCK;        //UART0 baud rate clock source = Timer3
+  79   2                RH3    = HIBYTE(65536 - (u32SysClock/16/u32Baudrate));  
+  80   2                RL3    = LOBYTE(65536 - (u32SysClock/16/u32Baudrate));  
+  81   2                set_T3CON_TR3;         //Trigger Timer3
+  82   2            break;
+  83   2            
+  84   2            case UART1_Timer3:
+  85   2                SCON_1 = 0x50;     //UART1 Mode1,REN_1=1,TI_1=1
+  86   2                T3CON = 0x80;     //T3PS2=0,T3PS1=0,T3PS0=0(Prescale=1), UART1 in MODE 1
+  87   2                RH3    = HIBYTE(65536 - (u32SysClock/16/u32Baudrate));  
+  88   2                RL3    = LOBYTE(65536 - (u32SysClock/16/u32Baudrate));     
+  89   2                set_T3CON_TR3;             //Trigger Timer3                                                     
+             -        
+  90   2            break; 
+  91   2        }
+  92   1      }
+  93          
+  94          #if 0 
+              unsigned char Receive_Data(unsigned char UARTPort)
+              {
+                  UINT8 c;
+                  switch (UARTPort)
+                  {
+                    case UART0:
+                      while (!RI);
+                      c = SBUF;
+                      RI = 0;
+                    break;
+                    case UART1:
+                      while (!RI_1);
+                      c = SBUF_1;
+                      RI_1 = 0;
+                    break;
+                  }
+                  return (c);
+              }
+              #endif
+ 114          
+ 115          void UART_Send_Data(unsigned char UARTPort, unsigned char c)
+ 116          {
+ 117   1          _push_(SFRS);
+ 118   1          SFRS = 0;
+ 119   1          switch (UARTPort)
+ 120   1          {
+ 121   2              case UART0:
+ 122   2                TI=0;
+ 123   2                SBUF = c;
+ 124   2                while(!TI);
+ 125   2              break;
+ 126   2              case UART1:
+ 127   2                TI_1=0;
+ 128   2                SBUF_1 = c;
+ 129   2                while(TI_1);
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 81  
+
+ 130   2              break;
+ 131   2          }
+ 132   1          _pop_(SFRS);
+ 133   1      }
+ 134          
+ 135          void Enable_UART0_VCOM_printf_24M_115200(void)
+ 136          {
+ 137   1          P06_QUASI_MODE;
+ 138   1          UART_Open(24000000,UART0_Timer1,115200);
+ 139   1          ENABLE_UART0_PRINTF;
+ 140   1      }
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 82  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION SPI_Initial (BEGIN)
-                                           ; SOURCE LINE # 5
-                                           ; SOURCE LINE # 6
-                                           ; SOURCE LINE # 7
+             ; FUNCTION _UART_Open (BEGIN)
+                                           ; SOURCE LINE # 60
+0000 900000      R     MOV     DPTR,#u32SysClock
+0003 120000      E     LCALL   ?C?LSTXDATA
+                                           ; SOURCE LINE # 61
+                                           ; SOURCE LINE # 62
+0006 900000      R     MOV     DPTR,#u8UARTPort
+0009 E0                MOVX    A,@DPTR
+000A 14                DEC     A
+000B 605B              JZ      ?C0003
+000D 14                DEC     A
+000E 6079              JZ      ?C0004
+0010 2402              ADD     A,#02H
+0012 6003              JZ      $ + 5H
+0014 020000      R     LJMP    ?C0005
+                                           ; SOURCE LINE # 63
+                                           ; SOURCE LINE # 64
+0017         ?C0002:
+                                           ; SOURCE LINE # 65
+0017 759850            MOV     SCON,#050H
+                                           ; SOURCE LINE # 66
+001A 438920            ORL     TMOD,#020H
+                                           ; SOURCE LINE # 67
+001D 438780            ORL     PCON,#080H
+                                           ; SOURCE LINE # 68
+0020 438E10            ORL     CKCON,#010H
+                                           ; SOURCE LINE # 69
+0023 A2AF              MOV     C,EA
+0025 9200        E     MOV     BIT_TMP,C
+0027 C2AF              CLR     EA
+0029 75C7AA            MOV     TA,#0AAH
+002C 75C755            MOV     TA,#055H
+002F E4                CLR     A
+0030 F591              MOV     SFRS,A
+0032 A200        E     MOV     C,BIT_TMP
+0034 92AF              MOV     EA,C
+0036 53C4DF            ANL     T3CON,#0DFH
+                                           ; SOURCE LINE # 70
+0039 7B10              MOV     R3,#010H
+003B FA                MOV     R2,A
+003C F9                MOV     R1,A
+003D F8                MOV     R0,A
+003E 900000      R     MOV     DPTR,#u32SysClock
+0041 E0                MOVX    A,@DPTR
+0042 FC                MOV     R4,A
+0043 A3                INC     DPTR
+0044 E0                MOVX    A,@DPTR
+0045 FD                MOV     R5,A
+0046 A3                INC     DPTR
+0047 E0                MOVX    A,@DPTR
+0048 FE                MOV     R6,A
+0049 A3                INC     DPTR
+004A E0                MOVX    A,@DPTR
+004B FF                MOV     R7,A
+004C 120000      E     LCALL   ?C?ULDIV
+004F 900000      R     MOV     DPTR,#u32Baudrate
+0052 E0                MOVX    A,@DPTR
+0053 F8                MOV     R0,A
+0054 A3                INC     DPTR
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 83  
+
+0055 E0                MOVX    A,@DPTR
+0056 F9                MOV     R1,A
+0057 A3                INC     DPTR
+0058 E0                MOVX    A,@DPTR
+0059 FA                MOV     R2,A
+005A A3                INC     DPTR
+005B E0                MOVX    A,@DPTR
+005C FB                MOV     R3,A
+005D 120000      E     LCALL   ?C?ULDIV
+0060 EF                MOV     A,R7
+0061 F4                CPL     A
+0062 04                INC     A
+0063 F58D              MOV     TH1,A
+                                           ; SOURCE LINE # 71
+0065 D28E              SETB    TR1
+                                           ; SOURCE LINE # 72
+0067 22                RET     
+                                           ; SOURCE LINE # 74
+0068         ?C0003:
+                                           ; SOURCE LINE # 75
+0068 759850            MOV     SCON,#050H
+                                           ; SOURCE LINE # 76
+006B 438780            ORL     PCON,#080H
+                                           ; SOURCE LINE # 77
+006E 53C4F8            ANL     T3CON,#0F8H
+                                           ; SOURCE LINE # 78
+0071 A2AF              MOV     C,EA
+0073 9200        E     MOV     BIT_TMP,C
+0075 C2AF              CLR     EA
+0077 75C7AA            MOV     TA,#0AAH
+007A 75C755            MOV     TA,#055H
+007D E4                CLR     A
+007E F591              MOV     SFRS,A
+0080 A200        E     MOV     C,BIT_TMP
+0082 92AF              MOV     EA,C
+0084 43C420            ORL     T3CON,#020H
+                                           ; SOURCE LINE # 79
+                                           ; SOURCE LINE # 80
+                                           ; SOURCE LINE # 81
+                                           ; SOURCE LINE # 82
+0087 8007              SJMP    ?C0015
+                                           ; SOURCE LINE # 84
+0089         ?C0004:
+                                           ; SOURCE LINE # 85
+0089 75F850            MOV     SCON_1,#050H
+                                           ; SOURCE LINE # 86
+008C 75C480            MOV     T3CON,#080H
+                                           ; SOURCE LINE # 87
+008F E4                CLR     A
+0090         ?C0015:
+0090 7B10              MOV     R3,#010H
+0092 FA                MOV     R2,A
+0093 F9                MOV     R1,A
+0094 F8                MOV     R0,A
+0095 900000      R     MOV     DPTR,#u32SysClock
+0098 E0                MOVX    A,@DPTR
+0099 FC                MOV     R4,A
+009A A3                INC     DPTR
+009B E0                MOVX    A,@DPTR
+009C FD                MOV     R5,A
+009D A3                INC     DPTR
+009E E0                MOVX    A,@DPTR
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 84  
+
+009F FE                MOV     R6,A
+00A0 A3                INC     DPTR
+00A1 E0                MOVX    A,@DPTR
+00A2 FF                MOV     R7,A
+00A3 120000      E     LCALL   ?C?ULDIV
+00A6 900000      R     MOV     DPTR,#u32Baudrate
+00A9 E0                MOVX    A,@DPTR
+00AA F8                MOV     R0,A
+00AB A3                INC     DPTR
+00AC E0                MOVX    A,@DPTR
+00AD F9                MOV     R1,A
+00AE A3                INC     DPTR
+00AF E0                MOVX    A,@DPTR
+00B0 FA                MOV     R2,A
+00B1 A3                INC     DPTR
+00B2 E0                MOVX    A,@DPTR
+00B3 FB                MOV     R3,A
+00B4 120000      E     LCALL   ?C?ULDIV
+00B7 C3                CLR     C
+00B8 E4                CLR     A
+00B9 9F                SUBB    A,R7
+00BA FF                MOV     R7,A
+00BB E4                CLR     A
+00BC 9E                SUBB    A,R6
+00BD FE                MOV     R6,A
+00BE 7401              MOV     A,#01H
+00C0 9D                SUBB    A,R5
+00C1 FD                MOV     R5,A
+00C2 E4                CLR     A
+00C3 9C                SUBB    A,R4
+00C4 FC                MOV     R4,A
+00C5 7808              MOV     R0,#08H
+00C7 120000      E     LCALL   ?C?ULSHR
+00CA 8FC6              MOV     RH3,R7
+                                           ; SOURCE LINE # 88
+00CC E4                CLR     A
+00CD 7B10              MOV     R3,#010H
+00CF FA                MOV     R2,A
+00D0 F9                MOV     R1,A
+00D1 F8                MOV     R0,A
+00D2 900000      R     MOV     DPTR,#u32SysClock
+00D5 E0                MOVX    A,@DPTR
+00D6 FC                MOV     R4,A
+00D7 A3                INC     DPTR
+00D8 E0                MOVX    A,@DPTR
+00D9 FD                MOV     R5,A
+00DA A3                INC     DPTR
+00DB E0                MOVX    A,@DPTR
+00DC FE                MOV     R6,A
+00DD A3                INC     DPTR
+00DE E0                MOVX    A,@DPTR
+00DF FF                MOV     R7,A
+00E0 120000      E     LCALL   ?C?ULDIV
+00E3 900000      R     MOV     DPTR,#u32Baudrate
+00E6 E0                MOVX    A,@DPTR
+00E7 F8                MOV     R0,A
+00E8 A3                INC     DPTR
+00E9 E0                MOVX    A,@DPTR
+00EA F9                MOV     R1,A
+00EB A3                INC     DPTR
+00EC E0                MOVX    A,@DPTR
+00ED FA                MOV     R2,A
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 85  
+
+00EE A3                INC     DPTR
+00EF E0                MOVX    A,@DPTR
+00F0 FB                MOV     R3,A
+00F1 120000      E     LCALL   ?C?ULDIV
+00F4 C3                CLR     C
+00F5 E4                CLR     A
+00F6 9F                SUBB    A,R7
+00F7 FF                MOV     R7,A
+00F8 E4                CLR     A
+00F9 8FC5              MOV     RL3,R7
+                                           ; SOURCE LINE # 89
+00FB A2AF              MOV     C,EA
+00FD 9200        E     MOV     BIT_TMP,C
+00FF C2AF              CLR     EA
+0101 75C7AA            MOV     TA,#0AAH
+0104 75C755            MOV     TA,#055H
+0107 F591              MOV     SFRS,A
+0109 A200        E     MOV     C,BIT_TMP
+010B 92AF              MOV     EA,C
+010D 43C408            ORL     T3CON,#08H
+                                           ; SOURCE LINE # 90
+                                           ; SOURCE LINE # 91
+                                           ; SOURCE LINE # 92
+0110         ?C0005:
+0110 22                RET     
+             ; FUNCTION _UART_Open (END)
+
+             ; FUNCTION _UART_Send_Data (BEGIN)
+                                           ; SOURCE LINE # 115
+;---- Variable 'c' assigned to Register 'R5' ----
+;---- Variable 'UARTPort' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 116
+                                           ; SOURCE LINE # 117
+0000 C091              PUSH    SFRS
+                                           ; SOURCE LINE # 118
+0002 E4                CLR     A
+0003 F591              MOV     SFRS,A
+                                           ; SOURCE LINE # 119
+0005 EF                MOV     A,R7
+0006 14                DEC     A
+0007 600C              JZ      ?C0010
+0009 04                INC     A
+000A 7012              JNZ     ?C0006
+                                           ; SOURCE LINE # 120
+                                           ; SOURCE LINE # 121
+000C         ?C0007:
+                                           ; SOURCE LINE # 122
+000C C299              CLR     TI
+                                           ; SOURCE LINE # 123
+000E 8D99              MOV     SBUF,R5
+0010         ?C0008:
+                                           ; SOURCE LINE # 124
+0010 20990B            JB      TI,?C0006
+0013 80FB              SJMP    ?C0008
+                                           ; SOURCE LINE # 125
+                                           ; SOURCE LINE # 126
+0015         ?C0010:
+                                           ; SOURCE LINE # 127
+0015 C2F9              CLR     TI_1
+                                           ; SOURCE LINE # 128
+0017 AF05              MOV     R7,AR5
+0019 8F9A              MOV     SBUF_1,R7
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 86  
+
+001B         ?C0011:
+                                           ; SOURCE LINE # 129
+001B 20F9FD            JB      TI_1,?C0011
+                                           ; SOURCE LINE # 130
+                                           ; SOURCE LINE # 131
+001E         ?C0006:
+                                           ; SOURCE LINE # 132
+001E D091              POP     SFRS
+                                           ; SOURCE LINE # 133
+0020 22                RET     
+             ; FUNCTION _UART_Send_Data (END)
+
+             ; FUNCTION Enable_UART0_VCOM_printf_24M_115200 (BEGIN)
+                                           ; SOURCE LINE # 135
+                                           ; SOURCE LINE # 136
+                                           ; SOURCE LINE # 137
 0000 A2AF              MOV     C,EA
 0002 9200        E     MOV     BIT_TMP,C
 0004 C2AF              CLR     EA
@@ -5045,159 +5414,30 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000D F591              MOV     SFRS,A
 000F A200        E     MOV     C,BIT_TMP
 0011 92AF              MOV     EA,C
-0013 53B3DF            ANL     P1M1,#0DFH
-0016 53B4DF            ANL     P1M2,#0DFH
-                                           ; SOURCE LINE # 8
-0019 A2AF              MOV     C,EA
-001B 9200        E     MOV     BIT_TMP,C
-001D C2AF              CLR     EA
-001F 75C7AA            MOV     TA,#0AAH
-0022 75C755            MOV     TA,#055H
-0025 F591              MOV     SFRS,A
-0027 A200        E     MOV     C,BIT_TMP
-0029 92AF              MOV     EA,C
-002B 53B3FE            ANL     P1M1,#0FEH
-002E 53B4FE            ANL     P1M2,#0FEH
-                                           ; SOURCE LINE # 9
-0031 A2AF              MOV     C,EA
-0033 9200        E     MOV     BIT_TMP,C
-0035 C2AF              CLR     EA
-0037 75C7AA            MOV     TA,#0AAH
-003A 75C755            MOV     TA,#055H
-003D F591              MOV     SFRS,A
-003F A200        E     MOV     C,BIT_TMP
-0041 92AF              MOV     EA,C
-0043 53B1FE            ANL     P0M1,#0FEH
-0046 53B2FE            ANL     P0M2,#0FEH
-                                           ; SOURCE LINE # 10
-0049 A2AF              MOV     C,EA
-004B 9200        E     MOV     BIT_TMP,C
-004D C2AF              CLR     EA
-004F 75C7AA            MOV     TA,#0AAH
-0052 75C755            MOV     TA,#055H
-0055 F591              MOV     SFRS,A
-0057 A200        E     MOV     C,BIT_TMP
-0059 92AF              MOV     EA,C
-005B 53B1FD            ANL     P0M1,#0FDH
-005E 53B2FD            ANL     P0M2,#0FDH
-                                           ; SOURCE LINE # 12
-0061 43F408            ORL     SPSR,#08H
-                                           ; SOURCE LINE # 13
-0064 A2AF              MOV     C,EA
-0066 9200        E     MOV     BIT_TMP,C
-0068 C2AF              CLR     EA
-006A 75C7AA            MOV     TA,#0AAH
-006D 75C755            MOV     TA,#055H
-0070 F591              MOV     SFRS,A
-0072 A200        E     MOV     C,BIT_TMP
-0074 92AF              MOV     EA,C
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 81  
+0013 53B1BF            ANL     P0M1,#0BFH
+0016 53B2BF            ANL     P0M2,#0BFH
+                                           ; SOURCE LINE # 138
+0019 900000      R     MOV     DPTR,#?_UART_Open?BYTE+04H
+001C F0                MOVX    @DPTR,A
+001D A3                INC     DPTR
+001E 120000      E     LCALL   ?C?LSTKXDATA
+0021 00                DB      00H
+0022 01                DB      01H
+0023 C2                DB      0C2H
+0024 00                DB      00H
+0025 7F00              MOV     R7,#00H
+0027 7E36              MOV     R6,#036H
+0029 7D6E              MOV     R5,#06EH
+002B 7C01              MOV     R4,#01H
+002D 120000      R     LCALL   _UART_Open
+                                           ; SOURCE LINE # 139
+0030 D299              SETB    TI
+0032 D200        R     SETB    PRINTFG
+                                           ; SOURCE LINE # 140
+0034 22                RET     
+             ; FUNCTION Enable_UART0_VCOM_printf_24M_115200 (END)
 
-0076 53F37F            ANL     SPCR,#07FH
-                                           ; SOURCE LINE # 15
-0079 A2AF              MOV     C,EA
-007B 9200        E     MOV     BIT_TMP,C
-007D C2AF              CLR     EA
-007F 75C7AA            MOV     TA,#0AAH
-0082 75C755            MOV     TA,#055H
-0085 F591              MOV     SFRS,A
-0087 A200        E     MOV     C,BIT_TMP
-0089 92AF              MOV     EA,C
-008B 53F3DF            ANL     SPCR,#0DFH
-                                           ; SOURCE LINE # 17
-008E A2AF              MOV     C,EA
-0090 9200        E     MOV     BIT_TMP,C
-0092 C2AF              CLR     EA
-0094 75C7AA            MOV     TA,#0AAH
-0097 75C755            MOV     TA,#055H
-009A F591              MOV     SFRS,A
-009C A200        E     MOV     C,BIT_TMP
-009E 92AF              MOV     EA,C
-00A0 53F3F7            ANL     SPCR,#0F7H
-                                           ; SOURCE LINE # 18
-00A3 A2AF              MOV     C,EA
-00A5 9200        E     MOV     BIT_TMP,C
-00A7 C2AF              CLR     EA
-00A9 75C7AA            MOV     TA,#0AAH
-00AC 75C755            MOV     TA,#055H
-00AF F591              MOV     SFRS,A
-00B1 A200        E     MOV     C,BIT_TMP
-00B3 92AF              MOV     EA,C
-00B5 53F3FB            ANL     SPCR,#0FBH
-                                           ; SOURCE LINE # 20
-00B8 A2AF              MOV     C,EA
-00BA 9200        E     MOV     BIT_TMP,C
-00BC C2AF              CLR     EA
-00BE 75C7AA            MOV     TA,#0AAH
-00C1 75C755            MOV     TA,#055H
-00C4 F591              MOV     SFRS,A
-00C6 A200        E     MOV     C,BIT_TMP
-00C8 92AF              MOV     EA,C
-00CA 43F310            ORL     SPCR,#010H
-                                           ; SOURCE LINE # 21
-00CD A2AF              MOV     C,EA
-00CF 9200        E     MOV     BIT_TMP,C
-00D1 C2AF              CLR     EA
-00D3 75C7AA            MOV     TA,#0AAH
-00D6 75C755            MOV     TA,#055H
-00D9 F591              MOV     SFRS,A
-00DB A200        E     MOV     C,BIT_TMP
-00DD 92AF              MOV     EA,C
-00DF 53F3FC            ANL     SPCR,#0FCH
-                                           ; SOURCE LINE # 22
-00E2 A2AF              MOV     C,EA
-00E4 9200        E     MOV     BIT_TMP,C
-00E6 C2AF              CLR     EA
-00E8 75C7AA            MOV     TA,#0AAH
-00EB 75C755            MOV     TA,#055H
-00EE F591              MOV     SFRS,A
-00F0 A200        E     MOV     C,BIT_TMP
-00F2 92AF              MOV     EA,C
-00F4 43F340            ORL     SPCR,#040H
-                                           ; SOURCE LINE # 23
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 82  
-
-00F7 53F47F            ANL     SPSR,#07FH
-                                           ; SOURCE LINE # 24
-00FA 22                RET     
-             ; FUNCTION SPI_Initial (END)
-
-             ; FUNCTION _SPI_Tx (BEGIN)
-                                           ; SOURCE LINE # 27
-;---- Variable 'Data' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 28
-                                           ; SOURCE LINE # 29
-0000 8FF5              MOV     SPDR,R7
-0002         ?C0002:
-                                           ; SOURCE LINE # 30
-0002 E5F4              MOV     A,SPSR
-0004 30E7FB            JNB     ACC.7,?C0002
-                                           ; SOURCE LINE # 31
-0007 53F47F            ANL     SPSR,#07FH
-                                           ; SOURCE LINE # 32
-000A 22                RET     
-             ; FUNCTION _SPI_Tx (END)
-
-             ; FUNCTION _SPI_Rx (BEGIN)
-                                           ; SOURCE LINE # 34
-;---- Variable 'Rx_Buf' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 36
-0000 8FF5              MOV     SPDR,R7
-0002         ?C0005:
-                                           ; SOURCE LINE # 37
-0002 E5F4              MOV     A,SPSR
-0004 30E7FB            JNB     ACC.7,?C0005
-                                           ; SOURCE LINE # 38
-;---- Variable 'u8SpiRB' assigned to Register 'R7' ----
-0007 AFF5              MOV     R7,SPDR
-                                           ; SOURCE LINE # 39
-0009 53F47F            ANL     SPSR,#07FH
-                                           ; SOURCE LINE # 40
-                                           ; SOURCE LINE # 41
-000C 22                RET     
-             ; FUNCTION _SPI_Rx (END)
-
-C51 COMPILER V9.60.7.0   SPI                                                               10/30/2023 18:52:37 PAGE 83  
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 87  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -5205,59 +5445,79 @@ NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 
 P0M1 . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B1H  1
 uint16_t . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
-P1M1 . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B3H  1
 P0M2 . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B2H  1
 P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
-P1M2 . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B4H  1
 P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
 P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
 P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
 EA . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AFH  1
 PWMCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
+_UART_Send_Data. . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  UARTPort . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+  c. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0005H  1
 int32_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
 int16_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
 IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
 size_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 TA . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C7H  1
-_SPI_Rx. . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  Rx_Buf . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  u8SpiRB. . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
-_SPI_Tx. . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  Data . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-SPI_Initial. . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+TI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0099H  1
+PRINTFG. . . . . . . . . . . . . . . .  PUBLIC   DATA   BIT      0000H  1
 INT8 . . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
 UINT32 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 UINT16 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+TI_1 . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00F9H  1
+SBUF . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0099H  1
+PCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0087H  1
+_UART_Open . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  u32SysClock. . . . . . . . . . . . .  AUTO     XDATA  U_LONG   0000H  4
+  u8UARTPort . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0004H  1
+  u32Baudrate. . . . . . . . . . . . .  AUTO     XDATA  U_LONG   0005H  4
 BIT_TMP. . . . . . . . . . . . . . . .  EXTERN   DATA   BIT      -----  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
+uart0_receive_data . . . . . . . . . .  PUBLIC   XDATA  U_CHAR   0000H  1
+uart0_receive_flag . . . . . . . . . .  PUBLIC   DATA   BIT      0001H  1
+TMOD . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0089H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-SPCR . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F3H  1
-SPDR . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F5H  1
+uart1_receive_data . . . . . . . . . .  PUBLIC   XDATA  U_CHAR   0001H  1
+uart1_receive_flag . . . . . . . . . .  PUBLIC   DATA   BIT      0002H  1
 SFRS . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0091H  1
+SBUF_1 . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   009AH  1
 SCON_1 . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F8H  1
-SPSR . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F4H  1
+Enable_UART0_VCOM_printf_24M_115200. .  PUBLIC   CODE   PROC     0000H  -----
+RH3. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C6H  1
+TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
 uint8_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+RL3. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C5H  1
 INT32. . . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
 INT16. . . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
+TR1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008EH  1
 int8_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
 ADCCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
 I2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 BIT. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  BIT      -----  1
 T2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
+T3CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C4H  1
+CKCON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008EH  1
 UINT8. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+C51 COMPILER V9.60.7.0   UART                                                              10/30/2023 18:52:38 PAGE 88  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 uint32_t . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    275    ----
+   CODE SIZE        =    359    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =      2       9
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----    ----
+   BIT SIZE         =      3    ----
 END OF MODULE INFORMATION.
 
 
