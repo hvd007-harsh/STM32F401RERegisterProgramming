@@ -10,39 +10,35 @@
 	 unsigned char  rx_Data;
 	
 	SPI_Tx(Data);
-	
-	Timer0_Delay(16000000,200,100);            /* check delay.c*/
-	
-	SPI_Rx(rx_Data);
-	
-	Timer0_Delay(16000000,200,100);            /* check delay.c*/
-	
+		
+	rx_Data = SPI_Rx(rx_Data);
+
 	return rx_Data;
 }
 
 void Write_MFRC522( unsigned char  addr,  unsigned char  val) {
 	/* CS LOW */
-	SS= 0x00; 
-	//The address is located:0XXXXXX0
+	SS= 0; 
+	
 	RC522_SPI_Transfer((addr << 1) & 0x7E);
 	RC522_SPI_Transfer(val);
 
 	/* CS HIGH */
-	SS = 0xFF; 
+	SS = 1; 
 }
 
- unsigned char  Read_MFRC522( unsigned char  addr) {
+unsigned char  Read_MFRC522( unsigned char  addr) {
 	unsigned char  val;
 
 	/* CS LOW */
-	SS = 0x00;
+	SS = 0;
 
-	//The address is located:1XXXXXX0
+	//The addreSS is located:1XXXXXX0
 	RC522_SPI_Transfer(((addr << 1) & 0x7E) | 0x80);
 	val = RC522_SPI_Transfer(0x00);
 
 	/* CS HIGH */
-	SS = 0xFF;
+	SS = 1;
 	return val;
 
 }
@@ -77,8 +73,8 @@ void MFRC522_Reset(void) {
 void MFRC522_Init(void) {
 
 	//GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);						// Activate the RFID reader
-	SS = 0x00;
-	P17 = 0xFF;
+	SS = 0;
+	P17 = 1;
 	//GPIO_SetBits(MFRC522_RST_GPIO,MFRC522_RST_PIN);					// not reset
 
 	// spi config
@@ -142,7 +138,7 @@ void MFRC522_Init(void) {
 	//chay
 	Write_MFRC522(CommandReg, command);
 	if (command == PCD_TRANSCEIVE) {
-		SetBitMask(BitFramingReg, 0x80);//StartSend=1,transmission of Data starts  
+		SetBitMask(BitFramingReg, 0x80);//StartSend=1,transmiSSion of Data starts  
 	}
 
 	//The team is allowed to be stored
@@ -300,7 +296,7 @@ void CalulateCRC( unsigned char  *pInData,  unsigned char  len,  unsigned char  
 	 unsigned char  i;
 	 unsigned char  buff[12];
 
-	//Confirmation + Address + password + quick number
+	//Confirmation + AddreSS + paSSword + quick number
 	buff[0] = authMode;
 	buff[1] = BlockAddr;
 	for (i = 0; i < 6; i++) {

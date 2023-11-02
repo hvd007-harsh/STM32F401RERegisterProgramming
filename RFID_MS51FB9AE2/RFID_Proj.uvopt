@@ -86,8 +86,8 @@
         </Book>
       </Books>
       <DebugOpt>
-        <uSim>1</uSim>
-        <uTrg>0</uTrg>
+        <uSim>0</uSim>
+        <uTrg>1</uTrg>
         <sLdApp>1</sLdApp>
         <sGomain>1</sGomain>
         <sRbreak>1</sRbreak>
@@ -127,7 +127,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTP51</Key>
-          <Name>(98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(93=-1,-1,-1,-1,0)</Name>
+          <Name>(98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(99=150,121,363,420,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(93=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -155,10 +155,15 @@
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Data</ItemText>
+          <ItemText>SPDR</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Data</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>rx_Data</ItemText>
         </Ww>
