@@ -5,6 +5,7 @@
 ".\Objects\delay.obj",
 ".\Objects\sys.obj",
 ".\Objects\uart.obj",
+".\Objects\adc.obj",
 ".\Objects\MS51_STARTUP.obj" 
 TO ".\Objects\RFID_Proj" 
 PRINT(".\Listings\RFID_Proj.m51") RAMSIZE(256) 

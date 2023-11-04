@@ -9,20 +9,19 @@ void SPI_Initial(void)
     P00_QUASI_MODE;                                  // P00 (MOSI) Quasi mode
     P01_QUASI_MODE;                                  // P01 (MISO) Quasi mode                                // P01 (MISO) Quasi mode
     
-    clr_SPSR_DISMODF;                                // SS General purpose I/O ( No Mode Fault ) 
+    set_SPSR_DISMODF;                                // SS General purpose I/O ( No Mode Fault ) 
     clr_SPCR_SSOE;
    
     clr_SPCR_LSBFE;                                  // MSB first
 
     clr_SPCR_CPOL;                                   // The SPI clock is low in idle mode
-    set_SPCR_CPHA;                                   // The data is sample on the second edge of SPI clock 
+    clr_SPCR_CPHA;                                   // The data is sample on the second edge of SPI clock 
     
     set_SPCR_MSTR;                                   // SPI in Master mode 
     SPICLK_FSYS_DIV2;                                    // Select SPI clock 
     set_SPCR_SPIEN;                                  // Enable SPI function 
     clr_SPSR_SPIF;
 }
-
 
 void SPI_Tx(unsigned char Data)
 { 
@@ -31,11 +30,11 @@ void SPI_Tx(unsigned char Data)
 	 clr_SPSR_SPIF;
 }
 
-unsigned char SPI_Rx(unsigned char Rx_Buf){
+unsigned char SPI_Rx(unsigned char u8SpiWB){
 	  unsigned char u8SpiRB;
-	  SPDR = Rx_Buf;
-	  while(!(SPSR & 0x80));
+    SPDR = u8SpiWB;
+    while(!(SPSR&0x80));
     u8SpiRB = SPDR;
     clr_SPSR_SPIF;
-		return u8SpiRB;
+    return u8SpiRB;
 }

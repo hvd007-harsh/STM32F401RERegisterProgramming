@@ -4,10 +4,10 @@
 
 
 
-
- unsigned char  RC522_SPI_Transfer( unsigned char  Data)
+/*
+ unsigned \char  RC522_SPI_Transfer( unsigned char  Data)
 {
-	 unsigned char  rx_Data;
+	 unsigned \char  rx_Data =0;
 	
 	SPI_Tx(Data);
 		
@@ -15,28 +15,29 @@
 
 	return rx_Data;
 }
+*/
 
 void Write_MFRC522( unsigned char  addr,  unsigned char  val) {
 	/* CS LOW */
 	SS= 0; 
 	
-	RC522_SPI_Transfer((addr << 1) & 0x7E);
-	RC522_SPI_Transfer(val);
+   SPI_Tx((addr << 1) & 0x7E);
+   SPI_Tx(val);
 
 	/* CS HIGH */
 	SS = 1; 
 }
 
 unsigned char  Read_MFRC522( unsigned char  addr) {
-	unsigned char  val;
+	UINT8 val;
 
 	/* CS LOW */
-	SS = 0;
+ 		SS = 0;
 
 	//The addreSS is located:1XXXXXX0
-	RC522_SPI_Transfer(((addr << 1) & 0x7E) | 0x80);
-	val = RC522_SPI_Transfer(0x00);
-
+	SPI_Tx(((addr << 1) & 0x7E) | 0x80);
+	val = SPI_Rx(val);
+	
 	/* CS HIGH */
 	SS = 1;
 	return val;
@@ -60,6 +61,8 @@ void AntennaOn(void) {
 	Read_MFRC522(TxControlReg);
 
 	SetBitMask(TxControlReg, 0x03);
+	  
+	Read_MFRC522(VersionReg);
 }
 
 void AntennaOff(void) {
@@ -71,17 +74,16 @@ void MFRC522_Reset(void) {
 }
 
 void MFRC522_Init(void) {
-
+  // unsigned /har val;
 	//GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);						// Activate the RFID reader
 	SS = 0;
 	P17 = 1;
 	//GPIO_SetBits(MFRC522_RST_GPIO,MFRC522_RST_PIN);					// not reset
-
 	// spi config
 	//MFRC522_SPI_Init();
 
 	MFRC522_Reset();
-
+ // val = Read_MFRC522(VersionReg);
 	//Timer: TPrescaler*TreloadVal/6.78MHz = 24ms
 	Write_MFRC522(TModeReg, 0x8D);		//auto=1; f(Timer) = 6.78MHz/TPreScaler
 	Write_MFRC522(TPrescalerReg, 0x3E);	//TModeReg[3..0] + TPrescalerReg
@@ -94,7 +96,7 @@ void MFRC522_Init(void) {
 	//ClearBitMask(Status2Reg, 0x08);		//MFCrypto1On=0
 	//Write_MFRC522(RxSelReg, 0x86);		//RxWait = RxSelReg[5..0]
 	//Write_MFRC522(RFCfgReg, 0x7F);   		//RxGain = 48dB
-
+    Read_MFRC522(VersionReg);
 	AntennaOn();		//Mo Anten
 }
 

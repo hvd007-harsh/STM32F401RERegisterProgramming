@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 1   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE RFID
@@ -62,7 +62,7 @@ line level    source
    1      =3  /*--------------------------------------------------------------------------
    2      =3  INTRINS.H
    3      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 2   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 2   
 
    4      =3  Intrinsic functions for C51.
    5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
@@ -126,7 +126,7 @@ line level    source
   22      =3   typedef unsigned int size_t;
   23      =3  #endif
   24      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 3   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 3   
 
   25      =3  #pragma SAVE
   26      =3  #pragma REGPARMS
@@ -190,7 +190,7 @@ line level    source
            =3 #define HBYTE ((unsigned char volatile huge *)  0)
            =3 #define HWORD ((unsigned int volatile huge *)  0)
            =3 #define HVAR(object, addr)   (*((object volatile huge *) (addr)))
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 4   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 4   
 
            =3 #define HARRAY(object, base) ((object volatile huge *) (base))
            =3 #endif
@@ -254,7 +254,7 @@ line level    source
   48      =3  extern void  *memcpy  (void *s1, const void *s2, size_t n);
   49      =3  extern void  *memchr  (const void *s, char val, size_t n);
   50      =3  extern void  *memccpy (void *s1, const void *s2, char val, size_t n);
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 5   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 5   
 
   51      =3  extern void  *memmove (void *s1, const void *s2, size_t n);
   52      =3  extern void  *memset  (void *s, char val, size_t n);
@@ -318,7 +318,7 @@ line level    source
   41      =3                    
   42      =3  //16 --> 8 x 2
   43      =3  #define HIBYTE(v1)              ((UINT8)((v1)>>8))                      //v1 is UINT16
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 6   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 6   
 
   44      =3  #define LOBYTE(v1)              ((UINT8)((v1)&0xFF))
   45      =3  //8 x 2 --> 16
@@ -382,7 +382,7 @@ line level    source
  103      =3  
  104      =3  /*****************************************************************************/
  105      =3  /*   BOD Define                                                              */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 7   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 7   
 
  106      =3  /*****************************************************************************/
  107      =3  #define    BOD_ENABLE               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x80;E
@@ -446,7 +446,7 @@ line level    source
  159      =3  #define    ENABLE_PWM0_FB_INTERRUPT      set_EIE_EFB0
  160      =3  #define    ENABLE_WDT_INTERRUPT          set_EIE_EWDT
  161      =3  #define    ENABLE_PWMM0_INTERRUPT        set_EIE_EPWM
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 8   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 8   
 
  162      =3  #define    ENABLE_CAPTURE_INTERRUPT      set_EIE_ECAP
  163      =3  #define    ENABLE_PIN_INTERRUPT          set_EIE_EPI
@@ -510,7 +510,7 @@ line level    source
  221      =3  #define   SET_INT_ADC_LEVEL3           set_IP_PADC; set_IPH_PADCH
  222      =3  
  223      =3  #define   SET_INT_INT1_LEVEL0          clr_IP_PX1; clr_IPH_PX1H
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 9   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 9   
 
  224      =3  #define   SET_INT_INT1_LEVEL1          clr_IP_PX1; set_IPH_PX1H
  225      =3  #define   SET_INT_INT1_LEVEL2          set_IP_PX1; clr_IPH_PX1H
@@ -574,7 +574,7 @@ line level    source
  283      =3  /* Clear Interrupt Flag */
  284      =3  #define    CLEAR_ADC_INTERRUPT_FLAG          clr_ADCCON0_ADCF
  285      =3  #define    CLEAR_BOD_INTERRUPT_FLAG          clr_BODCON0_BOF
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 10  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 10  
 
  286      =3  #define    CLEAR_BOD_RESET_FLAG              clr_BODCON0_BORF
  287      =3  #define    CLEAR_UART0_INTERRUPT_TX_FLAG     clr_SCON_TI
@@ -638,7 +638,7 @@ line level    source
  345      =3  #define    P10_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFE;P1M2|=0x01
  346      =3  #define    P11_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFD;P1M2|=0x02
  347      =3  #define    P12_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFB;P1M2|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 11  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 11  
 
  348      =3  #define    P13_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xF7;P1M2|=0x08
  349      =3  #define    P14_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xEF;P1M2|=0x10
@@ -702,7 +702,7 @@ line level    source
  406      =3  #define    P10_ST_ENABLE          SFRS=1;P1S|=0x01
  407      =3  #define    P11_ST_ENABLE          SFRS=1;P1S|=0x02
  408      =3  #define    P12_ST_ENABLE          SFRS=1;P1S|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 12  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 12  
 
  409      =3  #define    P13_ST_ENABLE          SFRS=1;P1S|=0x08
  410      =3  #define    P14_ST_ENABLE          SFRS=1;P1S|=0x10
@@ -766,7 +766,7 @@ line level    source
  468      =3  #define    ENABLE_BIT7_FALLINGEDGE_TRIG   PICON|=0x80;PINEN|=0x80;PIPEN&=0x7F
  469      =3  #define    ENABLE_BIT6_FALLINGEDGE_TRIG   PICON|=0x80;PINEN|=0x40;PIPEN&=0xBF
  470      =3  #define    ENABLE_BIT5_FALLINGEDGE_TRIG   PICON|=0x40;PINEN|=0x20;PIPEN&=0xDF
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 13  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 13  
 
  471      =3  #define    ENABLE_BIT4_FALLINGEDGE_TRIG   PICON|=0x40;PINEN|=0x10;PIPEN&=0xEF
  472      =3  #define    ENABLE_BIT3_FALLINGEDGE_TRIG   PICON|=0x20;PINEN|=0x08;PIPEN&=0xF7
@@ -830,7 +830,7 @@ line level    source
              -divider = 128 for TM2/TM3) */
  517      =3  #define    TIMER_DIV256_VALUE_500ms_FOSC_7372800   65536-14400      /* 14400*256 /7372800= 500 ms  (Timer 
              -divider = 256 for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 14  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 14  
 
  518      =3  #define    TIMER_DIV512_VALUE_100ms_FOSC_7372800   65536-1440       /* 1440*512  /7372800= 100ms.  (Timer 
              -Divider = 512 for TM2/TM3) */
@@ -894,7 +894,7 @@ line level    source
              -r divider = 64  for TM2/TM3) */
  549      =3  #define    TIMER_DIV128_VALUE_100ms_FOSC_11059200  65536-8640       /* 17280*128 /11059200 = 100 ms  (Time
              -r divider = 128 for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 15  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 15  
 
  550      =3  #define    TIMER_DIV128_VALUE_200ms_FOSC_11059200  65536-17280      /* 34560*128 /11059200 = 200 ms  (Time
              -r divider = 128 for TM2/TM3) */
@@ -958,7 +958,7 @@ line level    source
              -r divider = 4   for TM2/TM3) */
  581      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_16600000      65536-415      /* 415*4     /16600000 = 100 us  (Time
              -r divider = 4   for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 16  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 16  
 
  582      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_16600000      65536-830      /* 830*4     /16600000 = 200 us  (Time
              -r divider = 4   for TM2/TM3) */
@@ -1022,7 +1022,7 @@ line level    source
  613      =3  #define    TIMER_DIV128_VALUE_100ms_FOSC_22118400    65536-17280    /* 17280*128  /22118400 = 100 ms  (Tim
              -er divider = 128 for TM2/TM3) */
  614      =3  #define    TIMER_DIV128_VALUE_200ms_FOSC_22118400    65536-34560    /* 34560*128  /22118400 = 200 ms  (Tim
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 17  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 17  
 
              -er divider = 128 for TM2/TM3) */
  615      =3  #define    TIMER_DIV256_VALUE_500ms_FOSC_22118400    65536-43200    /* 43200*256  /22118400 = 500 ms  (Tim
@@ -1086,7 +1086,7 @@ line level    source
  650      =3  #define    TIMER0_FSYS_DIV12             clr_CKCON_T0M
  651      =3                                           
  652      =3  #define    TIMER0_MODE0_ENABLE           TMOD&=0xF0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 18  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 18  
 
  653      =3  #define    TIMER0_MODE1_ENABLE           TMOD&=0xF0;TMOD|=0x01
  654      =3  #define    TIMER0_MODE2_ENABLE           TMOD&=0xF0;TMOD|=0x02
@@ -1150,7 +1150,7 @@ line level    source
  699      =3  #define  IC3_P04_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x40;CAPCON0|=
              -0x20;CAPCON2|=0x20
  700      =3  #define  IC4_P01_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x50;CAPCON0|=
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 19  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 19  
 
              -0x20;CAPCON2|=0x20
  701      =3  #define  IC5_P03_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x60;CAPCON0|=
@@ -1214,7 +1214,7 @@ line level    source
  732      =3  #define  IC5_P03_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x60;CAPCON0|=0x20;CAPCON2|=0x20
  733      =3  #define  IC6_P05_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 20  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 20  
 
              -0x70;CAPCON0|=0x20;CAPCON2|=0x20
  734      =3  #define  IC7_P15_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
@@ -1278,7 +1278,7 @@ line level    source
  765      =3  #define  IC7_P15_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x80;CAPCON0|=0x20;CAPCON2|=0x20
  766      =3                                                  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 21  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 21  
 
  767      =3  #define  IC0_P12_CAP2_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0x0F;CAPCON1|=0x20;CAPCON4&=0xF0;CAPCON4|=
              -0x00;CAPCON0|=0x40;CAPCON2|=0x40
@@ -1342,7 +1342,7 @@ line level    source
  811      =3  #define    PWM2_P10_OUTPUT_ENABLE            PIOCON0|=0x04                                                
              -                                 //P1.0 as PWM2
  812      =3  #define    PWM1_P14_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x02;clr_SFRS_SFRPAGE        //P1.4
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 22  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 22  
 
              - as PWM1 output enable
  813      =3  #define    PWM1_P11_OUTPUT_ENABLE            PIOCON0|=0x02                                                
@@ -1406,7 +1406,7 @@ line level    source
  857      =3  #define    PWM45_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x04;EA=BIT_TMP
  858      =3  #define    PWM23_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x02;EA=BIT_TMP
  859      =3  #define    PWM01_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x01;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 23  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 23  
 
  860      =3  
  861      =3  /*****************************************************************************************
@@ -1470,7 +1470,7 @@ line level    source
              - as PWM2 output disable
  904      =3  #define    DISABLE_PWM0_CH2_P10_OUTPUT       PIOCON0&=0xFB                                                
              -                                 //P1.0 as PWM2               
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 24  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 24  
 
  905      =3  #define    DISABLE_PWM0_CH1_P14_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xFD;clr_SFRS_SFRPAGE        //P1.4
              - as PWM1 output disable
@@ -1534,7 +1534,7 @@ line level    source
  953      =3  
  954      =3  #define    ENABLE_ADC_CH0                    clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x00;P17_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x01;ADCCON1|=1    //P17
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 25  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 25  
 
  955      =3  #define    ENABLE_ADC_CH1                    clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x01;P30_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x02;ADCCON1|=1    //P30
@@ -1598,7 +1598,7 @@ line level    source
  987      =3  #define    PWM0_CH2_CENTRAL_TRIG_ADC         clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x08;ADCCON1|=0x02
  988      =3  #define    PWM0_CH4_CENTRAL_TRIG_ADC         clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 26  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 26  
 
              -CCON1|=0x08;ADCCON1|=0x02
  989      =3  #define    PWM0_CH0_END_TRIG_ADC             clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
@@ -1662,7 +1662,7 @@ line level    source
 1039      =3  
 1040      =3  #define    WDT_RUN_IN_POWERDOWN_ENABLE        set_WDCON_WIDPD
 1041      =3  #define    WDT_RUN_IN_POWERDOWN_DISABLE       clr_WDCON_WIDPD
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 27  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 27  
 
 1042      =3  #define    WDT_COUNTER_CLEAR                  set_WDCON_WDCLR
 1043      =3  #define    WDT_COUNTER_RUN                    set_WDCON_WDTR
@@ -1718,16 +1718,18 @@ line level    source
   49      =3  void ADC_InitialContinous(unsigned int u16ADCRBase, unsigned char u8ADCRLength);
   50      =3  void ADC_ConvertTime(unsigned char u8ADCDIV, unsigned char u8ADCAQT);
   51      =3  void ADC_ComapreMode(unsigned char u8ADCCMPEN, unsigned int u16ADCCMPVALUE);
-  52      =3  unsigned int READ_BANDGAP();
+  52      =3  unsigned int READ_BANDGAP(void);
+  53      =3  unsigned int ADC_CH7_Read(void);
+  54      =3  unsigned int ADC_CH6_Read(void);
   26      =2  #include "bod.h"
    1      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
    2      =3  /*                                                                                                        
              - */
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 28  
+
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 28  
-
    4      =3  /* Copyright(c) 2020 Nuvoton Technology Corp. All rights reserved.                                        
              - */
    5      =3  /*                                                                                                        
@@ -1788,10 +1790,10 @@ line level    source
              --*/
    2      =3  /*                                                                                                        
              - */
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 29  
+
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 29  
-
    4      =3  /* Copyright(c) 2020 Nuvoton Technology Corp. All rights reserved.                                        
              - */
    5      =3  /*                                                                                                        
@@ -1852,10 +1854,10 @@ line level    source
   43      =3    #define TIMER_DIV12_VALUE_100us_FOSC_160000      65536-130    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
   44      =3    #define TIMER_DIV12_VALUE_1ms_FOSC_160000        65536-1334    //1334*12/16000000 = 1 mS,       // Timer
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 30  
+
              - divider = 12 
   45      =3    #define TIMER_DIV12_VALUE_10ms_FOSC_160000      65536-13334    //13334*12/16000000 = 10 mS     // Timer 
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 30  
-
              -divider = 12 
   46      =3    #define TIMER_DIV12_VALUE_40ms_FOSC_160000      65536-53336    //53336*12/16000000 = 40 ms      // Timer
              - divider = 12 
@@ -1916,10 +1918,10 @@ line level    source
   75      =3    #define TIMER_DIV64_VALUE_30ms_FOSC_166000      65536-7781  //7781*64/16600000 = 30 ms      // Timer div
              -ider = 64
   76      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_166000    65536-12969  //12969*128/16600000 = 100 ms    // Timer d
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 31  
+
              -ivider = 128
   77      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_166000    65536-25937  //25937*128/16600000 = 200 ms    // Timer d
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 31  
-
              -ivider = 128
   78      =3    #define TIMER_DIV256_VALUE_500ms_FOSC_166000    65536-32422  //32422*256/16600000 = 500 ms   // Timer di
              -vider = 256
@@ -1980,10 +1982,10 @@ line level    source
  108      =3    #define TIMER_DIV12_VALUE_100us_FOSC_240000      65536-200    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
  109      =3    #define TIMER_DIV12_VALUE_1ms_FOSC_240000        65536-2000      //2000*12/24000000 = 1 mS,       // Tim
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 32  
+
              -er divider = 12
  110      =3    #define TIMER_DIV12_VALUE_10ms_FOSC_240000      65536-20000      //2000*12/24000000 = 10 mS       // Tim
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 32  
-
              -er divider = 12
  111      =3    #define TIMER_DIV4_VALUE_10us_FOSC_240000        65536-60      //60*4/24000000 = 10 uS,          // Time
              -r divider = 4
@@ -2044,10 +2046,10 @@ line level    source
              --*/
    2      =3  /*                                                                                                        
              - */
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 33  
+
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 33  
-
    4      =3  /* Copyright(c) 2020 Nuvoton Technology Corp. All rights reserved.                                        
              - */
    5      =3  /*                                                                                                        
@@ -2108,10 +2110,10 @@ line level    source
   27      =3  
   28      =3  void Trigger_IAP(void);
   29      =3  void Erase_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 34  
+
   30      =3  void Erase_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
   31      =3  void Program_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 34  
-
   32      =3  void Program_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
   33      =3  void Erase_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
   34      =3  void Erase_Verify_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
@@ -2172,10 +2174,10 @@ line level    source
   19      =3  #define  INT_SPI0         13
   20      =3  #define  INT_Timer2       14
   21      =3  #define  INT_Capture      15
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 35  
+
   22      =3  #define  INT_PWM0         16
   23      =3  #define  INT_UART1        17
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 35  
-
   24      =3  #define  INT_Timer3       18
   25      =3  #define  INT_WKT          19
   26      =3  #define  INT_SMC0         21
@@ -2236,10 +2238,10 @@ line level    source
   18      =3  #define PWM0_CH01        0
   19      =3  #define PWM0_CH23        1
   20      =3  #define PWM0_CH45        2
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 36  
+
   21      =3  #define PWM0_ALL         3
   22      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 36  
-
   23      =3  #define PWM1_CH01        0
   24      =3  #define PWM1_CH23        1
   25      =3  #define PWM1_CH45        2
@@ -2300,10 +2302,10 @@ line level    source
   18      =3  #define  HIRC_16        7
   19      =3  #define  HIRC_166       8
   20      =3  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 37  
+
   21      =3  extern unsigned char data  TA_REG_TMP,BYTE_TMP;
   22      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 37  
-
   23      =3  void FsysSelect(unsigned char u8FsysMode);
   24      =3  void ClockEnable(unsigned char u8FsysMode);
   25      =3  void ClockDisable(unsigned char u8FsysMode);
@@ -2364,10 +2366,10 @@ line level    source
   16      =3  unsigned char Receive_Data(unsigned char UARTPort);
   17      =3  void Enable_UART0_VCOM_printf_24M_115200(void);
   18      =3  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 38  
+
   19      =3  extern   bit PRINTFG,uart0_receive_flag,uart1_receive_flag;
   20      =3  extern   unsigned char uart0_receive_data,uart1_receive_data;
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 38  
-
   40      =2  #include "wdt.h"
    1      =3  
    2      =3  void WDT_Open(unsigned int u8WDTDIV);
@@ -2428,10 +2430,10 @@ line level    source
   75      =2  #define set_TCON_IT1             IT1=1
   76      =2  #define set_TCON_IE0             IE0=1
   77      =2  #define set_TCON_IT0             IT0=1
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 39  
+
   78      =2                                   
   79      =2  #define clr_TCON_TF1             TF1=0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 39  
-
   80      =2  #define clr_TCON_TR1             TR1=0
   81      =2  #define clr_TCON_TF0             TF0=0
   82      =2  #define clr_TCON_TR0             TR0=0
@@ -2492,10 +2494,10 @@ line level    source
  137      =2  
  138      =2  /****SFRS    91H ****/
  139      =2  #define set_SFRS_SFRPAGE         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=1;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 40  
+
  140      =2  #define clr_SFRS_SFRPAGE         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=0;EA=BIT_TMP
  141      =2  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 40  
-
  142      =2  /****CAPCON0  92H ****/
  143      =2  #define set_CAPCON0_CAPEN2       CAPCON0|=0x40
  144      =2  #define set_CAPCON0_CAPEN1       CAPCON0|=0x20
@@ -2556,10 +2558,10 @@ line level    source
  199      =2  #define set_CKEN_CKSWTF          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x01;EA=BIT_TMP
  200      =2  
  201      =2  #define clr_CKEN_EXTEN1          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0x7F;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 41  
+
  202      =2  #define clr_CKEN_EXTEN0          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xBF;EA=BIT_TMP
  203      =2  #define clr_CKEN_HIRCEN          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xDF;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 41  
-
  204      =2  #define clr_CKEN_CKSWTF          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xFE;EA=BIT_TMP
  205      =2  
  206      =2  /**** SCON    98H ****/
@@ -2620,10 +2622,10 @@ line level    source
  261      =2                                   
  262      =2  #define clr_CHPCON_SWRST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0x7F;EA=BIT_TMP
  263      =2  #define clr_CHPCON_IAPFF         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xBF;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 42  
+
  264      =2  #define clr_CHPCON_BS            BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFD;EA=BIT_TMP
  265      =2  #define clr_CHPCON_IAPEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFE;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 42  
-
  266      =2  
  267      =2  /**** P2    A0H ****/
  268      =2  
@@ -2684,10 +2686,10 @@ line level    source
  323      =2  /**** IE      A8H ****/
  324      =2  #define set_IE_EA                EA  =1
  325      =2  #define set_IE_EADC              EADC=1
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 43  
+
  326      =2  #define set_IE_EBOD              EBOD=1
  327      =2  #define set_IE_ES                ES  =1
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 43  
-
  328      =2  #define set_IE_ET1               ET1 =1
  329      =2  #define set_IE_EX1               EX1 =1
  330      =2  #define set_IE_ET0               ET0 =1
@@ -2748,10 +2750,10 @@ line level    source
  385      =2  #define clr_IAPCN_FCTRL1         IAPN&=0xFD
  386      =2  #define clr_IAPCN_FCTRL0         IAPN&=0xFE
  387      =2  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 44  
+
  388      =2  /**** P0M1  B1H PAGE0 ****/
  389      =2  #define set_P0M1_7               clr_SFRS_SFRPAGE;P0M1|=0x80
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 44  
-
  390      =2  #define set_P0M1_6               clr_SFRS_SFRPAGE;P0M1|=0x40
  391      =2  #define set_P0M1_5               clr_SFRS_SFRPAGE;P0M1|=0x20 
  392      =2  #define set_P0M1_4               clr_SFRS_SFRPAGE;P0M1|=0x10
@@ -2812,10 +2814,10 @@ line level    source
  447      =2  #define set_P0SR_6               set_SFRS_SFRPAGE;P0SR|=0x40;clr_SFRS_SFRPAGE
  448      =2  #define set_P0SR_5               set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
  449      =2  #define set_P0SR_4               set_SFRS_SFRPAGE;P0SR|=0x10;clr_SFRS_SFRPAGE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 45  
+
  450      =2  #define set_P0SR_3               set_SFRS_SFRPAGE;P0SR|=0x08;clr_SFRS_SFRPAGE
  451      =2  #define set_P0SR_2               set_SFRS_SFRPAGE;P0SR|=0x04;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 45  
-
  452      =2  #define set_P0SR_1               set_SFRS_SFRPAGE;P0SR|=0x02;clr_SFRS_SFRPAGE
  453      =2  #define set_P0SR_0               set_SFRS_SFRPAGE;P0SR|=0x01;clr_SFRS_SFRPAGE
  454      =2  
@@ -2876,10 +2878,10 @@ line level    source
  509      =2  #define clr_P2S_T1OE             P2S&=0xF7
  510      =2  #define clr_P2S_T0OE             P2S&=0xFB
  511      =2  #define clr_P2S_P2S0             P2S&=0xFE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 46  
+
  512      =2                                   
  513      =2  /**** IPH    B7H PAGE0 ****/                     
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 46  
-
  514      =2  #define set_IPH_PADCH            clr_SFRS_SFRPAGE;IPH|=0x40
  515      =2  #define set_IPH_PBODH            clr_SFRS_SFRPAGE;IPH|=0x20
  516      =2  #define set_IPH_PSH              clr_SFRS_SFRPAGE;IPH|=0x10
@@ -2940,10 +2942,10 @@ line level    source
  571      =2                                  
  572      =2  #define clr_I2TOC_I2TOCEN       I2TOC&=0xFB
  573      =2  #define clr_I2TOC_DIV           I2TOC&=0xFD
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 47  
+
  574      =2  #define clr_I2TOC_I2TOF         I2TOC&=0xFE
  575      =2  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 47  
-
  576      =2  /**** I2CON  C0H ****/ 
  577      =2  #define set_I2CON_I2CEN         I2CEN    = 1
  578      =2  #define set_I2CON_STA           STA      = 1
@@ -3004,10 +3006,10 @@ line level    source
  633      =2  /**** T2CON  C8H ****/
  634      =2  #define set_T2CON_TF2           TF2      = 1
  635      =2  #define set_T2CON_TR2           TR2      = 1
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 48  
+
  636      =2  #define set_T2CON_CMRL2         CM_RL2   = 1
  637      =2                                  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 48  
-
  638      =2  #define clr_T2CON_TF2           TF2      = 0
  639      =2  #define clr_T2CON_TR2           TR2      = 0
  640      =2  #define clr_T2CON_CMRL2         CM_RL2   = 0
@@ -3068,10 +3070,10 @@ line level    source
  695      =2  #define set_FBD_FBINLS          FBD|=0x40
  696      =2  #define set_FBD_FBD5            FBD|=0x20
  697      =2  #define set_FBD_FBD4            FBD|=0x10
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 49  
+
  698      =2  #define set_FBD_FBD3            FBD|=0x08
  699      =2  #define set_FBD_FBD2            FBD|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 49  
-
  700      =2  #define set_FBD_FBD1            FBD|=0x02
  701      =2  #define set_FBD_FBD0            FBD|=0x01
  702      =2                                  
@@ -3132,10 +3134,10 @@ line level    source
  757      =2  #define clr_PWMCON1_PWMTYP      PWMCON1&=0xEF
  758      =2  #define clr_PWMCON1_FBINEN      PWMCON1&=0xF7
  759      =2  #define clr_PWMCON1_PWMDIV2     PWMCON1&=0xFB 
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 50  
+
  760      =2  #define clr_PWMCON1_PWMDIV1     PWMCON1&=0xFD
  761      =2  #define clr_PWMCON1_PWMDIV0     PWMCON1&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 50  
-
  762      =2  
  763      =2  /**** ACC  E0H ****/
  764      =2  
@@ -3196,10 +3198,10 @@ line level    source
  818      =2  #define set_PICON_PIT2          PICON|=0x10
  819      =2  #define set_PICON_PIT1          PICON|=0x08
  820      =2  #define set_PICON_PIT0          PICON|=0x04
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 51  
+
  821      =2  #define set_PICON_PIPS1         PICON|=0x02
  822      =2  #define set_PICON_PIPS0         PICON|=0x01
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 51  
-
  823      =2                                    
  824      =2  #define clr_PICON_PIT67         PICON&=0x7F
  825      =2  #define clr_PICON_PIT45         PICON&=0xBF
@@ -3260,10 +3262,10 @@ line level    source
  880      =2                                   
  881      =2  #define clr_PIF_PIF7             PIF&=0x7F
  882      =2  #define clr_PIF_PIF6             PIF&=0xBF
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 52  
+
  883      =2  #define clr_PIF_PIF5             PIF&=0xDF
  884      =2  #define clr_PIF_PIF4             PIF&=0xEF
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 52  
-
  885      =2  #define clr_PIF_PIF3             PIF&=0xF7
  886      =2  #define clr_PIF_PIF2             PIF&=0xFB
  887      =2  #define clr_PIF_PIF1             PIF&=0xFD
@@ -3324,10 +3326,10 @@ line level    source
  942      =2  #define clr_CAPCON4_CAP20       CAPCON4&=0xFE
  943      =2  
  944      =2  /**** SPCR    F3H PAGE0 ****/
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 53  
+
  945      =2  #define set_SPCR_SSOE           clr_SFRS_SFRPAGE;SPCR|=0x80
  946      =2  #define set_SPCR_SPIEN          clr_SFRS_SFRPAGE;SPCR|=0x40
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 53  
-
  947      =2  #define set_SPCR_LSBFE          clr_SFRS_SFRPAGE;SPCR|=0x20
  948      =2  #define set_SPCR_MSTR           clr_SFRS_SFRPAGE;SPCR|=0x10
  949      =2  #define set_SPCR_CPOL           clr_SFRS_SFRPAGE;SPCR|=0x08
@@ -3388,10 +3390,10 @@ line level    source
 1004      =2  /**** EIPH      F7H ****/
 1005      =2  #define set_EIPH_PT2H           clr_SFRS_SFRPAGE;EIPH|=0x80
 1006      =2  #define set_EIPH_PSPIH          clr_SFRS_SFRPAGE;EIPH|=0x40
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 54  
+
 1007      =2  #define set_EIPH_PFBH           clr_SFRS_SFRPAGE;EIPH|=0x20
 1008      =2  #define set_EIPH_PWDTH          clr_SFRS_SFRPAGE;EIPH|=0x10
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 54  
-
 1009      =2  #define set_EIPH_PPWMH          clr_SFRS_SFRPAGE;EIPH|=0x08
 1010      =2  #define set_EIPH_PCAPH          clr_SFRS_SFRPAGE;EIPH|=0x04
 1011      =2  #define set_EIPH_PPIH           clr_SFRS_SFRPAGE;EIPH|=0x02
@@ -3452,10 +3454,10 @@ line level    source
 1066      =2  #define clr_PMEN_0               PMEN&=0xFE
 1067      =2                              
 1068      =2  /**** PMD    FCH ****/                       
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 55  
+
 1069      =2  #define set_PMD_7                PMD|=0x80
 1070      =2  #define set_PMD_6                PMD|=0x40
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 55  
-
 1071      =2  #define set_PMD_5                PMD|=0x20
 1072      =2  #define set_PMD_4                PMD|=0x10
 1073      =2  #define set_PMD_3                PMD|=0x08
@@ -3516,10 +3518,10 @@ line level    source
 1128      =2  /**** DPH  82H ****/ 
 1129      =2  /**** DPL  83H ****/ 
 1130      =2  /**** RWK  86H ****/ 
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 56  
+
 1131      =2  
 1132      =2  /**** PCON  87H ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 56  
-
 1133      =2  #define set_SMOD                PCON|=0x80
 1134      =2  #define set_SMOD0               PCON|=0x40
 1135      =2  #define set_POF                 PCON|=0x10
@@ -3580,10 +3582,10 @@ line level    source
 1190      =2  /**** TL0    8DH ****/ 
 1191      =2  
 1192      =2  /**** CKCON  8EH ****/
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 57  
+
 1193      =2  #define set_PWMCKS              CKCON|=0x40
 1194      =2  #define set_T1M                 CKCON|=0x10
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 57  
-
 1195      =2  #define set_T0M                 CKCON|=0x08
 1196      =2  #define set_CLOEN               CKCON|=0x02
 1197      =2                                       
@@ -3644,10 +3646,10 @@ line level    source
 1252      =2  #define clr_CAPF2               CAPCON0&=0xFB
 1253      =2  #define clr_CAPF1               CAPCON0&=0xFD
 1254      =2  #define clr_CAPF0               CAPCON0&=0xFE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 58  
+
 1255      =2  
 1256      =2  /**** CAPCON1  93H ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 58  
-
 1257      =2  #define set_CAP2LS1             CAPCON1|=0x20
 1258      =2  #define set_CAP2LS0             CAPCON1|=0x10
 1259      =2  #define set_CAP1LS1             CAPCON1|=0x08
@@ -3708,10 +3710,10 @@ line level    source
 1314      =2  #define set_RI                  RI    = 1
 1315      =2                                  
 1316      =2  #define clr_FE                  FE    = 0
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 59  
+
 1317      =2  #define clr_SM1                 SM1   = 0
 1318      =2  #define clr_SM2                 SM2   = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 59  
-
 1319      =2  #define clr_REN                 REN   = 0
 1320      =2  #define clr_TB8                 TB8   = 0
 1321      =2  #define clr_RB8                 RB8   = 0
@@ -3772,10 +3774,10 @@ line level    source
 1376      =2                                       
 1377      =2  #define clr_SWRF                AUXR1&=0x7F
 1378      =2  #define clr_RSTPINF             AUXR1&=0xBF
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 60  
+
 1379      =2  #define clr_HARDF               AUXR1&=0xDF
 1380      =2  #define clr_GF2                 AUXR1&=0xF7
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 60  
-
 1381      =2  #define clr_UART0PX             AUXR1&=0xFB
 1382      =2  #define clr_DPS                 AUXR1&=0xFE
 1383      =2  
@@ -3836,10 +3838,10 @@ line level    source
 1438      =2  /**** WDCON    AAH **** TA protect register ****/
 1439      =2  #define set_WDTR                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x80;EA=BIT_TMP
 1440      =2  #define set_WDCLR               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x40;EA=BIT_TMP
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 61  
+
 1441      =2  #define set_WDTF                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x20;EA=BIT_TMP
 1442      =2  #define set_WIDPD               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x10;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 61  
-
 1443      =2  #define set_WDTRF               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x08;EA=BIT_TMP
 1444      =2  #define set_WPS2                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x04;EA=BIT_TMP
 1445      =2  #define set_WPS1                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x02;EA=BIT_TMP
@@ -3900,10 +3902,10 @@ line level    source
 1500      =2  #define clr_P30                 P30= 0
 1501      =2  
 1502      =2  /**** P0M1  B1H PAGE0 ****/
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 62  
+
 1503      =2  #define set_P0M1_7              clr_SFRS_SFRPAGE;P0M1|=0x80
 1504      =2  #define set_P0M1_6              clr_SFRS_SFRPAGE;P0M1|=0x40
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 62  
-
 1505      =2  #define set_P0M1_5              clr_SFRS_SFRPAGE;P0M1|=0x20 
 1506      =2  #define set_P0M1_4              clr_SFRS_SFRPAGE;P0M1|=0x10
 1507      =2  #define set_P0M1_3              clr_SFRS_SFRPAGE;P0M1|=0x08
@@ -3964,10 +3966,10 @@ line level    source
 1562      =2  #define set_P0SR_5              set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
 1563      =2  #define set_P0SR_4              set_SFRS_SFRPAGE;P0SR|=0x10;clr_SFRS_SFRPAGE
 1564      =2  #define set_P0SR_3              set_SFRS_SFRPAGE;P0SR|=0x08;clr_SFRS_SFRPAGE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 63  
+
 1565      =2  #define set_P0SR_2              set_SFRS_SFRPAGE;P0SR|=0x04;clr_SFRS_SFRPAGE
 1566      =2  #define set_P0SR_1              set_SFRS_SFRPAGE;P0SR|=0x02;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 63  
-
 1567      =2  #define set_P0SR_0              set_SFRS_SFRPAGE;P0SR|=0x01;clr_SFRS_SFRPAGE
 1568      =2  
 1569      =2  #define clr_P0SR_7              set_SFRS_SFRPAGE;P0SR&=0x7F;clr_SFRS_SFRPAGE
@@ -4028,10 +4030,10 @@ line level    source
 1624      =2  
 1625      =2  /**** P1SR    B4H PAGE1 ****/ 
 1626      =2  #define set_P1SR_7              set_SFRS_SFRPAGE;P1SR|=0x80;clr_SFRS_SFRPAGE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 64  
+
 1627      =2  #define set_P1SR_6              set_SFRS_SFRPAGE;P1SR|=0x40;clr_SFRS_SFRPAGE
 1628      =2  #define set_P1SR_5              set_SFRS_SFRPAGE;P1SR|=0x20;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 64  
-
 1629      =2  #define set_P1SR_4              set_SFRS_SFRPAGE;P1SR|=0x10;clr_SFRS_SFRPAGE
 1630      =2  #define set_P1SR_3              set_SFRS_SFRPAGE;P1SR|=0x08;clr_SFRS_SFRPAGE
 1631      =2  #define set_P1SR_2              set_SFRS_SFRPAGE;P1SR|=0x04;clr_SFRS_SFRPAGE
@@ -4092,10 +4094,10 @@ line level    source
 1686      =2                                  
 1687      =2  #define clr_PADC                PADC     = 0
 1688      =2  #define clr_PBOD                PBOD     = 0
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 65  
+
 1689      =2  #define clr_PS                  PS       = 0
 1690      =2  #define clr_PT1                 PT1      = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 65  
-
 1691      =2  #define clr_PX1                 PX1      = 0
 1692      =2  #define clr_PT0                 PT0      = 0
 1693      =2  #define clr_PX0                 PX0      = 0
@@ -4156,10 +4158,10 @@ line level    source
 1748      =2  #define clr_T3PS2               clr_SFRS_SFRPAGE;T3CON&=0xFB
 1749      =2  #define clr_T3PS1               clr_SFRS_SFRPAGE;T3CON&=0xFD
 1750      =2  #define clr_T3PS0               clr_SFRS_SFRPAGE;T3CON&=0xFE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 66  
+
 1751      =2  
 1752      =2  /**** PWM4H  C4H  PAGE1 ****/ 
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 66  
-
 1753      =2  /**** RL3    C5H PAGE0 ****/
 1754      =2  /**** PWM5H  C5H PAGE1 ****/ 
 1755      =2  /**** RH3    C6H PAGE0 ****/
@@ -4220,10 +4222,10 @@ line level    source
 1810      =2  #define set_RS0                  RS0 = 1
 1811      =2  #define set_OV                   OV  = 1
 1812      =2  #define set_P                    P   = 1
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 67  
+
 1813      =2                                   
 1814      =2  #define clr_CY                   CY  = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 67  
-
 1815      =2  #define clr_AC                   AC  = 0
 1816      =2  #define clr_F0                   F0  = 0 
 1817      =2  #define clr_RS1                  RS1 = 0
@@ -4284,10 +4286,10 @@ line level    source
 1872      =2  
 1873      =2  /**** PWMPL    D9H ****/
 1874      =2  /**** PWM0L    DAH ****/
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 68  
+
 1875      =2  /**** PWM1L    DBH ****/
 1876      =2  /**** PWM2L    DCH ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 68  
-
 1877      =2  /**** PWM3L    DDH ****/
 1878      =2  
 1879      =2  /**** PIOCON0  DEH ****/
@@ -4348,10 +4350,10 @@ line level    source
 1934      =2  #define clr_ADFBEN               ADCCON2&=0x7F
 1935      =2  #define clr_ADCMPOP              ADCCON2&=0xBF
 1936      =2  #define clr_ADCMPEN              ADCCON2&=0xDF
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 69  
+
 1937      =2  #define clr_ADCMPO               ADCCON2&=0xEF
 1938      =2  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 69  
-
 1939      =2  /**** ADCDLY    E3H ****/
 1940      =2  /**** C0L      E4H ****/
 1941      =2  /**** C0H      E5H ****/
@@ -4412,10 +4414,10 @@ line level    source
 1996      =2  #define clr_PINEN4               PINEN&=0xEF
 1997      =2  #define clr_PINEN3               PINEN&=0xF7
 1998      =2  #define clr_PINEN2               PINEN&=0xFB
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 70  
+
 1999      =2  #define clr_PINEN1               PINEN&=0xFD
 2000      =2  #define clr_PINEN0               PINEN&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 70  
-
 2001      =2                              
 2002      =2  /**** PIPEN     EBH ****/
 2003      =2  #define set_PIPEN7               PIPEN|=0x80
@@ -4476,10 +4478,10 @@ line level    source
 2058      =2  #define clr_PCAP                 clr_SFRS_SFRPAGE;EIP&=0xFB
 2059      =2  #define clr_PPI                  clr_SFRS_SFRPAGE;EIP&=0xFD
 2060      =2  #define clr_PI2C                 clr_SFRS_SFRPAGE;EIP&=0xFE
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 71  
+
 2061      =2  
 2062      =2  /**** B  F0H ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 71  
-
 2063      =2  
 2064      =2  /**** CAPCON3    F1H ****/
 2065      =2  #define set_CAP13                CAPCON3|=0x80
@@ -4540,10 +4542,10 @@ line level    source
 2120      =2  /**** SPSR      F4H ****/
 2121      =2  #define set_SPIF                 SPSR|=0x80
 2122      =2  #define set_WCOL                 SPSR|=0x40
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 72  
+
 2123      =2  #define set_SPIOVF               SPSR|=0x20
 2124      =2  #define set_MODF                 SPSR|=0x10
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 72  
-
 2125      =2  #define set_DISMODF              SPSR|=0x08
 2126      =2                                       
 2127      =2  #define clr_SPIF                 SPSR&=0x7F
@@ -4604,10 +4606,10 @@ line level    source
 2182      =2                                   
 2183      =2  #define clr_FE_1                 FE_1  = 0
 2184      =2  #define clr_SM1_1                SM1_1 = 0
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 73  
+
 2185      =2  #define clr_SM2_1                SM2_1 = 0
 2186      =2  #define clr_REN_1                REN_1 = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 73  
-
 2187      =2  #define clr_TB8_1                TB8_1 = 0
 2188      =2  #define clr_RB8_1                RB8_1 = 0
 2189      =2  #define clr_TI_1                 TI_1  = 0
@@ -4668,10 +4670,10 @@ line level    source
 2244      =2  #define clr_PT3                  clr_SFRS_SFRPAGE;EIP1&=0xFD
 2245      =2  #define clr_PS_1                 clr_SFRS_SFRPAGE;EIP1&=0xFE
 2246      =2                                   
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 74  
+
 2247      =2  /**** EIPH1    FFH PAGE0 ****/                
 2248      =2  #define set_PWKTH                clr_SFRS_SFRPAGE;EIPH1|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 74  
-
 2249      =2  #define set_PT3H                 clr_SFRS_SFRPAGE;EIPH1|=0x02
 2250      =2  #define set_PSH_1                clr_SFRS_SFRPAGE;EIPH1|=0x01
 2251      =2                                        
@@ -4732,10 +4734,10 @@ line level    source
   68      =1  sfr P3SR        = 0xAD; //Page1
   69      =1  sfr IAPFD       = 0xAE;
   70      =1  sfr IAPCN       = 0xAF;
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 75  
+
   71      =1  
   72      =1  sfr P3          = 0xB0;
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 75  
-
   73      =1  sfr P0M1        = 0xB1;
   74      =1  sfr P0S         = 0xB1; //Page1
   75      =1  sfr P0M2        = 0xB2;
@@ -4796,10 +4798,10 @@ line level    source
  130      =1  sfr PWM2L        = 0xDC;
  131      =1  sfr PWM3L        = 0xDD;
  132      =1  sfr PIOCON0      = 0xDE;
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 76  
+
  133      =1  sfr PWMCON1     = 0xDF;
  134      =1  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 76  
-
  135      =1  sfr ACC         = 0xE0;
  136      =1  sfr ADCCON1     = 0xE1;
  137      =1  sfr ADCCON2     = 0xE2;
@@ -4860,10 +4862,10 @@ line level    source
  192      =1  
  193      =1  /*  PWMCON0  */
  194      =1  sbit PWMRUN     = PWMCON0^7;
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 77  
+
  195      =1  sbit LOAD       = PWMCON0^6;
  196      =1  sbit PWMF       = PWMCON0^5;
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 77  
-
  197      =1  sbit CLRPWM     = PWMCON0^4;
  198      =1  
  199      =1  
@@ -4924,10 +4926,10 @@ line level    source
  254      =1  sbit TB8        = SCON^3; 
  255      =1  sbit RB8        = SCON^2; 
  256      =1  sbit TI         = SCON^1; 
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 78  
+
  257      =1  sbit RI         = SCON^0; 
  258      =1  
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 78  
-
  259      =1  /*  P1  */     
  260      =1  sbit P17  = P1^7;
  261      =1  sbit P16  = P1^6;
@@ -4988,10 +4990,10 @@ line level    source
    3          #include "rfid.h"
    1      =1  #define MAX_LEN 16
    2      =1  
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 79  
+
    3      =1  /////////////////////////////////////////////////////////////////////
    4      =1  //set the pin
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 79  
-
    5      =1  
    6      =1  // Registers the MF522
    7      =1  #define PCD_IDLE              0x00               //NO action; Huy bo lenh hien hanh
@@ -5052,10 +5054,10 @@ line level    source
   62      =1  #define     RxThresholdReg        0x18
   63      =1  #define     DemodReg              0x19
   64      =1  #define     Reserved11            0x1A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 80  
+
   65      =1  #define     Reserved12            0x1B
   66      =1  #define     MifareReg             0x1C
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 80  
-
   67      =1  #define     Reserved13            0x1D
   68      =1  #define     Reserved14            0x1E
   69      =1  #define     SerialSpeedReg        0x1F
@@ -5107,480 +5109,466 @@ line level    source
    4          
    5          
    6          
-   7          
-   8           unsigned char  RC522_SPI_Transfer( unsigned char  Data)
+   7          /*
+   8           unsigned \char  RC522_SPI_Transfer( unsigned char  Data)
    9          {
-  10   1         unsigned char  rx_Data;
-  11   1        
-  12   1        SPI_Tx(Data);
-  13   1          
-  14   1        rx_Data = SPI_Rx(rx_Data);
-  15   1      
-  16   1        return rx_Data;
-  17   1      }
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 81  
+  10             unsigned \char  rx_Data =0;
+  11            
+  12            SPI_Tx(Data);
+  13              
+  14            rx_Data = SPI_Rx(rx_Data);
+  15          
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 81  
 
-  18          
-  19          void Write_MFRC522( unsigned char  addr,  unsigned char  val) {
-  20   1        /* CS LOW */
-  21   1        SS= 0; 
-  22   1        
-  23   1        RC522_SPI_Transfer((addr << 1) & 0x7E);
-  24   1        RC522_SPI_Transfer(val);
-  25   1      
-  26   1        /* CS HIGH */
-  27   1        SS = 1; 
-  28   1      }
-  29          
-  30          unsigned char  Read_MFRC522( unsigned char  addr) {
-  31   1        unsigned char  val;
-  32   1      
-  33   1        /* CS LOW */
-  34   1        SS = 0;
-  35   1      
-  36   1        //The addreSS is located:1XXXXXX0
-  37   1        RC522_SPI_Transfer(((addr << 1) & 0x7E) | 0x80);
-  38   1        val = RC522_SPI_Transfer(0x00);
-  39   1      
-  40   1        /* CS HIGH */
-  41   1        SS = 1;
-  42   1        return val;
-  43   1      
-  44   1      }
-  45          
-  46          void SetBitMask( unsigned char  reg,  unsigned char  mask) {
-  47   1         unsigned char  tmp;
-  48   1        tmp = Read_MFRC522(reg);
-  49   1        Write_MFRC522(reg, tmp | mask);  // set bit mask
-  50   1      }
-  51          
-  52          void ClearBitMask( unsigned char  reg,  unsigned char  mask) {
-  53   1         unsigned char  tmp;
-  54   1        tmp = Read_MFRC522(reg);
-  55   1        Write_MFRC522(reg, tmp & (~mask));  // clear bit mask
-  56   1      }
-  57          
-  58          void AntennaOn(void) {
-  59   1      
-  60   1        Read_MFRC522(TxControlReg);
-  61   1      
-  62   1        SetBitMask(TxControlReg, 0x03);
-  63   1      }
-  64          
-  65          void AntennaOff(void) {
-  66   1        ClearBitMask(TxControlReg, 0x03);
-  67   1      }
-  68          
-  69          void MFRC522_Reset(void) {
-  70   1        Write_MFRC522(CommandReg, PCD_RESETPHASE);
-  71   1      }
-  72          
-  73          void MFRC522_Init(void) {
-  74   1      
-  75   1        //GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);           // Activate the RFID reader
-  76   1        SS = 0;
-  77   1        P17 = 1;
-  78   1        //GPIO_SetBits(MFRC522_RST_GPIO,MFRC522_RST_PIN);         // not reset
-  79   1      
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 82  
+  16            return rx_Data;
+  17          }
+  18          */
+  19          
+  20          void Write_MFRC522( unsigned char  addr,  unsigned char  val) {
+  21   1        /* CS LOW */
+  22   1        SS= 0; 
+  23   1        
+  24   1         SPI_Tx((addr << 1) & 0x7E);
+  25   1         SPI_Tx(val);
+  26   1      
+  27   1        /* CS HIGH */
+  28   1        SS = 1; 
+  29   1      }
+  30          
+  31          unsigned char  Read_MFRC522( unsigned char  addr) {
+  32   1        UINT8 val;
+  33   1      
+  34   1        /* CS LOW */
+  35   1          SS = 0;
+  36   1      
+  37   1        //The addreSS is located:1XXXXXX0
+  38   1        SPI_Tx(((addr << 1) & 0x7E) | 0x80);
+  39   1        val = SPI_Rx(val);
+  40   1        
+  41   1        /* CS HIGH */
+  42   1        SS = 1;
+  43   1        return val;
+  44   1      
+  45   1      }
+  46          
+  47          void SetBitMask( unsigned char  reg,  unsigned char  mask) {
+  48   1         unsigned char  tmp;
+  49   1        tmp = Read_MFRC522(reg);
+  50   1        Write_MFRC522(reg, tmp | mask);  // set bit mask
+  51   1      }
+  52          
+  53          void ClearBitMask( unsigned char  reg,  unsigned char  mask) {
+  54   1         unsigned char  tmp;
+  55   1        tmp = Read_MFRC522(reg);
+  56   1        Write_MFRC522(reg, tmp & (~mask));  // clear bit mask
+  57   1      }
+  58          
+  59          void AntennaOn(void) {
+  60   1      
+  61   1        Read_MFRC522(TxControlReg);
+  62   1      
+  63   1        SetBitMask(TxControlReg, 0x03);
+  64   1          
+  65   1        Read_MFRC522(VersionReg);
+  66   1      }
+  67          
+  68          void AntennaOff(void) {
+  69   1        ClearBitMask(TxControlReg, 0x03);
+  70   1      }
+  71          
+  72          void MFRC522_Reset(void) {
+  73   1        Write_MFRC522(CommandReg, PCD_RESETPHASE);
+  74   1      }
+  75          
+  76          void MFRC522_Init(void) {
+  77   1        // unsigned /har val;
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 82  
 
-  80   1        // spi config
-  81   1        //MFRC522_SPI_Init();
-  82   1      
-  83   1        MFRC522_Reset();
+  78   1        //GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);           // Activate the RFID reader
+  79   1        SS = 0;
+  80   1        P17 = 1;
+  81   1        //GPIO_SetBits(MFRC522_RST_GPIO,MFRC522_RST_PIN);         // not reset
+  82   1        // spi config
+  83   1        //MFRC522_SPI_Init();
   84   1      
-  85   1        //Timer: TPrescaler*TreloadVal/6.78MHz = 24ms
-  86   1        Write_MFRC522(TModeReg, 0x8D);    //auto=1; f(Timer) = 6.78MHz/TPreScaler
-  87   1        Write_MFRC522(TPrescalerReg, 0x3E); //TModeReg[3..0] + TPrescalerReg
-  88   1        Write_MFRC522(TReloadRegL, 30);
-  89   1        Write_MFRC522(TReloadRegH, 0);
-  90   1      
-  91   1        Write_MFRC522(TxAutoReg, 0x40);   //100%ASK
-  92   1        Write_MFRC522(ModeReg, 0x3D);   //CRC Original value 0x6363 ???
-  93   1      
-  94   1        //ClearBitMask(Status2Reg, 0x08);   //MFCrypto1On=0
-  95   1        //Write_MFRC522(RxSelReg, 0x86);    //RxWait = RxSelReg[5..0]
-  96   1        //Write_MFRC522(RFCfgReg, 0x7F);      //RxGain = 48dB
-  97   1      
-  98   1        AntennaOn();    //Mo Anten
-  99   1      }
- 100          
- 101           unsigned char  MFRC522_ToCard( unsigned char  command,  unsigned char  *sendData,  unsigned char  sendLen
+  85   1        MFRC522_Reset();
+  86   1       // val = Read_MFRC522(VersionReg);
+  87   1        //Timer: TPrescaler*TreloadVal/6.78MHz = 24ms
+  88   1        Write_MFRC522(TModeReg, 0x8D);    //auto=1; f(Timer) = 6.78MHz/TPreScaler
+  89   1        Write_MFRC522(TPrescalerReg, 0x3E); //TModeReg[3..0] + TPrescalerReg
+  90   1        Write_MFRC522(TReloadRegL, 30);
+  91   1        Write_MFRC522(TReloadRegH, 0);
+  92   1      
+  93   1        Write_MFRC522(TxAutoReg, 0x40);   //100%ASK
+  94   1        Write_MFRC522(ModeReg, 0x3D);   //CRC Original value 0x6363 ???
+  95   1      
+  96   1        //ClearBitMask(Status2Reg, 0x08);   //MFCrypto1On=0
+  97   1        //Write_MFRC522(RxSelReg, 0x86);    //RxWait = RxSelReg[5..0]
+  98   1        //Write_MFRC522(RFCfgReg, 0x7F);      //RxGain = 48dB
+  99   1          Read_MFRC522(VersionReg);
+ 100   1        AntennaOn();    //Mo Anten
+ 101   1      }
+ 102          
+ 103           unsigned char  MFRC522_ToCard( unsigned char  command,  unsigned char  *sendData,  unsigned char  sendLen
              -,  unsigned char  *backData,  unsigned int  *backLen)
- 102          {
- 103   1         unsigned char  status = MI_ERR;
- 104   1         unsigned char  irqEn = 0x00;
- 105   1         unsigned char  waitIRq = 0x00;
- 106   1         unsigned char  lastBits;
- 107   1         unsigned char  n;
- 108   1         unsigned int  i;
- 109   1      
- 110   1        switch (command) {
- 111   2        case PCD_AUTHENT:   //Acknowledging the liver
- 112   2        {
- 113   3          irqEn = 0x12;
- 114   3          waitIRq = 0x10;
- 115   3          break;
- 116   3        }
- 117   2        case PCD_TRANSCEIVE:  // FIFO Data collection
- 118   2        {
- 119   3          irqEn = 0x77;
- 120   3          waitIRq = 0x30;
- 121   3          break;
- 122   3        }
- 123   2        default:
- 124   2          break;
- 125   2        }
- 126   1      
- 127   1        Write_MFRC522(CommIEnReg, irqEn | 0x80);  //Yeu cau ngat
- 128   1        ClearBitMask(CommIrqReg, 0x80);     //Clear all the bits
- 129   1        SetBitMask(FIFOLevelReg, 0x80);     //FlushBuffer=1, FIFO
- 130   1      
- 131   1        Write_MFRC522(CommandReg, PCD_IDLE);//NO action; Huy bo lenh hien hanh  ???
+ 104          {
+ 105   1         unsigned char  status = MI_ERR;
+ 106   1         unsigned char  irqEn = 0x00;
+ 107   1         unsigned char  waitIRq = 0x00;
+ 108   1         unsigned char  lastBits;
+ 109   1         unsigned char  n;
+ 110   1         unsigned int  i;
+ 111   1      
+ 112   1        switch (command) {
+ 113   2        case PCD_AUTHENT:   //Acknowledging the liver
+ 114   2        {
+ 115   3          irqEn = 0x12;
+ 116   3          waitIRq = 0x10;
+ 117   3          break;
+ 118   3        }
+ 119   2        case PCD_TRANSCEIVE:  // FIFO Data collection
+ 120   2        {
+ 121   3          irqEn = 0x77;
+ 122   3          waitIRq = 0x30;
+ 123   3          break;
+ 124   3        }
+ 125   2        default:
+ 126   2          break;
+ 127   2        }
+ 128   1      
+ 129   1        Write_MFRC522(CommIEnReg, irqEn | 0x80);  //Yeu cau ngat
+ 130   1        ClearBitMask(CommIrqReg, 0x80);     //Clear all the bits
+ 131   1        SetBitMask(FIFOLevelReg, 0x80);     //FlushBuffer=1, FIFO
  132   1      
- 133   1        // Record in FIFO
- 134   1        for (i = 0; i < sendLen; i++) {
- 135   2          Write_MFRC522(FIFODataReg, sendData[i]);
- 136   2        }
- 137   1      
- 138   1        //chay
- 139   1        Write_MFRC522(CommandReg, command);
- 140   1        if (command == PCD_TRANSCEIVE) {
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 83  
+ 133   1        Write_MFRC522(CommandReg, PCD_IDLE);//NO action; Huy bo lenh hien hanh  ???
+ 134   1      
+ 135   1        // Record in FIFO
+ 136   1        for (i = 0; i < sendLen; i++) {
+ 137   2          Write_MFRC522(FIFODataReg, sendData[i]);
+ 138   2        }
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 83  
 
- 141   2          SetBitMask(BitFramingReg, 0x80);//StartSend=1,transmiSSion of Data starts  
- 142   2        }
- 143   1      
- 144   1        //The team is allowed to be stored
- 145   1        i = 2000;//i tuy thuoc tan so thach anh, thoi gian toi da cho the M1 la 25ms
- 146   1        do {
- 147   2          //CommIrqReg[7..0]
- 148   2          //Set1 TxIRq RxIRq IdleIRq HiAlerIRq LoAlertIRq ErrIRq TimerIRq
- 149   2          n = Read_MFRC522(CommIrqReg);
- 150   2          i--;
- 151   2        } while ((i != 0) && !(n & 0x01) && !(n & waitIRq));
- 152   1      
- 153   1        ClearBitMask(BitFramingReg, 0x80);      //StartSend=0
+ 139   1      
+ 140   1        //chay
+ 141   1        Write_MFRC522(CommandReg, command);
+ 142   1        if (command == PCD_TRANSCEIVE) {
+ 143   2          SetBitMask(BitFramingReg, 0x80);//StartSend=1,transmiSSion of Data starts  
+ 144   2        }
+ 145   1      
+ 146   1        //The team is allowed to be stored
+ 147   1        i = 2000;//i tuy thuoc tan so thach anh, thoi gian toi da cho the M1 la 25ms
+ 148   1        do {
+ 149   2          //CommIrqReg[7..0]
+ 150   2          //Set1 TxIRq RxIRq IdleIRq HiAlerIRq LoAlertIRq ErrIRq TimerIRq
+ 151   2          n = Read_MFRC522(CommIrqReg);
+ 152   2          i--;
+ 153   2        } while ((i != 0) && !(n & 0x01) && !(n & waitIRq));
  154   1      
- 155   1        if (i != 0) {
- 156   2          if (!(Read_MFRC522(ErrorReg) & 0x1B))//BufferOvfl Collerr CRCErr ProtecolErr
- 157   2          {
- 158   3            status = MI_OK;
- 159   3            if (n & irqEn & 0x01) {
- 160   4              status = MI_NOTAGERR;     //??   
- 161   4            }
- 162   3      
- 163   3            if (command == PCD_TRANSCEIVE) {
- 164   4              n = Read_MFRC522(FIFOLevelReg);
- 165   4              lastBits = Read_MFRC522(ControlReg) & 0x07;
- 166   4              if (lastBits) {
- 167   5                *backLen = (n - 1) * 8 + lastBits;
- 168   5              } else {
- 169   5                *backLen = n * 8;
- 170   5              }
- 171   4      
- 172   4              if (n == 0) {
- 173   5                n = 1;
- 174   5              }
- 175   4              if (n > MAX_LEN) {
- 176   5                n = MAX_LEN;
- 177   5              }
- 178   4      
- 179   4              //FIFO doc in the received Data
- 180   4              for (i = 0; i < n; i++) {
- 181   5                backData[i] = Read_MFRC522(FIFODataReg);
- 182   5              }
- 183   4            }
- 184   3          } else {
- 185   3            status = MI_ERR;
- 186   3          }
- 187   2      
- 188   2        }
- 189   1      
- 190   1        //SetBitMask(ControlReg,0x80);           //timer stops
- 191   1        //Write_MFRC522(CommandReg, PCD_IDLE); 
- 192   1      
- 193   1        return status;
- 194   1      }
- 195          
- 196           unsigned char  MFRC522_Request( unsigned char  reqMode,  unsigned char  *TagType) {
- 197   1         unsigned char  status;
- 198   1         unsigned int  backBits;      //The bits are manipulated
- 199   1      
- 200   1        Write_MFRC522(BitFramingReg, 0x07); //TxLastBists = BitFramingReg[2..0] ???
+ 155   1        ClearBitMask(BitFramingReg, 0x80);      //StartSend=0
+ 156   1      
+ 157   1        if (i != 0) {
+ 158   2          if (!(Read_MFRC522(ErrorReg) & 0x1B))//BufferOvfl Collerr CRCErr ProtecolErr
+ 159   2          {
+ 160   3            status = MI_OK;
+ 161   3            if (n & irqEn & 0x01) {
+ 162   4              status = MI_NOTAGERR;     //??   
+ 163   4            }
+ 164   3      
+ 165   3            if (command == PCD_TRANSCEIVE) {
+ 166   4              n = Read_MFRC522(FIFOLevelReg);
+ 167   4              lastBits = Read_MFRC522(ControlReg) & 0x07;
+ 168   4              if (lastBits) {
+ 169   5                *backLen = (n - 1) * 8 + lastBits;
+ 170   5              } else {
+ 171   5                *backLen = n * 8;
+ 172   5              }
+ 173   4      
+ 174   4              if (n == 0) {
+ 175   5                n = 1;
+ 176   5              }
+ 177   4              if (n > MAX_LEN) {
+ 178   5                n = MAX_LEN;
+ 179   5              }
+ 180   4      
+ 181   4              //FIFO doc in the received Data
+ 182   4              for (i = 0; i < n; i++) {
+ 183   5                backData[i] = Read_MFRC522(FIFODataReg);
+ 184   5              }
+ 185   4            }
+ 186   3          } else {
+ 187   3            status = MI_ERR;
+ 188   3          }
+ 189   2      
+ 190   2        }
+ 191   1      
+ 192   1        //SetBitMask(ControlReg,0x80);           //timer stops
+ 193   1        //Write_MFRC522(CommandReg, PCD_IDLE); 
+ 194   1      
+ 195   1        return status;
+ 196   1      }
+ 197          
+ 198           unsigned char  MFRC522_Request( unsigned char  reqMode,  unsigned char  *TagType) {
+ 199   1         unsigned char  status;
+ 200   1         unsigned int  backBits;      //The bits are manipulated
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 84  
+
  201   1      
- 202   1        TagType[0] = reqMode;
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 84  
-
- 203   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, TagType, 1, TagType, &backBits);
- 204   1      
- 205   1        if ((status != MI_OK) || (backBits != 0x10)) {
- 206   2          status = MI_ERR;
- 207   2        }
- 208   1      
- 209   1        return status;
- 210   1      }
- 211          
- 212           unsigned char  MFRC522_Anticoll( unsigned char  *serNum) {
- 213   1         unsigned char  status;
- 214   1         unsigned char  i;
- 215   1         unsigned char  serNumCheck = 0;
- 216   1         unsigned int  unLen;
- 217   1      
- 218   1        //ClearBitMask(Status2Reg, 0x08);   //TempSensclear
- 219   1        //ClearBitMask(CollReg,0x80);     //ValuesAfterColl
- 220   1        Write_MFRC522(BitFramingReg, 0x00);   //TxLastBists = BitFramingReg[2..0]
- 221   1      
- 222   1        serNum[0] = PICC_ANTICOLL;
- 223   1        serNum[1] = 0x20;
- 224   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, serNum, 2, serNum, &unLen);
- 225   1      
- 226   1        if (status == MI_OK) {
- 227   2          //Check the serial number
- 228   2          for (i = 0; i < 4; i++) {
- 229   3            serNumCheck ^= serNum[i];
- 230   3          }
- 231   2          if (serNumCheck != serNum[i]) {
- 232   3            status = MI_ERR;
- 233   3          }
- 234   2        }
- 235   1      
- 236   1        //SetBitMask(CollReg, 0x80);    //ValuesAfterColl=1
+ 202   1        Write_MFRC522(BitFramingReg, 0x07); //TxLastBists = BitFramingReg[2..0] ???
+ 203   1      
+ 204   1        TagType[0] = reqMode;
+ 205   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, TagType, 1, TagType, &backBits);
+ 206   1      
+ 207   1        if ((status != MI_OK) || (backBits != 0x10)) {
+ 208   2          status = MI_ERR;
+ 209   2        }
+ 210   1      
+ 211   1        return status;
+ 212   1      }
+ 213          
+ 214           unsigned char  MFRC522_Anticoll( unsigned char  *serNum) {
+ 215   1         unsigned char  status;
+ 216   1         unsigned char  i;
+ 217   1         unsigned char  serNumCheck = 0;
+ 218   1         unsigned int  unLen;
+ 219   1      
+ 220   1        //ClearBitMask(Status2Reg, 0x08);   //TempSensclear
+ 221   1        //ClearBitMask(CollReg,0x80);     //ValuesAfterColl
+ 222   1        Write_MFRC522(BitFramingReg, 0x00);   //TxLastBists = BitFramingReg[2..0]
+ 223   1      
+ 224   1        serNum[0] = PICC_ANTICOLL;
+ 225   1        serNum[1] = 0x20;
+ 226   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, serNum, 2, serNum, &unLen);
+ 227   1      
+ 228   1        if (status == MI_OK) {
+ 229   2          //Check the serial number
+ 230   2          for (i = 0; i < 4; i++) {
+ 231   3            serNumCheck ^= serNum[i];
+ 232   3          }
+ 233   2          if (serNumCheck != serNum[i]) {
+ 234   3            status = MI_ERR;
+ 235   3          }
+ 236   2        }
  237   1      
- 238   1        return status;
- 239   1      }
- 240          
- 241          void CalulateCRC( unsigned char  *pInData,  unsigned char  len,  unsigned char  *pOutData) {
- 242   1         unsigned char  i, n;
- 243   1      
- 244   1        ClearBitMask(DivIrqReg, 0x04);      //CRCIrq = 0
- 245   1        SetBitMask(FIFOLevelReg, 0x80);     //Con tro FIFO
- 246   1        //Write_MFRC522(CommandReg, PCD_IDLE);
- 247   1      
- 248   1        //Record in FIFO
- 249   1        for (i = 0; i < len; i++) {
- 250   2          Write_MFRC522(FIFODataReg, *(pInData + i));
- 251   2        }
- 252   1        Write_MFRC522(CommandReg, PCD_CALCCRC);
- 253   1      
- 254   1        // Let the CRC computer complete
- 255   1        i = 0xFF;
- 256   1        do {
- 257   2          n = Read_MFRC522(DivIrqReg);
- 258   2          i--;
- 259   2        } while ((i != 0) && !(n & 0x04));      //CRCIrq = 1
- 260   1      
- 261   1        //Doc results in CRC calculation
- 262   1        pOutData[0] = Read_MFRC522(CRCResultRegL);
- 263   1        pOutData[1] = Read_MFRC522(CRCResultRegM);
- 264   1      }
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 85  
+ 238   1        //SetBitMask(CollReg, 0x80);    //ValuesAfterColl=1
+ 239   1      
+ 240   1        return status;
+ 241   1      }
+ 242          
+ 243          void CalulateCRC( unsigned char  *pInData,  unsigned char  len,  unsigned char  *pOutData) {
+ 244   1         unsigned char  i, n;
+ 245   1      
+ 246   1        ClearBitMask(DivIrqReg, 0x04);      //CRCIrq = 0
+ 247   1        SetBitMask(FIFOLevelReg, 0x80);     //Con tro FIFO
+ 248   1        //Write_MFRC522(CommandReg, PCD_IDLE);
+ 249   1      
+ 250   1        //Record in FIFO
+ 251   1        for (i = 0; i < len; i++) {
+ 252   2          Write_MFRC522(FIFODataReg, *(pInData + i));
+ 253   2        }
+ 254   1        Write_MFRC522(CommandReg, PCD_CALCCRC);
+ 255   1      
+ 256   1        // Let the CRC computer complete
+ 257   1        i = 0xFF;
+ 258   1        do {
+ 259   2          n = Read_MFRC522(DivIrqReg);
+ 260   2          i--;
+ 261   2        } while ((i != 0) && !(n & 0x04));      //CRCIrq = 1
+ 262   1      
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 85  
 
- 265          
- 266           unsigned char  MFRC522_SelectTag( unsigned char  *serNum) {
- 267   1         unsigned char  i;
- 268   1         unsigned char  status;
- 269   1         unsigned char  size;
- 270   1         unsigned int  recvBits;
- 271   1         unsigned char  buffer[9];
- 272   1      
- 273   1        //ClearBitMask(Status2Reg, 0x08);     //MFCrypto1On=0
+ 263   1        //Doc results in CRC calculation
+ 264   1        pOutData[0] = Read_MFRC522(CRCResultRegL);
+ 265   1        pOutData[1] = Read_MFRC522(CRCResultRegM);
+ 266   1      }
+ 267          
+ 268           unsigned char  MFRC522_SelectTag( unsigned char  *serNum) {
+ 269   1         unsigned char  i;
+ 270   1         unsigned char  status;
+ 271   1         unsigned char  size;
+ 272   1         unsigned int  recvBits;
+ 273   1         unsigned char  buffer[9];
  274   1      
- 275   1        buffer[0] = PICC_SElECTTAG;
- 276   1        buffer[1] = 0x70;
- 277   1        for (i = 0; i < 5; i++) {
- 278   2          buffer[i + 2] = *(serNum + i);
- 279   2        }
- 280   1        CalulateCRC(buffer, 7, &buffer[7]);   //??
- 281   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, buffer, 9, buffer, &recvBits);
- 282   1      
- 283   1        if ((status == MI_OK) && (recvBits == 0x18)) {
- 284   2          size = buffer[0];
- 285   2        } else {
- 286   2          size = 0;
- 287   2        }
- 288   1      
- 289   1        return size;
- 290   1      }
- 291          
- 292           unsigned char  MFRC522_Auth( unsigned char  authMode,  unsigned char  BlockAddr,  unsigned char  *Sectork
+ 275   1        //ClearBitMask(Status2Reg, 0x08);     //MFCrypto1On=0
+ 276   1      
+ 277   1        buffer[0] = PICC_SElECTTAG;
+ 278   1        buffer[1] = 0x70;
+ 279   1        for (i = 0; i < 5; i++) {
+ 280   2          buffer[i + 2] = *(serNum + i);
+ 281   2        }
+ 282   1        CalulateCRC(buffer, 7, &buffer[7]);   //??
+ 283   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, buffer, 9, buffer, &recvBits);
+ 284   1      
+ 285   1        if ((status == MI_OK) && (recvBits == 0x18)) {
+ 286   2          size = buffer[0];
+ 287   2        } else {
+ 288   2          size = 0;
+ 289   2        }
+ 290   1      
+ 291   1        return size;
+ 292   1      }
+ 293          
+ 294           unsigned char  MFRC522_Auth( unsigned char  authMode,  unsigned char  BlockAddr,  unsigned char  *Sectork
              -ey,
- 293             unsigned char  *serNum) {
- 294   1         unsigned char  status;
- 295   1         unsigned int  recvBits;
- 296   1         unsigned char  i;
- 297   1         unsigned char  buff[12];
- 298   1      
- 299   1        //Confirmation + AddreSS + paSSword + quick number
- 300   1        buff[0] = authMode;
- 301   1        buff[1] = BlockAddr;
- 302   1        for (i = 0; i < 6; i++) {
- 303   2          buff[i + 2] = *(Sectorkey + i);
- 304   2        }
- 305   1        for (i = 0; i < 4; i++) {
- 306   2          buff[i + 8] = *(serNum + i);
- 307   2        }
- 308   1        status = MFRC522_ToCard(PCD_AUTHENT, buff, 12, buff, &recvBits);
- 309   1      
- 310   1        if ((status != MI_OK) || (!(Read_MFRC522(Status2Reg) & 0x08))) {
- 311   2          status = MI_ERR;
- 312   2        }
- 313   1      
- 314   1        return status;
- 315   1      }
- 316          
- 317           unsigned char  MFRC522_Read( unsigned char  blockAddr,  unsigned char  *recvData) {
- 318   1         unsigned char  status;
- 319   1         unsigned int  unLen;
- 320   1      
- 321   1        recvData[0] = PICC_READ;
- 322   1        recvData[1] = blockAddr;
- 323   1        CalulateCRC(recvData, 2, &recvData[2]);
- 324   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, recvData, 4, recvData, &unLen);
- 325   1      
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 86  
+ 295             unsigned char  *serNum) {
+ 296   1         unsigned char  status;
+ 297   1         unsigned int  recvBits;
+ 298   1         unsigned char  i;
+ 299   1         unsigned char  buff[12];
+ 300   1      
+ 301   1        //Confirmation + AddreSS + paSSword + quick number
+ 302   1        buff[0] = authMode;
+ 303   1        buff[1] = BlockAddr;
+ 304   1        for (i = 0; i < 6; i++) {
+ 305   2          buff[i + 2] = *(Sectorkey + i);
+ 306   2        }
+ 307   1        for (i = 0; i < 4; i++) {
+ 308   2          buff[i + 8] = *(serNum + i);
+ 309   2        }
+ 310   1        status = MFRC522_ToCard(PCD_AUTHENT, buff, 12, buff, &recvBits);
+ 311   1      
+ 312   1        if ((status != MI_OK) || (!(Read_MFRC522(Status2Reg) & 0x08))) {
+ 313   2          status = MI_ERR;
+ 314   2        }
+ 315   1      
+ 316   1        return status;
+ 317   1      }
+ 318          
+ 319           unsigned char  MFRC522_Read( unsigned char  blockAddr,  unsigned char  *recvData) {
+ 320   1         unsigned char  status;
+ 321   1         unsigned int  unLen;
+ 322   1      
+ 323   1        recvData[0] = PICC_READ;
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 86  
 
- 326   1        if ((status != MI_OK) || (unLen != 0x90)) {
- 327   2          status = MI_ERR;
- 328   2        }
- 329   1      
- 330   1        return status;
- 331   1      }
- 332          
- 333           unsigned char  MFRC522_Write( unsigned char  blockAddr,  unsigned char  *writeData) {
- 334   1         unsigned char  status;
- 335   1         unsigned int  recvBits;
- 336   1         unsigned char  i;
- 337   1         unsigned char  buff[18];
- 338   1      
- 339   1        buff[0] = PICC_WRITE;
- 340   1        buff[1] = blockAddr;
- 341   1        CalulateCRC(buff, 2, &buff[2]);
- 342   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &recvBits);
- 343   1      
- 344   1        if ((status != MI_OK) || (recvBits != 4) || ((buff[0] & 0x0F) != 0x0A)) {
- 345   2          status = MI_ERR;
- 346   2        }
- 347   1      
- 348   1        if (status == MI_OK) {
- 349   2          for (i = 0; i < 16; i++)    //16 FIFO bytes recorded
- 350   2              {
- 351   3            buff[i] = *(writeData + i);
- 352   3          }
- 353   2          CalulateCRC(buff, 16, &buff[16]);
- 354   2          status = MFRC522_ToCard(PCD_TRANSCEIVE, buff, 18, buff, &recvBits);
- 355   2      
- 356   2          if ((status != MI_OK) || (recvBits != 4)
- 357   2              || ((buff[0] & 0x0F) != 0x0A)) {
- 358   3            status = MI_ERR;
- 359   3          }
- 360   2        }
- 361   1      
- 362   1        return status;
- 363   1      }
- 364          
- 365          void MFRC522_Halt(void) {
- 366   1         unsigned int  unLen;
- 367   1         unsigned char  buff[4];
- 368   1      
- 369   1        buff[0] = PICC_HALT;
- 370   1        buff[1] = 0;
- 371   1        CalulateCRC(buff, 2, &buff[2]);
- 372   1      
- 373   1        MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &unLen);
- 374   1      }
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 87  
+ 324   1        recvData[1] = blockAddr;
+ 325   1        CalulateCRC(recvData, 2, &recvData[2]);
+ 326   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, recvData, 4, recvData, &unLen);
+ 327   1      
+ 328   1        if ((status != MI_OK) || (unLen != 0x90)) {
+ 329   2          status = MI_ERR;
+ 330   2        }
+ 331   1      
+ 332   1        return status;
+ 333   1      }
+ 334          
+ 335           unsigned char  MFRC522_Write( unsigned char  blockAddr,  unsigned char  *writeData) {
+ 336   1         unsigned char  status;
+ 337   1         unsigned int  recvBits;
+ 338   1         unsigned char  i;
+ 339   1         unsigned char  buff[18];
+ 340   1      
+ 341   1        buff[0] = PICC_WRITE;
+ 342   1        buff[1] = blockAddr;
+ 343   1        CalulateCRC(buff, 2, &buff[2]);
+ 344   1        status = MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &recvBits);
+ 345   1      
+ 346   1        if ((status != MI_OK) || (recvBits != 4) || ((buff[0] & 0x0F) != 0x0A)) {
+ 347   2          status = MI_ERR;
+ 348   2        }
+ 349   1      
+ 350   1        if (status == MI_OK) {
+ 351   2          for (i = 0; i < 16; i++)    //16 FIFO bytes recorded
+ 352   2              {
+ 353   3            buff[i] = *(writeData + i);
+ 354   3          }
+ 355   2          CalulateCRC(buff, 16, &buff[16]);
+ 356   2          status = MFRC522_ToCard(PCD_TRANSCEIVE, buff, 18, buff, &recvBits);
+ 357   2      
+ 358   2          if ((status != MI_OK) || (recvBits != 4)
+ 359   2              || ((buff[0] & 0x0F) != 0x0A)) {
+ 360   3            status = MI_ERR;
+ 361   3          }
+ 362   2        }
+ 363   1      
+ 364   1        return status;
+ 365   1      }
+ 366          
+ 367          void MFRC522_Halt(void) {
+ 368   1         unsigned int  unLen;
+ 369   1         unsigned char  buff[4];
+ 370   1      
+ 371   1        buff[0] = PICC_HALT;
+ 372   1        buff[1] = 0;
+ 373   1        CalulateCRC(buff, 2, &buff[2]);
+ 374   1      
+ 375   1        MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &unLen);
+ 376   1      }
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 87  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION _RC522_SPI_Transfer (BEGIN)
-                                           ; SOURCE LINE # 8
-;---- Variable 'Data' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 9
-                                           ; SOURCE LINE # 12
-0000 120000      E     LCALL   _SPI_Tx
-                                           ; SOURCE LINE # 14
-0003 900000      R     MOV     DPTR,#rx_Data
-0006 E0                MOVX    A,@DPTR
-0007 FF                MOV     R7,A
-0008 120000      E     LCALL   _SPI_Rx
-000B 900000      R     MOV     DPTR,#rx_Data
-000E EF                MOV     A,R7
-000F F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 16
-                                           ; SOURCE LINE # 17
-0010 22                RET     
-             ; FUNCTION _RC522_SPI_Transfer (END)
-
-             ; FUNCTION L?0094 (BEGIN)
+             ; FUNCTION L?0093 (BEGIN)
 0000 120000      E     LCALL   ?C?CLDOPTR
 0003 FD                MOV     R5,A
 0004 7F09              MOV     R7,#09H
              ; FUNCTION _Write_MFRC522 (BEGIN)
-                                           ; SOURCE LINE # 19
+                                           ; SOURCE LINE # 20
 0006 900000      R     MOV     DPTR,#val
 0009 ED                MOV     A,R5
 000A F0                MOVX    @DPTR,A
 ;---- Variable 'addr' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 21
+                                           ; SOURCE LINE # 22
 000B C295              CLR     P15
-                                           ; SOURCE LINE # 23
+                                           ; SOURCE LINE # 24
 000D EF                MOV     A,R7
 000E 25E0              ADD     A,ACC
 0010 547E              ANL     A,#07EH
 0012 FF                MOV     R7,A
-0013 120000      R     LCALL   _RC522_SPI_Transfer
-                                           ; SOURCE LINE # 24
+0013 120000      E     LCALL   _SPI_Tx
+                                           ; SOURCE LINE # 25
 0016 900000      R     MOV     DPTR,#val
 0019 E0                MOVX    A,@DPTR
 001A FF                MOV     R7,A
-001B 120000      R     LCALL   _RC522_SPI_Transfer
-                                           ; SOURCE LINE # 27
-001E D295              SETB    P15
+001B 120000      E     LCALL   _SPI_Tx
                                            ; SOURCE LINE # 28
+001E D295              SETB    P15
+                                           ; SOURCE LINE # 29
 0020 22                RET     
              ; FUNCTION _Write_MFRC522 (END)
 
              ; FUNCTION _Read_MFRC522 (BEGIN)
-                                           ; SOURCE LINE # 30
+                                           ; SOURCE LINE # 31
 ;---- Variable 'addr' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 34
+                                           ; SOURCE LINE # 35
 0000 C295              CLR     P15
-                                           ; SOURCE LINE # 37
+                                           ; SOURCE LINE # 38
 0002 EF                MOV     A,R7
 0003 25E0              ADD     A,ACC
 0005 547E              ANL     A,#07EH
 0007 4480              ORL     A,#080H
 0009 FF                MOV     R7,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 88  
-
-000A 120000      R     LCALL   _RC522_SPI_Transfer
-                                           ; SOURCE LINE # 38
-000D E4                CLR     A
-000E FF                MOV     R7,A
-000F 120000      R     LCALL   _RC522_SPI_Transfer
-;---- Variable 'val' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 41
-0012 D295              SETB    P15
+000A 120000      E     LCALL   _SPI_Tx
+                                           ; SOURCE LINE # 39
+000D 900000      R     MOV     DPTR,#val
+0010 E0                MOVX    A,@DPTR
+0011 FF                MOV     R7,A
+0012 120000      E     LCALL   _SPI_Rx
+0015 900000      R     MOV     DPTR,#val
+0018 EF                MOV     A,R7
+0019 F0                MOVX    @DPTR,A
                                            ; SOURCE LINE # 42
-                                           ; SOURCE LINE # 44
-0014 22                RET     
+001A D295              SETB    P15
+                                           ; SOURCE LINE # 43
+                                           ; SOURCE LINE # 45
+001C 22                RET     
              ; FUNCTION _Read_MFRC522 (END)
 
              ; FUNCTION _SetBitMask (BEGIN)
-                                           ; SOURCE LINE # 46
+                                           ; SOURCE LINE # 47
 0000 900000      R     MOV     DPTR,#mask
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 88  
+
 0003 ED                MOV     A,R5
 0004 F0                MOVX    @DPTR,A
 0005 900000      R     MOV     DPTR,#reg
 0008 EF                MOV     A,R7
 0009 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 48
+                                           ; SOURCE LINE # 49
 000A 120000      R     LCALL   _Read_MFRC522
 ;---- Variable 'tmp' assigned to Register 'R6' ----
 000D AE07              MOV     R6,AR7
-                                           ; SOURCE LINE # 49
+                                           ; SOURCE LINE # 50
 000F 900000      R     MOV     DPTR,#reg
 0012 E0                MOVX    A,@DPTR
 0013 FF                MOV     R7,A
@@ -5592,18 +5580,18 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _SetBitMask (END)
 
              ; FUNCTION _ClearBitMask (BEGIN)
-                                           ; SOURCE LINE # 52
+                                           ; SOURCE LINE # 53
 0000 900000      R     MOV     DPTR,#mask
 0003 ED                MOV     A,R5
 0004 F0                MOVX    @DPTR,A
 0005 900000      R     MOV     DPTR,#reg
 0008 EF                MOV     A,R7
 0009 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 54
+                                           ; SOURCE LINE # 55
 000A 120000      R     LCALL   _Read_MFRC522
 ;---- Variable 'tmp' assigned to Register 'R6' ----
 000D AE07              MOV     R6,AR7
-                                           ; SOURCE LINE # 55
+                                           ; SOURCE LINE # 56
 000F 900000      R     MOV     DPTR,#reg
 0012 E0                MOVX    A,@DPTR
 0013 FF                MOV     R7,A
@@ -5616,74 +5604,78 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _ClearBitMask (END)
 
              ; FUNCTION AntennaOn (BEGIN)
-                                           ; SOURCE LINE # 58
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 89  
-
-                                           ; SOURCE LINE # 60
+                                           ; SOURCE LINE # 59
+                                           ; SOURCE LINE # 61
 0000 7F14              MOV     R7,#014H
 0002 120000      R     LCALL   _Read_MFRC522
-                                           ; SOURCE LINE # 62
+                                           ; SOURCE LINE # 63
 0005 7D03              MOV     R5,#03H
 0007 7F14              MOV     R7,#014H
-0009 020000      R     LJMP    _SetBitMask
+0009 120000      R     LCALL   _SetBitMask
+                                           ; SOURCE LINE # 65
+000C 7F37              MOV     R7,#037H
+000E 020000      R     LJMP    _Read_MFRC522
              ; FUNCTION AntennaOn (END)
 
              ; FUNCTION AntennaOff (BEGIN)
-                                           ; SOURCE LINE # 65
-                                           ; SOURCE LINE # 66
+                                           ; SOURCE LINE # 68
+                                           ; SOURCE LINE # 69
 0000 7D03              MOV     R5,#03H
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 89  
+
 0002 7F14              MOV     R7,#014H
 0004 020000      R     LJMP    _ClearBitMask
              ; FUNCTION AntennaOff (END)
 
              ; FUNCTION MFRC522_Reset (BEGIN)
-                                           ; SOURCE LINE # 69
-                                           ; SOURCE LINE # 70
+                                           ; SOURCE LINE # 72
+                                           ; SOURCE LINE # 73
 0000 7D0F              MOV     R5,#0FH
 0002 7F01              MOV     R7,#01H
 0004 020000      R     LJMP    _Write_MFRC522
              ; FUNCTION MFRC522_Reset (END)
 
              ; FUNCTION MFRC522_Init (BEGIN)
-                                           ; SOURCE LINE # 73
                                            ; SOURCE LINE # 76
+                                           ; SOURCE LINE # 79
 0000 C295              CLR     P15
-                                           ; SOURCE LINE # 77
+                                           ; SOURCE LINE # 80
 0002 D297              SETB    P17
-                                           ; SOURCE LINE # 83
+                                           ; SOURCE LINE # 85
 0004 120000      R     LCALL   MFRC522_Reset
-                                           ; SOURCE LINE # 86
+                                           ; SOURCE LINE # 88
 0007 7D8D              MOV     R5,#08DH
 0009 7F2A              MOV     R7,#02AH
 000B 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 87
+                                           ; SOURCE LINE # 89
 000E 7D3E              MOV     R5,#03EH
 0010 7F2B              MOV     R7,#02BH
 0012 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 88
+                                           ; SOURCE LINE # 90
 0015 7D1E              MOV     R5,#01EH
 0017 7F2D              MOV     R7,#02DH
 0019 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 89
+                                           ; SOURCE LINE # 91
 001C E4                CLR     A
 001D FD                MOV     R5,A
 001E 7F2C              MOV     R7,#02CH
 0020 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 91
+                                           ; SOURCE LINE # 93
 0023 7D40              MOV     R5,#040H
 0025 7F15              MOV     R7,#015H
 0027 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 92
+                                           ; SOURCE LINE # 94
 002A 7D3D              MOV     R5,#03DH
 002C 7F11              MOV     R7,#011H
 002E 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 98
-0031 020000      R     LJMP    AntennaOn
+                                           ; SOURCE LINE # 99
+0031 7F37              MOV     R7,#037H
+0033 120000      R     LCALL   _Read_MFRC522
+                                           ; SOURCE LINE # 100
+0036 020000      R     LJMP    AntennaOn
              ; FUNCTION MFRC522_Init (END)
 
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 90  
-
-             ; FUNCTION L?0092 (BEGIN)
+             ; FUNCTION L?0091 (BEGIN)
 0000 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 0003 F0                MOVX    @DPTR,A
 0004 A3                INC     DPTR
@@ -5693,6 +5685,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0009 7400        R     MOV     A,#HIGH buff
 000B F0                MOVX    @DPTR,A
 000C A3                INC     DPTR
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 90  
+
 000D 7400        R     MOV     A,#LOW buff
 000F F0                MOVX    @DPTR,A
 0010 A3                INC     DPTR
@@ -5706,11 +5700,11 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001B F0                MOVX    @DPTR,A
 001C 7A00        R     MOV     R2,#HIGH buff
 001E 7900        R     MOV     R1,#LOW buff
-0020         L?0093:
+0020         L?0092:
 0020 7B01              MOV     R3,#01H
 0022 7F0C              MOV     R7,#0CH
              ; FUNCTION _MFRC522_ToCard (BEGIN)
-                                           ; SOURCE LINE # 101
+                                           ; SOURCE LINE # 103
 0024 900000      R     MOV     DPTR,#sendData
 0027 EB                MOV     A,R3
 0028 F0                MOVX    @DPTR,A
@@ -5723,84 +5717,84 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002F 900000      R     MOV     DPTR,#command
 0032 EF                MOV     A,R7
 0033 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 102
-                                           ; SOURCE LINE # 103
+                                           ; SOURCE LINE # 104
+                                           ; SOURCE LINE # 105
 0034 900000      R     MOV     DPTR,#status
 0037 7402              MOV     A,#02H
 0039 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 104
+                                           ; SOURCE LINE # 106
 003A E4                CLR     A
 003B A3                INC     DPTR
 003C F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 105
+                                           ; SOURCE LINE # 107
 003D A3                INC     DPTR
 003E F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 110
+                                           ; SOURCE LINE # 112
 003F EF                MOV     A,R7
 0040 24F4              ADD     A,#0F4H
-0042 6010              JZ      ?C0012
+0042 6010              JZ      ?C0011
 0044 24FE              ADD     A,#0FEH
-0046 7016              JNZ     ?C0010
-                                           ; SOURCE LINE # 111
-0048         ?C0011:
-                                           ; SOURCE LINE # 112
+0046 7016              JNZ     ?C0009
                                            ; SOURCE LINE # 113
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 91  
-
+0048         ?C0010:
+                                           ; SOURCE LINE # 114
+                                           ; SOURCE LINE # 115
 0048 900000      R     MOV     DPTR,#irqEn
 004B 7412              MOV     A,#012H
 004D F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 114
+                                           ; SOURCE LINE # 116
 004E A3                INC     DPTR
 004F 7410              MOV     A,#010H
 0051 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 115
-0052 800A              SJMP    ?C0010
-                                           ; SOURCE LINE # 116
                                            ; SOURCE LINE # 117
-0054         ?C0012:
+0052 800A              SJMP    ?C0009
                                            ; SOURCE LINE # 118
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 91  
+
                                            ; SOURCE LINE # 119
+0054         ?C0011:
+                                           ; SOURCE LINE # 120
+                                           ; SOURCE LINE # 121
 0054 900000      R     MOV     DPTR,#irqEn
 0057 7477              MOV     A,#077H
 0059 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 120
+                                           ; SOURCE LINE # 122
 005A A3                INC     DPTR
 005B 7430              MOV     A,#030H
 005D F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 121
-                                           ; SOURCE LINE # 122
                                            ; SOURCE LINE # 123
                                            ; SOURCE LINE # 124
                                            ; SOURCE LINE # 125
-005E         ?C0010:
+                                           ; SOURCE LINE # 126
                                            ; SOURCE LINE # 127
+005E         ?C0009:
+                                           ; SOURCE LINE # 129
 005E 900000      R     MOV     DPTR,#irqEn
 0061 E0                MOVX    A,@DPTR
 0062 4480              ORL     A,#080H
 0064 FD                MOV     R5,A
 0065 7F02              MOV     R7,#02H
 0067 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 128
+                                           ; SOURCE LINE # 130
 006A 7D80              MOV     R5,#080H
 006C 7F04              MOV     R7,#04H
 006E 120000      R     LCALL   _ClearBitMask
-                                           ; SOURCE LINE # 129
+                                           ; SOURCE LINE # 131
 0071 7D80              MOV     R5,#080H
 0073 7F0A              MOV     R7,#0AH
 0075 120000      R     LCALL   _SetBitMask
-                                           ; SOURCE LINE # 131
+                                           ; SOURCE LINE # 133
 0078 E4                CLR     A
 0079 FD                MOV     R5,A
 007A 7F01              MOV     R7,#01H
 007C 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 134
+                                           ; SOURCE LINE # 136
 007F E4                CLR     A
 0080 900000      R     MOV     DPTR,#i
 0083 F0                MOVX    @DPTR,A
 0084 A3                INC     DPTR
 0085 F0                MOVX    @DPTR,A
-0086         ?C0014:
+0086         ?C0013:
 0086 900000      R     MOV     DPTR,#sendLen
 0089 E0                MOVX    A,@DPTR
 008A FF                MOV     R7,A
@@ -5809,18 +5803,18 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 008F FC                MOV     R4,A
 0090 A3                INC     DPTR
 0091 E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 92  
-
 0092 FD                MOV     R5,A
 0093 C3                CLR     C
 0094 9F                SUBB    A,R7
 0095 EC                MOV     A,R4
 0096 9400              SUBB    A,#00H
-0098 5022              JNC     ?C0015
-                                           ; SOURCE LINE # 135
+0098 5022              JNC     ?C0014
+                                           ; SOURCE LINE # 137
 009A 900000      R     MOV     DPTR,#sendData
 009D E0                MOVX    A,@DPTR
 009E FB                MOV     R3,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 92  
+
 009F A3                INC     DPTR
 00A0 E0                MOVX    A,@DPTR
 00A1 FA                MOV     R2,A
@@ -5829,54 +5823,52 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00A4 F9                MOV     R1,A
 00A5 8D82              MOV     DPL,R5
 00A7 8C83              MOV     DPH,R4
-00A9 120000      R     LCALL   L?0094
-                                           ; SOURCE LINE # 136
+00A9 120000      R     LCALL   L?0093
+                                           ; SOURCE LINE # 138
 00AC 900000      R     MOV     DPTR,#i+01H
 00AF E0                MOVX    A,@DPTR
 00B0 04                INC     A
 00B1 F0                MOVX    @DPTR,A
-00B2 70D2              JNZ     ?C0014
+00B2 70D2              JNZ     ?C0013
 00B4 900000      R     MOV     DPTR,#i
 00B7 E0                MOVX    A,@DPTR
 00B8 04                INC     A
 00B9 F0                MOVX    @DPTR,A
-00BA         ?C0080:
-00BA 80CA              SJMP    ?C0014
-00BC         ?C0015:
-                                           ; SOURCE LINE # 139
+00BA         ?C0079:
+00BA 80CA              SJMP    ?C0013
+00BC         ?C0014:
+                                           ; SOURCE LINE # 141
 00BC 900000      R     MOV     DPTR,#command
 00BF E0                MOVX    A,@DPTR
 00C0 FD                MOV     R5,A
 00C1 7F01              MOV     R7,#01H
 00C3 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 140
+                                           ; SOURCE LINE # 142
 00C6 900000      R     MOV     DPTR,#command
 00C9 E0                MOVX    A,@DPTR
-00CA B40C07            CJNE    A,#0CH,?C0017
-                                           ; SOURCE LINE # 141
+00CA B40C07            CJNE    A,#0CH,?C0016
+                                           ; SOURCE LINE # 143
 00CD 7D80              MOV     R5,#080H
 00CF 7F0D              MOV     R7,#0DH
 00D1 120000      R     LCALL   _SetBitMask
-                                           ; SOURCE LINE # 142
-00D4         ?C0017:
-                                           ; SOURCE LINE # 145
+                                           ; SOURCE LINE # 144
+00D4         ?C0016:
+                                           ; SOURCE LINE # 147
 00D4 900000      R     MOV     DPTR,#i
 00D7 7407              MOV     A,#07H
 00D9 F0                MOVX    @DPTR,A
 00DA A3                INC     DPTR
 00DB 74D0              MOV     A,#0D0H
 00DD F0                MOVX    @DPTR,A
-00DE         ?C0020:
-                                           ; SOURCE LINE # 146
-                                           ; SOURCE LINE # 149
+00DE         ?C0019:
+                                           ; SOURCE LINE # 148
+                                           ; SOURCE LINE # 151
 00DE 7F04              MOV     R7,#04H
 00E0 120000      R     LCALL   _Read_MFRC522
 00E3 900000      R     MOV     DPTR,#n
 00E6 EF                MOV     A,R7
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 93  
-
 00E7 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 150
+                                           ; SOURCE LINE # 152
 00E8 900000      R     MOV     DPTR,#i+01H
 00EB E0                MOVX    A,@DPTR
 00EC 24FF              ADD     A,#0FFH
@@ -5885,86 +5877,88 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00F2 E0                MOVX    A,@DPTR
 00F3 34FF              ADDC    A,#0FFH
 00F5 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 151
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 93  
+
+                                           ; SOURCE LINE # 153
 00F6 E0                MOVX    A,@DPTR
-00F7 7002              JNZ     ?C0081
+00F7 7002              JNZ     ?C0080
 00F9 A3                INC     DPTR
 00FA E0                MOVX    A,@DPTR
-00FB         ?C0081:
-00FB 6011              JZ      ?C0019
+00FB         ?C0080:
+00FB 6011              JZ      ?C0018
 00FD 900000      R     MOV     DPTR,#n
 0100 E0                MOVX    A,@DPTR
 0101 FF                MOV     R7,A
-0102 20E009            JB      ACC.0,?C0019
+0102 20E009            JB      ACC.0,?C0018
 0105 900000      R     MOV     DPTR,#waitIRq
 0108 E0                MOVX    A,@DPTR
 0109 FE                MOV     R6,A
 010A EF                MOV     A,R7
 010B 5E                ANL     A,R6
-010C 60D0              JZ      ?C0020
-010E         ?C0019:
-                                           ; SOURCE LINE # 153
+010C 60D0              JZ      ?C0019
+010E         ?C0018:
+                                           ; SOURCE LINE # 155
 010E 7D80              MOV     R5,#080H
 0110 7F0D              MOV     R7,#0DH
 0112 120000      R     LCALL   _ClearBitMask
-                                           ; SOURCE LINE # 155
+                                           ; SOURCE LINE # 157
 0115 900000      R     MOV     DPTR,#i
 0118 E0                MOVX    A,@DPTR
-0119 7002              JNZ     ?C0082
+0119 7002              JNZ     ?C0081
 011B A3                INC     DPTR
 011C E0                MOVX    A,@DPTR
-011D         ?C0082:
+011D         ?C0081:
 011D 7003              JNZ     $ + 5H
-011F 020000      R     LJMP    ?C0022
-                                           ; SOURCE LINE # 156
+011F 020000      R     LJMP    ?C0021
+                                           ; SOURCE LINE # 158
 0122 7F06              MOV     R7,#06H
 0124 120000      R     LCALL   _Read_MFRC522
 0127 EF                MOV     A,R7
 0128 541B              ANL     A,#01BH
 012A 6003              JZ      $ + 5H
-012C 020000      R     LJMP    ?C0023
-                                           ; SOURCE LINE # 157
-                                           ; SOURCE LINE # 158
+012C 020000      R     LJMP    ?C0022
+                                           ; SOURCE LINE # 159
+                                           ; SOURCE LINE # 160
 012F 900000      R     MOV     DPTR,#status
 0132 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 159
+                                           ; SOURCE LINE # 161
 0133 A3                INC     DPTR
 0134 E0                MOVX    A,@DPTR
 0135 FF                MOV     R7,A
 0136 900000      R     MOV     DPTR,#n
 0139 E0                MOVX    A,@DPTR
 013A 5F                ANL     A,R7
-013B 30E006            JNB     ACC.0,?C0024
-                                           ; SOURCE LINE # 160
+013B 30E006            JNB     ACC.0,?C0023
+                                           ; SOURCE LINE # 162
 013E 900000      R     MOV     DPTR,#status
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 94  
-
 0141 7401              MOV     A,#01H
 0143 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 161
-0144         ?C0024:
                                            ; SOURCE LINE # 163
+0144         ?C0023:
+                                           ; SOURCE LINE # 165
 0144 900000      R     MOV     DPTR,#command
 0147 E0                MOVX    A,@DPTR
 0148 640C              XRL     A,#0CH
 014A 6003              JZ      $ + 5H
-014C 020000      R     LJMP    ?C0022
-                                           ; SOURCE LINE # 164
+014C 020000      R     LJMP    ?C0021
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 94  
+
+                                           ; SOURCE LINE # 166
 014F 7F0A              MOV     R7,#0AH
 0151 120000      R     LCALL   _Read_MFRC522
 0154 900000      R     MOV     DPTR,#n
 0157 EF                MOV     A,R7
 0158 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 165
+                                           ; SOURCE LINE # 167
 0159 7F0C              MOV     R7,#0CH
 015B 120000      R     LCALL   _Read_MFRC522
 015E EF                MOV     A,R7
 015F 5407              ANL     A,#07H
 ;---- Variable 'lastBits' assigned to Register 'R5' ----
 0161 FD                MOV     R5,A
-                                           ; SOURCE LINE # 166
-0162 6029              JZ      ?C0026
-                                           ; SOURCE LINE # 167
+                                           ; SOURCE LINE # 168
+0162 6029              JZ      ?C0025
+                                           ; SOURCE LINE # 169
 0164 900000      R     MOV     DPTR,#n
 0167 E0                MOVX    A,@DPTR
 0168 24FF              ADD     A,#0FFH
@@ -5974,13 +5968,13 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 016E FE                MOV     R6,A
 016F EF                MOV     A,R7
 0170 7803              MOV     R0,#03H
-0172         ?C0083:
+0172         ?C0082:
 0172 C3                CLR     C
 0173 33                RLC     A
 0174 CE                XCH     A,R6
 0175 33                RLC     A
 0176 CE                XCH     A,R6
-0177 D8F9              DJNZ    R0,?C0083
+0177 D8F9              DJNZ    R0,?C0082
 0179 7C00              MOV     R4,#00H
 017B 2D                ADD     A,R5
 017C FF                MOV     R7,A
@@ -5996,13 +5990,11 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0188 A3                INC     DPTR
 0189 E0                MOVX    A,@DPTR
 018A C9                XCH     A,R1
-                                           ; SOURCE LINE # 168
-018B 8016              SJMP    ?C0090
-018D         ?C0026:
-                                           ; SOURCE LINE # 169
+                                           ; SOURCE LINE # 170
+018B 8016              SJMP    ?C0089
+018D         ?C0025:
+                                           ; SOURCE LINE # 171
 018D 900000      R     MOV     DPTR,#n
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 95  
-
 0190 E0                MOVX    A,@DPTR
 0191 75F008            MOV     B,#08H
 0194 A4                MUL     AB
@@ -6013,42 +6005,44 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 019B A3                INC     DPTR
 019C E0                MOVX    A,@DPTR
 019D FA                MOV     R2,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 95  
+
 019E A3                INC     DPTR
 019F E0                MOVX    A,@DPTR
 01A0 F9                MOV     R1,A
 01A1 E5F0              MOV     A,B
-01A3         ?C0090:
+01A3         ?C0089:
 01A3 8FF0              MOV     B,R7
 01A5 120000      E     LCALL   ?C?ISTPTR
-                                           ; SOURCE LINE # 170
-01A8         ?C0027:
                                            ; SOURCE LINE # 172
+01A8         ?C0026:
+                                           ; SOURCE LINE # 174
 01A8 900000      R     MOV     DPTR,#n
 01AB E0                MOVX    A,@DPTR
-01AC 7002              JNZ     ?C0028
-                                           ; SOURCE LINE # 173
+01AC 7002              JNZ     ?C0027
+                                           ; SOURCE LINE # 175
 01AE 04                INC     A
 01AF F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 174
-01B0         ?C0028:
-                                           ; SOURCE LINE # 175
+                                           ; SOURCE LINE # 176
+01B0         ?C0027:
+                                           ; SOURCE LINE # 177
 01B0 900000      R     MOV     DPTR,#n
 01B3 E0                MOVX    A,@DPTR
 01B4 D3                SETB    C
 01B5 9410              SUBB    A,#010H
-01B7 4003              JC      ?C0029
-                                           ; SOURCE LINE # 176
+01B7 4003              JC      ?C0028
+                                           ; SOURCE LINE # 178
 01B9 7410              MOV     A,#010H
 01BB F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 177
-01BC         ?C0029:
-                                           ; SOURCE LINE # 180
+                                           ; SOURCE LINE # 179
+01BC         ?C0028:
+                                           ; SOURCE LINE # 182
 01BC E4                CLR     A
 01BD 900000      R     MOV     DPTR,#i
 01C0 F0                MOVX    @DPTR,A
 01C1 A3                INC     DPTR
 01C2 F0                MOVX    @DPTR,A
-01C3         ?C0030:
+01C3         ?C0029:
 01C3 900000      R     MOV     DPTR,#n
 01C6 E0                MOVX    A,@DPTR
 01C7 FF                MOV     R7,A
@@ -6059,14 +6053,12 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 01CE 900000      R     MOV     DPTR,#i
 01D1 E0                MOVX    A,@DPTR
 01D2 9400              SUBB    A,#00H
-01D4 5035              JNC     ?C0022
-                                           ; SOURCE LINE # 181
+01D4 5035              JNC     ?C0021
+                                           ; SOURCE LINE # 183
 01D6 7F09              MOV     R7,#09H
 01D8 120000      R     LCALL   _Read_MFRC522
 01DB 900000      R     MOV     DPTR,#backData
 01DE E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 96  
-
 01DF FB                MOV     R3,A
 01E0 A3                INC     DPTR
 01E1 E0                MOVX    A,@DPTR
@@ -6077,44 +6069,46 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 01E6 900000      R     MOV     DPTR,#i
 01E9 E0                MOVX    A,@DPTR
 01EA FC                MOV     R4,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 96  
+
 01EB A3                INC     DPTR
 01EC E0                MOVX    A,@DPTR
 01ED F582              MOV     DPL,A
 01EF 8C83              MOV     DPH,R4
 01F1 EF                MOV     A,R7
 01F2 120000      E     LCALL   ?C?CSTOPTR
-                                           ; SOURCE LINE # 182
+                                           ; SOURCE LINE # 184
 01F5 900000      R     MOV     DPTR,#i+01H
 01F8 E0                MOVX    A,@DPTR
 01F9 04                INC     A
 01FA F0                MOVX    @DPTR,A
-01FB 70C6              JNZ     ?C0030
+01FB 70C6              JNZ     ?C0029
 01FD 900000      R     MOV     DPTR,#i
 0200 E0                MOVX    A,@DPTR
 0201 04                INC     A
 0202 F0                MOVX    @DPTR,A
-0203         ?C0084:
-0203 80BE              SJMP    ?C0030
-                                           ; SOURCE LINE # 183
-                                           ; SOURCE LINE # 184
-0205         ?C0023:
+0203         ?C0083:
+0203 80BE              SJMP    ?C0029
                                            ; SOURCE LINE # 185
+                                           ; SOURCE LINE # 186
+0205         ?C0022:
+                                           ; SOURCE LINE # 187
 0205 900000      R     MOV     DPTR,#status
 0208 7402              MOV     A,#02H
 020A F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 186
                                            ; SOURCE LINE # 188
-020B         ?C0022:
-                                           ; SOURCE LINE # 193
+                                           ; SOURCE LINE # 190
+020B         ?C0021:
+                                           ; SOURCE LINE # 195
 020B 900000      R     MOV     DPTR,#status
 020E E0                MOVX    A,@DPTR
 020F FF                MOV     R7,A
-                                           ; SOURCE LINE # 194
+                                           ; SOURCE LINE # 196
 0210 22                RET     
              ; FUNCTION _MFRC522_ToCard (END)
 
              ; FUNCTION _MFRC522_Request (BEGIN)
-                                           ; SOURCE LINE # 196
+                                           ; SOURCE LINE # 198
 0000 900000      R     MOV     DPTR,#reqMode
 0003 EF                MOV     A,R7
 0004 F0                MOVX    @DPTR,A
@@ -6127,13 +6121,11 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000B A3                INC     DPTR
 000C E9                MOV     A,R1
 000D F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 200
+                                           ; SOURCE LINE # 202
 000E 7D07              MOV     R5,#07H
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 97  
-
 0010 7F0D              MOV     R7,#0DH
 0012 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 202
+                                           ; SOURCE LINE # 204
 0015 900000      R     MOV     DPTR,#reqMode
 0018 E0                MOVX    A,@DPTR
 0019 FF                MOV     R7,A
@@ -6141,6 +6133,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001B E0                MOVX    A,@DPTR
 001C FB                MOV     R3,A
 001D A3                INC     DPTR
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 97  
+
 001E E0                MOVX    A,@DPTR
 001F FA                MOV     R2,A
 0020 A3                INC     DPTR
@@ -6148,7 +6142,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0022 F9                MOV     R1,A
 0023 EF                MOV     A,R7
 0024 120000      E     LCALL   ?C?CSTPTR
-                                           ; SOURCE LINE # 203
+                                           ; SOURCE LINE # 205
 0027 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 002A 7401              MOV     A,#01H
 002C F0                MOVX    @DPTR,A
@@ -6188,31 +6182,31 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0057 7F0C              MOV     R7,#0CH
 0059 120000      R     LCALL   _MFRC522_ToCard
 ;---- Variable 'status' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 205
+                                           ; SOURCE LINE # 207
 005C EF                MOV     A,R7
-005D 700C              JNZ     ?C0036
+005D 700C              JNZ     ?C0035
 005F 900000      R     MOV     DPTR,#backBits
 0062 E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 98  
-
-0063 7004              JNZ     ?C0085
+0063 7004              JNZ     ?C0084
 0065 A3                INC     DPTR
 0066 E0                MOVX    A,@DPTR
 0067 6410              XRL     A,#010H
-0069         ?C0085:
-0069 6002              JZ      ?C0035
-006B         ?C0036:
-                                           ; SOURCE LINE # 206
+0069         ?C0084:
+0069 6002              JZ      ?C0034
+006B         ?C0035:
+                                           ; SOURCE LINE # 208
 006B 7F02              MOV     R7,#02H
-                                           ; SOURCE LINE # 207
-006D         ?C0035:
                                            ; SOURCE LINE # 209
-                                           ; SOURCE LINE # 210
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 98  
+
+006D         ?C0034:
+                                           ; SOURCE LINE # 211
+                                           ; SOURCE LINE # 212
 006D 22                RET     
              ; FUNCTION _MFRC522_Request (END)
 
              ; FUNCTION _MFRC522_Anticoll (BEGIN)
-                                           ; SOURCE LINE # 212
+                                           ; SOURCE LINE # 214
 0000 900000      R     MOV     DPTR,#serNum
 0003 EB                MOV     A,R3
 0004 F0                MOVX    @DPTR,A
@@ -6222,15 +6216,15 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0008 A3                INC     DPTR
 0009 E9                MOV     A,R1
 000A F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 215
+                                           ; SOURCE LINE # 217
 000B E4                CLR     A
 000C A3                INC     DPTR
 000D F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 220
+                                           ; SOURCE LINE # 222
 000E FD                MOV     R5,A
 000F 7F0D              MOV     R7,#0DH
 0011 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 222
+                                           ; SOURCE LINE # 224
 0014 900000      R     MOV     DPTR,#serNum
 0017 E0                MOVX    A,@DPTR
 0018 FB                MOV     R3,A
@@ -6242,7 +6236,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001E F9                MOV     R1,A
 001F 7493              MOV     A,#093H
 0021 120000      E     LCALL   ?C?CSTPTR
-                                           ; SOURCE LINE # 223
+                                           ; SOURCE LINE # 225
 0024 900000      R     MOV     DPTR,#serNum
 0027 E0                MOVX    A,@DPTR
 0028 FB                MOV     R3,A
@@ -6255,10 +6249,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002F 900001            MOV     DPTR,#01H
 0032 7420              MOV     A,#020H
 0034 120000      E     LCALL   ?C?CSTOPTR
-                                           ; SOURCE LINE # 224
+                                           ; SOURCE LINE # 226
 0037 C002              PUSH    AR2
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 99  
-
 0039 C001              PUSH    AR1
 003B 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 003E 7402              MOV     A,#02H
@@ -6269,6 +6261,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0046 A3                INC     DPTR
 0047 E0                MOVX    A,@DPTR
 0048 FA                MOV     R2,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 99  
+
 0049 A3                INC     DPTR
 004A E0                MOVX    A,@DPTR
 004B 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+05H
@@ -6295,14 +6289,14 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0068 120000      R     LCALL   _MFRC522_ToCard
 ;---- Variable 'status' assigned to Register 'R4' ----
 006B AC07              MOV     R4,AR7
-                                           ; SOURCE LINE # 226
-006D EC                MOV     A,R4
-006E 7044              JNZ     ?C0038
                                            ; SOURCE LINE # 228
+006D EC                MOV     A,R4
+006E 7044              JNZ     ?C0037
+                                           ; SOURCE LINE # 230
 ;---- Variable 'i' assigned to Register 'R5' ----
 0070 FD                MOV     R5,A
-0071         ?C0039:
-                                           ; SOURCE LINE # 229
+0071         ?C0038:
+                                           ; SOURCE LINE # 231
 0071 900000      R     MOV     DPTR,#serNumCheck
 0074 E0                MOVX    A,@DPTR
 0075 FF                MOV     R7,A
@@ -6321,18 +6315,18 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0089 FE                MOV     R6,A
 008A EF                MOV     A,R7
 008B 6E                XRL     A,R6
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 100 
-
 008C 900000      R     MOV     DPTR,#serNumCheck
 008F F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 230
+                                           ; SOURCE LINE # 232
 0090 0D                INC     R5
 0091 ED                MOV     A,R5
-0092 B404DC            CJNE    A,#04H,?C0039
-0095         ?C0040:
-                                           ; SOURCE LINE # 231
+0092 B404DC            CJNE    A,#04H,?C0038
+0095         ?C0039:
+                                           ; SOURCE LINE # 233
 0095 900000      R     MOV     DPTR,#serNum
 0098 E0                MOVX    A,@DPTR
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 100 
+
 0099 FB                MOV     R3,A
 009A A3                INC     DPTR
 009B E0                MOVX    A,@DPTR
@@ -6348,24 +6342,24 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00AB 900000      R     MOV     DPTR,#serNumCheck
 00AE E0                MOVX    A,@DPTR
 00AF 6F                XRL     A,R7
-00B0 6002              JZ      ?C0038
-                                           ; SOURCE LINE # 232
-00B2 7C02              MOV     R4,#02H
-                                           ; SOURCE LINE # 233
+00B0 6002              JZ      ?C0037
                                            ; SOURCE LINE # 234
-00B4         ?C0038:
-                                           ; SOURCE LINE # 238
+00B2 7C02              MOV     R4,#02H
+                                           ; SOURCE LINE # 235
+                                           ; SOURCE LINE # 236
+00B4         ?C0037:
+                                           ; SOURCE LINE # 240
 00B4 AF04              MOV     R7,AR4
-                                           ; SOURCE LINE # 239
+                                           ; SOURCE LINE # 241
 00B6 22                RET     
              ; FUNCTION _MFRC522_Anticoll (END)
 
-             ; FUNCTION L?0095 (BEGIN)
+             ; FUNCTION L?0094 (BEGIN)
 0000 7B01              MOV     R3,#01H
 0002 7A00        R     MOV     R2,#HIGH buff
 0004 7900        R     MOV     R1,#LOW buff
              ; FUNCTION _CalulateCRC (BEGIN)
-                                           ; SOURCE LINE # 241
+                                           ; SOURCE LINE # 243
 0006 900000      R     MOV     DPTR,#pInData
 0009 EB                MOV     A,R3
 000A F0                MOVX    @DPTR,A
@@ -6378,31 +6372,31 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0011 A3                INC     DPTR
 0012 ED                MOV     A,R5
 0013 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 244
+                                           ; SOURCE LINE # 246
 0014 7D04              MOV     R5,#04H
 0016 7F05              MOV     R7,#05H
 0018 120000      R     LCALL   _ClearBitMask
-                                           ; SOURCE LINE # 245
+                                           ; SOURCE LINE # 247
 001B 7D80              MOV     R5,#080H
 001D 7F0A              MOV     R7,#0AH
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 101 
-
 001F 120000      R     LCALL   _SetBitMask
-                                           ; SOURCE LINE # 249
+                                           ; SOURCE LINE # 251
 0022 E4                CLR     A
 0023 900000      R     MOV     DPTR,#i
 0026 F0                MOVX    @DPTR,A
-0027         ?C0044:
+0027         ?C0043:
 0027 900000      R     MOV     DPTR,#len
 002A E0                MOVX    A,@DPTR
 002B FF                MOV     R7,A
 002C 900000      R     MOV     DPTR,#i
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 101 
+
 002F E0                MOVX    A,@DPTR
 0030 FE                MOV     R6,A
 0031 C3                CLR     C
 0032 9F                SUBB    A,R7
-0033 501B              JNC     ?C0045
-                                           ; SOURCE LINE # 250
+0033 501B              JNC     ?C0044
+                                           ; SOURCE LINE # 252
 0035 900000      R     MOV     DPTR,#pInData
 0038 E0                MOVX    A,@DPTR
 0039 FB                MOV     R3,A
@@ -6414,43 +6408,41 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 003F F9                MOV     R1,A
 0040 8E82              MOV     DPL,R6
 0042 758300            MOV     DPH,#00H
-0045 120000      R     LCALL   L?0094
-                                           ; SOURCE LINE # 251
+0045 120000      R     LCALL   L?0093
+                                           ; SOURCE LINE # 253
 0048 900000      R     MOV     DPTR,#i
 004B E0                MOVX    A,@DPTR
 004C 04                INC     A
 004D F0                MOVX    @DPTR,A
-004E 80D7              SJMP    ?C0044
-0050         ?C0045:
-                                           ; SOURCE LINE # 252
+004E 80D7              SJMP    ?C0043
+0050         ?C0044:
+                                           ; SOURCE LINE # 254
 0050 7D03              MOV     R5,#03H
 0052 7F01              MOV     R7,#01H
 0054 120000      R     LCALL   _Write_MFRC522
-                                           ; SOURCE LINE # 255
+                                           ; SOURCE LINE # 257
 0057 900000      R     MOV     DPTR,#i
 005A 74FF              MOV     A,#0FFH
 005C F0                MOVX    @DPTR,A
-005D         ?C0049:
-                                           ; SOURCE LINE # 256
-                                           ; SOURCE LINE # 257
+005D         ?C0048:
+                                           ; SOURCE LINE # 258
+                                           ; SOURCE LINE # 259
 005D 7F05              MOV     R7,#05H
 005F 120000      R     LCALL   _Read_MFRC522
 ;---- Variable 'n' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 258
+                                           ; SOURCE LINE # 260
 0062 900000      R     MOV     DPTR,#i
 0065 E0                MOVX    A,@DPTR
 0066 14                DEC     A
 0067 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 259
+                                           ; SOURCE LINE # 261
 0068 E0                MOVX    A,@DPTR
-0069 6004              JZ      ?C0048
+0069 6004              JZ      ?C0047
 006B EF                MOV     A,R7
-006C 30E2EE            JNB     ACC.2,?C0049
-006F         ?C0048:
-                                           ; SOURCE LINE # 262
+006C 30E2EE            JNB     ACC.2,?C0048
+006F         ?C0047:
+                                           ; SOURCE LINE # 264
 006F 7F22              MOV     R7,#022H
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 102 
-
 0071 120000      R     LCALL   _Read_MFRC522
 0074 900000      R     MOV     DPTR,#pOutData
 0077 E0                MOVX    A,@DPTR
@@ -6461,9 +6453,11 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 007C A3                INC     DPTR
 007D E0                MOVX    A,@DPTR
 007E F9                MOV     R1,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 102 
+
 007F EF                MOV     A,R7
 0080 120000      E     LCALL   ?C?CSTPTR
-                                           ; SOURCE LINE # 263
+                                           ; SOURCE LINE # 265
 0083 7F21              MOV     R7,#021H
 0085 120000      R     LCALL   _Read_MFRC522
 0088 900000      R     MOV     DPTR,#pOutData
@@ -6481,7 +6475,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _CalulateCRC (END)
 
              ; FUNCTION _MFRC522_SelectTag (BEGIN)
-                                           ; SOURCE LINE # 266
+                                           ; SOURCE LINE # 268
 0000 900000      R     MOV     DPTR,#serNum
 0003 EB                MOV     A,R3
 0004 F0                MOVX    @DPTR,A
@@ -6491,20 +6485,20 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0008 A3                INC     DPTR
 0009 E9                MOV     A,R1
 000A F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 275
+                                           ; SOURCE LINE # 277
 000B 900000      R     MOV     DPTR,#buffer
 000E 7493              MOV     A,#093H
 0010 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 276
+                                           ; SOURCE LINE # 278
 0011 A3                INC     DPTR
 0012 7470              MOV     A,#070H
 0014 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 277
+                                           ; SOURCE LINE # 279
 ;---- Variable 'i' assigned to Register 'R7' ----
 0015 E4                CLR     A
 0016 FF                MOV     R7,A
-0017         ?C0052:
-                                           ; SOURCE LINE # 278
+0017         ?C0051:
+                                           ; SOURCE LINE # 280
 0017 900000      R     MOV     DPTR,#serNum
 001A E0                MOVX    A,@DPTR
 001B FB                MOV     R3,A
@@ -6513,8 +6507,6 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001E FA                MOV     R2,A
 001F A3                INC     DPTR
 0020 E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 103 
-
 0021 F9                MOV     R1,A
 0022 8F82              MOV     DPL,R7
 0024 758300            MOV     DPH,#00H
@@ -6525,15 +6517,17 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002E F582              MOV     DPL,A
 0030 E4                CLR     A
 0031 3400        R     ADDC    A,#HIGH buffer+02H
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 103 
+
 0033 F583              MOV     DPH,A
 0035 EE                MOV     A,R6
 0036 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 279
+                                           ; SOURCE LINE # 281
 0037 0F                INC     R7
 0038 EF                MOV     A,R7
-0039 B405DB            CJNE    A,#05H,?C0052
-003C         ?C0053:
-                                           ; SOURCE LINE # 280
+0039 B405DB            CJNE    A,#05H,?C0051
+003C         ?C0052:
+                                           ; SOURCE LINE # 282
 003C 900000      R     MOV     DPTR,#?_CalulateCRC?BYTE+04H
 003F 7401              MOV     A,#01H
 0041 F0                MOVX    @DPTR,A
@@ -6548,7 +6542,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 004E 7900        R     MOV     R1,#LOW buffer
 0050 7D07              MOV     R5,#07H
 0052 120000      R     LCALL   _CalulateCRC
-                                           ; SOURCE LINE # 281
+                                           ; SOURCE LINE # 283
 0055 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 0058 7409              MOV     A,#09H
 005A F0                MOVX    @DPTR,A
@@ -6572,44 +6566,44 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0072 F0                MOVX    @DPTR,A
 0073 7A00        R     MOV     R2,#HIGH buffer
 0075 7900        R     MOV     R1,#LOW buffer
-0077 120000      R     LCALL   L?0093
+0077 120000      R     LCALL   L?0092
 ;---- Variable 'status' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 283
+                                           ; SOURCE LINE # 285
 007A EF                MOV     A,R7
-007B 7012              JNZ     ?C0055
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 104 
-
+007B 7012              JNZ     ?C0054
 007D 900000      R     MOV     DPTR,#recvBits
 0080 E0                MOVX    A,@DPTR
-0081 7004              JNZ     ?C0086
+0081 7004              JNZ     ?C0085
 0083 A3                INC     DPTR
 0084 E0                MOVX    A,@DPTR
 0085 6418              XRL     A,#018H
-0087         ?C0086:
-0087 7006              JNZ     ?C0055
-                                           ; SOURCE LINE # 284
-0089 900000      R     MOV     DPTR,#buffer
-008C E0                MOVX    A,@DPTR
-                                           ; SOURCE LINE # 285
-008D 8001              SJMP    ?C0091
-008F         ?C0055:
+0087         ?C0085:
+0087 7006              JNZ     ?C0054
                                            ; SOURCE LINE # 286
+0089 900000      R     MOV     DPTR,#buffer
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 104 
+
+008C E0                MOVX    A,@DPTR
+                                           ; SOURCE LINE # 287
+008D 8001              SJMP    ?C0090
+008F         ?C0054:
+                                           ; SOURCE LINE # 288
 008F E4                CLR     A
-0090         ?C0091:
+0090         ?C0090:
 0090 900000      R     MOV     DPTR,#size
 0093 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 287
-0094         ?C0056:
                                            ; SOURCE LINE # 289
+0094         ?C0055:
+                                           ; SOURCE LINE # 291
 0094 900000      R     MOV     DPTR,#size
 0097 E0                MOVX    A,@DPTR
 0098 FF                MOV     R7,A
-                                           ; SOURCE LINE # 290
+                                           ; SOURCE LINE # 292
 0099 22                RET     
              ; FUNCTION _MFRC522_SelectTag (END)
 
              ; FUNCTION _MFRC522_Auth (BEGIN)
-                                           ; SOURCE LINE # 292
+                                           ; SOURCE LINE # 294
 0000 900000      R     MOV     DPTR,#Sectorkey
 0003 EB                MOV     A,R3
 0004 F0                MOVX    @DPTR,A
@@ -6621,28 +6615,26 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000A F0                MOVX    @DPTR,A
 ;---- Variable 'BlockAddr' assigned to Register 'R5' ----
 ;---- Variable 'authMode' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 293
-                                           ; SOURCE LINE # 300
+                                           ; SOURCE LINE # 295
+                                           ; SOURCE LINE # 302
 000B 900000      R     MOV     DPTR,#buff
 000E EF                MOV     A,R7
 000F F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 301
+                                           ; SOURCE LINE # 303
 0010 A3                INC     DPTR
 0011 ED                MOV     A,R5
 0012 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 302
+                                           ; SOURCE LINE # 304
 ;---- Variable 'i' assigned to Register 'R7' ----
 0013 E4                CLR     A
 0014 FF                MOV     R7,A
-0015         ?C0058:
-                                           ; SOURCE LINE # 303
+0015         ?C0057:
+                                           ; SOURCE LINE # 305
 0015 900000      R     MOV     DPTR,#Sectorkey
 0018 E0                MOVX    A,@DPTR
 0019 FB                MOV     R3,A
 001A A3                INC     DPTR
 001B E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 105 
-
 001C FA                MOV     R2,A
 001D A3                INC     DPTR
 001E E0                MOVX    A,@DPTR
@@ -6653,22 +6645,24 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0028 FE                MOV     R6,A
 0029 7400        R     MOV     A,#LOW buff+02H
 002B 2F                ADD     A,R7
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 105 
+
 002C F582              MOV     DPL,A
 002E E4                CLR     A
 002F 3400        R     ADDC    A,#HIGH buff+02H
 0031 F583              MOV     DPH,A
 0033 EE                MOV     A,R6
 0034 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 304
+                                           ; SOURCE LINE # 306
 0035 0F                INC     R7
 0036 EF                MOV     A,R7
-0037 B406DB            CJNE    A,#06H,?C0058
-003A         ?C0059:
-                                           ; SOURCE LINE # 305
+0037 B406DB            CJNE    A,#06H,?C0057
+003A         ?C0058:
+                                           ; SOURCE LINE # 307
 003A E4                CLR     A
 003B FF                MOV     R7,A
-003C         ?C0061:
-                                           ; SOURCE LINE # 306
+003C         ?C0060:
+                                           ; SOURCE LINE # 308
 003C 900000      R     MOV     DPTR,#serNum
 003F E0                MOVX    A,@DPTR
 0040 FB                MOV     R3,A
@@ -6690,12 +6684,12 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0058 F583              MOV     DPH,A
 005A EE                MOV     A,R6
 005B F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 307
+                                           ; SOURCE LINE # 309
 005C 0F                INC     R7
 005D EF                MOV     A,R7
-005E B404DB            CJNE    A,#04H,?C0061
-0061         ?C0062:
-                                           ; SOURCE LINE # 308
+005E B404DB            CJNE    A,#04H,?C0060
+0061         ?C0061:
+                                           ; SOURCE LINE # 310
 0061 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 0064 740C              MOV     A,#0CH
 0066 F0                MOVX    @DPTR,A
@@ -6705,8 +6699,6 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 006B A3                INC     DPTR
 006C 7400        R     MOV     A,#HIGH buff
 006E F0                MOVX    @DPTR,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 106 
-
 006F A3                INC     DPTR
 0070 7400        R     MOV     A,#LOW buff
 0072 F0                MOVX    @DPTR,A
@@ -6717,6 +6709,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0078 7400        R     MOV     A,#HIGH recvBits
 007A F0                MOVX    @DPTR,A
 007B A3                INC     DPTR
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 106 
+
 007C 7400        R     MOV     A,#LOW recvBits
 007E F0                MOVX    @DPTR,A
 007F 7B01              MOV     R3,#01H
@@ -6727,29 +6721,29 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 008A 900000      R     MOV     DPTR,#status
 008D EF                MOV     A,R7
 008E F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 310
-008F 7009              JNZ     ?C0065
+                                           ; SOURCE LINE # 312
+008F 7009              JNZ     ?C0064
 0091 7F08              MOV     R7,#08H
 0093 120000      R     LCALL   _Read_MFRC522
 0096 EF                MOV     A,R7
-0097 20E306            JB      ACC.3,?C0064
-009A         ?C0065:
-                                           ; SOURCE LINE # 311
+0097 20E306            JB      ACC.3,?C0063
+009A         ?C0064:
+                                           ; SOURCE LINE # 313
 009A 900000      R     MOV     DPTR,#status
 009D 7402              MOV     A,#02H
 009F F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 312
-00A0         ?C0064:
                                            ; SOURCE LINE # 314
+00A0         ?C0063:
+                                           ; SOURCE LINE # 316
 00A0 900000      R     MOV     DPTR,#status
 00A3 E0                MOVX    A,@DPTR
 00A4 FF                MOV     R7,A
-                                           ; SOURCE LINE # 315
+                                           ; SOURCE LINE # 317
 00A5 22                RET     
              ; FUNCTION _MFRC522_Auth (END)
 
              ; FUNCTION _MFRC522_Read (BEGIN)
-                                           ; SOURCE LINE # 317
+                                           ; SOURCE LINE # 319
 0000 900000      R     MOV     DPTR,#recvData
 0003 EB                MOV     A,R3
 0004 F0                MOVX    @DPTR,A
@@ -6760,7 +6754,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0009 E9                MOV     A,R1
 000A F0                MOVX    @DPTR,A
 ;---- Variable 'blockAddr' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 321
+                                           ; SOURCE LINE # 323
 000B 900000      R     MOV     DPTR,#recvData
 000E E0                MOVX    A,@DPTR
 000F FB                MOV     R3,A
@@ -6769,25 +6763,25 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0012 FA                MOV     R2,A
 0013 A3                INC     DPTR
 0014 E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 107 
-
 0015 F9                MOV     R1,A
 0016 7430              MOV     A,#030H
 0018 120000      E     LCALL   ?C?CSTPTR
-                                           ; SOURCE LINE # 322
+                                           ; SOURCE LINE # 324
 001B 900000      R     MOV     DPTR,#recvData
 001E E0                MOVX    A,@DPTR
 001F FB                MOV     R3,A
 0020 A3                INC     DPTR
 0021 E0                MOVX    A,@DPTR
 0022 FA                MOV     R2,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 107 
+
 0023 A3                INC     DPTR
 0024 E0                MOVX    A,@DPTR
 0025 F9                MOV     R1,A
 0026 900001            MOV     DPTR,#01H
 0029 EF                MOV     A,R7
 002A 120000      E     LCALL   ?C?CSTOPTR
-                                           ; SOURCE LINE # 323
+                                           ; SOURCE LINE # 325
 002D C003              PUSH    AR3
 002F C002              PUSH    AR2
 0031 C001              PUSH    AR1
@@ -6818,7 +6812,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0052 D003              POP     AR3
 0054 7D02              MOV     R5,#02H
 0056 120000      R     LCALL   _CalulateCRC
-                                           ; SOURCE LINE # 324
+                                           ; SOURCE LINE # 326
 0059 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 005C 7404              MOV     A,#04H
 005E F0                MOVX    @DPTR,A
@@ -6833,8 +6827,6 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0069 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+05H
 006C C9                XCH     A,R1
 006D F0                MOVX    @DPTR,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 108 
-
 006E A3                INC     DPTR
 006F EA                MOV     A,R2
 0070 F0                MOVX    @DPTR,A
@@ -6845,6 +6837,8 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0075 7401              MOV     A,#01H
 0077 F0                MOVX    @DPTR,A
 0078 A3                INC     DPTR
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 108 
+
 0079 7400        R     MOV     A,#HIGH unLen
 007B F0                MOVX    @DPTR,A
 007C A3                INC     DPTR
@@ -6860,29 +6854,29 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0089 7F0C              MOV     R7,#0CH
 008B 120000      R     LCALL   _MFRC522_ToCard
 ;---- Variable 'status' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 326
+                                           ; SOURCE LINE # 328
 008E EF                MOV     A,R7
-008F 700C              JNZ     ?C0068
+008F 700C              JNZ     ?C0067
 0091 900000      R     MOV     DPTR,#unLen
 0094 E0                MOVX    A,@DPTR
-0095 7004              JNZ     ?C0087
+0095 7004              JNZ     ?C0086
 0097 A3                INC     DPTR
 0098 E0                MOVX    A,@DPTR
 0099 6490              XRL     A,#090H
-009B         ?C0087:
-009B 6002              JZ      ?C0067
-009D         ?C0068:
-                                           ; SOURCE LINE # 327
+009B         ?C0086:
+009B 6002              JZ      ?C0066
+009D         ?C0067:
+                                           ; SOURCE LINE # 329
 009D 7F02              MOV     R7,#02H
-                                           ; SOURCE LINE # 328
-009F         ?C0067:
                                            ; SOURCE LINE # 330
-                                           ; SOURCE LINE # 331
+009F         ?C0066:
+                                           ; SOURCE LINE # 332
+                                           ; SOURCE LINE # 333
 009F 22                RET     
              ; FUNCTION _MFRC522_Read (END)
 
              ; FUNCTION _MFRC522_Write (BEGIN)
-                                           ; SOURCE LINE # 333
+                                           ; SOURCE LINE # 335
 0000 900000      R     MOV     DPTR,#writeData
 0003 EB                MOV     A,R3
 0004 F0                MOVX    @DPTR,A
@@ -6893,62 +6887,62 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0009 E9                MOV     A,R1
 000A F0                MOVX    @DPTR,A
 ;---- Variable 'blockAddr' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 339
+                                           ; SOURCE LINE # 341
 000B 900000      R     MOV     DPTR,#buff
 000E 74A0              MOV     A,#0A0H
 0010 F0                MOVX    @DPTR,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 109 
-
-                                           ; SOURCE LINE # 340
+                                           ; SOURCE LINE # 342
 0011 A3                INC     DPTR
 0012 EF                MOV     A,R7
 0013 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 341
+                                           ; SOURCE LINE # 343
 0014 900000      R     MOV     DPTR,#?_CalulateCRC?BYTE+04H
 0017 7401              MOV     A,#01H
 0019 F0                MOVX    @DPTR,A
 001A A3                INC     DPTR
 001B 7400        R     MOV     A,#HIGH buff+02H
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 109 
+
 001D F0                MOVX    @DPTR,A
 001E A3                INC     DPTR
 001F 7400        R     MOV     A,#LOW buff+02H
 0021 F0                MOVX    @DPTR,A
 0022 7D02              MOV     R5,#02H
-0024 120000      R     LCALL   L?0095
-                                           ; SOURCE LINE # 342
-0027 7404              MOV     A,#04H
-0029 120000      R     LCALL   L?0092
-;---- Variable 'status' assigned to Register 'R7' ----
+0024 120000      R     LCALL   L?0094
                                            ; SOURCE LINE # 344
+0027 7404              MOV     A,#04H
+0029 120000      R     LCALL   L?0091
+;---- Variable 'status' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 346
 002C EF                MOV     A,R7
-002D 7016              JNZ     ?C0071
+002D 7016              JNZ     ?C0070
 002F 900000      R     MOV     DPTR,#recvBits
 0032 E0                MOVX    A,@DPTR
-0033 7004              JNZ     ?C0088
+0033 7004              JNZ     ?C0087
 0035 A3                INC     DPTR
 0036 E0                MOVX    A,@DPTR
 0037 6404              XRL     A,#04H
-0039         ?C0088:
-0039 700A              JNZ     ?C0071
+0039         ?C0087:
+0039 700A              JNZ     ?C0070
 003B 900000      R     MOV     DPTR,#buff
 003E E0                MOVX    A,@DPTR
 003F 540F              ANL     A,#0FH
 0041 640A              XRL     A,#0AH
-0043 6002              JZ      ?C0070
-0045         ?C0071:
-                                           ; SOURCE LINE # 345
+0043 6002              JZ      ?C0069
+0045         ?C0070:
+                                           ; SOURCE LINE # 347
 0045 7F02              MOV     R7,#02H
-                                           ; SOURCE LINE # 346
-0047         ?C0070:
                                            ; SOURCE LINE # 348
+0047         ?C0069:
+                                           ; SOURCE LINE # 350
 0047 EF                MOV     A,R7
-0048 7059              JNZ     ?C0072
-                                           ; SOURCE LINE # 349
+0048 7059              JNZ     ?C0071
+                                           ; SOURCE LINE # 351
 ;---- Variable 'i' assigned to Register 'R6' ----
 004A FE                MOV     R6,A
-004B         ?C0073:
-                                           ; SOURCE LINE # 350
-                                           ; SOURCE LINE # 351
+004B         ?C0072:
+                                           ; SOURCE LINE # 352
+                                           ; SOURCE LINE # 353
 004B 900000      R     MOV     DPTR,#writeData
 004E E0                MOVX    A,@DPTR
 004F FB                MOV     R3,A
@@ -6961,8 +6955,6 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0056 8E82              MOV     DPL,R6
 0058 758300            MOV     DPH,#00H
 005B 120000      E     LCALL   ?C?CLDOPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 110 
-
 005E FD                MOV     R5,A
 005F 7400        R     MOV     A,#LOW buff
 0061 2E                ADD     A,R6
@@ -6972,12 +6964,14 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0067 F583              MOV     DPH,A
 0069 ED                MOV     A,R5
 006A F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 352
+                                           ; SOURCE LINE # 354
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 110 
+
 006B 0E                INC     R6
 006C EE                MOV     A,R6
-006D B410DB            CJNE    A,#010H,?C0073
-0070         ?C0074:
-                                           ; SOURCE LINE # 353
+006D B410DB            CJNE    A,#010H,?C0072
+0070         ?C0073:
+                                           ; SOURCE LINE # 355
 0070 900000      R     MOV     DPTR,#?_CalulateCRC?BYTE+04H
 0073 7401              MOV     A,#01H
 0075 F0                MOVX    @DPTR,A
@@ -6988,55 +6982,55 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 007B 7400        R     MOV     A,#LOW buff+010H
 007D F0                MOVX    @DPTR,A
 007E 7D10              MOV     R5,#010H
-0080 120000      R     LCALL   L?0095
-                                           ; SOURCE LINE # 354
-0083 7412              MOV     A,#012H
-0085 120000      R     LCALL   L?0092
+0080 120000      R     LCALL   L?0094
                                            ; SOURCE LINE # 356
+0083 7412              MOV     A,#012H
+0085 120000      R     LCALL   L?0091
+                                           ; SOURCE LINE # 358
 0088 EF                MOV     A,R7
-0089 7016              JNZ     ?C0077
+0089 7016              JNZ     ?C0076
 008B 900000      R     MOV     DPTR,#recvBits
 008E E0                MOVX    A,@DPTR
-008F 7004              JNZ     ?C0089
+008F 7004              JNZ     ?C0088
 0091 A3                INC     DPTR
 0092 E0                MOVX    A,@DPTR
 0093 6404              XRL     A,#04H
-0095         ?C0089:
-0095 700A              JNZ     ?C0077
+0095         ?C0088:
+0095 700A              JNZ     ?C0076
 0097 900000      R     MOV     DPTR,#buff
 009A E0                MOVX    A,@DPTR
 009B 540F              ANL     A,#0FH
 009D 640A              XRL     A,#0AH
-009F 6002              JZ      ?C0072
-00A1         ?C0077:
-                                           ; SOURCE LINE # 357
-                                           ; SOURCE LINE # 358
-00A1 7F02              MOV     R7,#02H
+009F 6002              JZ      ?C0071
+00A1         ?C0076:
                                            ; SOURCE LINE # 359
                                            ; SOURCE LINE # 360
-00A3         ?C0072:
+00A1 7F02              MOV     R7,#02H
+                                           ; SOURCE LINE # 361
                                            ; SOURCE LINE # 362
-                                           ; SOURCE LINE # 363
+00A3         ?C0071:
+                                           ; SOURCE LINE # 364
+                                           ; SOURCE LINE # 365
 00A3 22                RET     
              ; FUNCTION _MFRC522_Write (END)
 
              ; FUNCTION MFRC522_Halt (BEGIN)
-                                           ; SOURCE LINE # 365
-                                           ; SOURCE LINE # 369
+                                           ; SOURCE LINE # 367
+                                           ; SOURCE LINE # 371
 0000 900000      R     MOV     DPTR,#buff
 0003 7450              MOV     A,#050H
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 111 
-
 0005 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 370
+                                           ; SOURCE LINE # 372
 0006 E4                CLR     A
 0007 A3                INC     DPTR
 0008 F0                MOVX    @DPTR,A
-                                           ; SOURCE LINE # 371
+                                           ; SOURCE LINE # 373
 0009 7B01              MOV     R3,#01H
 000B 900000      R     MOV     DPTR,#?_CalulateCRC?BYTE+04H
 000E 04                INC     A
 000F F0                MOVX    @DPTR,A
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 111 
+
 0010 A3                INC     DPTR
 0011 7400        R     MOV     A,#HIGH buff+02H
 0013 F0                MOVX    @DPTR,A
@@ -7047,7 +7041,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001A 7900        R     MOV     R1,#LOW buff
 001C 7D02              MOV     R5,#02H
 001E 120000      R     LCALL   _CalulateCRC
-                                           ; SOURCE LINE # 373
+                                           ; SOURCE LINE # 375
 0021 900000      R     MOV     DPTR,#?_MFRC522_ToCard?BYTE+04H
 0024 7404              MOV     A,#04H
 0026 F0                MOVX    @DPTR,A
@@ -7076,7 +7070,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0047 020000      R     LJMP    _MFRC522_ToCard
              ; FUNCTION MFRC522_Halt (END)
 
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 112 
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 112 
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -7113,7 +7107,7 @@ _ClearBitMask. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 _SPI_Tx. . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 _Read_MFRC522. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   addr . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  val. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+  val. . . . . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0000H  1
 _MFRC522_Read. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   blockAddr. . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   recvData . . . . . . . . . . . . . .  AUTO     XDATA  PTR      0000H  3
@@ -7128,9 +7122,6 @@ _MFRC522_SelectTag . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   recvBits . . . . . . . . . . . . . .  AUTO     XDATA  U_INT    0004H  2
   buffer . . . . . . . . . . . . . . .  AUTO     XDATA  ARRAY    0006H  9
 UINT32 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
-_RC522_SPI_Transfer. . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  Data . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  rx_Data. . . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0000H  1
 UINT16 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 MFRC522_Reset. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 MFRC522_Halt . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
@@ -7139,15 +7130,15 @@ MFRC522_Halt . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 _Write_MFRC522 . . . . . . . . . . . .  PUBLIC   CODE   PROC     0006H  -----
   addr . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   val. . . . . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0000H  1
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 113 
+_MFRC522_Write . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  blockAddr. . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+  writeData. . . . . . . . . . . . . .  AUTO     XDATA  PTR      0000H  3
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 113 
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
 
 
-_MFRC522_Write . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  blockAddr. . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  writeData. . . . . . . . . . . . . .  AUTO     XDATA  PTR      0000H  3
   status . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   recvBits . . . . . . . . . . . . . .  AUTO     XDATA  U_INT    0003H  2
   i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0006H  1
@@ -7203,11 +7194,11 @@ PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 uint32_t . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 
 
-C51 COMPILER V9.60.7.0   RFID                                                              11/02/2023 17:28:07 PAGE 114 
-
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1898    ----
+   CODE SIZE        =   1899    ----
    CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.60.7.0   RFID                                                              11/04/2023 11:33:39 PAGE 114 
+
    XDATA SIZE       =   ----     115
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
