@@ -1,0 +1,7 @@
+".\Objects\main.obj",
+".\Objects\common.obj",
+".\Objects\sys.obj",
+".\Objects\uart.obj",
+".\Objects\MS51_STARTUP.obj" 
+TO ".\Objects\Flash" 
+PRINT(".\Listings\Flash.m51") RAMSIZE(256) 
