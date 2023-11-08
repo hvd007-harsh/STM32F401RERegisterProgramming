@@ -70,12 +70,11 @@ unsigned int ADC_CH6_Read(void)
 {
 	unsigned int ADCdataAIN6;
 	ENABLE_ADC_AIN6; 
-	ADCCON1 |= 0x30;//clock divider 00110000 
-	ADCCON2 |= 0x0E; // AQT Time 00001110
 	clr_ADCCON0_ADCF; 
 	set_ADCCON0_ADCS; 
-	while(!(ADCCON0&SET_BIT7));
-	ADCdataAIN6 = ADCRH <<4; 
+	while(ADCF == 0);
+	ADCdataAIN6 = ADCRH; 
+	ADCdataAIN6 <<= 4; 
 	ADCdataAIN6 |= ADCRL&0x0F; 
 	DISABLE_ADC;
 	return ADCdataAIN6; 
@@ -84,13 +83,12 @@ unsigned int ADC_CH6_Read(void)
 unsigned int ADC_CH7_Read(void)
 {
 	unsigned int ADCdataAIN7; 
-	ENABLE_ADC_AIN7; 
-	ADCCON1 |= 0x30; 
-	ADCCON2 |= 0xE0; 
+	ENABLE_ADC_AIN7;
   clr_ADCCON0_ADCF; 
 	set_ADCCON0_ADCS; 
-	while(!(ADCCON0 & SET_BIT7));
-	ADCdataAIN7 = ADCRH <<4; 
+	while(ADCF == 0);
+	ADCdataAIN7 = ADCRH ;
+	ADCdataAIN7 <<= 4; 
 	ADCdataAIN7 |= ADCRL&0x0F ; 
 	DISABLE_ADC;
 	return ADCdataAIN7;
