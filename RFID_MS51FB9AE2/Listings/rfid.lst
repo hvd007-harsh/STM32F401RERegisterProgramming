@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 1   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE RFID
@@ -62,7 +62,7 @@ line level    source
    1      =3  /*--------------------------------------------------------------------------
    2      =3  INTRINS.H
    3      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 2   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 2   
 
    4      =3  Intrinsic functions for C51.
    5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
@@ -126,7 +126,7 @@ line level    source
   22      =3   typedef unsigned int size_t;
   23      =3  #endif
   24      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 3   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 3   
 
   25      =3  #pragma SAVE
   26      =3  #pragma REGPARMS
@@ -190,7 +190,7 @@ line level    source
            =3 #define HBYTE ((unsigned char volatile huge *)  0)
            =3 #define HWORD ((unsigned int volatile huge *)  0)
            =3 #define HVAR(object, addr)   (*((object volatile huge *) (addr)))
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 4   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 4   
 
            =3 #define HARRAY(object, base) ((object volatile huge *) (base))
            =3 #endif
@@ -254,7 +254,7 @@ line level    source
   48      =3  extern void  *memcpy  (void *s1, const void *s2, size_t n);
   49      =3  extern void  *memchr  (const void *s, char val, size_t n);
   50      =3  extern void  *memccpy (void *s1, const void *s2, char val, size_t n);
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 5   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 5   
 
   51      =3  extern void  *memmove (void *s1, const void *s2, size_t n);
   52      =3  extern void  *memset  (void *s, char val, size_t n);
@@ -318,7 +318,7 @@ line level    source
   41      =3                    
   42      =3  //16 --> 8 x 2
   43      =3  #define HIBYTE(v1)              ((UINT8)((v1)>>8))                      //v1 is UINT16
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 6   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 6   
 
   44      =3  #define LOBYTE(v1)              ((UINT8)((v1)&0xFF))
   45      =3  //8 x 2 --> 16
@@ -382,7 +382,7 @@ line level    source
  103      =3  
  104      =3  /*****************************************************************************/
  105      =3  /*   BOD Define                                                              */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 7   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 7   
 
  106      =3  /*****************************************************************************/
  107      =3  #define    BOD_ENABLE               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x80;E
@@ -446,7 +446,7 @@ line level    source
  159      =3  #define    ENABLE_PWM0_FB_INTERRUPT      set_EIE_EFB0
  160      =3  #define    ENABLE_WDT_INTERRUPT          set_EIE_EWDT
  161      =3  #define    ENABLE_PWMM0_INTERRUPT        set_EIE_EPWM
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 8   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 8   
 
  162      =3  #define    ENABLE_CAPTURE_INTERRUPT      set_EIE_ECAP
  163      =3  #define    ENABLE_PIN_INTERRUPT          set_EIE_EPI
@@ -510,7 +510,7 @@ line level    source
  221      =3  #define   SET_INT_ADC_LEVEL3           set_IP_PADC; set_IPH_PADCH
  222      =3  
  223      =3  #define   SET_INT_INT1_LEVEL0          clr_IP_PX1; clr_IPH_PX1H
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 9   
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 9   
 
  224      =3  #define   SET_INT_INT1_LEVEL1          clr_IP_PX1; set_IPH_PX1H
  225      =3  #define   SET_INT_INT1_LEVEL2          set_IP_PX1; clr_IPH_PX1H
@@ -574,7 +574,7 @@ line level    source
  283      =3  /* Clear Interrupt Flag */
  284      =3  #define    CLEAR_ADC_INTERRUPT_FLAG          clr_ADCCON0_ADCF
  285      =3  #define    CLEAR_BOD_INTERRUPT_FLAG          clr_BODCON0_BOF
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 10  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 10  
 
  286      =3  #define    CLEAR_BOD_RESET_FLAG              clr_BODCON0_BORF
  287      =3  #define    CLEAR_UART0_INTERRUPT_TX_FLAG     clr_SCON_TI
@@ -638,7 +638,7 @@ line level    source
  345      =3  #define    P10_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFE;P1M2|=0x01
  346      =3  #define    P11_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFD;P1M2|=0x02
  347      =3  #define    P12_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xFB;P1M2|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 11  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 11  
 
  348      =3  #define    P13_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xF7;P1M2|=0x08
  349      =3  #define    P14_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P1M1&=0xEF;P1M2|=0x10
@@ -702,7 +702,7 @@ line level    source
  406      =3  #define    P10_ST_ENABLE          SFRS=1;P1S|=0x01
  407      =3  #define    P11_ST_ENABLE          SFRS=1;P1S|=0x02
  408      =3  #define    P12_ST_ENABLE          SFRS=1;P1S|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 12  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 12  
 
  409      =3  #define    P13_ST_ENABLE          SFRS=1;P1S|=0x08
  410      =3  #define    P14_ST_ENABLE          SFRS=1;P1S|=0x10
@@ -766,7 +766,7 @@ line level    source
  468      =3  #define    ENABLE_BIT7_FALLINGEDGE_TRIG   PICON|=0x80;PINEN|=0x80;PIPEN&=0x7F
  469      =3  #define    ENABLE_BIT6_FALLINGEDGE_TRIG   PICON|=0x80;PINEN|=0x40;PIPEN&=0xBF
  470      =3  #define    ENABLE_BIT5_FALLINGEDGE_TRIG   PICON|=0x40;PINEN|=0x20;PIPEN&=0xDF
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 13  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 13  
 
  471      =3  #define    ENABLE_BIT4_FALLINGEDGE_TRIG   PICON|=0x40;PINEN|=0x10;PIPEN&=0xEF
  472      =3  #define    ENABLE_BIT3_FALLINGEDGE_TRIG   PICON|=0x20;PINEN|=0x08;PIPEN&=0xF7
@@ -830,7 +830,7 @@ line level    source
              -divider = 128 for TM2/TM3) */
  517      =3  #define    TIMER_DIV256_VALUE_500ms_FOSC_7372800   65536-14400      /* 14400*256 /7372800= 500 ms  (Timer 
              -divider = 256 for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 14  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 14  
 
  518      =3  #define    TIMER_DIV512_VALUE_100ms_FOSC_7372800   65536-1440       /* 1440*512  /7372800= 100ms.  (Timer 
              -Divider = 512 for TM2/TM3) */
@@ -894,7 +894,7 @@ line level    source
              -r divider = 64  for TM2/TM3) */
  549      =3  #define    TIMER_DIV128_VALUE_100ms_FOSC_11059200  65536-8640       /* 17280*128 /11059200 = 100 ms  (Time
              -r divider = 128 for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 15  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 15  
 
  550      =3  #define    TIMER_DIV128_VALUE_200ms_FOSC_11059200  65536-17280      /* 34560*128 /11059200 = 200 ms  (Time
              -r divider = 128 for TM2/TM3) */
@@ -958,7 +958,7 @@ line level    source
              -r divider = 4   for TM2/TM3) */
  581      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_16600000      65536-415      /* 415*4     /16600000 = 100 us  (Time
              -r divider = 4   for TM2/TM3) */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 16  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 16  
 
  582      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_16600000      65536-830      /* 830*4     /16600000 = 200 us  (Time
              -r divider = 4   for TM2/TM3) */
@@ -1022,7 +1022,7 @@ line level    source
  613      =3  #define    TIMER_DIV128_VALUE_100ms_FOSC_22118400    65536-17280    /* 17280*128  /22118400 = 100 ms  (Tim
              -er divider = 128 for TM2/TM3) */
  614      =3  #define    TIMER_DIV128_VALUE_200ms_FOSC_22118400    65536-34560    /* 34560*128  /22118400 = 200 ms  (Tim
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 17  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 17  
 
              -er divider = 128 for TM2/TM3) */
  615      =3  #define    TIMER_DIV256_VALUE_500ms_FOSC_22118400    65536-43200    /* 43200*256  /22118400 = 500 ms  (Tim
@@ -1086,7 +1086,7 @@ line level    source
  650      =3  #define    TIMER0_FSYS_DIV12             clr_CKCON_T0M
  651      =3                                           
  652      =3  #define    TIMER0_MODE0_ENABLE           TMOD&=0xF0
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 18  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 18  
 
  653      =3  #define    TIMER0_MODE1_ENABLE           TMOD&=0xF0;TMOD|=0x01
  654      =3  #define    TIMER0_MODE2_ENABLE           TMOD&=0xF0;TMOD|=0x02
@@ -1150,7 +1150,7 @@ line level    source
  699      =3  #define  IC3_P04_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x40;CAPCON0|=
              -0x20;CAPCON2|=0x20
  700      =3  #define  IC4_P01_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x50;CAPCON0|=
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 19  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 19  
 
              -0x20;CAPCON2|=0x20
  701      =3  #define  IC5_P03_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x60;CAPCON0|=
@@ -1214,7 +1214,7 @@ line level    source
  732      =3  #define  IC5_P03_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x60;CAPCON0|=0x20;CAPCON2|=0x20
  733      =3  #define  IC6_P05_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 20  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 20  
 
              -0x70;CAPCON0|=0x20;CAPCON2|=0x20
  734      =3  #define  IC7_P15_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
@@ -1278,7 +1278,7 @@ line level    source
  765      =3  #define  IC7_P15_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x80;CAPCON0|=0x20;CAPCON2|=0x20
  766      =3                                                  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 21  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 21  
 
  767      =3  #define  IC0_P12_CAP2_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0x0F;CAPCON1|=0x20;CAPCON4&=0xF0;CAPCON4|=
              -0x00;CAPCON0|=0x40;CAPCON2|=0x40
@@ -1342,7 +1342,7 @@ line level    source
  811      =3  #define    PWM2_P10_OUTPUT_ENABLE            PIOCON0|=0x04                                                
              -                                 //P1.0 as PWM2
  812      =3  #define    PWM1_P14_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x02;clr_SFRS_SFRPAGE        //P1.4
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 22  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 22  
 
              - as PWM1 output enable
  813      =3  #define    PWM1_P11_OUTPUT_ENABLE            PIOCON0|=0x02                                                
@@ -1406,7 +1406,7 @@ line level    source
  857      =3  #define    PWM45_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x04;EA=BIT_TMP
  858      =3  #define    PWM23_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x02;EA=BIT_TMP
  859      =3  #define    PWM01_DEADTIME_ENABLE             BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;PDTEN|=0x01;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 23  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 23  
 
  860      =3  
  861      =3  /*****************************************************************************************
@@ -1470,7 +1470,7 @@ line level    source
              - as PWM2 output disable
  904      =3  #define    DISABLE_PWM0_CH2_P10_OUTPUT       PIOCON0&=0xFB                                                
              -                                 //P1.0 as PWM2               
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 24  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 24  
 
  905      =3  #define    DISABLE_PWM0_CH1_P14_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xFD;clr_SFRS_SFRPAGE        //P1.4
              - as PWM1 output disable
@@ -1534,7 +1534,7 @@ line level    source
  953      =3  
  954      =3  #define    ENABLE_ADC_CH0                    clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x00;P17_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x01;ADCCON1|=1    //P17
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 25  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 25  
 
  955      =3  #define    ENABLE_ADC_CH1                    clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x01;P30_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x02;ADCCON1|=1    //P30
@@ -1598,7 +1598,7 @@ line level    source
  987      =3  #define    PWM0_CH2_CENTRAL_TRIG_ADC         clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x08;ADCCON1|=0x02
  988      =3  #define    PWM0_CH4_CENTRAL_TRIG_ADC         clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 26  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 26  
 
              -CCON1|=0x08;ADCCON1|=0x02
  989      =3  #define    PWM0_CH0_END_TRIG_ADC             clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
@@ -1662,7 +1662,7 @@ line level    source
 1039      =3  
 1040      =3  #define    WDT_RUN_IN_POWERDOWN_ENABLE        set_WDCON_WIDPD
 1041      =3  #define    WDT_RUN_IN_POWERDOWN_DISABLE       clr_WDCON_WIDPD
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 27  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 27  
 
 1042      =3  #define    WDT_COUNTER_CLEAR                  set_WDCON_WDCLR
 1043      =3  #define    WDT_COUNTER_RUN                    set_WDCON_WDTR
@@ -1726,7 +1726,7 @@ line level    source
              --*/
    2      =3  /*                                                                                                        
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 28  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 28  
 
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
@@ -1790,7 +1790,7 @@ line level    source
              --*/
    2      =3  /*                                                                                                        
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 29  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 29  
 
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
@@ -1854,7 +1854,7 @@ line level    source
   43      =3    #define TIMER_DIV12_VALUE_100us_FOSC_160000      65536-130    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
   44      =3    #define TIMER_DIV12_VALUE_1ms_FOSC_160000        65536-1334    //1334*12/16000000 = 1 mS,       // Timer
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 30  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 30  
 
              - divider = 12 
   45      =3    #define TIMER_DIV12_VALUE_10ms_FOSC_160000      65536-13334    //13334*12/16000000 = 10 mS     // Timer 
@@ -1918,7 +1918,7 @@ line level    source
   75      =3    #define TIMER_DIV64_VALUE_30ms_FOSC_166000      65536-7781  //7781*64/16600000 = 30 ms      // Timer div
              -ider = 64
   76      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_166000    65536-12969  //12969*128/16600000 = 100 ms    // Timer d
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 31  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 31  
 
              -ivider = 128
   77      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_166000    65536-25937  //25937*128/16600000 = 200 ms    // Timer d
@@ -1982,7 +1982,7 @@ line level    source
  108      =3    #define TIMER_DIV12_VALUE_100us_FOSC_240000      65536-200    //130*12/16000000 = 10 uS,      // Timer d
              -ivider = 12 
  109      =3    #define TIMER_DIV12_VALUE_1ms_FOSC_240000        65536-2000      //2000*12/24000000 = 1 mS,       // Tim
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 32  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 32  
 
              -er divider = 12
  110      =3    #define TIMER_DIV12_VALUE_10ms_FOSC_240000      65536-20000      //2000*12/24000000 = 10 mS       // Tim
@@ -2046,7 +2046,7 @@ line level    source
              --*/
    2      =3  /*                                                                                                        
              - */
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 33  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 33  
 
    3      =3  /* SPDX-License-Identifier: Apache-2.0                                                                    
              - */
@@ -2110,7 +2110,7 @@ line level    source
   27      =3  
   28      =3  void Trigger_IAP(void);
   29      =3  void Erase_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 34  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 34  
 
   30      =3  void Erase_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
   31      =3  void Program_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize);
@@ -2174,7 +2174,7 @@ line level    source
   19      =3  #define  INT_SPI0         13
   20      =3  #define  INT_Timer2       14
   21      =3  #define  INT_Capture      15
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 35  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 35  
 
   22      =3  #define  INT_PWM0         16
   23      =3  #define  INT_UART1        17
@@ -2238,7 +2238,7 @@ line level    source
   18      =3  #define PWM0_CH01        0
   19      =3  #define PWM0_CH23        1
   20      =3  #define PWM0_CH45        2
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 36  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 36  
 
   21      =3  #define PWM0_ALL         3
   22      =3  
@@ -2302,7 +2302,7 @@ line level    source
   18      =3  #define  HIRC_16        7
   19      =3  #define  HIRC_166       8
   20      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 37  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 37  
 
   21      =3  extern unsigned char data  TA_REG_TMP,BYTE_TMP;
   22      =3  
@@ -2366,7 +2366,7 @@ line level    source
   16      =3  unsigned char Receive_Data(unsigned char UARTPort);
   17      =3  void Enable_UART0_VCOM_printf_24M_115200(void);
   18      =3  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 38  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 38  
 
   19      =3  extern   bit PRINTFG,uart0_receive_flag,uart1_receive_flag;
   20      =3  extern   unsigned char uart0_receive_data,uart1_receive_data;
@@ -2430,7 +2430,7 @@ line level    source
   75      =2  #define set_TCON_IT1             IT1=1
   76      =2  #define set_TCON_IE0             IE0=1
   77      =2  #define set_TCON_IT0             IT0=1
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 39  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 39  
 
   78      =2                                   
   79      =2  #define clr_TCON_TF1             TF1=0
@@ -2494,7 +2494,7 @@ line level    source
  137      =2  
  138      =2  /****SFRS    91H ****/
  139      =2  #define set_SFRS_SFRPAGE         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=1;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 40  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 40  
 
  140      =2  #define clr_SFRS_SFRPAGE         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS=0;EA=BIT_TMP
  141      =2  
@@ -2558,7 +2558,7 @@ line level    source
  199      =2  #define set_CKEN_CKSWTF          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=0x01;EA=BIT_TMP
  200      =2  
  201      =2  #define clr_CKEN_EXTEN1          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0x7F;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 41  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 41  
 
  202      =2  #define clr_CKEN_EXTEN0          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xBF;EA=BIT_TMP
  203      =2  #define clr_CKEN_HIRCEN          BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xDF;EA=BIT_TMP
@@ -2622,7 +2622,7 @@ line level    source
  261      =2                                   
  262      =2  #define clr_CHPCON_SWRST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0x7F;EA=BIT_TMP
  263      =2  #define clr_CHPCON_IAPFF         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xBF;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 42  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 42  
 
  264      =2  #define clr_CHPCON_BS            BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFD;EA=BIT_TMP
  265      =2  #define clr_CHPCON_IAPEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFE;EA=BIT_TMP
@@ -2686,7 +2686,7 @@ line level    source
  323      =2  /**** IE      A8H ****/
  324      =2  #define set_IE_EA                EA  =1
  325      =2  #define set_IE_EADC              EADC=1
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 43  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 43  
 
  326      =2  #define set_IE_EBOD              EBOD=1
  327      =2  #define set_IE_ES                ES  =1
@@ -2750,7 +2750,7 @@ line level    source
  385      =2  #define clr_IAPCN_FCTRL1         IAPN&=0xFD
  386      =2  #define clr_IAPCN_FCTRL0         IAPN&=0xFE
  387      =2  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 44  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 44  
 
  388      =2  /**** P0M1  B1H PAGE0 ****/
  389      =2  #define set_P0M1_7               clr_SFRS_SFRPAGE;P0M1|=0x80
@@ -2814,7 +2814,7 @@ line level    source
  447      =2  #define set_P0SR_6               set_SFRS_SFRPAGE;P0SR|=0x40;clr_SFRS_SFRPAGE
  448      =2  #define set_P0SR_5               set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
  449      =2  #define set_P0SR_4               set_SFRS_SFRPAGE;P0SR|=0x10;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 45  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 45  
 
  450      =2  #define set_P0SR_3               set_SFRS_SFRPAGE;P0SR|=0x08;clr_SFRS_SFRPAGE
  451      =2  #define set_P0SR_2               set_SFRS_SFRPAGE;P0SR|=0x04;clr_SFRS_SFRPAGE
@@ -2878,7 +2878,7 @@ line level    source
  509      =2  #define clr_P2S_T1OE             P2S&=0xF7
  510      =2  #define clr_P2S_T0OE             P2S&=0xFB
  511      =2  #define clr_P2S_P2S0             P2S&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 46  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 46  
 
  512      =2                                   
  513      =2  /**** IPH    B7H PAGE0 ****/                     
@@ -2942,7 +2942,7 @@ line level    source
  571      =2                                  
  572      =2  #define clr_I2TOC_I2TOCEN       I2TOC&=0xFB
  573      =2  #define clr_I2TOC_DIV           I2TOC&=0xFD
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 47  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 47  
 
  574      =2  #define clr_I2TOC_I2TOF         I2TOC&=0xFE
  575      =2  
@@ -3006,7 +3006,7 @@ line level    source
  633      =2  /**** T2CON  C8H ****/
  634      =2  #define set_T2CON_TF2           TF2      = 1
  635      =2  #define set_T2CON_TR2           TR2      = 1
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 48  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 48  
 
  636      =2  #define set_T2CON_CMRL2         CM_RL2   = 1
  637      =2                                  
@@ -3070,7 +3070,7 @@ line level    source
  695      =2  #define set_FBD_FBINLS          FBD|=0x40
  696      =2  #define set_FBD_FBD5            FBD|=0x20
  697      =2  #define set_FBD_FBD4            FBD|=0x10
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 49  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 49  
 
  698      =2  #define set_FBD_FBD3            FBD|=0x08
  699      =2  #define set_FBD_FBD2            FBD|=0x04
@@ -3134,7 +3134,7 @@ line level    source
  757      =2  #define clr_PWMCON1_PWMTYP      PWMCON1&=0xEF
  758      =2  #define clr_PWMCON1_FBINEN      PWMCON1&=0xF7
  759      =2  #define clr_PWMCON1_PWMDIV2     PWMCON1&=0xFB 
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 50  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 50  
 
  760      =2  #define clr_PWMCON1_PWMDIV1     PWMCON1&=0xFD
  761      =2  #define clr_PWMCON1_PWMDIV0     PWMCON1&=0xFE
@@ -3198,7 +3198,7 @@ line level    source
  818      =2  #define set_PICON_PIT2          PICON|=0x10
  819      =2  #define set_PICON_PIT1          PICON|=0x08
  820      =2  #define set_PICON_PIT0          PICON|=0x04
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 51  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 51  
 
  821      =2  #define set_PICON_PIPS1         PICON|=0x02
  822      =2  #define set_PICON_PIPS0         PICON|=0x01
@@ -3262,7 +3262,7 @@ line level    source
  880      =2                                   
  881      =2  #define clr_PIF_PIF7             PIF&=0x7F
  882      =2  #define clr_PIF_PIF6             PIF&=0xBF
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 52  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 52  
 
  883      =2  #define clr_PIF_PIF5             PIF&=0xDF
  884      =2  #define clr_PIF_PIF4             PIF&=0xEF
@@ -3326,7 +3326,7 @@ line level    source
  942      =2  #define clr_CAPCON4_CAP20       CAPCON4&=0xFE
  943      =2  
  944      =2  /**** SPCR    F3H PAGE0 ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 53  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 53  
 
  945      =2  #define set_SPCR_SSOE           clr_SFRS_SFRPAGE;SPCR|=0x80
  946      =2  #define set_SPCR_SPIEN          clr_SFRS_SFRPAGE;SPCR|=0x40
@@ -3390,7 +3390,7 @@ line level    source
 1004      =2  /**** EIPH      F7H ****/
 1005      =2  #define set_EIPH_PT2H           clr_SFRS_SFRPAGE;EIPH|=0x80
 1006      =2  #define set_EIPH_PSPIH          clr_SFRS_SFRPAGE;EIPH|=0x40
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 54  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 54  
 
 1007      =2  #define set_EIPH_PFBH           clr_SFRS_SFRPAGE;EIPH|=0x20
 1008      =2  #define set_EIPH_PWDTH          clr_SFRS_SFRPAGE;EIPH|=0x10
@@ -3454,7 +3454,7 @@ line level    source
 1066      =2  #define clr_PMEN_0               PMEN&=0xFE
 1067      =2                              
 1068      =2  /**** PMD    FCH ****/                       
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 55  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 55  
 
 1069      =2  #define set_PMD_7                PMD|=0x80
 1070      =2  #define set_PMD_6                PMD|=0x40
@@ -3518,7 +3518,7 @@ line level    source
 1128      =2  /**** DPH  82H ****/ 
 1129      =2  /**** DPL  83H ****/ 
 1130      =2  /**** RWK  86H ****/ 
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 56  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 56  
 
 1131      =2  
 1132      =2  /**** PCON  87H ****/
@@ -3582,7 +3582,7 @@ line level    source
 1190      =2  /**** TL0    8DH ****/ 
 1191      =2  
 1192      =2  /**** CKCON  8EH ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 57  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 57  
 
 1193      =2  #define set_PWMCKS              CKCON|=0x40
 1194      =2  #define set_T1M                 CKCON|=0x10
@@ -3646,7 +3646,7 @@ line level    source
 1252      =2  #define clr_CAPF2               CAPCON0&=0xFB
 1253      =2  #define clr_CAPF1               CAPCON0&=0xFD
 1254      =2  #define clr_CAPF0               CAPCON0&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 58  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 58  
 
 1255      =2  
 1256      =2  /**** CAPCON1  93H ****/
@@ -3710,7 +3710,7 @@ line level    source
 1314      =2  #define set_RI                  RI    = 1
 1315      =2                                  
 1316      =2  #define clr_FE                  FE    = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 59  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 59  
 
 1317      =2  #define clr_SM1                 SM1   = 0
 1318      =2  #define clr_SM2                 SM2   = 0
@@ -3774,7 +3774,7 @@ line level    source
 1376      =2                                       
 1377      =2  #define clr_SWRF                AUXR1&=0x7F
 1378      =2  #define clr_RSTPINF             AUXR1&=0xBF
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 60  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 60  
 
 1379      =2  #define clr_HARDF               AUXR1&=0xDF
 1380      =2  #define clr_GF2                 AUXR1&=0xF7
@@ -3838,7 +3838,7 @@ line level    source
 1438      =2  /**** WDCON    AAH **** TA protect register ****/
 1439      =2  #define set_WDTR                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x80;EA=BIT_TMP
 1440      =2  #define set_WDCLR               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x40;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 61  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 61  
 
 1441      =2  #define set_WDTF                BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x20;EA=BIT_TMP
 1442      =2  #define set_WIDPD               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=0x10;EA=BIT_TMP
@@ -3902,7 +3902,7 @@ line level    source
 1500      =2  #define clr_P30                 P30= 0
 1501      =2  
 1502      =2  /**** P0M1  B1H PAGE0 ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 62  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 62  
 
 1503      =2  #define set_P0M1_7              clr_SFRS_SFRPAGE;P0M1|=0x80
 1504      =2  #define set_P0M1_6              clr_SFRS_SFRPAGE;P0M1|=0x40
@@ -3966,7 +3966,7 @@ line level    source
 1562      =2  #define set_P0SR_5              set_SFRS_SFRPAGE;P0SR|=0x20;clr_SFRS_SFRPAGE
 1563      =2  #define set_P0SR_4              set_SFRS_SFRPAGE;P0SR|=0x10;clr_SFRS_SFRPAGE
 1564      =2  #define set_P0SR_3              set_SFRS_SFRPAGE;P0SR|=0x08;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 63  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 63  
 
 1565      =2  #define set_P0SR_2              set_SFRS_SFRPAGE;P0SR|=0x04;clr_SFRS_SFRPAGE
 1566      =2  #define set_P0SR_1              set_SFRS_SFRPAGE;P0SR|=0x02;clr_SFRS_SFRPAGE
@@ -4030,7 +4030,7 @@ line level    source
 1624      =2  
 1625      =2  /**** P1SR    B4H PAGE1 ****/ 
 1626      =2  #define set_P1SR_7              set_SFRS_SFRPAGE;P1SR|=0x80;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 64  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 64  
 
 1627      =2  #define set_P1SR_6              set_SFRS_SFRPAGE;P1SR|=0x40;clr_SFRS_SFRPAGE
 1628      =2  #define set_P1SR_5              set_SFRS_SFRPAGE;P1SR|=0x20;clr_SFRS_SFRPAGE
@@ -4094,7 +4094,7 @@ line level    source
 1686      =2                                  
 1687      =2  #define clr_PADC                PADC     = 0
 1688      =2  #define clr_PBOD                PBOD     = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 65  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 65  
 
 1689      =2  #define clr_PS                  PS       = 0
 1690      =2  #define clr_PT1                 PT1      = 0
@@ -4158,7 +4158,7 @@ line level    source
 1748      =2  #define clr_T3PS2               clr_SFRS_SFRPAGE;T3CON&=0xFB
 1749      =2  #define clr_T3PS1               clr_SFRS_SFRPAGE;T3CON&=0xFD
 1750      =2  #define clr_T3PS0               clr_SFRS_SFRPAGE;T3CON&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 66  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 66  
 
 1751      =2  
 1752      =2  /**** PWM4H  C4H  PAGE1 ****/ 
@@ -4222,7 +4222,7 @@ line level    source
 1810      =2  #define set_RS0                  RS0 = 1
 1811      =2  #define set_OV                   OV  = 1
 1812      =2  #define set_P                    P   = 1
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 67  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 67  
 
 1813      =2                                   
 1814      =2  #define clr_CY                   CY  = 0
@@ -4286,7 +4286,7 @@ line level    source
 1872      =2  
 1873      =2  /**** PWMPL    D9H ****/
 1874      =2  /**** PWM0L    DAH ****/
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 68  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 68  
 
 1875      =2  /**** PWM1L    DBH ****/
 1876      =2  /**** PWM2L    DCH ****/
@@ -4350,7 +4350,7 @@ line level    source
 1934      =2  #define clr_ADFBEN               ADCCON2&=0x7F
 1935      =2  #define clr_ADCMPOP              ADCCON2&=0xBF
 1936      =2  #define clr_ADCMPEN              ADCCON2&=0xDF
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 69  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 69  
 
 1937      =2  #define clr_ADCMPO               ADCCON2&=0xEF
 1938      =2  
@@ -4414,7 +4414,7 @@ line level    source
 1996      =2  #define clr_PINEN4               PINEN&=0xEF
 1997      =2  #define clr_PINEN3               PINEN&=0xF7
 1998      =2  #define clr_PINEN2               PINEN&=0xFB
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 70  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 70  
 
 1999      =2  #define clr_PINEN1               PINEN&=0xFD
 2000      =2  #define clr_PINEN0               PINEN&=0xFE
@@ -4478,7 +4478,7 @@ line level    source
 2058      =2  #define clr_PCAP                 clr_SFRS_SFRPAGE;EIP&=0xFB
 2059      =2  #define clr_PPI                  clr_SFRS_SFRPAGE;EIP&=0xFD
 2060      =2  #define clr_PI2C                 clr_SFRS_SFRPAGE;EIP&=0xFE
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 71  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 71  
 
 2061      =2  
 2062      =2  /**** B  F0H ****/
@@ -4542,7 +4542,7 @@ line level    source
 2120      =2  /**** SPSR      F4H ****/
 2121      =2  #define set_SPIF                 SPSR|=0x80
 2122      =2  #define set_WCOL                 SPSR|=0x40
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 72  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 72  
 
 2123      =2  #define set_SPIOVF               SPSR|=0x20
 2124      =2  #define set_MODF                 SPSR|=0x10
@@ -4606,7 +4606,7 @@ line level    source
 2182      =2                                   
 2183      =2  #define clr_FE_1                 FE_1  = 0
 2184      =2  #define clr_SM1_1                SM1_1 = 0
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 73  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 73  
 
 2185      =2  #define clr_SM2_1                SM2_1 = 0
 2186      =2  #define clr_REN_1                REN_1 = 0
@@ -4670,7 +4670,7 @@ line level    source
 2244      =2  #define clr_PT3                  clr_SFRS_SFRPAGE;EIP1&=0xFD
 2245      =2  #define clr_PS_1                 clr_SFRS_SFRPAGE;EIP1&=0xFE
 2246      =2                                   
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 74  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 74  
 
 2247      =2  /**** EIPH1    FFH PAGE0 ****/                
 2248      =2  #define set_PWKTH                clr_SFRS_SFRPAGE;EIPH1|=0x04
@@ -4734,7 +4734,7 @@ line level    source
   68      =1  sfr P3SR        = 0xAD; //Page1
   69      =1  sfr IAPFD       = 0xAE;
   70      =1  sfr IAPCN       = 0xAF;
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 75  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 75  
 
   71      =1  
   72      =1  sfr P3          = 0xB0;
@@ -4798,7 +4798,7 @@ line level    source
  130      =1  sfr PWM2L        = 0xDC;
  131      =1  sfr PWM3L        = 0xDD;
  132      =1  sfr PIOCON0      = 0xDE;
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 76  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 76  
 
  133      =1  sfr PWMCON1     = 0xDF;
  134      =1  
@@ -4862,7 +4862,7 @@ line level    source
  192      =1  
  193      =1  /*  PWMCON0  */
  194      =1  sbit PWMRUN     = PWMCON0^7;
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 77  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 77  
 
  195      =1  sbit LOAD       = PWMCON0^6;
  196      =1  sbit PWMF       = PWMCON0^5;
@@ -4926,7 +4926,7 @@ line level    source
  254      =1  sbit TB8        = SCON^3; 
  255      =1  sbit RB8        = SCON^2; 
  256      =1  sbit TI         = SCON^1; 
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 78  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 78  
 
  257      =1  sbit RI         = SCON^0; 
  258      =1  
@@ -4990,7 +4990,7 @@ line level    source
    3          #include "rfid.h"
    1      =1  #define MAX_LEN 16
    2      =1  
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 79  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 79  
 
    3      =1  /////////////////////////////////////////////////////////////////////
    4      =1  //set the pin
@@ -5054,7 +5054,7 @@ line level    source
   62      =1  #define     RxThresholdReg        0x18
   63      =1  #define     DemodReg              0x19
   64      =1  #define     Reserved11            0x1A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 80  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 80  
 
   65      =1  #define     Reserved12            0x1B
   66      =1  #define     MifareReg             0x1C
@@ -5118,7 +5118,7 @@ line level    source
   13              
   14            rx_Data = SPI_Rx(rx_Data);
   15          
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 81  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 81  
 
   16            return rx_Data;
   17          }
@@ -5182,7 +5182,7 @@ line level    source
   75          
   76          void MFRC522_Init(void) {
   77   1        // unsigned /har val;
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 82  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 82  
 
   78   1        //GPIO_SetBits(MFRC522_CS_GPIO,MFRC522_CS_PIN);           // Activate the RFID reader
   79   1        SS = 0;
@@ -5246,7 +5246,7 @@ line level    source
  136   1        for (i = 0; i < sendLen; i++) {
  137   2          Write_MFRC522(FIFODataReg, sendData[i]);
  138   2        }
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 83  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 83  
 
  139   1      
  140   1        //chay
@@ -5310,7 +5310,7 @@ line level    source
  198           unsigned char  MFRC522_Request( unsigned char  reqMode,  unsigned char  *TagType) {
  199   1         unsigned char  status;
  200   1         unsigned int  backBits;      //The bits are manipulated
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 84  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 84  
 
  201   1      
  202   1        Write_MFRC522(BitFramingReg, 0x07); //TxLastBists = BitFramingReg[2..0] ???
@@ -5374,7 +5374,7 @@ line level    source
  260   2          i--;
  261   2        } while ((i != 0) && !(n & 0x04));      //CRCIrq = 1
  262   1      
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 85  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 85  
 
  263   1        //Doc results in CRC calculation
  264   1        pOutData[0] = Read_MFRC522(CRCResultRegL);
@@ -5438,7 +5438,7 @@ line level    source
  321   1         unsigned int  unLen;
  322   1      
  323   1        recvData[0] = PICC_READ;
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 86  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 86  
 
  324   1        recvData[1] = blockAddr;
  325   1        CalulateCRC(recvData, 2, &recvData[2]);
@@ -5493,7 +5493,7 @@ line level    source
  374   1      
  375   1        MFRC522_ToCard(PCD_TRANSCEIVE, buff, 4, buff, &unLen);
  376   1      }
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 87  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 87  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -5557,7 +5557,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _SetBitMask (BEGIN)
                                            ; SOURCE LINE # 47
 0000 900000      R     MOV     DPTR,#mask
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 88  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 88  
 
 0003 ED                MOV     A,R5
 0004 F0                MOVX    @DPTR,A
@@ -5621,7 +5621,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 68
                                            ; SOURCE LINE # 69
 0000 7D03              MOV     R5,#03H
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 89  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 89  
 
 0002 7F14              MOV     R7,#014H
 0004 020000      R     LJMP    _ClearBitMask
@@ -5685,7 +5685,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0009 7400        R     MOV     A,#HIGH buff
 000B F0                MOVX    @DPTR,A
 000C A3                INC     DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 90  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 90  
 
 000D 7400        R     MOV     A,#LOW buff
 000F F0                MOVX    @DPTR,A
@@ -5749,7 +5749,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 117
 0052 800A              SJMP    ?C0009
                                            ; SOURCE LINE # 118
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 91  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 91  
 
                                            ; SOURCE LINE # 119
 0054         ?C0011:
@@ -5813,7 +5813,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 009A 900000      R     MOV     DPTR,#sendData
 009D E0                MOVX    A,@DPTR
 009E FB                MOV     R3,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 92  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 92  
 
 009F A3                INC     DPTR
 00A0 E0                MOVX    A,@DPTR
@@ -5877,7 +5877,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00F2 E0                MOVX    A,@DPTR
 00F3 34FF              ADDC    A,#0FFH
 00F5 F0                MOVX    @DPTR,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 93  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 93  
 
                                            ; SOURCE LINE # 153
 00F6 E0                MOVX    A,@DPTR
@@ -5941,7 +5941,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0148 640C              XRL     A,#0CH
 014A 6003              JZ      $ + 5H
 014C 020000      R     LJMP    ?C0021
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 94  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 94  
 
                                            ; SOURCE LINE # 166
 014F 7F0A              MOV     R7,#0AH
@@ -6005,7 +6005,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 019B A3                INC     DPTR
 019C E0                MOVX    A,@DPTR
 019D FA                MOV     R2,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 95  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 95  
 
 019E A3                INC     DPTR
 019F E0                MOVX    A,@DPTR
@@ -6069,7 +6069,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 01E6 900000      R     MOV     DPTR,#i
 01E9 E0                MOVX    A,@DPTR
 01EA FC                MOV     R4,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 96  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 96  
 
 01EB A3                INC     DPTR
 01EC E0                MOVX    A,@DPTR
@@ -6133,7 +6133,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001B E0                MOVX    A,@DPTR
 001C FB                MOV     R3,A
 001D A3                INC     DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 97  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 97  
 
 001E E0                MOVX    A,@DPTR
 001F FA                MOV     R2,A
@@ -6197,7 +6197,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 208
 006B 7F02              MOV     R7,#02H
                                            ; SOURCE LINE # 209
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 98  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 98  
 
 006D         ?C0034:
                                            ; SOURCE LINE # 211
@@ -6261,7 +6261,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0046 A3                INC     DPTR
 0047 E0                MOVX    A,@DPTR
 0048 FA                MOV     R2,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 99  
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 99  
 
 0049 A3                INC     DPTR
 004A E0                MOVX    A,@DPTR
@@ -6325,7 +6325,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 233
 0095 900000      R     MOV     DPTR,#serNum
 0098 E0                MOVX    A,@DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 100 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 100 
 
 0099 FB                MOV     R3,A
 009A A3                INC     DPTR
@@ -6389,7 +6389,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002A E0                MOVX    A,@DPTR
 002B FF                MOV     R7,A
 002C 900000      R     MOV     DPTR,#i
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 101 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 101 
 
 002F E0                MOVX    A,@DPTR
 0030 FE                MOV     R6,A
@@ -6453,7 +6453,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 007C A3                INC     DPTR
 007D E0                MOVX    A,@DPTR
 007E F9                MOV     R1,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 102 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 102 
 
 007F EF                MOV     A,R7
 0080 120000      E     LCALL   ?C?CSTPTR
@@ -6517,7 +6517,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002E F582              MOV     DPL,A
 0030 E4                CLR     A
 0031 3400        R     ADDC    A,#HIGH buffer+02H
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 103 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 103 
 
 0033 F583              MOV     DPH,A
 0035 EE                MOV     A,R6
@@ -6581,7 +6581,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0087 7006              JNZ     ?C0054
                                            ; SOURCE LINE # 286
 0089 900000      R     MOV     DPTR,#buffer
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 104 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 104 
 
 008C E0                MOVX    A,@DPTR
                                            ; SOURCE LINE # 287
@@ -6645,7 +6645,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0028 FE                MOV     R6,A
 0029 7400        R     MOV     A,#LOW buff+02H
 002B 2F                ADD     A,R7
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 105 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 105 
 
 002C F582              MOV     DPL,A
 002E E4                CLR     A
@@ -6709,7 +6709,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0078 7400        R     MOV     A,#HIGH recvBits
 007A F0                MOVX    @DPTR,A
 007B A3                INC     DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 106 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 106 
 
 007C 7400        R     MOV     A,#LOW recvBits
 007E F0                MOVX    @DPTR,A
@@ -6773,7 +6773,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0020 A3                INC     DPTR
 0021 E0                MOVX    A,@DPTR
 0022 FA                MOV     R2,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 107 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 107 
 
 0023 A3                INC     DPTR
 0024 E0                MOVX    A,@DPTR
@@ -6837,7 +6837,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0075 7401              MOV     A,#01H
 0077 F0                MOVX    @DPTR,A
 0078 A3                INC     DPTR
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 108 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 108 
 
 0079 7400        R     MOV     A,#HIGH unLen
 007B F0                MOVX    @DPTR,A
@@ -6901,7 +6901,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0019 F0                MOVX    @DPTR,A
 001A A3                INC     DPTR
 001B 7400        R     MOV     A,#HIGH buff+02H
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 109 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 109 
 
 001D F0                MOVX    @DPTR,A
 001E A3                INC     DPTR
@@ -6965,7 +6965,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0069 ED                MOV     A,R5
 006A F0                MOVX    @DPTR,A
                                            ; SOURCE LINE # 354
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 110 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 110 
 
 006B 0E                INC     R6
 006C EE                MOV     A,R6
@@ -7029,7 +7029,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000B 900000      R     MOV     DPTR,#?_CalulateCRC?BYTE+04H
 000E 04                INC     A
 000F F0                MOVX    @DPTR,A
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 111 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 111 
 
 0010 A3                INC     DPTR
 0011 7400        R     MOV     A,#HIGH buff+02H
@@ -7070,7 +7070,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0047 020000      R     LJMP    _MFRC522_ToCard
              ; FUNCTION MFRC522_Halt (END)
 
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 112 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 112 
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -7133,7 +7133,7 @@ _Write_MFRC522 . . . . . . . . . . . .  PUBLIC   CODE   PROC     0006H  -----
 _MFRC522_Write . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   blockAddr. . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   writeData. . . . . . . . . . . . . .  AUTO     XDATA  PTR      0000H  3
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 113 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 113 
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -7197,7 +7197,7 @@ uint32_t . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =   1899    ----
    CONSTANT SIZE    =   ----    ----
-C51 COMPILER V9.60.7.0   RFID                                                              11/09/2023 19:35:49 PAGE 114 
+C51 COMPILER V9.60.7.0   RFID                                                              11/18/2023 12:07:17 PAGE 114 
 
    XDATA SIZE       =   ----     115
    PDATA SIZE       =   ----    ----
