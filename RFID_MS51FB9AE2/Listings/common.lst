@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 1   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE COMMON
@@ -62,7 +62,7 @@ line level    source
    9      =2  /*  sfr_macro_ms51_16k.h                                                                                  
              - */
   10      =2  /*  SFR Macro define for Nuvoton MS51FB9AE / MS51XB9AE / MS51XB9BE                                        
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 2   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 2   
 
              - */
   11      =2  /*  <Define rule I> set or clr _ regsiter name _ register bit name                                        
@@ -126,7 +126,7 @@ line level    source
   10      =3  #define __STDIO_H__
   11      =3  
   12      =3  #ifndef EOF
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 3   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 3   
 
   13      =3   #define EOF -1
   14      =3  #endif
@@ -190,7 +190,7 @@ line level    source
            =3 #define FVAR(object, addr)   (*((object volatile far *) (addr)))
            =3 #define FARRAY(object, base) ((object volatile far *) (base))
            =3 #define FCVAR(object, addr)   (*((object const far *) (addr)))
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 4   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 4   
 
            =3 #define FCARRAY(object, base) ((object const far *) (base))
            =3 #else
@@ -254,7 +254,7 @@ line level    source
   36      =3  extern int    strpos  (const char *s, char c);
   37      =3  extern char  *strrchr (const char *s, char c);
   38      =3  extern int    strrpos (const char *s, char c);
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 5   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 5   
 
   39      =3  
   40      =3  extern size_t strspn  (const char *s, const char *set);
@@ -318,7 +318,7 @@ line level    source
   29      =3  
   30      =3  #define Disable  0
   31      =3  #define Enable   1
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 6   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 6   
 
   32      =3  
   33      =3  #define DISABLE  0
@@ -382,7 +382,7 @@ line level    source
   91      =3  
   92      =3  /*****************************************************************************/
   93      =3  /*   Software reset                                                          */
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 7   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 7   
 
   94      =3  /*****************************************************************************/
   95      =3  #define    ENABLE_SOFTWARE_RESET_TO_APROM    clr_CHPCON_BS;set_CHPCON_SWRST
@@ -446,7 +446,7 @@ line level    source
  147      =3  #define    DISABLE_GLOBAL_INTERRUPT      EA=0
  148      =3  /*ENABLE INTERRUPT*/                     
  149      =3  #define    ENABLE_ADC_INTERRUPT          set_IE_EADC
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 8   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 8   
 
  150      =3  #define    ENABLE_BOD_INTERRUPT          set_IE_EBOD
  151      =3  #define    ENABLE_UART0_INTERRUPT        set_IE_ES
@@ -510,7 +510,7 @@ line level    source
  209      =3  #define   SET_INT_TIMER0_LEVEL1        clr_IP_PT0; set_IPH_PT0H
  210      =3  #define   SET_INT_TIMER0_LEVEL2        set_IP_PT0; clr_IPH_PT0H
  211      =3  #define   SET_INT_TIMER0_LEVEL3        set_IP_PT0; set_IPH_PT0H
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 9   
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 9   
 
  212      =3  
  213      =3  #define   SET_INT_I2C0_LEVEL0          clr_EIP_PI2C; clr_EIPH_PI2CH
@@ -574,7 +574,7 @@ line level    source
  271      =3  #define   SET_INT_UART1_LEVEL3         set_EIP1_PS_1; set_EIPH1_PSH_1
  272      =3  
  273      =3  #define   SET_INT_Timer3_LEVEL0        clr_EIP1_PT3; clr_EIPH1_PT3H
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 10  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 10  
 
  274      =3  #define   SET_INT_Timer3_LEVEL1        clr_EIP1_PT3; set_EIPH1_PT3H
  275      =3  #define   SET_INT_Timer3_LEVEL2        set_EIP1_PT3; clr_EIPH1_PT3H
@@ -638,7 +638,7 @@ line level    source
  333      =3  #define    P17_QUASI_MODE            clr_SFRS_SFRPAGE;P1M1&=0x7F;P1M2&=0x7F
  334      =3  #define    P30_QUASI_MODE            clr_SFRS_SFRPAGE;P3M1&=0xFE;P3M2&=0xFE
  335      =3  #define    ALL_GPIO_QUASI_MODE       clr_SFRS_SFRPAGE;P0M1=0;P0M2=0;P1M1=0;P1M2=0;P3M1=0;P3M2=0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 11  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 11  
 
  336      =3  //------------------- Define Port as Push Pull mode -------------------
  337      =3  #define    P00_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xFE;P0M2|=0x01
@@ -702,7 +702,7 @@ line level    source
  394      =3  /*****************************************************************************************
  395      =3  * For GPIO TTL/Schmitt Trig Type Seetting 
  396      =3  *****************************************************************************************/
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 12  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 12  
 
  397      =3  //------------------- Enable GPIO Schmitt Trigger Mode  -------------------
  398      =3  #define    P00_ST_ENABLE          SFRS=1;P0S|=0x01
@@ -766,7 +766,7 @@ line level    source
  456      =3  *****************************************************************************/
  457      =3  #define    ENABLE_BIT7_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0x7F;PIPEN|=0x80
  458      =3  #define    ENABLE_BIT6_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0xBF;PIPEN|=0x40
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 13  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 13  
 
  459      =3  #define    ENABLE_BIT5_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xDF;PIPEN|=0x20
  460      =3  #define    ENABLE_BIT4_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xEF;PIPEN|=0x10
@@ -830,7 +830,7 @@ line level    source
              -divider = 4   for TM2/TM3) */
  511      =3  #define    TIMER_DIV16_VALUE_10ms_FOSC_7372800     65536-4608       /* 4608*16   /7372800= 10 ms   (Timer 
              -divider = 16  for TM2/TM3) */
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 14  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 14  
 
  512      =3  #define    TIMER_DIV64_VALUE_30ms_FOSC_7372800     65536-3456       /* 3456*64   /7372800= 30 ms   (Timer 
              -divider = 64  for TM2/TM3) */
@@ -894,7 +894,7 @@ line level    source
              -r divider = 4   for TM2/TM3) */
  543      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_11059200      65536-2765       /* 2765*4    /11059200 = 1 mS    (Time
              -r divider = 4   for TM2/TM3) */
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 15  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 15  
 
  544      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_11059200    65536-277        /* 553*4     /11059200 = 100 us  (Time
              -r divider = 4   for TM2/TM3) */
@@ -958,7 +958,7 @@ line level    source
  574      =3  /* define timer base value Fsys = 16.6MHz */
  575      =3  #define    TIMER_DIV12_VALUE_10us_FOSC_16600000      65536-14       /* 14*12     /16600000 = 10 uS,  (Time
              -r divider = 12  for TM0/TM1) */
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 16  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 16  
 
  576      =3  #define    TIMER_DIV12_VALUE_100us_FOSC_16600000     65536-138      /* 138*12    /16600000 = 100 uS, (Time
              -r divider = 12  for TM0/TM1) */
@@ -1022,7 +1022,7 @@ line level    source
  607      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_22118400        65536-5530     /* 923*4      /22118400 = 1 mS,   (Tim
              -er divider = 4   for TM2/TM3) */
  608      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_22118400      65536-553      /* 553*4      /22118400 = 100 us  (Tim
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 17  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 17  
 
              -er divider = 4   for TM2/TM3) */
  609      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_22118400      65536-1106     /* 1106*4     /22118400 = 200 us  (Tim
@@ -1086,7 +1086,7 @@ line level    source
              -er divider = 512 for TM2/TM3) */ 
  639      =3  
  640      =3  /*******************************************************************************
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 18  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 18  
 
  641      =3  *   TIMER Function Define
  642      =3  ********************************************************************************/
@@ -1150,7 +1150,7 @@ line level    source
              -0x10;CAPCON2|=0x10
  693      =3  #define  IC7_P15_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x08;CAPCON0|=
              -0x10;CAPCON2|=0x10
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 19  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 19  
 
  694      =3                                                  
  695      =3  #define  IC0_P12_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x00;CAPCON0|=
@@ -1214,7 +1214,7 @@ line level    source
  726      =3  #define  IC0_P12_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x00;CAPCON0|=0x20;CAPCON2|=0x20
  727      =3  #define  IC1_P11_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 20  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 20  
 
              -0x10;CAPCON0|=0x20;CAPCON2|=0x20
  728      =3  #define  IC2_P10_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
@@ -1278,7 +1278,7 @@ line level    source
  759      =3  #define  IC2_P10_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x20;CAPCON0|=0x20;CAPCON2|=0x20
  760      =3  #define  IC3_P00_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 21  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 21  
 
              -0x30;CAPCON0|=0x20;CAPCON2|=0x20
  761      =3  #define  IC3_P04_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
@@ -1342,7 +1342,7 @@ line level    source
  805      =3  #define    PWM5_P15_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output enable
  806      =3  #define    PWM5_P03_OUTPUT_ENABLE            PIOCON0|=0x20                                                
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 22  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 22  
 
              -                                 //P0.3 as PWM5
  807      =3  #define    PWM4_P01_OUTPUT_ENABLE            PIOCON0|=0x10                                                
@@ -1406,7 +1406,7 @@ line level    source
  847      =3  #define    PWM_CENTRAL_POINT_INT             set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x20;clr_SFRS_SFRPAGE
              -;set_PWMCON1_PWMTYP
  848      =3  #define    PWM_PERIOD_END_INT                set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x30;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 23  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 23  
 
              -;set_PWMCON1_PWMTYP
  849      =3  //--------- PWM interrupt pin select ---------------------------
@@ -1470,7 +1470,7 @@ line level    source
  897      =3  
  898      =3  #define    DISABLE_PWM0_CH5_P15_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xDF;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output disable
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 24  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 24  
 
  899      =3  #define    DISABLE_PWM0_CH5_P03_OUTPUT       PIOCON0&=0xDF                                                
              -                                 //P0.3 as PWM5               
@@ -1534,7 +1534,7 @@ line level    source
  947      =3  #define    ENABLE_ADC_AIN2                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x02;P07_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x04;ADCCON1|=1    //P07
  948      =3  #define    ENABLE_ADC_AIN3                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x03;P06_INPUT_MODE;A
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 25  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 25  
 
              -INDIDS=0;AINDIDS|=0x08;ADCCON1|=1    //P06
  949      =3  #define    ENABLE_ADC_AIN4                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x04;P05_INPUT_MODE;A
@@ -1598,7 +1598,7 @@ line level    source
  981      =3  #define    PWM0_CH2_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x00;ADCCON1|=0x02
  982      =3  #define    PWM0_CH4_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 26  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 26  
 
              -CCON1|=0x04;ADCCON1|=0x02
  983      =3  #define    PWM0_CH0_RISINGEDGE_TRIG_ADC      clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
@@ -1662,7 +1662,7 @@ line level    source
 1027      =3  
 1028      =3  /*****************************************************************************************
 1029      =3  * WDT setting
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 27  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 27  
 
 1030      =3  *****************************************************************************************/
 1031      =3  #define    WDT_TIMEOUT_6MS                    TA=0xAA;TA=0x55;WDCON&=0xF8
@@ -1726,7 +1726,7 @@ line level    source
   45      =3  #define ADC_ADCAQT6                 6
   46      =3  #define ADC_ADCAQT7                 7
   47      =3  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 28  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 28  
 
   48      =3  
   49      =3  void ADC_InitialContinous(unsigned int u16ADCRBase, unsigned char u8ADCRLength);
@@ -1790,7 +1790,7 @@ line level    source
   11      =3  
   12      =3  #define  BOOT_APROM     0
   13      =3  #define  BOOT_LDROM     2
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 29  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 29  
 
   14      =3  
   15      =3  extern bit BIT_TMP;
@@ -1854,7 +1854,7 @@ line level    source
              -vider = 64
   37      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_110592    65536-8640    //17280*128/22118400 = 100 ms    // Timer 
              -divider = 128
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 30  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 30  
 
   38      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_110592    65536-17280    //34560*128/22118400 = 200 ms    // Timer
              - divider = 128
@@ -1918,7 +1918,7 @@ line level    source
   69      =3    #define TIMER_DIV4_VALUE_10us_FOSC_166000        65536-41    //41*4/16600000 = 10 uS,        // Timer di
              -vider = 4  for TM2/TM3
   70      =3    #define TIMER_DIV4_VALUE_100us_FOSC_166000      65536-415    //415*4/16600000 = 100 us        // Timer d
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 31  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 31  
 
              -ivider = 4
   71      =3    #define TIMER_DIV4_VALUE_200us_FOSC_166000      65536-830    //830*4/16600000 = 200 us        // Timer d
@@ -1982,7 +1982,7 @@ line level    source
              -er divider = 64
  102      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_221184    65536-17280      //17280*128/22118400 = 100 ms      // T
              -imer divider = 128
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 32  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 32  
 
  103      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_221184    65536-34560      //34560*128/22118400 = 200 ms      // T
              -imer divider = 128
@@ -2046,7 +2046,7 @@ line level    source
              - */
    5      =3  /*                                                                                                        
              - */
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 33  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 33  
 
    6      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
@@ -2110,7 +2110,7 @@ line level    source
   15      =3  #define     BYTE_READ_ID             0x0C
   16      =3  #define     PAGE_ERASE_CONFIG        0xE2
   17      =3  #define     BYTE_READ_CONFIG         0xC0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 34  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 34  
 
   18      =3  #define     BYTE_PROGRAM_CONFIG      0xE1
   19      =3  
@@ -2174,7 +2174,7 @@ line level    source
    7      =3  
    8      =3  #define  INT_INT0         1
    9      =3  #define  INT_BOD          2
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 35  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 35  
 
   10      =3  #define  INT_WDT          3
   11      =3  #define  INT_Timer0       4
@@ -2238,7 +2238,7 @@ line level    source
              --*/
    7      =3  
    8      =3  #define PWM_FSYS         0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 36  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 36  
 
    9      =3  #define PWM_TIMER1       1
   10      =3  
@@ -2302,7 +2302,7 @@ line level    source
              --*/
    7      =3  
    8      =3  #define  FSYS_HXT   0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 37  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 37  
 
    9      =3  #define  FSYS_LXT   1
   10      =3  #define  FSYS_HIRC  2
@@ -2366,7 +2366,7 @@ line level    source
              - */
    6      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 38  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 38  
 
    7      =3  
    8      =3  #define UART0_Timer1  0
@@ -2430,7 +2430,7 @@ line level    source
   63      =2  #define clr_PCON_POF             PCON&=0xEF
   64      =2  #define clr_PCON_GF1             PCON&=0xF7
   65      =2  #define clr_PCON_GF0             PCON&=0xFB 
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 39  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 39  
 
   66      =2  #define clr_PCON_PD              PCON&=0xFD
   67      =2  #define clr_PCON_IDLE            PCON&=0xFE
@@ -2494,7 +2494,7 @@ line level    source
  125      =2  #define set_WKCON_WKTF           WKCON|=0x10
  126      =2  #define set_WKCON_WKTR           WKCON|=0x08
  127      =2  #define set_WKCON_WKPS2          WKCON|=0x04
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 40  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 40  
 
  128      =2  #define set_WKCON_WKPS1          WKCON|=0x02
  129      =2  #define set_WKCON_WKPS0          WKCON|=0x01
@@ -2558,7 +2558,7 @@ line level    source
  187      =2  #define set_CKSWT_OSC0           BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT|=0x02;EA=BIT_TMP
  188      =2  
  189      =2  #define clr_CKSWT_HIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xDF;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 41  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 41  
 
  190      =2  #define clr_CKSWT_LIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xEF;EA=BIT_TMP
  191      =2  #define clr_CKSWT_ECLKST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xF7;EA=BIT_TMP
@@ -2622,7 +2622,7 @@ line level    source
  249      =2  #define set_EIE1_ET3             EIE1|=0x02
  250      =2  #define set_EIE1_ES_1            EIE1|=0x01
  251      =2                                      
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 42  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 42  
 
  252      =2  #define clr_EIE1_EWKT            EIE1&=0xFB
  253      =2  #define clr_EIE1_ET3             EIE1&=0xFD
@@ -2686,7 +2686,7 @@ line level    source
  311      =2  #define set_IAPUEN_LDUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN|=0x02;EA=BIT_TMP
  312      =2  #define set_IAPUEN_APUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN|=0x01;EA=BIT_TMP
  313      =2                                   
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 43  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 43  
 
  314      =2  #define clr_IAPUEN_SPMEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xEF;EA=BIT_TMP
  315      =2  #define clr_IAPUEN_SPUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xF7;EA=BIT_TMP
@@ -2750,7 +2750,7 @@ line level    source
  373      =2  /**** IAPCN  AFH ****/
  374      =2  #define set_IAPCN_FOEN           IAPN|=0x20
  375      =2  #define set_IAPCN_FCEN           IAPN|=0x10
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 44  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 44  
 
  376      =2  #define set_IAPCN_FCTRL3         IAPN|=0x08
  377      =2  #define set_IAPCN_FCTRL2         IAPN|=0x04
@@ -2814,7 +2814,7 @@ line level    source
  435      =2                                   
  436      =2  #define clr_P0M2_7               clr_SFRS_SFRPAGE;P0M2&=0x7F
  437      =2  #define clr_P0M2_6               clr_SFRS_SFRPAGE;P0M2&=0xBF
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 45  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 45  
 
  438      =2  #define clr_P0M2_5               clr_SFRS_SFRPAGE;P0M2&=0xDF
  439      =2  #define clr_P0M2_4               clr_SFRS_SFRPAGE;P0M2&=0xEF
@@ -2878,7 +2878,7 @@ line level    source
  497      =2  #define clr_P1SR_3               set_SFRS_SFRPAGE;P1SR&=0xF7;clr_SFRS_SFRPAGE
  498      =2  #define clr_P1SR_2               set_SFRS_SFRPAGE;P1SR&=0xFB;clr_SFRS_SFRPAGE
  499      =2  #define clr_P1SR_1               set_SFRS_SFRPAGE;P1SR&=0xFD;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 46  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 46  
 
  500      =2  #define clr_P1SR_0               set_SFRS_SFRPAGE;P1SR&=0xFE;clr_SFRS_SFRPAGE
  501      =2  
@@ -2942,7 +2942,7 @@ line level    source
  559      =2  
  560      =2  /**** SADEN    B9H ****/
  561      =2  /**** SADEN_1  8AH ****/
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 47  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 47  
 
  562      =2  /**** SADDR_1  BBH ****/
  563      =2  /**** I2DAT    BCH ****/
@@ -3006,7 +3006,7 @@ line level    source
  621      =2  
  622      =2  /**** PIOCON1 C6H PAGE1 ****/ 
  623      =2  #define set_PIOCON1_PIO15       set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 48  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 48  
 
  624      =2  #define set_PIOCON1_PIO13       set_SFRS_SFRPAGE;PIOCON1|=0x08;clr_SFRS_SFRPAGE
  625      =2  #define set_PIOCON1_PIO12       set_SFRS_SFRPAGE;PIOCON1|=0x04;clr_SFRS_SFRPAGE
@@ -3070,7 +3070,7 @@ line level    source
  683      =2  #define clr_PSW_RS0             RS0 = 0
  684      =2  #define clr_PSW_OV              OV   = 0
  685      =2  #define clr_PSW_P               P    = 0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 49  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 49  
 
  686      =2  
  687      =2  /**** PWMPH    D1H ****/
@@ -3134,7 +3134,7 @@ line level    source
  745      =2  #define set_PWMCON1_PWMMOD1     PWMCON1|=0x80
  746      =2  #define set_PWMCON1_PWMMOD0     PWMCON1|=0x40
  747      =2  #define set_PWMCON1_GP          PWMCON1|=0x20
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 50  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 50  
 
  748      =2  #define set_PWMCON1_PWMTYP      PWMCON1|=0x10
  749      =2  #define set_PWMCON1_FBINEN      PWMCON1|=0x08
@@ -3198,7 +3198,7 @@ line level    source
  806      =2  #define clr_ADCCON0_ADCS        clr_SFRS_SFRPAGE;ADCS=0
  807      =2  #define clr_ADCCON0_ETGSEL1     clr_SFRS_SFRPAGE;ETGSEL1=0
  808      =2  #define clr_ADCCON0_ETGSEL0     clr_SFRS_SFRPAGE;ETGSEL0=0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 51  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 51  
 
  809      =2  #define clr_ADCCON0_ADCHS3      clr_SFRS_SFRPAGE;ADCHS3=0
  810      =2  #define clr_ADCCON0_ADCHS2      clr_SFRS_SFRPAGE;ADCHS2=0
@@ -3262,7 +3262,7 @@ line level    source
  868      =2  #define clr_PIPEN_PIPEN1        PIPEN&=0xFD
  869      =2  #define clr_PIPEN_PIPEN0        PIPEN&=0xFE
  870      =2  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 52  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 52  
 
  871      =2  /**** PIF ECH ****/
  872      =2  #define set_PIF_PIF7             PIF|=0x80
@@ -3326,7 +3326,7 @@ line level    source
  930      =2  #define clr_CAPCON3_CAP01       CAPCON3&=0xFD
  931      =2  #define clr_CAPCON3_CAP00       CAPCON3&=0xFE
  932      =2  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 53  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 53  
 
  933      =2  /**** CAPCON4    F2H ****/
  934      =2  #define set_CAPCON4_CAP23       CAPCON4|=0x08
@@ -3390,7 +3390,7 @@ line level    source
  992      =2  #define set_AINDIDS_P30DIDS     clr_SFRS_SFRPAGE;AINDIDS|=0x02
  993      =2  #define set_AINDIDS_P17DIDS     clr_SFRS_SFRPAGE;AINDIDS|=0x01
  994      =2                                  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 54  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 54  
 
  995      =2  #define clr_AINDIDS_P11DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0x7F
  996      =2  #define clr_AINDIDS_P03DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xBF
@@ -3454,7 +3454,7 @@ line level    source
 1054      =2  #define set_PMEN_5               PMEN|=0x20
 1055      =2  #define set_PMEN_4               PMEN|=0x10
 1056      =2  #define set_PMEN_3               PMEN|=0x08
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 55  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 55  
 
 1057      =2  #define set_PMEN_2               PMEN|=0x04
 1058      =2  #define set_PMEN_1               PMEN|=0x02
@@ -3518,7 +3518,7 @@ line level    source
 1116      =2  #define set_P07                 P07=1
 1117      =2                                  
 1118      =2  #define clr_P00                 P00=0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 56  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 56  
 
 1119      =2  #define clr_P01                 P01=0
 1120      =2  #define clr_P02                 P02=0
@@ -3582,7 +3582,7 @@ line level    source
 1178      =2  #define clr_GATE_T1             TMOD&=0x7F
 1179      =2  #define clr_CT_T1               TMOD&=0xBF
 1180      =2  #define clr_M1_T1               TMOD&=0xDF
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 57  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 57  
 
 1181      =2  #define clr_M0_T1               TMOD&=0xEF
 1182      =2  #define clr_GATE_T0             TMOD&=0xF7
@@ -3646,7 +3646,7 @@ line level    source
 1240      =2  
 1241      =2  /****CAPCON0  92H ****/
 1242      =2  #define set_CAPEN2              CAPCON0|=0x40
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 58  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 58  
 
 1243      =2  #define set_CAPEN1              CAPCON0|=0x20
 1244      =2  #define set_CAPEN0              CAPCON0|=0x10
@@ -3710,7 +3710,7 @@ line level    source
 1302      =2  #define clr_EXTEN0              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xBF;EA=BIT_TMP
 1303      =2  #define clr_HIRCEN              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xDF;EA=BIT_TMP
 1304      =2  #define clr_CKSWTF              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xFE;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 59  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 59  
 
 1305      =2  
 1306      =2  /**** SCON    98H ****/
@@ -3774,7 +3774,7 @@ line level    source
 1364      =2  #define clr_BS                  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFD;EA=BIT_TMP
 1365      =2  #define clr_IAPEN               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFE;EA=BIT_TMP
 1366      =2  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 60  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 60  
 
 1367      =2  /**** P2    A0H ****/
 1368      =2  
@@ -3838,7 +3838,7 @@ line level    source
 1426      =2                                  
 1427      =2  #define clr_EA                  EA       = 0
 1428      =2  #define clr_EADC                EADC     = 0
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 61  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 61  
 
 1429      =2  #define clr_EBOD                EBOD     = 0
 1430      =2  #define clr_ES                  ES       = 0
@@ -3902,7 +3902,7 @@ line level    source
 1488      =2  #define set_FCTRL1              IAPN|=0x02
 1489      =2  #define set_FCTRL0              IAPN|=0x01
 1490      =2                                        
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 62  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 62  
 
 1491      =2  #define clr_FOEN                IAPN&=0xDF
 1492      =2  #define clr_FCEN                IAPN&=0xEF
@@ -3966,7 +3966,7 @@ line level    source
 1550      =2  #define clr_P0M2_7              clr_SFRS_SFRPAGE;P0M2&=0x7F
 1551      =2  #define clr_P0M2_6              clr_SFRS_SFRPAGE;P0M2&=0xBF
 1552      =2  #define clr_P0M2_5              clr_SFRS_SFRPAGE;P0M2&=0xDF
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 63  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 63  
 
 1553      =2  #define clr_P0M2_4              clr_SFRS_SFRPAGE;P0M2&=0xEF
 1554      =2  #define clr_P0M2_3              clr_SFRS_SFRPAGE;P0M2&=0xF7
@@ -4030,7 +4030,7 @@ line level    source
 1612      =2  #define clr_P1S_2               set_SFRS_SFRPAGE;P1S&=0xFB;clr_SFRS_SFRPAGE
 1613      =2  #define clr_P1S_1               set_SFRS_SFRPAGE;P1S&=0xFD;clr_SFRS_SFRPAGE
 1614      =2  #define clr_P1S_0               set_SFRS_SFRPAGE;P1S&=0xFE;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 64  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 64  
 
 1615      =2  
 1616      =2  /**** P1M2    B4H PAGE0 ****/                      
@@ -4094,7 +4094,7 @@ line level    source
 1674      =2  #define clr_INTSEL2             set_SFRS_SFRPAGE;PWMINTC&=0xFB;clr_SFRS_SFRPAGE
 1675      =2  #define clr_INTSEL1             set_SFRS_SFRPAGE;PWMINTC&=0xFD;clr_SFRS_SFRPAGE
 1676      =2  #define clr_INTSEL0             set_SFRS_SFRPAGE;PWMINTC&=0xFE;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 65  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 65  
 
 1677      =2  
 1678      =2  /**** IP    B8H ****/
@@ -4158,7 +4158,7 @@ line level    source
 1736      =2  #define set_BRCK                clr_SFRS_SFRPAGE;T3CON|=0x20
 1737      =2  #define set_TF3                 clr_SFRS_SFRPAGE;T3CON|=0x10
 1738      =2  #define set_TR3                 clr_SFRS_SFRPAGE;T3CON|=0x08
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 66  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 66  
 
 1739      =2  #define set_T3PS2               clr_SFRS_SFRPAGE;T3CON|=0x04
 1740      =2  #define set_T3PS1               clr_SFRS_SFRPAGE;T3CON|=0x02
@@ -4222,7 +4222,7 @@ line level    source
 1798      =2  /**** TL2    CCH PAGE0 ****/
 1799      =2  /**** PWM4L   CCH PAGE1 ****/ 
 1800      =2  /**** TH2    CDH PAGE0 ****/
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 67  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 67  
 
 1801      =2  /**** PWM5L  CDH PAGE1 ****/ 
 1802      =2  /**** ADCMPL  CEH ****/ 
@@ -4286,7 +4286,7 @@ line level    source
 1860      =2  #define clr_FBD0                 FBD&=0xFE
 1861      =2  
 1862      =2  /**** PWMCON0      D8H ****/
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 68  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 68  
 
 1863      =2  #define set_PWMRUN               PWMRUN   = 1
 1864      =2  #define set_LOAD                 LOAD     = 1
@@ -4350,7 +4350,7 @@ line level    source
 1922      =2  #define clr_STADCPX              ADCCON1&=0xBF
 1923      =2  #define clr_ETGTYP1              ADCCON1&=0xF7
 1924      =2  #define clr_ETGTYP0              ADCCON1&=0xFB
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 69  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 69  
 
 1925      =2  #define clr_ADCEX                ADCCON1&=0xFD
 1926      =2  #define clr_ADCEN                ADCCON1&=0xFE
@@ -4414,7 +4414,7 @@ line level    source
 1984      =2  #define set_PINEN7               PINEN|=0x80
 1985      =2  #define set_PINEN6               PINEN|=0x40
 1986      =2  #define set_PINEN5               PINEN|=0x20
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 70  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 70  
 
 1987      =2  #define set_PINEN4               PINEN|=0x10
 1988      =2  #define set_PINEN3               PINEN|=0x08
@@ -4478,7 +4478,7 @@ line level    source
 2046      =2  #define set_PFB                  clr_SFRS_SFRPAGE;EIP|=0x20
 2047      =2  #define set_PWDT                 clr_SFRS_SFRPAGE;EIP|=0x10
 2048      =2  #define set_PPWM                 clr_SFRS_SFRPAGE;EIP|=0x08
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 71  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 71  
 
 2049      =2  #define set_PCAP                 clr_SFRS_SFRPAGE;EIP|=0x04
 2050      =2  #define set_PPI                  clr_SFRS_SFRPAGE;EIP|=0x02
@@ -4542,7 +4542,7 @@ line level    source
 2108      =2  #define clr_CPOL                 clr_SFRS_SFRPAGE;SPCR&=0xF7
 2109      =2  #define clr_CPHA                 clr_SFRS_SFRPAGE;SPCR&=0xFB
 2110      =2  #define clr_SPR1                 clr_SFRS_SFRPAGE;SPCR&=0xFD
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 72  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 72  
 
 2111      =2  #define clr_SPR0                 clr_SFRS_SFRPAGE;SPCR&=0xFE
 2112      =2  
@@ -4606,7 +4606,7 @@ line level    source
 2170      =2  #define clr_PPIH                 clr_SFRS_SFRPAGE;EIPH&=0xFD
 2171      =2  #define clr_PI2CH                clr_SFRS_SFRPAGE;EIPH&=0xFE
 2172      =2  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 73  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 73  
 
 2173      =2  /**** SCON_1    F8H ****/
 2174      =2  #define set_FE_1                 FE_1  = 1
@@ -4670,7 +4670,7 @@ line level    source
 2232      =2  #define clr_PMD3                 PMD&=0xF7
 2233      =2  #define clr_PMD2                 PMD&=0xFB
 2234      =2  #define clr_PMD1                 PMD&=0xFD
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 74  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 74  
 
 2235      =2  #define clr_PMD0                 PMD&=0xFE
 2236      =2  
@@ -4734,7 +4734,7 @@ line level    source
   56      =1  sfr IAPTRG      = 0xA4; //TA Protection
   57      =1  sfr IAPUEN      = 0xA5;  //TA Protection
   58      =1  sfr IAPAL       = 0xA6;
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 75  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 75  
 
   59      =1  sfr IAPAH       = 0xA7;
   60      =1  
@@ -4798,7 +4798,7 @@ line level    source
  118      =1  sfr PWMPH       = 0xD1;
  119      =1  sfr PWM0H        = 0xD2;
  120      =1  sfr PWM1H        = 0xD3;
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 76  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 76  
 
  121      =1  sfr PWM2H        = 0xD4;
  122      =1  sfr PWM3H        = 0xD5;
@@ -4862,7 +4862,7 @@ line level    source
  180      =1  sbit TI_1       = SCON_1^1; 
  181      =1  sbit RI_1       = SCON_1^0; 
  182      =1  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 77  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 77  
 
  183      =1  /*  ADCCON0  */
  184      =1  sbit ADCF       = ADCCON0^7;
@@ -4926,7 +4926,7 @@ line level    source
  242      =1  sbit ET0        = IE^1;
  243      =1  sbit EX0        = IE^0;
  244      =1  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 78  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 78  
 
  245      =1  /*  P2  */ 
  246      =1  sbit P20        = P2^0;
@@ -4990,7 +4990,7 @@ line level    source
  304      =1  
  305      =1  
  306      =1  
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 79  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 79  
 
  307      =1  
  308      =1  
@@ -5054,7 +5054,7 @@ line level    source
   64          void Idle_Mode(bit IdleStatus)
   65          {
   66   1          if (IdleStatus)
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 80  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 80  
 
   67   1          {
   68   2             IDLE_MODE_ENABLE;
@@ -5062,7 +5062,7 @@ line level    source
   70   2             _nop_();
   71   2          }
   72   1      }
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 81  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 81  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -5126,7 +5126,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0000 300005      R     JNB     IdleStatus,?C0006
                                            ; SOURCE LINE # 67
                                            ; SOURCE LINE # 68
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 82  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 82  
 
 0003 438701            ORL     PCON,#01H
                                            ; SOURCE LINE # 69
@@ -5139,7 +5139,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0008 22                RET     
              ; FUNCTION Idle_Mode (END)
 
-C51 COMPILER V9.60.7.0   COMMON                                                            11/18/2023 12:07:17 PAGE 83  
+C51 COMPILER V9.60.7.0   COMMON                                                            11/19/2023 18:40:03 PAGE 83  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

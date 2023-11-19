@@ -1,11 +1,11 @@
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 1   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 1   
 
 
-C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SYS
-OBJECT MODULE PLACED IN .\Objects\sys.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE sys.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51F
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE WDT
+OBJECT MODULE PLACED IN .\Objects\wdt.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE wdt.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\MS51BSP_KEIL-master\MS51F
                     -B9AE_MS51XB9AE_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\StdDriver\i
-                    -nc) DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Listings\sys.lst) TABS(2) OBJECT(.\Objects\sys.obj)
+                    -nc) DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Listings\wdt.lst) TABS(2) OBJECT(.\Objects\wdt.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
    9      =2  /*  sfr_macro_ms51_16k.h                                                                                  
              - */
   10      =2  /*  SFR Macro define for Nuvoton MS51FB9AE / MS51XB9AE / MS51XB9BE                                        
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 2   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 2   
 
              - */
   11      =2  /*  <Define rule I> set or clr _ regsiter name _ register bit name                                        
@@ -126,7 +126,7 @@ line level    source
   10      =3  #define __STDIO_H__
   11      =3  
   12      =3  #ifndef EOF
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 3   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 3   
 
   13      =3   #define EOF -1
   14      =3  #endif
@@ -190,7 +190,7 @@ line level    source
            =3 #define FVAR(object, addr)   (*((object volatile far *) (addr)))
            =3 #define FARRAY(object, base) ((object volatile far *) (base))
            =3 #define FCVAR(object, addr)   (*((object const far *) (addr)))
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 4   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 4   
 
            =3 #define FCARRAY(object, base) ((object const far *) (base))
            =3 #else
@@ -254,7 +254,7 @@ line level    source
   36      =3  extern int    strpos  (const char *s, char c);
   37      =3  extern char  *strrchr (const char *s, char c);
   38      =3  extern int    strrpos (const char *s, char c);
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 5   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 5   
 
   39      =3  
   40      =3  extern size_t strspn  (const char *s, const char *set);
@@ -318,7 +318,7 @@ line level    source
   29      =3  
   30      =3  #define Disable  0
   31      =3  #define Enable   1
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 6   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 6   
 
   32      =3  
   33      =3  #define DISABLE  0
@@ -382,7 +382,7 @@ line level    source
   91      =3  
   92      =3  /*****************************************************************************/
   93      =3  /*   Software reset                                                          */
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 7   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 7   
 
   94      =3  /*****************************************************************************/
   95      =3  #define    ENABLE_SOFTWARE_RESET_TO_APROM    clr_CHPCON_BS;set_CHPCON_SWRST
@@ -446,7 +446,7 @@ line level    source
  147      =3  #define    DISABLE_GLOBAL_INTERRUPT      EA=0
  148      =3  /*ENABLE INTERRUPT*/                     
  149      =3  #define    ENABLE_ADC_INTERRUPT          set_IE_EADC
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 8   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 8   
 
  150      =3  #define    ENABLE_BOD_INTERRUPT          set_IE_EBOD
  151      =3  #define    ENABLE_UART0_INTERRUPT        set_IE_ES
@@ -510,7 +510,7 @@ line level    source
  209      =3  #define   SET_INT_TIMER0_LEVEL1        clr_IP_PT0; set_IPH_PT0H
  210      =3  #define   SET_INT_TIMER0_LEVEL2        set_IP_PT0; clr_IPH_PT0H
  211      =3  #define   SET_INT_TIMER0_LEVEL3        set_IP_PT0; set_IPH_PT0H
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 9   
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 9   
 
  212      =3  
  213      =3  #define   SET_INT_I2C0_LEVEL0          clr_EIP_PI2C; clr_EIPH_PI2CH
@@ -574,7 +574,7 @@ line level    source
  271      =3  #define   SET_INT_UART1_LEVEL3         set_EIP1_PS_1; set_EIPH1_PSH_1
  272      =3  
  273      =3  #define   SET_INT_Timer3_LEVEL0        clr_EIP1_PT3; clr_EIPH1_PT3H
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 10  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 10  
 
  274      =3  #define   SET_INT_Timer3_LEVEL1        clr_EIP1_PT3; set_EIPH1_PT3H
  275      =3  #define   SET_INT_Timer3_LEVEL2        set_EIP1_PT3; clr_EIPH1_PT3H
@@ -638,7 +638,7 @@ line level    source
  333      =3  #define    P17_QUASI_MODE            clr_SFRS_SFRPAGE;P1M1&=0x7F;P1M2&=0x7F
  334      =3  #define    P30_QUASI_MODE            clr_SFRS_SFRPAGE;P3M1&=0xFE;P3M2&=0xFE
  335      =3  #define    ALL_GPIO_QUASI_MODE       clr_SFRS_SFRPAGE;P0M1=0;P0M2=0;P1M1=0;P1M2=0;P3M1=0;P3M2=0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 11  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 11  
 
  336      =3  //------------------- Define Port as Push Pull mode -------------------
  337      =3  #define    P00_PUSHPULL_MODE         clr_SFRS_SFRPAGE;P0M1&=0xFE;P0M2|=0x01
@@ -702,7 +702,7 @@ line level    source
  394      =3  /*****************************************************************************************
  395      =3  * For GPIO TTL/Schmitt Trig Type Seetting 
  396      =3  *****************************************************************************************/
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 12  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 12  
 
  397      =3  //------------------- Enable GPIO Schmitt Trigger Mode  -------------------
  398      =3  #define    P00_ST_ENABLE          SFRS=1;P0S|=0x01
@@ -766,7 +766,7 @@ line level    source
  456      =3  *****************************************************************************/
  457      =3  #define    ENABLE_BIT7_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0x7F;PIPEN|=0x80
  458      =3  #define    ENABLE_BIT6_HIGHLEVEL_TRIG     PICON&=0x7F;PINEN&=0xBF;PIPEN|=0x40
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 13  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 13  
 
  459      =3  #define    ENABLE_BIT5_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xDF;PIPEN|=0x20
  460      =3  #define    ENABLE_BIT4_HIGHLEVEL_TRIG     PICON&=0xBF;PINEN&=0xEF;PIPEN|=0x10
@@ -830,7 +830,7 @@ line level    source
              -divider = 4   for TM2/TM3) */
  511      =3  #define    TIMER_DIV16_VALUE_10ms_FOSC_7372800     65536-4608       /* 4608*16   /7372800= 10 ms   (Timer 
              -divider = 16  for TM2/TM3) */
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 14  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 14  
 
  512      =3  #define    TIMER_DIV64_VALUE_30ms_FOSC_7372800     65536-3456       /* 3456*64   /7372800= 30 ms   (Timer 
              -divider = 64  for TM2/TM3) */
@@ -894,7 +894,7 @@ line level    source
              -r divider = 4   for TM2/TM3) */
  543      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_11059200      65536-2765       /* 2765*4    /11059200 = 1 mS    (Time
              -r divider = 4   for TM2/TM3) */
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 15  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 15  
 
  544      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_11059200    65536-277        /* 553*4     /11059200 = 100 us  (Time
              -r divider = 4   for TM2/TM3) */
@@ -958,7 +958,7 @@ line level    source
  574      =3  /* define timer base value Fsys = 16.6MHz */
  575      =3  #define    TIMER_DIV12_VALUE_10us_FOSC_16600000      65536-14       /* 14*12     /16600000 = 10 uS,  (Time
              -r divider = 12  for TM0/TM1) */
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 16  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 16  
 
  576      =3  #define    TIMER_DIV12_VALUE_100us_FOSC_16600000     65536-138      /* 138*12    /16600000 = 100 uS, (Time
              -r divider = 12  for TM0/TM1) */
@@ -1022,7 +1022,7 @@ line level    source
  607      =3  #define    TIMER_DIV4_VALUE_1ms_FOSC_22118400        65536-5530     /* 923*4      /22118400 = 1 mS,   (Tim
              -er divider = 4   for TM2/TM3) */
  608      =3  #define    TIMER_DIV4_VALUE_100us_FOSC_22118400      65536-553      /* 553*4      /22118400 = 100 us  (Tim
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 17  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 17  
 
              -er divider = 4   for TM2/TM3) */
  609      =3  #define    TIMER_DIV4_VALUE_200us_FOSC_22118400      65536-1106     /* 1106*4     /22118400 = 200 us  (Tim
@@ -1086,7 +1086,7 @@ line level    source
              -er divider = 512 for TM2/TM3) */ 
  639      =3  
  640      =3  /*******************************************************************************
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 18  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 18  
 
  641      =3  *   TIMER Function Define
  642      =3  ********************************************************************************/
@@ -1150,7 +1150,7 @@ line level    source
              -0x10;CAPCON2|=0x10
  693      =3  #define  IC7_P15_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x08;CAPCON0|=
              -0x10;CAPCON2|=0x10
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 19  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 19  
 
  694      =3                                                  
  695      =3  #define  IC0_P12_CAP1_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xF3;CAPCON3&=0x0F;CAPCON3|=0x00;CAPCON0|=
@@ -1214,7 +1214,7 @@ line level    source
  726      =3  #define  IC0_P12_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
              -0x00;CAPCON0|=0x20;CAPCON2|=0x20
  727      =3  #define  IC1_P11_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 20  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 20  
 
              -0x10;CAPCON0|=0x20;CAPCON2|=0x20
  728      =3  #define  IC2_P10_CAP1_RISINGEDGE_CAPTURE        SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x04;CAPCON3&=0x0F;CAPCON3|=
@@ -1278,7 +1278,7 @@ line level    source
  759      =3  #define  IC2_P10_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
              -0x20;CAPCON0|=0x20;CAPCON2|=0x20
  760      =3  #define  IC3_P00_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 21  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 21  
 
              -0x30;CAPCON0|=0x20;CAPCON2|=0x20
  761      =3  #define  IC3_P04_CAP1_BOTHEDGE_CAPTURE          SFRS=0;CAPCON1&=0xF3;CAPCON1|=0x08;CAPCON3&=0x0F;CAPCON3|=
@@ -1342,7 +1342,7 @@ line level    source
  805      =3  #define    PWM5_P15_OUTPUT_ENABLE            set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output enable
  806      =3  #define    PWM5_P03_OUTPUT_ENABLE            PIOCON0|=0x20                                                
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 22  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 22  
 
              -                                 //P0.3 as PWM5
  807      =3  #define    PWM4_P01_OUTPUT_ENABLE            PIOCON0|=0x10                                                
@@ -1406,7 +1406,7 @@ line level    source
  847      =3  #define    PWM_CENTRAL_POINT_INT             set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x20;clr_SFRS_SFRPAGE
              -;set_PWMCON1_PWMTYP
  848      =3  #define    PWM_PERIOD_END_INT                set_SFRS_SFRPAGE;PWMINTC&=0xCF;PWMINTC|=0x30;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 23  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 23  
 
              -;set_PWMCON1_PWMTYP
  849      =3  //--------- PWM interrupt pin select ---------------------------
@@ -1470,7 +1470,7 @@ line level    source
  897      =3  
  898      =3  #define    DISABLE_PWM0_CH5_P15_OUTPUT       set_SFRS_SFRPAGE;PIOCON1&=0xDF;clr_SFRS_SFRPAGE        //P1.5
              - as PWM5 output disable
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 24  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 24  
 
  899      =3  #define    DISABLE_PWM0_CH5_P03_OUTPUT       PIOCON0&=0xDF                                                
              -                                 //P0.3 as PWM5               
@@ -1534,7 +1534,7 @@ line level    source
  947      =3  #define    ENABLE_ADC_AIN2                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x02;P07_INPUT_MODE;A
              -INDIDS=0;AINDIDS|=0x04;ADCCON1|=1    //P07
  948      =3  #define    ENABLE_ADC_AIN3                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x03;P06_INPUT_MODE;A
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 25  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 25  
 
              -INDIDS=0;AINDIDS|=0x08;ADCCON1|=1    //P06
  949      =3  #define    ENABLE_ADC_AIN4                   clr_SFRS_SFRPAGE;ADCCON0&=0xF0;ADCCON0|=0x04;P05_INPUT_MODE;A
@@ -1598,7 +1598,7 @@ line level    source
  981      =3  #define    PWM0_CH2_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x10;ADCCON1&=0xF3;AD
              -CCON1|=0x00;ADCCON1|=0x02
  982      =3  #define    PWM0_CH4_FALLINGEDGE_TRIG_ADC     clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x20;ADCCON1&=0xF3;AD
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 26  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 26  
 
              -CCON1|=0x04;ADCCON1|=0x02
  983      =3  #define    PWM0_CH0_RISINGEDGE_TRIG_ADC      clr_SFRS_SFRPAGE;ADCCON0&=0xCF;ADCCON0|=0x00;ADCCON1&=0xF3;AD
@@ -1662,7 +1662,7 @@ line level    source
 1027      =3  
 1028      =3  /*****************************************************************************************
 1029      =3  * WDT setting
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 27  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 27  
 
 1030      =3  *****************************************************************************************/
 1031      =3  #define    WDT_TIMEOUT_6MS                    TA=0xAA;TA=0x55;WDCON&=0xF8
@@ -1726,7 +1726,7 @@ line level    source
   45      =3  #define ADC_ADCAQT6                 6
   46      =3  #define ADC_ADCAQT7                 7
   47      =3  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 28  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 28  
 
   48      =3  
   49      =3  void ADC_InitialContinous(unsigned int u16ADCRBase, unsigned char u8ADCRLength);
@@ -1790,7 +1790,7 @@ line level    source
   11      =3  
   12      =3  #define  BOOT_APROM     0
   13      =3  #define  BOOT_LDROM     2
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 29  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 29  
 
   14      =3  
   15      =3  extern bit BIT_TMP;
@@ -1854,7 +1854,7 @@ line level    source
              -vider = 64
   37      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_110592    65536-8640    //17280*128/22118400 = 100 ms    // Timer 
              -divider = 128
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 30  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 30  
 
   38      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_110592    65536-17280    //34560*128/22118400 = 200 ms    // Timer
              - divider = 128
@@ -1918,7 +1918,7 @@ line level    source
   69      =3    #define TIMER_DIV4_VALUE_10us_FOSC_166000        65536-41    //41*4/16600000 = 10 uS,        // Timer di
              -vider = 4  for TM2/TM3
   70      =3    #define TIMER_DIV4_VALUE_100us_FOSC_166000      65536-415    //415*4/16600000 = 100 us        // Timer d
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 31  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 31  
 
              -ivider = 4
   71      =3    #define TIMER_DIV4_VALUE_200us_FOSC_166000      65536-830    //830*4/16600000 = 200 us        // Timer d
@@ -1982,7 +1982,7 @@ line level    source
              -er divider = 64
  102      =3    #define TIMER_DIV128_VALUE_100ms_FOSC_221184    65536-17280      //17280*128/22118400 = 100 ms      // T
              -imer divider = 128
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 32  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 32  
 
  103      =3    #define TIMER_DIV128_VALUE_200ms_FOSC_221184    65536-34560      //34560*128/22118400 = 200 ms      // T
              -imer divider = 128
@@ -2046,7 +2046,7 @@ line level    source
              - */
    5      =3  /*                                                                                                        
              - */
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 33  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 33  
 
    6      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
@@ -2110,7 +2110,7 @@ line level    source
   15      =3  #define     BYTE_READ_ID             0x0C
   16      =3  #define     PAGE_ERASE_CONFIG        0xE2
   17      =3  #define     BYTE_READ_CONFIG         0xC0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 34  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 34  
 
   18      =3  #define     BYTE_PROGRAM_CONFIG      0xE1
   19      =3  
@@ -2174,7 +2174,7 @@ line level    source
    7      =3  
    8      =3  #define  INT_INT0         1
    9      =3  #define  INT_BOD          2
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 35  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 35  
 
   10      =3  #define  INT_WDT          3
   11      =3  #define  INT_Timer0       4
@@ -2238,7 +2238,7 @@ line level    source
              --*/
    7      =3  
    8      =3  #define PWM_FSYS         0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 36  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 36  
 
    9      =3  #define PWM_TIMER1       1
   10      =3  
@@ -2302,7 +2302,7 @@ line level    source
              --*/
    7      =3  
    8      =3  #define  FSYS_HXT   0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 37  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 37  
 
    9      =3  #define  FSYS_LXT   1
   10      =3  #define  FSYS_HIRC  2
@@ -2366,7 +2366,7 @@ line level    source
              - */
    6      =3  /*--------------------------------------------------------------------------------------------------------
              --*/
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 38  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 38  
 
    7      =3  
    8      =3  #define UART0_Timer1  0
@@ -2430,7 +2430,7 @@ line level    source
   63      =2  #define clr_PCON_POF             PCON&=0xEF
   64      =2  #define clr_PCON_GF1             PCON&=0xF7
   65      =2  #define clr_PCON_GF0             PCON&=0xFB 
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 39  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 39  
 
   66      =2  #define clr_PCON_PD              PCON&=0xFD
   67      =2  #define clr_PCON_IDLE            PCON&=0xFE
@@ -2494,7 +2494,7 @@ line level    source
  125      =2  #define set_WKCON_WKTF           WKCON|=0x10
  126      =2  #define set_WKCON_WKTR           WKCON|=0x08
  127      =2  #define set_WKCON_WKPS2          WKCON|=0x04
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 40  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 40  
 
  128      =2  #define set_WKCON_WKPS1          WKCON|=0x02
  129      =2  #define set_WKCON_WKPS0          WKCON|=0x01
@@ -2558,7 +2558,7 @@ line level    source
  187      =2  #define set_CKSWT_OSC0           BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT|=0x02;EA=BIT_TMP
  188      =2  
  189      =2  #define clr_CKSWT_HIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xDF;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 41  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 41  
 
  190      =2  #define clr_CKSWT_LIRCST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xEF;EA=BIT_TMP
  191      =2  #define clr_CKSWT_ECLKST         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKSWT&=0xF7;EA=BIT_TMP
@@ -2622,7 +2622,7 @@ line level    source
  249      =2  #define set_EIE1_ET3             EIE1|=0x02
  250      =2  #define set_EIE1_ES_1            EIE1|=0x01
  251      =2                                      
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 42  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 42  
 
  252      =2  #define clr_EIE1_EWKT            EIE1&=0xFB
  253      =2  #define clr_EIE1_ET3             EIE1&=0xFD
@@ -2686,7 +2686,7 @@ line level    source
  311      =2  #define set_IAPUEN_LDUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN|=0x02;EA=BIT_TMP
  312      =2  #define set_IAPUEN_APUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN|=0x01;EA=BIT_TMP
  313      =2                                   
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 43  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 43  
 
  314      =2  #define clr_IAPUEN_SPMEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xEF;EA=BIT_TMP
  315      =2  #define clr_IAPUEN_SPUEN         BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;IAPUEN&=0xF7;EA=BIT_TMP
@@ -2750,7 +2750,7 @@ line level    source
  373      =2  /**** IAPCN  AFH ****/
  374      =2  #define set_IAPCN_FOEN           IAPN|=0x20
  375      =2  #define set_IAPCN_FCEN           IAPN|=0x10
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 44  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 44  
 
  376      =2  #define set_IAPCN_FCTRL3         IAPN|=0x08
  377      =2  #define set_IAPCN_FCTRL2         IAPN|=0x04
@@ -2814,7 +2814,7 @@ line level    source
  435      =2                                   
  436      =2  #define clr_P0M2_7               clr_SFRS_SFRPAGE;P0M2&=0x7F
  437      =2  #define clr_P0M2_6               clr_SFRS_SFRPAGE;P0M2&=0xBF
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 45  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 45  
 
  438      =2  #define clr_P0M2_5               clr_SFRS_SFRPAGE;P0M2&=0xDF
  439      =2  #define clr_P0M2_4               clr_SFRS_SFRPAGE;P0M2&=0xEF
@@ -2878,7 +2878,7 @@ line level    source
  497      =2  #define clr_P1SR_3               set_SFRS_SFRPAGE;P1SR&=0xF7;clr_SFRS_SFRPAGE
  498      =2  #define clr_P1SR_2               set_SFRS_SFRPAGE;P1SR&=0xFB;clr_SFRS_SFRPAGE
  499      =2  #define clr_P1SR_1               set_SFRS_SFRPAGE;P1SR&=0xFD;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 46  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 46  
 
  500      =2  #define clr_P1SR_0               set_SFRS_SFRPAGE;P1SR&=0xFE;clr_SFRS_SFRPAGE
  501      =2  
@@ -2942,7 +2942,7 @@ line level    source
  559      =2  
  560      =2  /**** SADEN    B9H ****/
  561      =2  /**** SADEN_1  8AH ****/
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 47  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 47  
 
  562      =2  /**** SADDR_1  BBH ****/
  563      =2  /**** I2DAT    BCH ****/
@@ -3006,7 +3006,7 @@ line level    source
  621      =2  
  622      =2  /**** PIOCON1 C6H PAGE1 ****/ 
  623      =2  #define set_PIOCON1_PIO15       set_SFRS_SFRPAGE;PIOCON1|=0x20;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 48  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 48  
 
  624      =2  #define set_PIOCON1_PIO13       set_SFRS_SFRPAGE;PIOCON1|=0x08;clr_SFRS_SFRPAGE
  625      =2  #define set_PIOCON1_PIO12       set_SFRS_SFRPAGE;PIOCON1|=0x04;clr_SFRS_SFRPAGE
@@ -3070,7 +3070,7 @@ line level    source
  683      =2  #define clr_PSW_RS0             RS0 = 0
  684      =2  #define clr_PSW_OV              OV   = 0
  685      =2  #define clr_PSW_P               P    = 0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 49  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 49  
 
  686      =2  
  687      =2  /**** PWMPH    D1H ****/
@@ -3134,7 +3134,7 @@ line level    source
  745      =2  #define set_PWMCON1_PWMMOD1     PWMCON1|=0x80
  746      =2  #define set_PWMCON1_PWMMOD0     PWMCON1|=0x40
  747      =2  #define set_PWMCON1_GP          PWMCON1|=0x20
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 50  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 50  
 
  748      =2  #define set_PWMCON1_PWMTYP      PWMCON1|=0x10
  749      =2  #define set_PWMCON1_FBINEN      PWMCON1|=0x08
@@ -3198,7 +3198,7 @@ line level    source
  806      =2  #define clr_ADCCON0_ADCS        clr_SFRS_SFRPAGE;ADCS=0
  807      =2  #define clr_ADCCON0_ETGSEL1     clr_SFRS_SFRPAGE;ETGSEL1=0
  808      =2  #define clr_ADCCON0_ETGSEL0     clr_SFRS_SFRPAGE;ETGSEL0=0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 51  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 51  
 
  809      =2  #define clr_ADCCON0_ADCHS3      clr_SFRS_SFRPAGE;ADCHS3=0
  810      =2  #define clr_ADCCON0_ADCHS2      clr_SFRS_SFRPAGE;ADCHS2=0
@@ -3262,7 +3262,7 @@ line level    source
  868      =2  #define clr_PIPEN_PIPEN1        PIPEN&=0xFD
  869      =2  #define clr_PIPEN_PIPEN0        PIPEN&=0xFE
  870      =2  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 52  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 52  
 
  871      =2  /**** PIF ECH ****/
  872      =2  #define set_PIF_PIF7             PIF|=0x80
@@ -3326,7 +3326,7 @@ line level    source
  930      =2  #define clr_CAPCON3_CAP01       CAPCON3&=0xFD
  931      =2  #define clr_CAPCON3_CAP00       CAPCON3&=0xFE
  932      =2  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 53  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 53  
 
  933      =2  /**** CAPCON4    F2H ****/
  934      =2  #define set_CAPCON4_CAP23       CAPCON4|=0x08
@@ -3390,7 +3390,7 @@ line level    source
  992      =2  #define set_AINDIDS_P30DIDS     clr_SFRS_SFRPAGE;AINDIDS|=0x02
  993      =2  #define set_AINDIDS_P17DIDS     clr_SFRS_SFRPAGE;AINDIDS|=0x01
  994      =2                                  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 54  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 54  
 
  995      =2  #define clr_AINDIDS_P11DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0x7F
  996      =2  #define clr_AINDIDS_P03DIDS     clr_SFRS_SFRPAGE;AINDIDS&=0xBF
@@ -3454,7 +3454,7 @@ line level    source
 1054      =2  #define set_PMEN_5               PMEN|=0x20
 1055      =2  #define set_PMEN_4               PMEN|=0x10
 1056      =2  #define set_PMEN_3               PMEN|=0x08
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 55  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 55  
 
 1057      =2  #define set_PMEN_2               PMEN|=0x04
 1058      =2  #define set_PMEN_1               PMEN|=0x02
@@ -3518,7 +3518,7 @@ line level    source
 1116      =2  #define set_P07                 P07=1
 1117      =2                                  
 1118      =2  #define clr_P00                 P00=0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 56  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 56  
 
 1119      =2  #define clr_P01                 P01=0
 1120      =2  #define clr_P02                 P02=0
@@ -3582,7 +3582,7 @@ line level    source
 1178      =2  #define clr_GATE_T1             TMOD&=0x7F
 1179      =2  #define clr_CT_T1               TMOD&=0xBF
 1180      =2  #define clr_M1_T1               TMOD&=0xDF
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 57  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 57  
 
 1181      =2  #define clr_M0_T1               TMOD&=0xEF
 1182      =2  #define clr_GATE_T0             TMOD&=0xF7
@@ -3646,7 +3646,7 @@ line level    source
 1240      =2  
 1241      =2  /****CAPCON0  92H ****/
 1242      =2  #define set_CAPEN2              CAPCON0|=0x40
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 58  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 58  
 
 1243      =2  #define set_CAPEN1              CAPCON0|=0x20
 1244      =2  #define set_CAPEN0              CAPCON0|=0x10
@@ -3710,7 +3710,7 @@ line level    source
 1302      =2  #define clr_EXTEN0              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xBF;EA=BIT_TMP
 1303      =2  #define clr_HIRCEN              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xDF;EA=BIT_TMP
 1304      =2  #define clr_CKSWTF              BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=0xFE;EA=BIT_TMP
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 59  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 59  
 
 1305      =2  
 1306      =2  /**** SCON    98H ****/
@@ -3774,7 +3774,7 @@ line level    source
 1364      =2  #define clr_BS                  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFD;EA=BIT_TMP
 1365      =2  #define clr_IAPEN               BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=0xFE;EA=BIT_TMP
 1366      =2  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 60  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 60  
 
 1367      =2  /**** P2    A0H ****/
 1368      =2  
@@ -3838,7 +3838,7 @@ line level    source
 1426      =2                                  
 1427      =2  #define clr_EA                  EA       = 0
 1428      =2  #define clr_EADC                EADC     = 0
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 61  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 61  
 
 1429      =2  #define clr_EBOD                EBOD     = 0
 1430      =2  #define clr_ES                  ES       = 0
@@ -3902,7 +3902,7 @@ line level    source
 1488      =2  #define set_FCTRL1              IAPN|=0x02
 1489      =2  #define set_FCTRL0              IAPN|=0x01
 1490      =2                                        
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 62  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 62  
 
 1491      =2  #define clr_FOEN                IAPN&=0xDF
 1492      =2  #define clr_FCEN                IAPN&=0xEF
@@ -3966,7 +3966,7 @@ line level    source
 1550      =2  #define clr_P0M2_7              clr_SFRS_SFRPAGE;P0M2&=0x7F
 1551      =2  #define clr_P0M2_6              clr_SFRS_SFRPAGE;P0M2&=0xBF
 1552      =2  #define clr_P0M2_5              clr_SFRS_SFRPAGE;P0M2&=0xDF
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 63  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 63  
 
 1553      =2  #define clr_P0M2_4              clr_SFRS_SFRPAGE;P0M2&=0xEF
 1554      =2  #define clr_P0M2_3              clr_SFRS_SFRPAGE;P0M2&=0xF7
@@ -4030,7 +4030,7 @@ line level    source
 1612      =2  #define clr_P1S_2               set_SFRS_SFRPAGE;P1S&=0xFB;clr_SFRS_SFRPAGE
 1613      =2  #define clr_P1S_1               set_SFRS_SFRPAGE;P1S&=0xFD;clr_SFRS_SFRPAGE
 1614      =2  #define clr_P1S_0               set_SFRS_SFRPAGE;P1S&=0xFE;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 64  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 64  
 
 1615      =2  
 1616      =2  /**** P1M2    B4H PAGE0 ****/                      
@@ -4094,7 +4094,7 @@ line level    source
 1674      =2  #define clr_INTSEL2             set_SFRS_SFRPAGE;PWMINTC&=0xFB;clr_SFRS_SFRPAGE
 1675      =2  #define clr_INTSEL1             set_SFRS_SFRPAGE;PWMINTC&=0xFD;clr_SFRS_SFRPAGE
 1676      =2  #define clr_INTSEL0             set_SFRS_SFRPAGE;PWMINTC&=0xFE;clr_SFRS_SFRPAGE
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 65  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 65  
 
 1677      =2  
 1678      =2  /**** IP    B8H ****/
@@ -4158,7 +4158,7 @@ line level    source
 1736      =2  #define set_BRCK                clr_SFRS_SFRPAGE;T3CON|=0x20
 1737      =2  #define set_TF3                 clr_SFRS_SFRPAGE;T3CON|=0x10
 1738      =2  #define set_TR3                 clr_SFRS_SFRPAGE;T3CON|=0x08
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 66  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 66  
 
 1739      =2  #define set_T3PS2               clr_SFRS_SFRPAGE;T3CON|=0x04
 1740      =2  #define set_T3PS1               clr_SFRS_SFRPAGE;T3CON|=0x02
@@ -4222,7 +4222,7 @@ line level    source
 1798      =2  /**** TL2    CCH PAGE0 ****/
 1799      =2  /**** PWM4L   CCH PAGE1 ****/ 
 1800      =2  /**** TH2    CDH PAGE0 ****/
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 67  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 67  
 
 1801      =2  /**** PWM5L  CDH PAGE1 ****/ 
 1802      =2  /**** ADCMPL  CEH ****/ 
@@ -4286,7 +4286,7 @@ line level    source
 1860      =2  #define clr_FBD0                 FBD&=0xFE
 1861      =2  
 1862      =2  /**** PWMCON0      D8H ****/
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 68  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 68  
 
 1863      =2  #define set_PWMRUN               PWMRUN   = 1
 1864      =2  #define set_LOAD                 LOAD     = 1
@@ -4350,7 +4350,7 @@ line level    source
 1922      =2  #define clr_STADCPX              ADCCON1&=0xBF
 1923      =2  #define clr_ETGTYP1              ADCCON1&=0xF7
 1924      =2  #define clr_ETGTYP0              ADCCON1&=0xFB
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 69  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 69  
 
 1925      =2  #define clr_ADCEX                ADCCON1&=0xFD
 1926      =2  #define clr_ADCEN                ADCCON1&=0xFE
@@ -4414,7 +4414,7 @@ line level    source
 1984      =2  #define set_PINEN7               PINEN|=0x80
 1985      =2  #define set_PINEN6               PINEN|=0x40
 1986      =2  #define set_PINEN5               PINEN|=0x20
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 70  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 70  
 
 1987      =2  #define set_PINEN4               PINEN|=0x10
 1988      =2  #define set_PINEN3               PINEN|=0x08
@@ -4478,7 +4478,7 @@ line level    source
 2046      =2  #define set_PFB                  clr_SFRS_SFRPAGE;EIP|=0x20
 2047      =2  #define set_PWDT                 clr_SFRS_SFRPAGE;EIP|=0x10
 2048      =2  #define set_PPWM                 clr_SFRS_SFRPAGE;EIP|=0x08
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 71  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 71  
 
 2049      =2  #define set_PCAP                 clr_SFRS_SFRPAGE;EIP|=0x04
 2050      =2  #define set_PPI                  clr_SFRS_SFRPAGE;EIP|=0x02
@@ -4542,7 +4542,7 @@ line level    source
 2108      =2  #define clr_CPOL                 clr_SFRS_SFRPAGE;SPCR&=0xF7
 2109      =2  #define clr_CPHA                 clr_SFRS_SFRPAGE;SPCR&=0xFB
 2110      =2  #define clr_SPR1                 clr_SFRS_SFRPAGE;SPCR&=0xFD
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 72  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 72  
 
 2111      =2  #define clr_SPR0                 clr_SFRS_SFRPAGE;SPCR&=0xFE
 2112      =2  
@@ -4606,7 +4606,7 @@ line level    source
 2170      =2  #define clr_PPIH                 clr_SFRS_SFRPAGE;EIPH&=0xFD
 2171      =2  #define clr_PI2CH                clr_SFRS_SFRPAGE;EIPH&=0xFE
 2172      =2  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 73  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 73  
 
 2173      =2  /**** SCON_1    F8H ****/
 2174      =2  #define set_FE_1                 FE_1  = 1
@@ -4670,7 +4670,7 @@ line level    source
 2232      =2  #define clr_PMD3                 PMD&=0xF7
 2233      =2  #define clr_PMD2                 PMD&=0xFB
 2234      =2  #define clr_PMD1                 PMD&=0xFD
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 74  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 74  
 
 2235      =2  #define clr_PMD0                 PMD&=0xFE
 2236      =2  
@@ -4734,7 +4734,7 @@ line level    source
   56      =1  sfr IAPTRG      = 0xA4; //TA Protection
   57      =1  sfr IAPUEN      = 0xA5;  //TA Protection
   58      =1  sfr IAPAL       = 0xA6;
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 75  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 75  
 
   59      =1  sfr IAPAH       = 0xA7;
   60      =1  
@@ -4798,7 +4798,7 @@ line level    source
  118      =1  sfr PWMPH       = 0xD1;
  119      =1  sfr PWM0H        = 0xD2;
  120      =1  sfr PWM1H        = 0xD3;
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 76  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 76  
 
  121      =1  sfr PWM2H        = 0xD4;
  122      =1  sfr PWM3H        = 0xD5;
@@ -4862,7 +4862,7 @@ line level    source
  180      =1  sbit TI_1       = SCON_1^1; 
  181      =1  sbit RI_1       = SCON_1^0; 
  182      =1  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 77  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 77  
 
  183      =1  /*  ADCCON0  */
  184      =1  sbit ADCF       = ADCCON0^7;
@@ -4926,7 +4926,7 @@ line level    source
  242      =1  sbit ET0        = IE^1;
  243      =1  sbit EX0        = IE^0;
  244      =1  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 78  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 78  
 
  245      =1  /*  P2  */ 
  246      =1  sbit P20        = P2^0;
@@ -4990,619 +4990,274 @@ line level    source
  304      =1  
  305      =1  
  306      =1  
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 79  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 79  
 
  307      =1  
  308      =1  
  309      =1  
    8          
-   9          unsigned char data  TA_REG_TMP,BYTE_TMP,SFRS_TMP;
-  10          
-  11            /**
-  12            * @brief This API configures modify system HIRC value
-  13            * @param[in] u8FsysMode . Valid values are:
-  14            *                       - \ref HIRC_24                 :Internal HIRC 24MHz .
-  15            *                       - \ref HIRC_16                 :Internal HIRC 16MHz.
-  16            *                       - \ref HIRC_166                :Internal HIRC 16.6MHz.
-  17            * @note      None.
-  18            * @exmaple : MODIFY_HIRC(HIRC_24);
-  19            */
-  20           void MODIFY_HIRC(unsigned char u8HIRCSEL)
-  21          {
-  22   1          unsigned char data hircmap0,hircmap1, offset,judge;
-  23   1          unsigned char trimvalue16bit;
-  24   1      
-  25   1          set_CHPCON_IAPEN;
-  26   1          SFRS = 0 ;
-  27   1          switch (u8HIRCSEL)
-  28   1          {
-  29   2            case HIRC_24:
-  30   2              IAPAL = 0x38;
-  31   2            break;
-  32   2            case HIRC_16:
-  33   2              IAPAL = 0x30;
-  34   2            break;
-  35   2            case HIRC_166:
-  36   2              IAPAL = 0x30;
-  37   2            break;
-  38   2          }
-  39   1          IAPAH = 0x00;
-  40   1          IAPCN = READ_UID;
-  41   1          set_IAPTRG_IAPGO;
-  42   1          hircmap0 = IAPFD;
-  43   1          IAPAL++;
-  44   1          set_IAPTRG_IAPGO;
-  45   1          hircmap1 = IAPFD;
-  46   1      
-  47   1          switch (u8HIRCSEL)
-  48   1          { 
-  49   2            case HIRC_166:
-  50   2              trimvalue16bit = ((hircmap0 << 1) + (hircmap1 & 0x01));
-  51   2              judge = trimvalue16bit&0xC0;
-  52   2              offset = trimvalue16bit&0x3F;
-  53   2              trimvalue16bit -= 14;
-  54   2              IAPCN = READ_DID;
-  55   2              IAPAL = 1;
-  56   2              IAPAH = 0;
-  57   2              set_IAPTRG_IAPGO_WDCLR;
-  58   2      
-  59   2              if ((IAPFD==0x4B)||(IAPFD==0x52)||(IAPFD==0x53))    /* MS51 process */
-  60   2              {
-  61   3                if (offset<15)
-  62   3                  {
-  63   4                    if ((judge==0x40)||(judge==0x80)||(judge==0xC0))
-  64   4                    trimvalue16bit -= 14;
-  65   4                  }
-  66   3                else
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 80  
+   9          #if 0 
+              /**
+               * @brief       Watchdog time Interrupt Vector demo  
+               * @param       none
+               * @details     none
+               * @note        none
+               */
+              void WDT_ISR (void)   interrupt 10
+              {
+                _push_(SFRS);
+                  clr_WDCON_WDTF;
+                _pop_(SFRS);
+              }
+              #endif
+  23          
+  24          /**
+  25           * @brief       Watchdog time delay setting 
+  26           * @param       u8WDTDIV WKT counter divider select  (1/4/8/16/32/64/128/256) 
+  27           * @return      none
+  28           * @details     none
+  29           * @note        none
+  30           * @example     WDT_Open(256);
+  31           */
+  32           void WDT_Open(unsigned int u8WDTDIV)
+  33          {
+  34   1          SFRS=0;
+  35   1          BIT_TMP=EA;
+  36   1          EA=0;
+  37   1          switch (u8WDTDIV)
+  38   1          {
+  39   2              case 1: TA=0xAA;TA=0x55;WDCON&=0xF8; break;
+  40   2              case 4: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x01; break;
+  41   2              case 8: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x02; break;
+  42   2              case 16: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x03; break;
+  43   2              case 32: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x04; break;
+  44   2              case 64: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x05; break;
+  45   2              case 128: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x06; break;
+  46   2              case 256: TA=0xAA;TA=0x55;WDCON&=0xF8;TA=0xAA;TA=0x55;WDCON|=0x07; break;
+  47   2              default: break;
+  48   2          }
+  49   1          EA = BIT_TMP;
+  50   1          set_WDCON_WIDPD;
+  51   1          set_WDCON_WDTR;
+  52   1      }
+  53          
+  54          /**
+  55           * @brief       Watchdog time interrupt setting 
+  56           * @param       u8WDTINT (Enable/Disable) 
+  57           * @return      none
+  58           * @details     none
+  59           * @note        none
+  60           * @example      WDT_Interrupt(Enable);
+  61           */
+  62          void WDT_Interrupt(unsigned char u8WDTINT)
+  63          {
+  64   1          switch (u8WDTINT)
+  65   1          {
+  66   2              case Disable: clr_EIE_EWDT; break;    
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 80  
 
-  67   3                    trimvalue16bit -= 4;
-  68   3              }
-  69   2              hircmap0 = (trimvalue16bit >> 1);
-  70   2            break;
-  71   2      
-  72   2              default: break;                                       /*N76E003 process */
-  73   2          }
-  74   1      
-  75   1          TA = 0xAA;
-  76   1          TA = 0x55;
-  77   1          RCTRIM0 = hircmap0;
-  78   1          TA = 0xAA;
-  79   1          TA = 0x55;
-  80   1          RCTRIM1 = hircmap1;
-  81   1          clr_CHPCON_IAPEN;
-  82   1      }
-  83          
-  84          
-  85            /**
-  86            * @brief This API configures system clock source
-  87            * @param[in] u8FsysMode . Valid values are:
-  88            *                       - \ref FSYS_HIRC                :Internal HIRC (16MHz as default).
-  89            *                       - \ref FSYS_LIRC                :Internal LIRC.
-  90            *                       - \ref FSYS_OSCIN_P00           :External clock input from P0.0.
-  91            * @note      None.
-  92            * @exmaple : FsysSelect(FSYS_LIRC);
-  93            */
-  94          void FsysSelect(unsigned char u8FsysMode)
-  95          {
-  96   1        switch (u8FsysMode)
-  97   1        {
-  98   2              //***** HIRC enable part *****  
-  99   2          case FSYS_HIRC:
- 100   2              ClockEnable(FSYS_HIRC);                 //Enable HIRC
- 101   2              ClockSwitch(FSYS_HIRC);                 //Switching system clock HIRC
- 102   2          break;
- 103   2          
- 104   2          //***** LIRC enable part*****
- 105   2          case FSYS_LIRC:
- 106   2              ClockSwitch(FSYS_LIRC);                 // LIRC always on switch system to LIRC
- 107   2              clr_CKEN_HIRCEN;                        // Disable HIRC if needed 
- 108   2          break;
- 109   2          
- 110   2          /***** ECLK enable part clock in with P3.0 *****/ 
- 111   2          case FSYS_OSCIN_P30:
- 112   2              ClockEnable(FSYS_HIRC);                 //Enable and system clock to HIRC
- 113   2              ClockSwitch(FSYS_HIRC);
- 114   2              ClockEnable(FSYS_OSCIN_P30);            //Enable External clock source
- 115   2              ClockSwitch(FSYS_OSCIN_P30);            //Switching system clock to OSCIN 
- 116   2              clr_CKEN_HIRCEN;                        //step5: disable HIRC if needed 
- 117   2          break;
- 118   2        }
- 119   1      }
- 120          
- 121          void ClockEnable(unsigned char u8FsysMode)
- 122          {
- 123   1        switch (u8FsysMode)
- 124   1        {
- 125   2          /***** HIRC enable part ******/
- 126   2          case FSYS_HIRC:
- 127   2              set_CKEN_HIRCEN;                        //step1: Enable extnal clock source.
- 128   2              while(!(CKSWT&SET_BIT5));      //step2: check clock source status and wait for ready
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 81  
-
- 129   2          break;
- 130   2          /***** ECLK P30 enable part ******/
- 131   2          case FSYS_OSCIN_P30:
- 132   2              TA=0xAA;TA=0x55;CKEN|=0xC0;                        //step1: Enable extnal clock source.
- 133   2              while(!(CKSWT&SET_BIT3));      //step2: check clock source status and wait for ready
- 134   2          break;
- 135   2        }
- 136   1      }
- 137          
- 138          void ClockDisable(unsigned char u8FsysMode)
- 139          {
- 140   1        SFRS = 0;
- 141   1        switch (u8FsysMode)
- 142   1        {
- 143   2           /***** HIRC Disable part ******/
- 144   2          case FSYS_HIRC:
- 145   2              clr_CKEN_HIRCEN;
- 146   2          break;
- 147   2          //***** ECLK from P3.0 Disable part ******/
- 148   2          case FSYS_OSCIN_P30:
- 149   2             TA=0xAA;TA=0x55;CKEN&=0x3F;
- 150   2          break;
- 151   2        }
- 152   1      }
- 153          
- 154          void ClockSwitch(unsigned char u8FsysMode)
- 155          {
- 156   1        SFRS = 0 ;
- 157   1        BIT_TMP=EA;EA=0;
- 158   1        switch (u8FsysMode)
- 159   1        {
- 160   2          /***** HIRC Disable part ******/
- 161   2          case FSYS_HIRC:
- 162   2              clr_CKSWT_OSC1;
- 163   2              clr_CKSWT_OSC0;
- 164   2          break;
- 165   2          /***** LIRC Disable part******/
- 166   2          case FSYS_LIRC:
- 167   2              set_CKSWT_OSC1;
- 168   2              clr_CKSWT_OSC0;
- 169   2          break;
- 170   2          /***** ECLK P30 Disable part ******/
- 171   2          case FSYS_OSCIN_P30:
- 172   2              set_CKSWT_ECLKST;
- 173   2          break;
- 174   2        }
- 175   1        EA = BIT_TMP;
- 176   1      }
- 177          
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 82  
+  67   2              case Enable: set_EIE_EWDT; break;
+  68   2          }
+  69   1      }
+  70          
+  71          /**
+  72           * @brief       Watchdog Clear Counter process
+  73           * @param       none
+  74           * @return      none
+  75           * @details     none
+  76           * @note        none
+  77           * @example     WDT_Clear();
+  78           */
+  79          void WDT_Clear(void)
+  80          {
+  81   1            WDT_COUNTER_CLEAR;                  /* Clear WDT counter */ 
+  82   1            while(WDCON&SET_BIT6);              /* Check for the WDT counter cleared */
+  83   1      }
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 81  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION _MODIFY_HIRC (BEGIN)
-                                           ; SOURCE LINE # 20
-;---- Variable 'u8HIRCSEL' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 21
-                                           ; SOURCE LINE # 25
+             ; FUNCTION _WDT_Open (BEGIN)
+                                           ; SOURCE LINE # 32
+;---- Variable 'u8WDTDIV' assigned to Register 'R6/R7' ----
+                                           ; SOURCE LINE # 33
+                                           ; SOURCE LINE # 34
+0000 E4                CLR     A
+0001 F591              MOV     SFRS,A
+                                           ; SOURCE LINE # 35
+0003 A2AF              MOV     C,EA
+0005 9200        E     MOV     BIT_TMP,C
+                                           ; SOURCE LINE # 36
+0007 C2AF              CLR     EA
+                                           ; SOURCE LINE # 37
+0009 EF                MOV     A,R7
+000A 8EF0              MOV     B,R6
+000C 120000      E     LCALL   ?C?ICASE
+000F 0000        R     DW      ?C0002
+0011 0001              DW      01H
+0013 0000        R     DW      ?C0003
+0015 0004              DW      04H
+0017 0000        R     DW      ?C0004
+0019 0008              DW      08H
+001B 0000        R     DW      ?C0005
+001D 0010              DW      010H
+001F 0000        R     DW      ?C0006
+0021 0020              DW      020H
+0023 0000        R     DW      ?C0007
+0025 0040              DW      040H
+0027 0000        R     DW      ?C0008
+0029 0080              DW      080H
+002B 0000        R     DW      ?C0009
+002D 0100              DW      0100H
+002F 0000              DW      00H
+0031 0000        R     DW      ?C0001
+                                           ; SOURCE LINE # 38
+                                           ; SOURCE LINE # 39
+0033         ?C0002:
+0033 75C7AA            MOV     TA,#0AAH
+0036 75C755            MOV     TA,#055H
+0039 53AAF8            ANL     WDCON,#0F8H
+003C 020000      R     LJMP    ?C0001
+                                           ; SOURCE LINE # 40
+003F         ?C0003:
+003F 75C7AA            MOV     TA,#0AAH
+0042 75C755            MOV     TA,#055H
+0045 53AAF8            ANL     WDCON,#0F8H
+0048 75C7AA            MOV     TA,#0AAH
+004B 75C755            MOV     TA,#055H
+004E 43AA01            ORL     WDCON,#01H
+0051 8076              SJMP    ?C0001
+                                           ; SOURCE LINE # 41
+0053         ?C0004:
+0053 75C7AA            MOV     TA,#0AAH
+0056 75C755            MOV     TA,#055H
+0059 53AAF8            ANL     WDCON,#0F8H
+005C 75C7AA            MOV     TA,#0AAH
+005F 75C755            MOV     TA,#055H
+0062 43AA02            ORL     WDCON,#02H
+0065 8062              SJMP    ?C0001
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 82  
+
+                                           ; SOURCE LINE # 42
+0067         ?C0005:
+0067 75C7AA            MOV     TA,#0AAH
+006A 75C755            MOV     TA,#055H
+006D 53AAF8            ANL     WDCON,#0F8H
+0070 75C7AA            MOV     TA,#0AAH
+0073 75C755            MOV     TA,#055H
+0076 43AA03            ORL     WDCON,#03H
+0079 804E              SJMP    ?C0001
+                                           ; SOURCE LINE # 43
+007B         ?C0006:
+007B 75C7AA            MOV     TA,#0AAH
+007E 75C755            MOV     TA,#055H
+0081 53AAF8            ANL     WDCON,#0F8H
+0084 75C7AA            MOV     TA,#0AAH
+0087 75C755            MOV     TA,#055H
+008A 43AA04            ORL     WDCON,#04H
+008D 803A              SJMP    ?C0001
+                                           ; SOURCE LINE # 44
+008F         ?C0007:
+008F 75C7AA            MOV     TA,#0AAH
+0092 75C755            MOV     TA,#055H
+0095 53AAF8            ANL     WDCON,#0F8H
+0098 75C7AA            MOV     TA,#0AAH
+009B 75C755            MOV     TA,#055H
+009E 43AA05            ORL     WDCON,#05H
+00A1 8026              SJMP    ?C0001
+                                           ; SOURCE LINE # 45
+00A3         ?C0008:
+00A3 75C7AA            MOV     TA,#0AAH
+00A6 75C755            MOV     TA,#055H
+00A9 53AAF8            ANL     WDCON,#0F8H
+00AC 75C7AA            MOV     TA,#0AAH
+00AF 75C755            MOV     TA,#055H
+00B2 43AA06            ORL     WDCON,#06H
+00B5 8012              SJMP    ?C0001
+                                           ; SOURCE LINE # 46
+00B7         ?C0009:
+00B7 75C7AA            MOV     TA,#0AAH
+00BA 75C755            MOV     TA,#055H
+00BD 53AAF8            ANL     WDCON,#0F8H
+00C0 75C7AA            MOV     TA,#0AAH
+00C3 75C755            MOV     TA,#055H
+00C6 43AA07            ORL     WDCON,#07H
+                                           ; SOURCE LINE # 47
+                                           ; SOURCE LINE # 48
+00C9         ?C0001:
+                                           ; SOURCE LINE # 49
+00C9 A200        E     MOV     C,BIT_TMP
+00CB 92AF              MOV     EA,C
+                                           ; SOURCE LINE # 50
+00CD A2AF              MOV     C,EA
+00CF 9200        E     MOV     BIT_TMP,C
+00D1 C2AF              CLR     EA
+00D3 75C7AA            MOV     TA,#0AAH
+00D6 75C755            MOV     TA,#055H
+00D9 43AA10            ORL     WDCON,#010H
+00DC A200        E     MOV     C,BIT_TMP
+00DE 92AF              MOV     EA,C
+                                           ; SOURCE LINE # 51
+00E0 A2AF              MOV     C,EA
+00E2 9200        E     MOV     BIT_TMP,C
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 83  
+
+00E4 C2AF              CLR     EA
+00E6 75C7AA            MOV     TA,#0AAH
+00E9 75C755            MOV     TA,#055H
+00EC 43AA80            ORL     WDCON,#080H
+00EF A200        E     MOV     C,BIT_TMP
+00F1 92AF              MOV     EA,C
+                                           ; SOURCE LINE # 52
+00F3 22                RET     
+             ; FUNCTION _WDT_Open (END)
+
+             ; FUNCTION _WDT_Interrupt (BEGIN)
+                                           ; SOURCE LINE # 62
+;---- Variable 'u8WDTINT' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 63
+                                           ; SOURCE LINE # 64
+0000 EF                MOV     A,R7
+0001 14                DEC     A
+0002 6007              JZ      ?C0014
+0004 04                INC     A
+0005 7007              JNZ     ?C0015
+                                           ; SOURCE LINE # 65
+                                           ; SOURCE LINE # 66
+0007         ?C0013:
+0007 539BEF            ANL     EIE,#0EFH
+000A 22                RET     
+                                           ; SOURCE LINE # 67
+000B         ?C0014:
+000B 439B10            ORL     EIE,#010H
+                                           ; SOURCE LINE # 68
+                                           ; SOURCE LINE # 69
+000E         ?C0015:
+000E 22                RET     
+             ; FUNCTION _WDT_Interrupt (END)
+
+             ; FUNCTION WDT_Clear (BEGIN)
+                                           ; SOURCE LINE # 79
+                                           ; SOURCE LINE # 80
+                                           ; SOURCE LINE # 81
 0000 A2AF              MOV     C,EA
 0002 9200        E     MOV     BIT_TMP,C
 0004 C2AF              CLR     EA
 0006 75C7AA            MOV     TA,#0AAH
 0009 75C755            MOV     TA,#055H
-000C 439F01            ORL     CHPCON,#01H
+000C 43AA40            ORL     WDCON,#040H
 000F A200        E     MOV     C,BIT_TMP
 0011 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 26
-0013 E4                CLR     A
-0014 F591              MOV     SFRS,A
-                                           ; SOURCE LINE # 27
-0016 EF                MOV     A,R7
-0017 24F9              ADD     A,#0F9H
-0019 600C              JZ      ?C0003
-001B 14                DEC     A
-001C 6009              JZ      ?C0003
-001E 2402              ADD     A,#02H
-0020 7008              JNZ     ?C0001
-                                           ; SOURCE LINE # 28
-                                           ; SOURCE LINE # 29
-0022         ?C0002:
-                                           ; SOURCE LINE # 30
-0022 75A638            MOV     IAPAL,#038H
-                                           ; SOURCE LINE # 31
-0025 8003              SJMP    ?C0001
-                                           ; SOURCE LINE # 32
-0027         ?C0003:
-                                           ; SOURCE LINE # 33
-                                           ; SOURCE LINE # 34
-                                           ; SOURCE LINE # 35
-0027         ?C0037:
-0027 75A630            MOV     IAPAL,#030H
-                                           ; SOURCE LINE # 37
-                                           ; SOURCE LINE # 38
-002A         ?C0001:
-                                           ; SOURCE LINE # 39
-002A E4                CLR     A
-002B F5A7              MOV     IAPAH,A
-                                           ; SOURCE LINE # 40
-002D 75AF04            MOV     IAPCN,#04H
-                                           ; SOURCE LINE # 41
-0030 A2AF              MOV     C,EA
-0032 9200        E     MOV     BIT_TMP,C
-0034 C2AF              CLR     EA
-0036 75C7AA            MOV     TA,#0AAH
-0039 75C755            MOV     TA,#055H
-003C 43A401            ORL     IAPTRG,#01H
-003F A200        E     MOV     C,BIT_TMP
-0041 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 42
-0043 85AE00      R     MOV     hircmap0,IAPFD
-                                           ; SOURCE LINE # 43
-0046 05A6              INC     IAPAL
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 83  
-
-                                           ; SOURCE LINE # 44
-0048 A2AF              MOV     C,EA
-004A 9200        E     MOV     BIT_TMP,C
-004C C2AF              CLR     EA
-004E 75C7AA            MOV     TA,#0AAH
-0051 75C755            MOV     TA,#055H
-0054 43A401            ORL     IAPTRG,#01H
-0057 A200        E     MOV     C,BIT_TMP
-0059 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 45
-005B 85AE00      R     MOV     hircmap1,IAPFD
-                                           ; SOURCE LINE # 47
-005E EF                MOV     A,R7
-005F 24F8              ADD     A,#0F8H
-0061 6003              JZ      $ + 5H
-0063 020000      R     LJMP    ?C0005
-                                           ; SOURCE LINE # 48
-                                           ; SOURCE LINE # 49
-0066         ?C0006:
-                                           ; SOURCE LINE # 50
-0066 E500        R     MOV     A,hircmap0
-0068 25E0              ADD     A,ACC
-006A FF                MOV     R7,A
-006B E500        R     MOV     A,hircmap1
-006D 5401              ANL     A,#01H
-006F 2F                ADD     A,R7
-0070 FF                MOV     R7,A
-;---- Variable 'trimvalue16bit' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 51
-0071 54C0              ANL     A,#0C0H
-0073 F500        R     MOV     judge,A
-                                           ; SOURCE LINE # 52
-0075 EF                MOV     A,R7
-0076 543F              ANL     A,#03FH
-0078 F500        R     MOV     offset,A
-                                           ; SOURCE LINE # 53
-007A 74F2              MOV     A,#0F2H
-007C 2F                ADD     A,R7
-007D FF                MOV     R7,A
-                                           ; SOURCE LINE # 54
-007E 75AF0C            MOV     IAPCN,#0CH
-                                           ; SOURCE LINE # 55
-0081 75A601            MOV     IAPAL,#01H
-                                           ; SOURCE LINE # 56
-0084 E4                CLR     A
-0085 F5A7              MOV     IAPAH,A
-                                           ; SOURCE LINE # 57
-0087 A2AF              MOV     C,EA
-0089 9200        E     MOV     BIT_TMP,C
-008B C2AF              CLR     EA
-008D A2AF              MOV     C,EA
-008F 9200        E     MOV     BIT_TMP,C
-0091 C2AF              CLR     EA
-0093 75C7AA            MOV     TA,#0AAH
-0096 75C755            MOV     TA,#055H
-0099 43AA40            ORL     WDCON,#040H
-009C A200        E     MOV     C,BIT_TMP
-009E 92AF              MOV     EA,C
-00A0 75C7AA            MOV     TA,#0AAH
-00A3 75C755            MOV     TA,#055H
-00A6 43A401            ORL     IAPTRG,#01H
-00A9 A200        E     MOV     C,BIT_TMP
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 84  
-
-00AB 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 59
-00AD E5AE              MOV     A,IAPFD
-00AF 644B              XRL     A,#04BH
-00B1 600B              JZ      ?C0008
-00B3 E5AE              MOV     A,IAPFD
-00B5 6452              XRL     A,#052H
-00B7 6005              JZ      ?C0008
-00B9 E5AE              MOV     A,IAPFD
-00BB B45322            CJNE    A,#053H,?C0007
-00BE         ?C0008:
-                                           ; SOURCE LINE # 60
-                                           ; SOURCE LINE # 61
-00BE E500        R     MOV     A,offset
-00C0 C3                CLR     C
-00C1 940F              SUBB    A,#0FH
-00C3 5017              JNC     ?C0009
-                                           ; SOURCE LINE # 62
-                                           ; SOURCE LINE # 63
-00C5 E500        R     MOV     A,judge
-00C7 6440              XRL     A,#040H
-00C9 600B              JZ      ?C0011
-00CB E500        R     MOV     A,judge
-00CD 6480              XRL     A,#080H
-00CF 6005              JZ      ?C0011
-00D1 E500        R     MOV     A,judge
-00D3 B4C00A            CJNE    A,#0C0H,?C0007
-00D6         ?C0011:
-                                           ; SOURCE LINE # 64
-00D6 74F2              MOV     A,#0F2H
-00D8 2F                ADD     A,R7
-00D9 FF                MOV     R7,A
-                                           ; SOURCE LINE # 65
-00DA 8004              SJMP    ?C0007
-00DC         ?C0009:
-                                           ; SOURCE LINE # 67
-00DC 74FC              MOV     A,#0FCH
-00DE 2F                ADD     A,R7
-00DF FF                MOV     R7,A
-                                           ; SOURCE LINE # 68
-00E0         ?C0007:
-                                           ; SOURCE LINE # 69
-00E0 EF                MOV     A,R7
-00E1 C3                CLR     C
-00E2 13                RRC     A
-00E3 F500        R     MOV     hircmap0,A
-                                           ; SOURCE LINE # 70
-                                           ; SOURCE LINE # 72
-                                           ; SOURCE LINE # 73
-00E5         ?C0005:
-                                           ; SOURCE LINE # 75
-00E5 75C7AA            MOV     TA,#0AAH
-                                           ; SOURCE LINE # 76
-00E8 75C755            MOV     TA,#055H
-                                           ; SOURCE LINE # 77
-00EB 850084      R     MOV     RCTRIM0,hircmap0
-                                           ; SOURCE LINE # 78
-00EE 75C7AA            MOV     TA,#0AAH
-                                           ; SOURCE LINE # 79
-00F1 75C755            MOV     TA,#055H
-                                           ; SOURCE LINE # 80
-00F4 850085      R     MOV     RCTRIM1,hircmap1
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 85  
-
-                                           ; SOURCE LINE # 81
-00F7 A2AF              MOV     C,EA
-00F9 9200        E     MOV     BIT_TMP,C
-00FB C2AF              CLR     EA
-00FD 75C7AA            MOV     TA,#0AAH
-0100 75C755            MOV     TA,#055H
-0103 539FFE            ANL     CHPCON,#0FEH
-0106 A200        E     MOV     C,BIT_TMP
-0108 92AF              MOV     EA,C
+0013         ?C0016:
                                            ; SOURCE LINE # 82
-010A 22                RET     
-             ; FUNCTION _MODIFY_HIRC (END)
+0013 E5AA              MOV     A,WDCON
+0015 20E6FB            JB      ACC.6,?C0016
+                                           ; SOURCE LINE # 83
+0018 22                RET     
+             ; FUNCTION WDT_Clear (END)
 
-             ; FUNCTION _FsysSelect (BEGIN)
-                                           ; SOURCE LINE # 94
-;---- Variable 'u8FsysMode' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 95
-                                           ; SOURCE LINE # 96
-0000 EF                MOV     A,R7
-0001 24FD              ADD     A,#0FDH
-0003 6011              JZ      ?C0017
-0005 14                DEC     A
-0006 6012              JZ      ?C0018
-0008 2402              ADD     A,#02H
-000A 7035              JNZ     ?C0019
-                                           ; SOURCE LINE # 97
-                                           ; SOURCE LINE # 99
-000C         ?C0016:
-                                           ; SOURCE LINE # 100
-000C 7F02              MOV     R7,#02H
-000E 120000      R     LCALL   _ClockEnable
-                                           ; SOURCE LINE # 101
-0011 7F02              MOV     R7,#02H
-0013 020000      R     LJMP    _ClockSwitch
-                                           ; SOURCE LINE # 102
-                                           ; SOURCE LINE # 105
-0016         ?C0017:
-                                           ; SOURCE LINE # 106
-0016 7F03              MOV     R7,#03H
-                                           ; SOURCE LINE # 107
-                                           ; SOURCE LINE # 108
-0018 8011              SJMP    ?C0038
-                                           ; SOURCE LINE # 111
-001A         ?C0018:
-                                           ; SOURCE LINE # 112
-001A 7F02              MOV     R7,#02H
-001C 120000      R     LCALL   _ClockEnable
-                                           ; SOURCE LINE # 113
-001F 7F02              MOV     R7,#02H
-0021 120000      R     LCALL   _ClockSwitch
-                                           ; SOURCE LINE # 114
-0024 7F04              MOV     R7,#04H
-0026 120000      R     LCALL   _ClockEnable
-                                           ; SOURCE LINE # 115
-0029 7F04              MOV     R7,#04H
-002B         ?C0038:
-002B 120000      R     LCALL   _ClockSwitch
-                                           ; SOURCE LINE # 116
-002E A2AF              MOV     C,EA
-0030 9200        E     MOV     BIT_TMP,C
-0032 C2AF              CLR     EA
-0034 75C7AA            MOV     TA,#0AAH
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 86  
-
-0037 75C755            MOV     TA,#055H
-003A 5397DF            ANL     CKEN,#0DFH
-003D A200        E     MOV     C,BIT_TMP
-003F 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 117
-                                           ; SOURCE LINE # 118
-                                           ; SOURCE LINE # 119
-0041         ?C0019:
-0041 22                RET     
-             ; FUNCTION _FsysSelect (END)
-
-             ; FUNCTION _ClockEnable (BEGIN)
-                                           ; SOURCE LINE # 121
-;---- Variable 'u8FsysMode' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 122
-                                           ; SOURCE LINE # 123
-0000 EF                MOV     A,R7
-0001 24FC              ADD     A,#0FCH
-0003 601E              JZ      ?C0024
-0005 2402              ADD     A,#02H
-0007 7028              JNZ     ?C0027
-                                           ; SOURCE LINE # 124
-                                           ; SOURCE LINE # 126
-0009         ?C0021:
-                                           ; SOURCE LINE # 127
-0009 A2AF              MOV     C,EA
-000B 9200        E     MOV     BIT_TMP,C
-000D C2AF              CLR     EA
-000F 75C7AA            MOV     TA,#0AAH
-0012 75C755            MOV     TA,#055H
-0015 439720            ORL     CKEN,#020H
-0018 A200        E     MOV     C,BIT_TMP
-001A 92AF              MOV     EA,C
-001C         ?C0022:
-                                           ; SOURCE LINE # 128
-001C E596              MOV     A,CKSWT
-001E 20E510            JB      ACC.5,?C0027
-0021 80F9              SJMP    ?C0022
-                                           ; SOURCE LINE # 129
-                                           ; SOURCE LINE # 131
-0023         ?C0024:
-                                           ; SOURCE LINE # 132
-0023 75C7AA            MOV     TA,#0AAH
-0026 75C755            MOV     TA,#055H
-0029 4397C0            ORL     CKEN,#0C0H
-002C         ?C0025:
-                                           ; SOURCE LINE # 133
-002C E596              MOV     A,CKSWT
-002E 30E3FB            JNB     ACC.3,?C0025
-                                           ; SOURCE LINE # 134
-                                           ; SOURCE LINE # 135
-                                           ; SOURCE LINE # 136
-0031         ?C0027:
-0031 22                RET     
-             ; FUNCTION _ClockEnable (END)
-
-             ; FUNCTION _ClockDisable (BEGIN)
-                                           ; SOURCE LINE # 138
-;---- Variable 'u8FsysMode' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 139
-                                           ; SOURCE LINE # 140
-0000 E4                CLR     A
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 87  
-
-0001 F591              MOV     SFRS,A
-                                           ; SOURCE LINE # 141
-0003 EF                MOV     A,R7
-0004 24FC              ADD     A,#0FCH
-0006 6018              JZ      ?C0030
-0008 2402              ADD     A,#02H
-000A 701D              JNZ     ?C0031
-                                           ; SOURCE LINE # 142
-                                           ; SOURCE LINE # 144
-000C         ?C0029:
-                                           ; SOURCE LINE # 145
-000C A2AF              MOV     C,EA
-000E 9200        E     MOV     BIT_TMP,C
-0010 C2AF              CLR     EA
-0012 75C7AA            MOV     TA,#0AAH
-0015 75C755            MOV     TA,#055H
-0018 5397DF            ANL     CKEN,#0DFH
-001B A200        E     MOV     C,BIT_TMP
-001D 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 146
-001F 22                RET     
-                                           ; SOURCE LINE # 148
-0020         ?C0030:
-                                           ; SOURCE LINE # 149
-0020 75C7AA            MOV     TA,#0AAH
-0023 75C755            MOV     TA,#055H
-0026 53973F            ANL     CKEN,#03FH
-                                           ; SOURCE LINE # 150
-                                           ; SOURCE LINE # 151
-                                           ; SOURCE LINE # 152
-0029         ?C0031:
-0029 22                RET     
-             ; FUNCTION _ClockDisable (END)
-
-             ; FUNCTION _ClockSwitch (BEGIN)
-                                           ; SOURCE LINE # 154
-;---- Variable 'u8FsysMode' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 155
-                                           ; SOURCE LINE # 156
-0000 E4                CLR     A
-0001 F591              MOV     SFRS,A
-                                           ; SOURCE LINE # 157
-0003 A2AF              MOV     C,EA
-0005 9200        E     MOV     BIT_TMP,C
-0007 C2AF              CLR     EA
-                                           ; SOURCE LINE # 158
-0009 EF                MOV     A,R7
-000A 24FD              ADD     A,#0FDH
-000C 6018              JZ      ?C0034
-000E 14                DEC     A
-000F 6039              JZ      ?C0035
-0011 2402              ADD     A,#02H
-0013 7048              JNZ     ?C0032
-                                           ; SOURCE LINE # 159
-                                           ; SOURCE LINE # 161
-0015         ?C0033:
-                                           ; SOURCE LINE # 162
-0015 A2AF              MOV     C,EA
-0017 9200        E     MOV     BIT_TMP,C
-0019 C2AF              CLR     EA
-001B 75C7AA            MOV     TA,#0AAH
-001E 75C755            MOV     TA,#055H
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 88  
-
-0021 5396FB            ANL     CKSWT,#0FBH
-                                           ; SOURCE LINE # 163
-                                           ; SOURCE LINE # 164
-0024 800F              SJMP    ?C0039
-                                           ; SOURCE LINE # 166
-0026         ?C0034:
-                                           ; SOURCE LINE # 167
-0026 A2AF              MOV     C,EA
-0028 9200        E     MOV     BIT_TMP,C
-002A C2AF              CLR     EA
-002C 75C7AA            MOV     TA,#0AAH
-002F 75C755            MOV     TA,#055H
-0032 439604            ORL     CKSWT,#04H
-0035         ?C0039:
-0035 A200        E     MOV     C,BIT_TMP
-0037 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 168
-0039 A2AF              MOV     C,EA
-003B 9200        E     MOV     BIT_TMP,C
-003D C2AF              CLR     EA
-003F 75C7AA            MOV     TA,#0AAH
-0042 75C755            MOV     TA,#055H
-0045 5396FD            ANL     CKSWT,#0FDH
-                                           ; SOURCE LINE # 169
-0048 800F              SJMP    ?C0040
-                                           ; SOURCE LINE # 171
-004A         ?C0035:
-                                           ; SOURCE LINE # 172
-004A A2AF              MOV     C,EA
-004C 9200        E     MOV     BIT_TMP,C
-004E C2AF              CLR     EA
-0050 75C7AA            MOV     TA,#0AAH
-0053 75C755            MOV     TA,#055H
-0056 439608            ORL     CKSWT,#08H
-0059         ?C0040:
-0059 A200        E     MOV     C,BIT_TMP
-005B 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 173
-                                           ; SOURCE LINE # 174
-005D         ?C0032:
-                                           ; SOURCE LINE # 175
-005D A200        E     MOV     C,BIT_TMP
-005F 92AF              MOV     EA,C
-                                           ; SOURCE LINE # 176
-0061 22                RET     
-             ; FUNCTION _ClockSwitch (END)
-
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 89  
+C51 COMPILER V9.60.7.0   WDT                                                               11/19/2023 18:40:04 PAGE 84  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -5613,64 +5268,36 @@ P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
 P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
 P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
 P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
-RCTRIM0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0084H  1
-RCTRIM1. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0085H  1
 EA . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AFH  1
 PWMCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 int32_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
-BYTE_TMP . . . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0000H  1
 int16_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
-_FsysSelect. . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  u8FsysMode . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
-CKSWT. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0096H  1
-SFRS_TMP . . . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0001H  1
 size_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 TA . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C7H  1
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
-CKEN . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0097H  1
+_WDT_Interrupt . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  u8WDTINT . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 INT8 . . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
-TA_REG_TMP . . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0002H  1
 UINT32 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
-_ClockDisable. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  u8FsysMode . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 UINT16 . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 BIT_TMP. . . . . . . . . . . . . . . .  EXTERN   DATA   BIT      -----  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-_ClockEnable . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  u8FsysMode . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-CHPCON . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   009FH  1
+WDT_Clear. . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 SFRS . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0091H  1
 SCON_1 . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F8H  1
-IAPTRG . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A4H  1
 uint8_t. . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 INT32. . . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
-_MODIFY_HIRC . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  u8HIRCSEL. . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  hircmap0 . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
-  hircmap1 . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0001H  1
-  offset . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0002H  1
-  judge. . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0003H  1
-  trimvalue16bit . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+EIE. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   009BH  1
 INT16. . . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
 int8_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
 ADCCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
 I2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 BIT. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  BIT      -----  1
-IAPAH. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A7H  1
-IAPFD. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00AEH  1
-_ClockSwitch . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  u8FsysMode . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+_WDT_Open. . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  u8WDTDIV . . . . . . . . . . . . . .  * REG *  DATA   U_INT    0006H  2
 T2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-IAPAL. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A6H  1
-IAPCN. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00AFH  1
-C51 COMPILER V9.60.7.0   SYS                                                               11/19/2023 18:40:03 PAGE 90  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
 UINT8. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 WDCON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00AAH  1
@@ -5678,11 +5305,11 @@ uint32_t . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    523    ----
+   CODE SIZE        =    284    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      3       4
+   DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
