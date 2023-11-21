@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 16:25:39 PAGE     1
+A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 19:45:19 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.2.7.0
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
                       55     ;
                       56     ;  The following EQU statements define the xdata page used for pdata
                       57     ;  variables. The EQU PPAGE must conform with the PPAGE control used
-A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 16:25:39 PAGE     2
+A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 19:45:19 PAGE     2
 
                       58     ;  in the linker invocation.
                       59     ;
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
 000E F0              121     XDATALOOP:      MOVX    @DPTR,A
 000F A3              122                     INC     DPTR
 0010 DFFC            123                     DJNZ    R7,XDATALOOP
-A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 16:25:39 PAGE     3
+A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 19:45:19 PAGE     3
 
 0012 DEFA            124                     DJNZ    R6,XDATALOOP
                      125     ENDIF
@@ -176,7 +176,7 @@ LOC  OBJ            LINE     SOURCE
 0017 020000   F      162                     LJMP    ?C_START
                      163     
                      164                     END
-A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 16:25:39 PAGE     4
+A51 MACRO ASSEMBLER  MS51_STARTUP                                                         11/21/2023 19:45:19 PAGE     4
 
 SYMBOL TABLE LISTING
 ------ ----- -------

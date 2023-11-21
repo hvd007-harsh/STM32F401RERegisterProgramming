@@ -1,0 +1,6 @@
+".\Objects\main.obj",
+".\Objects\sys.obj",
+".\Objects\wdt.obj",
+".\Objects\MS51_STARTUP.obj" 
+TO ".\Objects\INTORLOCKING" 
+PRINT(".\Listings\INTORLOCKING.m51") RAMSIZE(256) 
