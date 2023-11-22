@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   SYS                                                               11/21/2023 19:45:19 PAGE 1   
+C51 COMPILER V9.60.7.0   SYS                                                               11/22/2023 15:10:55 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SYS
@@ -62,7 +62,7 @@ line level    source
   45   1          hircmap1 = IAPFD;
   46   1      
   47   1          switch (u8HIRCSEL)
-C51 COMPILER V9.60.7.0   SYS                                                               11/21/2023 19:45:19 PAGE 2   
+C51 COMPILER V9.60.7.0   SYS                                                               11/22/2023 15:10:55 PAGE 2   
 
   48   1          { 
   49   2            case HIRC_166:
@@ -126,7 +126,7 @@ line level    source
  107   2              clr_CKEN_HIRCEN;                        // Disable HIRC if needed 
  108   2          break;
  109   2          
-C51 COMPILER V9.60.7.0   SYS                                                               11/21/2023 19:45:19 PAGE 3   
+C51 COMPILER V9.60.7.0   SYS                                                               11/22/2023 15:10:55 PAGE 3   
 
  110   2          /***** ECLK enable part clock in with P3.0 *****/ 
  111   2          case FSYS_OSCIN_P30:
@@ -190,7 +190,7 @@ line level    source
  169   2          break;
  170   2          /***** ECLK P30 Disable part ******/
  171   2          case FSYS_OSCIN_P30:
-C51 COMPILER V9.60.7.0   SYS                                                               11/21/2023 19:45:19 PAGE 4   
+C51 COMPILER V9.60.7.0   SYS                                                               11/22/2023 15:10:55 PAGE 4   
 
  172   2              set_CKSWT_ECLKST;
  173   2          break;

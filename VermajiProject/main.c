@@ -27,7 +27,8 @@ unsigned char temp _at_ 0x08;
 unsigned char idata itemp _at_ 0x90;
 unsigned char xdata xtemp _at_ 0x80;
 
-unsigned long counter=0, RelayCounter =0;
+unsigned long counter=0;
+unsigned long RelayCounter =0;
 bit sw_flag = 1;
 
 void sw_delay(int ms);
@@ -50,7 +51,7 @@ void Timer0_ISR (void) interrupt 1           /*interrupt address is 0x000B */
     TL0 = TL0_INIT;
     TF0 = 0 ;
 	  RelayCounter++;
-	if( MGS1 == 1 || MGS2==1 || MGS3==1 || MGS4 ==1)
+	if(((MGS1==1) || (MGS2==1) || (MGS3==1) || (MGS4 ==1)))
   {		
   	counter++;
 	}
@@ -59,7 +60,7 @@ void Timer0_ISR (void) interrupt 1           /*interrupt address is 0x000B */
 		counter=0;
 	}
 	
-	if((counter > 0x993) && ((LD4 == 1)||(LD3 == 1) ||(LD2 == 1) ||(LD1 == 1)))
+	if(counter > 0x993)
 	 {
 			BZ = 1;
 			sw_delay(500);
@@ -68,12 +69,43 @@ void Timer0_ISR (void) interrupt 1           /*interrupt address is 0x000B */
 			BZ = 1;
 			sw_delay(500);
 			BZ = 0;
-	//						}
 	}else
 	{
-			counter =0;
 			BZ = 0;
 	}
+	
+	 
+		 if(MGS4 == 0 )
+		 {
+       LD4 = 0; 
+		 }
+		 else
+		 {
+			 LD4 = 1; 
+		 }
+		 if(MGS3 == 0)
+		 {
+			 LD3 = 0 ; 
+		 }
+		 else
+		 {
+			 LD3 = 1;
+		 }
+		 if(MGS2== 0){
+			 LD2 = 0; 
+		 }
+		 else
+		 {
+			 LD2 = 1; 
+		 }
+		 if(MGS1 == 0)
+		 {
+			 LD1 = 0;
+		 }
+		 else
+		 {
+			 LD1 = 1;
+		 }
     _pop_(SFRS);
 }
 
@@ -87,13 +119,13 @@ void main(void){
   TL0 = TL0_INIT;
 	ENABLE_TIMER0_INTERRUPT;			/* Timer 0 mode configuration */
 	ENABLE_GLOBAL_INTERRUPT;                       /* enable interrupts */
-
+	set_TCON_TR0;
+	
 	WDT_Open(256);
   WDT_Interrupt(Disable);
 	RL1 = RL2 = RL3 = RL4 = BZ=  0;
 	LD4 = LD3 = LD2 = LD1 =  1 ; 
-	 
-	
+
 while(1){
 	//If MGS pin is not connected then switch will be 0 if it is not then it is 1
 	 if((MGS4 == 1)||
@@ -106,9 +138,7 @@ while(1){
 		else
 		{
 			sw_flag = 1; 
-		}
-
-		
+		};
 			//Switch 4
 		 if(SW4 == 0x00)
 		 { 
@@ -116,7 +146,7 @@ while(1){
 				if((MGS4 == 0)&&
 					(MGS3 == 0)&&
 					(MGS2 == 0)&&
-					(MGS1== 0)&&((RL1 == 0 )||(RL2 == 0 )||(RL3 == 0)||(RL4 ==0 )))
+					(MGS1== 0))
 				{
 					RL4 = 1;
 					RelayCounter =0;
@@ -129,16 +159,7 @@ while(1){
 				BZ = 1;
 				sw_delay(100); 
 				BZ = 0;
-				ENABLE_TIMER0_INTERRUPT;
-				set_TCON_TR0; 
 				while(RelayCounter < 1225){
-			     if((MGS4 == 1)||
-							(MGS3 == 1)||
-							(MGS2 == 1)||
-							(MGS1== 1)){
-							    RL4 = 0;
-								  break; 
-							}
 							
 					 if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 					 {
@@ -150,7 +171,6 @@ while(1){
 					 }
 			 }
 			 RL4 = 0;
-			 BZ = 0;
 		 }
 		 
 		 
@@ -159,44 +179,32 @@ while(1){
 			 if((MGS4 == 0)&&
 				 (MGS3 == 0)&&
 				 (MGS2 == 0)&&
-	  		 (MGS1== 0)&&((RL1 == 0 )||(RL2 == 0 )||(RL3 == 0)||(RL4 ==0 )))
+	  		 (MGS1== 0))
 		  {
 				RL2 = 1; 
 				RelayCounter =0;
 			}
 			 BZ = 1;
 			 sw_delay(100); 
-			 BZ = 0;
-			 ENABLE_TIMER0_INTERRUPT;
-			 set_TCON_TR0; 
+			 BZ = 0; 
 			 while(RelayCounter < 1225){
-			     if((MGS4 == 1)||
-							(MGS3 == 1)||
-							(MGS2 == 1)||
-							(MGS1== 1)){
-							    RL2 = 0;
-									DISABLE_TIMER0_INTERRUPT; 
-									clr_TCON_TR0;
-								  break; 
-							}
 						if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 					 {
-						  BZ = 1;
+						 BZ = 1; 
 					 }
 					 else
-					 {
-						 BZ =0;
+				   {
+						 BZ = 0;
 					 }
 			 }
 			 RL2 = 0; 
-			 BZ = 0;
 		 }
 		 if(SW3 == 0)
 		 {
 			 if((MGS4 == 0)&&
 				 (MGS3 == 0)&&
 				 (MGS2 == 0)&&
-	  		 (MGS1== 0)&&((RL1 == 0 )||(RL2 == 0 )||(RL3 == 0)||(RL4 ==0 )))
+	  		 (MGS1== 0))
 				{
 					RL3 = 1;
 					RelayCounter =0;
@@ -208,19 +216,7 @@ while(1){
 				BZ = 1;
 				sw_delay(100); 
 				BZ = 0;
-				ENABLE_TIMER0_INTERRUPT;
-				set_TCON_TR0;
 			 while(RelayCounter < 1225){
-			     if((MGS4 == 1)||
-							(MGS3 == 1)||
-							(MGS2 == 1)||
-							(MGS1== 1))
-							{
-							    RL3 = 0;
-									DISABLE_TIMER0_INTERRUPT; 
-									clr_TCON_TR0;
-								  break; 
-							}
 						if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 					 {
 						  BZ = 1;
@@ -238,7 +234,7 @@ while(1){
 			 if((MGS4 == 0)&&
 				 (MGS3 == 0)&&
 				 (MGS2 == 0)&&
-	  		 (MGS1== 0)&&((RL1 == 0 )||(RL2 == 0 )||(RL3 == 0)||(RL4 ==0 )))
+	  		 (MGS1== 0))
 				{
 					RL1 = 1;
 					RelayCounter =0;
@@ -250,19 +246,7 @@ while(1){
 				BZ = 1;
 				sw_delay(100); 
 				BZ = 0;
-				ENABLE_TIMER0_INTERRUPT;
-				set_TCON_TR0;
 				while(RelayCounter < 1225){
-						if((MGS4 == 1)||
-							(MGS3 == 1)||
-							(MGS2 == 1)||
-							(MGS1== 1))
-							{
-							    RL1 = 0;
-									DISABLE_TIMER0_INTERRUPT; 
-									clr_TCON_TR0;
-								  break; 
-							}
 							if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 							{
 								BZ = 1;
@@ -273,42 +257,9 @@ while(1){
 							}
 			 } 
 			 RL1 = 0;
-			 BZ = 0;
 		 }
 			
-		 
-		 if(MGS4 == 0 )
-		 {
-       LD4 = 0; 
-		 }
-		 else
-		 {
-			 LD4 = 1; 
-		 }
-		 if(MGS3 == 0)
-		 {
-			 LD3 = 0;
-		 }
-		 else
-		 {
-			 LD3= 1; 
-		 }
-		 if(MGS2 == 0)
-		 {
-			 LD2 = 0; 
-		 }
-		 else
-		 {
-			 LD2 = 1; 
-		 }
-		 if(MGS1== 0)
-		 {
-			 LD1 = 0;
-		 }
-		 else
-		 {
-			 LD1 = 1;
-		 }
+		
 		}
 }
 
