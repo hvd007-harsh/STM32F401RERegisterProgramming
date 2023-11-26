@@ -7,7 +7,6 @@
 ".\Objects\uart.obj",
 ".\Objects\adc.obj",
 ".\Objects\eeprom.obj",
-".\Objects\wdt.obj",
 ".\Objects\MS51_STARTUP.obj" 
 TO ".\Objects\RFID_Proj" 
 PRINT(".\Listings\RFID_Proj.m51") RAMSIZE(256) 

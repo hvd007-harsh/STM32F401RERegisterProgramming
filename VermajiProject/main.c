@@ -153,20 +153,22 @@ while(1){
 				}
 				//Ring the buzzer
 				BZ = 1;
-				sw_delay(100);
-				BZ = 0; 
-				sw_delay(100); 
+				sw_delay(500);
+				BZ = 0;
+				sw_delay(500); 
 				BZ = 1;
-				sw_delay(100); 
+				sw_delay(500);
 				BZ = 0;
 				while(RelayCounter < 1225){
 							
 					 if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 					 {
+						  sw_delay(300); 
 						  BZ = 1;
 					 }
 					 else
 					 {
+						 sw_delay(300);
 						 BZ =0;
 					 }
 			 }
@@ -184,9 +186,13 @@ while(1){
 				RL2 = 1; 
 				RelayCounter =0;
 			}
-			 BZ = 1;
-			 sw_delay(100); 
-			 BZ = 0; 
+			BZ = 1;
+			sw_delay(500);
+			BZ = 0;
+			sw_delay(500); 
+			BZ = 1;
+			sw_delay(500);
+			BZ = 0;
 			 while(RelayCounter < 1225){
 						if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 					 {
@@ -210,11 +216,11 @@ while(1){
 					RelayCounter =0;
 				}
 				BZ = 1;
-				sw_delay(100);
-				BZ = 0; 
-				sw_delay(100); 
+				sw_delay(500);
+				BZ = 0;
+				sw_delay(500); 
 				BZ = 1;
-				sw_delay(100); 
+				sw_delay(500);
 				BZ = 0;
 			 while(RelayCounter < 1225){
 						if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
@@ -239,13 +245,13 @@ while(1){
 					RL1 = 1;
 					RelayCounter =0;
 				}
-				BZ = 1;
-				sw_delay(100);
-				BZ = 0; 
-				sw_delay(100); 
-				BZ = 1;
-				sw_delay(100); 
-				BZ = 0;
+			BZ = 1;
+			sw_delay(500);
+			BZ = 0;
+			sw_delay(500); 
+			BZ = 1;
+			sw_delay(500);
+			BZ = 0;
 				while(RelayCounter < 1225){
 							if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
 							{

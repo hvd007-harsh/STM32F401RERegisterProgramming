@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              11/22/2023 15:10:55 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              11/26/2023 13:12:01 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   49   1        
   50   1          TH0 = TH0_INIT;
   51   1          TL0 = TL0_INIT;
-C51 COMPILER V9.60.7.0   MAIN                                                              11/22/2023 15:10:55 PAGE 2   
+C51 COMPILER V9.60.7.0   MAIN                                                              11/26/2023 13:12:01 PAGE 2   
 
   52   1          TF0 = 0 ;
   53   1          RelayCounter++;
@@ -126,7 +126,7 @@ line level    source
  111          
  112          
  113          void main(void){
-C51 COMPILER V9.60.7.0   MAIN                                                              11/22/2023 15:10:55 PAGE 3   
+C51 COMPILER V9.60.7.0   MAIN                                                              11/26/2023 13:12:01 PAGE 3   
 
  114   1        /* UART0 initial for printf */
  115   1        setup();
@@ -170,135 +170,141 @@ line level    source
  153   4              }
  154   3              //Ring the buzzer
  155   3              BZ = 1;
- 156   3              sw_delay(100);
- 157   3              BZ = 0; 
- 158   3              sw_delay(100); 
+ 156   3              sw_delay(500);
+ 157   3              BZ = 0;
+ 158   3              sw_delay(500); 
  159   3              BZ = 1;
- 160   3              sw_delay(100); 
+ 160   3              sw_delay(500);
  161   3              BZ = 0;
  162   3              while(RelayCounter < 1225){
  163   4                    
  164   4                 if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
  165   4                 {
- 166   5                    BZ = 1;
- 167   5                 }
- 168   4                 else
- 169   4                 {
- 170   5                   BZ =0;
- 171   5                 }
- 172   4             }
- 173   3             RL4 = 0;
- 174   3           }
- 175   2           
-C51 COMPILER V9.60.7.0   MAIN                                                              11/22/2023 15:10:55 PAGE 4   
+ 166   5                    sw_delay(300); 
+ 167   5                    BZ = 1;
+ 168   5                 }
+ 169   4                 else
+ 170   4                 {
+ 171   5                   sw_delay(300);
+ 172   5                   BZ =0;
+ 173   5                 }
+ 174   4             }
+ 175   3             RL4 = 0;
+C51 COMPILER V9.60.7.0   MAIN                                                              11/26/2023 13:12:01 PAGE 4   
 
- 176   2           
- 177   2           if(SW2 == 0x00)
- 178   2           {
- 179   3             if((MGS4 == 0)&&
- 180   3               (MGS3 == 0)&&
- 181   3               (MGS2 == 0)&&
- 182   3               (MGS1== 0))
- 183   3            {
- 184   4              RL2 = 1; 
- 185   4              RelayCounter =0;
- 186   4            }
- 187   3             BZ = 1;
- 188   3             sw_delay(100); 
- 189   3             BZ = 0; 
- 190   3             while(RelayCounter < 1225){
- 191   4                  if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
- 192   4                 {
- 193   5                   BZ = 1; 
- 194   5                 }
- 195   4                 else
- 196   4                 {
- 197   5                   BZ = 0;
- 198   5                 }
- 199   4             }
- 200   3             RL2 = 0; 
- 201   3           }
- 202   2           if(SW3 == 0)
- 203   2           {
- 204   3             if((MGS4 == 0)&&
- 205   3               (MGS3 == 0)&&
- 206   3               (MGS2 == 0)&&
- 207   3               (MGS1== 0))
- 208   3              {
- 209   4                RL3 = 1;
- 210   4                RelayCounter =0;
- 211   4              }
- 212   3              BZ = 1;
- 213   3              sw_delay(100);
- 214   3              BZ = 0; 
- 215   3              sw_delay(100); 
- 216   3              BZ = 1;
- 217   3              sw_delay(100); 
- 218   3              BZ = 0;
- 219   3             while(RelayCounter < 1225){
- 220   4                  if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
- 221   4                 {
- 222   5                    BZ = 1;
- 223   5                 }
- 224   4                 else
- 225   4                 {
- 226   5                      BZ = 0;
- 227   5                 }
- 228   4             }
- 229   3             RL3 = 0;
- 230   3             BZ = 0;
- 231   3           }
- 232   2           if(SW1 == 0)
- 233   2           {
- 234   3             if((MGS4 == 0)&&
- 235   3               (MGS3 == 0)&&
- 236   3               (MGS2 == 0)&&
- 237   3               (MGS1== 0))
-C51 COMPILER V9.60.7.0   MAIN                                                              11/22/2023 15:10:55 PAGE 5   
+ 176   3           }
+ 177   2           
+ 178   2           
+ 179   2           if(SW2 == 0x00)
+ 180   2           {
+ 181   3             if((MGS4 == 0)&&
+ 182   3               (MGS3 == 0)&&
+ 183   3               (MGS2 == 0)&&
+ 184   3               (MGS1== 0))
+ 185   3            {
+ 186   4              RL2 = 1; 
+ 187   4              RelayCounter =0;
+ 188   4            }
+ 189   3            BZ = 1;
+ 190   3            sw_delay(500);
+ 191   3            BZ = 0;
+ 192   3            sw_delay(500); 
+ 193   3            BZ = 1;
+ 194   3            sw_delay(500);
+ 195   3            BZ = 0;
+ 196   3             while(RelayCounter < 1225){
+ 197   4                  if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
+ 198   4                 {
+ 199   5                   BZ = 1; 
+ 200   5                 }
+ 201   4                 else
+ 202   4                 {
+ 203   5                   BZ = 0;
+ 204   5                 }
+ 205   4             }
+ 206   3             RL2 = 0; 
+ 207   3           }
+ 208   2           if(SW3 == 0)
+ 209   2           {
+ 210   3             if((MGS4 == 0)&&
+ 211   3               (MGS3 == 0)&&
+ 212   3               (MGS2 == 0)&&
+ 213   3               (MGS1== 0))
+ 214   3              {
+ 215   4                RL3 = 1;
+ 216   4                RelayCounter =0;
+ 217   4              }
+ 218   3              BZ = 1;
+ 219   3              sw_delay(500);
+ 220   3              BZ = 0;
+ 221   3              sw_delay(500); 
+ 222   3              BZ = 1;
+ 223   3              sw_delay(500);
+ 224   3              BZ = 0;
+ 225   3             while(RelayCounter < 1225){
+ 226   4                  if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
+ 227   4                 {
+ 228   5                    BZ = 1;
+ 229   5                 }
+ 230   4                 else
+ 231   4                 {
+ 232   5                      BZ = 0;
+ 233   5                 }
+ 234   4             }
+ 235   3             RL3 = 0;
+ 236   3             BZ = 0;
+ 237   3           }
+C51 COMPILER V9.60.7.0   MAIN                                                              11/26/2023 13:12:01 PAGE 5   
 
- 238   3              {
- 239   4                RL1 = 1;
- 240   4                RelayCounter =0;
- 241   4              }
- 242   3              BZ = 1;
- 243   3              sw_delay(100);
- 244   3              BZ = 0; 
- 245   3              sw_delay(100); 
- 246   3              BZ = 1;
- 247   3              sw_delay(100); 
- 248   3              BZ = 0;
- 249   3              while(RelayCounter < 1225){
- 250   4                    if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
- 251   4                    {
- 252   5                      BZ = 1;
- 253   5                    }
- 254   4                    else
- 255   4                    {
- 256   5                      BZ = 0;
- 257   5                    }
- 258   4             } 
- 259   3             RL1 = 0;
- 260   3           }
- 261   2            
- 262   2          
- 263   2          }
- 264   1      }
- 265          
- 266          void sw_delay (int ms){
- 267   1          int a, b;
- 268   1          for (a=0; a<1296; a++){
- 269   2               for (b=0; b<ms; b++);
- 270   2          }
- 271   1      }
- 272          
- 273          
- 274          void setup (void){
- 275   1        ALL_GPIO_PUSHPULL_MODE;
- 276   1      }
+ 238   2           if(SW1 == 0)
+ 239   2           {
+ 240   3             if((MGS4 == 0)&&
+ 241   3               (MGS3 == 0)&&
+ 242   3               (MGS2 == 0)&&
+ 243   3               (MGS1== 0))
+ 244   3              {
+ 245   4                RL1 = 1;
+ 246   4                RelayCounter =0;
+ 247   4              }
+ 248   3            BZ = 1;
+ 249   3            sw_delay(500);
+ 250   3            BZ = 0;
+ 251   3            sw_delay(500); 
+ 252   3            BZ = 1;
+ 253   3            sw_delay(500);
+ 254   3            BZ = 0;
+ 255   3              while(RelayCounter < 1225){
+ 256   4                    if((SW4==0) || (SW3==0) || (SW2==0) || (SW1==0))
+ 257   4                    {
+ 258   5                      BZ = 1;
+ 259   5                    }
+ 260   4                    else
+ 261   4                    {
+ 262   5                      BZ = 0;
+ 263   5                    }
+ 264   4             } 
+ 265   3             RL1 = 0;
+ 266   3           }
+ 267   2            
+ 268   2          
+ 269   2          }
+ 270   1      }
+ 271          
+ 272          void sw_delay (int ms){
+ 273   1          int a, b;
+ 274   1          for (a=0; a<1296; a++){
+ 275   2               for (b=0; b<ms; b++);
+ 276   2          }
+ 277   1      }
+ 278          
+ 279          
+ 280          void setup (void){
+ 281   1        ALL_GPIO_PUSHPULL_MODE;
+ 282   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    753    ----
+   CODE SIZE        =    760    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      8    ----
    PDATA SIZE       =   ----    ----
