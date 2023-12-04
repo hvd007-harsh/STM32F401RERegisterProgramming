@@ -1,0 +1,105 @@
+C51 COMPILER V9.60.7.0   COMMON                                                            11/06/2023 19:11:45 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE COMMON
+OBJECT MODULE PLACED IN .\Objects\common.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE common.c LARGE OPTIMIZE(8,SPEED) BROWSE ORDER INCDIR(D:\MS51BSP_KEIL-mas
+                    -ter\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\Device\Include;D:\MS51BSP_KEIL-master\MS51FB9AE_MS51XB9AE_MS51XB9BE\Library\St
+                    -dDriver\inc) DEBUG OBJECTEXTEND PRINT(.\Listings\common.lst) TABS(2) OBJECT(.\Objects\common.obj)
+
+line level    source
+
+   1          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   2          /*                                                                                                        
+             - */
+   3          /* SPDX-License-Identifier: Apache-2.0                                                                    
+             - */
+   4          /* Copyright(c) 2022 Nuvoton Technology Corp. All rights reserved.                                        
+             - */
+   5          /*                                                                                                        
+             - */
+   6          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   7          #include "ms51_16k.h"
+   8          
+   9          bit BIT_TMP;
+  10          /**
+  11           * @brief       Read Dataflash
+  12           * @param       Dataflash start address
+  13           * @return      Dataflash Value
+  14           * @details     None
+  15           */
+  16          unsigned char Read_APROM_BYTE(unsigned int code *u16_addr)
+  17          {
+  18   1          unsigned char rdata;
+  19   1          rdata = *u16_addr >> 8;
+  20   1          return rdata;
+  21   1      }
+  22          
+  23          /**
+  24           * @brief       Software reset API
+  25           * @param       Run in APROM/LDROM after reset
+  26           *                       - \ref BOOT_APROM: Run in APROM after reset .
+  27           *                       - \ref BOOT_LDROM: Run in LDROM after reset.
+  28           * @return      None
+  29           * @details     None
+  30           */
+  31          void Software_Reset(unsigned char u8Bootarea)
+  32          {
+  33   1          unsigned char boottemp;
+  34   1          boottemp = (0x80|u8Bootarea);
+  35   1          TA = 0xAA;
+  36   1          TA = 0x55;
+  37   1          CHPCON = boottemp;                   //software reset enable
+  38   1      }
+  39          
+  40          /**
+  41           * @brief       MCU power down mode enable API
+  42           * @param       Enable power down mode
+  43           *                       - \ref ENABLE: Run into power down mode .
+  44           * @return      None
+  45           * @details     None
+  46           */
+  47          void PowerDown_Mode(bit PDStatus)
+C51 COMPILER V9.60.7.0   COMMON                                                            11/06/2023 19:11:45 PAGE 2   
+
+  48          {
+  49   1          if (PDStatus)
+  50   1          {
+  51   2             POWERDOWN_MODE_ENABLE;
+  52   2             _nop_();
+  53   2             _nop_();
+  54   2          }
+  55   1      }
+  56          
+  57          /**
+  58           * @brief       MCU idle mode enable API
+  59           * @param       Enable idle mode
+  60           *                       - \ref ENABLE: Run into idle mode .
+  61           * @return      None
+  62           * @details     None
+  63           */
+  64          void Idle_Mode(bit IdleStatus)
+  65          {
+  66   1          if (IdleStatus)
+  67   1          {
+  68   2             IDLE_MODE_ENABLE;
+  69   2             _nop_();
+  70   2             _nop_();
+  71   2          }
+  72   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     38    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

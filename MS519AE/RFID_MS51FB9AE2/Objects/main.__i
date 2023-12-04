@@ -1,0 +1,1 @@
+"main.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(D:\MS51FB9AE-master\src\Library\Device\Include;D:\MS51FB9AE-master\src\Library\StdDriver\inc) DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) TABS (2) OBJECT(.\Objects\main.obj)

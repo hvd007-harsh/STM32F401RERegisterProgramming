@@ -1,0 +1,185 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/28/2023  19:02:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\C51\BIN\BL51.EXE .\Objects\MS51_STARTUP.obj, .\Objects\main.obj TO .\Objects\RFID_Proj PRINT (.\Listings\RFID_Proj.m5
+>> 1) RAMSIZE (256) DISABLEWARNING (16)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\MS51_STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  .\Objects\RFID_Proj (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0033H     UNIT         ?PR?MAIN?MAIN
+            CODE    0833H     0026H     UNIT         ?PR?_SW_DELAY?MAIN
+            CODE    0859H     001AH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\RFID_Proj (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?_SW_DELAY?MAIN
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   BIT_TMP
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\RFID_Proj (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0859H         SEGMENT       ?C_C51STARTUP
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/28/2023  19:02:01  PAGE 2
+
+
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:085CH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0859H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:07FFH         SYMBOL        XDATALEN
+  C:0867H         SYMBOL        XDATALOOP
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         91
+  C:0859H         LINE#         106
+  C:085BH         LINE#         107
+  C:085CH         LINE#         108
+  C:085DH         LINE#         109
+  C:085FH         LINE#         113
+  C:0862H         LINE#         114
+  C:0864H         LINE#         116
+  C:0866H         LINE#         120
+  C:0867H         LINE#         121
+  C:0868H         LINE#         122
+  C:0869H         LINE#         123
+  C:086BH         LINE#         124
+  C:086DH         LINE#         158
+  C:0870H         LINE#         162
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00B1H         PUBLIC        P0M1
+  D:00B3H         PUBLIC        P1M1
+  D:00B2H         PUBLIC        P0M2
+  D:0080H         PUBLIC        P0
+  D:00B4H         PUBLIC        P1M2
+  D:0090H         PUBLIC        P1
+  D:00ACH         PUBLIC        P3M1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00ADH         PUBLIC        P3M2
+  B:00A8H.7       PUBLIC        EA
+  D:00D8H         PUBLIC        PWMCON0
+  D:00A8H         PUBLIC        IE
+  D:00C7H         PUBLIC        TA
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/28/2023  19:02:01  PAGE 3
+
+
+  D:00B8H         PUBLIC        IP
+  C:0800H         PUBLIC        main
+  B:0090H.2       PUBLIC        P12
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0091H         PUBLIC        SFRS
+  D:00F8H         PUBLIC        SCON_1
+  D:00E8H         PUBLIC        ADCCON0
+  D:00C0H         PUBLIC        I2CON
+  C:0833H         PUBLIC        _sw_delay
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0800H         LINE#         10
+  C:0800H         LINE#         11
+  C:0800H         LINE#         12
+  C:081FH         LINE#         13
+  C:081FH         LINE#         14
+  C:081FH         LINE#         15
+  C:0821H         LINE#         16
+  C:0828H         LINE#         17
+  C:082AH         LINE#         18
+  C:0831H         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         PROC          _SW_DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        a
+  D:0002H         SYMBOL        b
+  -------         ENDDO         
+  C:0833H         LINE#         23
+  C:0833H         LINE#         25
+  C:0836H         LINE#         26
+  C:084DH         LINE#         27
+  C:0858H         LINE#         28
+  -------         ENDPROC       _SW_DELAY
+  -------         ENDMOD        MAIN
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  BIT_TMP
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  BIT_TMP
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0803H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  BIT_TMP
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0810H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0076H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=118
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/28/2023  19:02:01  PAGE 4
+
+
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
